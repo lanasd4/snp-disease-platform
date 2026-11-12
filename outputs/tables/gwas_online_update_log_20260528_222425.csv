@@ -1,0 +1,2 @@
+﻿url,raw_path,downloaded_at,max_lines,download_status,error,line_count,file_size_bytes
+https://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations_ontology-annotated.tsv,data/raw/online/gwas/gwas_online_snapshot_20260528_222425.tsv,2026-05-28T22:24:25,1500,failed,HTTP Error 404: Not Found,0,0

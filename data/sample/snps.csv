@@ -1,0 +1,7 @@
+﻿snp_id,rsid,gene_id,chromosome,position,variant_type,functional_annotation,active
+1,rs7903146,1,10,,SNP,intronic,Y
+2,rs9939609,2,16,,SNP,intronic,Y
+3,rs699,3,1,,SNP,missense,Y
+4,rs10757278,4,9,,SNP,intergenic,Y
+5,rs12917707,5,16,,SNP,non-coding,Y
+6,rs3939286,6,9,,SNP,non-coding,Y

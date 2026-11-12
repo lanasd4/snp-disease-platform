@@ -1,0 +1,7 @@
+﻿disease_name,disease_arabic_name,rsid,gene_symbol,gene_name,study_title,source_name,publication_year,country,region,population_label,is_arab_related,p_value,odds_ratio,risk_allele,effect_allele,source_database,evidence_level
+Asthma,الربو,rs3939286,IL33,Interleukin 33,Sample association study for Asthma,Demo Source,2024,International,Global,Mixed ancestry,N,0.0008,1.15,A,A,Demo,Sample
+Chronic Kidney Disease,مرض الكلى المزمن,rs12917707,UMOD,Uromodulin,Sample Arab-related study for Chronic Kidney Disease,Demo Source,2024,Arab Region,Arab Region,Arab-related population,Y,0.0003,1.2,T,T,Demo,Sample
+Coronary Artery Disease,مرض الشريان التاجي,rs10757278,CDKN2A,Cyclin Dependent Kinase Inhibitor 2A,Sample association study for Coronary Artery Disease,Demo Source,2024,International,Global,Mixed ancestry,N,5e-07,1.42,G,G,Demo,Sample
+Hypertension,ارتفاع ضغط الدم,rs699,AGT,Angiotensinogen,Sample regional study for Hypertension,Demo Source,2024,Middle East,Middle East,Middle Eastern population,Y,0.001,1.18,C,C,Demo,Sample
+Obesity,السمنة,rs9939609,FTO,Fat Mass and Obesity Associated,Sample association study for Obesity,Demo Source,2024,International,Global,Mixed ancestry,N,2e-05,1.25,A,A,Demo,Sample
+Type 2 Diabetes,السكري من النوع الثاني,rs7903146,TCF7L2,Transcription Factor 7 Like 2,Sample association study for Type 2 Diabetes,Demo Source,2024,International,Global,Mixed ancestry,N,1e-05,1.35,T,T,Demo,Sample

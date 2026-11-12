@@ -1,0 +1,31 @@
+﻿disease_name,disease_arabic_name,rsid,gene_symbol,p_value
+Chronic Kidney Disease,مرض الكلى المزمن,rs911119,CST3,1.9999999999999998e-138
+Obesity,السمنة,rs8043757,FTO,5e-110
+Obesity,السمنة,rs1558902,FTO,2.0000000000000002e-81
+Obesity,السمنة,rs7185735,FTO,1e-79
+Chronic Kidney Disease,مرض الكلى المزمن,rs3775948,SLC2A9,2e-65
+Chronic Kidney Disease,مرض الكلى المزمن,rs504915,NRXN2,3e-63
+Obesity,السمنة,rs11075990,FTO,2e-51
+Type 2 Diabetes,السكري من النوع الثاني,rs7901695,TCF7L2,1e-48
+Type 2 Diabetes,السكري من النوع الثاني,rs7903146,TCF7L2,1e-48
+Type 2 Diabetes,السكري من النوع الثاني,rs2237892,KCNQ1,1.9999999999999998e-42
+Obesity,السمنة,rs6711012,AC093326.1 - TMEM18,2.9999999999999998e-40
+Obesity,السمنة,rs1421085,FTO,6e-39
+Obesity,السمنة,rs538656,RNU4-17P - AC090771.1,2e-36
+Type 2 Diabetes,السكري من النوع الثاني,rs7903146,TCF7L2,1e-35
+Hypertension,ارتفاع ضغط الدم,rs11066280,HECTD4,1e-35
+Obesity,السمنة,rs10938397,AC108467.1 - THAP12P9,3e-34
+Type 2 Diabetes,السكري من النوع الثاني,rs7903146,TCF7L2,9.999999999999999e-31
+Chronic Kidney Disease,مرض الكلى المزمن,rs2725220,PKD2,3.9999999999999996e-30
+Chronic Kidney Disease,مرض الكلى المزمن,rs10937329,LINC01991 - AC092941.1,9e-30
+Type 2 Diabetes,السكري من النوع الثاني,rs2383208,CDKN2B-AS1 - AL157937.1,2.0000000000000002e-29
+Obesity,السمنة,rs13130484,AC108467.1 - THAP12P9,3.9999999999999994e-28
+Obesity,السمنة,rs3764261,HERPUD1 - CETP,1e-27
+Obesity,السمنة,rs10871777,RNU4-17P - AC090771.1,2e-27
+Type 2 Diabetes,السكري من النوع الثاني,rs2237892,KCNQ1,9.999999999999999e-27
+Obesity,السمنة,rs10189761,AC093326.1 - TMEM18,6e-24
+Hypertension,ارتفاع ضغط الدم,rs11191548,CNNM2,7.000000000000001e-24
+Hypertension,ارتفاع ضغط الدم,rs1378942,CSK,1.0000000000000001e-23
+Obesity,السمنة,rs633715,AL136114.1,9.000000000000001e-23
+Obesity,السمنة,rs11152213,RNU4-17P - AC090771.1,3e-22
+Obesity,السمنة,rs2030323,AC103796.1,3e-22

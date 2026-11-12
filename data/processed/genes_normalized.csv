@@ -1,0 +1,702 @@
+﻿gene_id,gene_symbol,gene_name,description,source_database
+GENE_000001,A4GALT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000002,ABCA7,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000003,ABCC8,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000004,ABHD17C,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000005,ABO,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000006,ACAD10,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000007,ACAP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000008,ADAD1 - IL2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000009,ADAM29,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000010,ADAMTS7,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000011,ADARB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000012,ADCY3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000013,ADCY3 - DNAJC27,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000014,ADCY5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000015,ADCY7,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000016,ADCY9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000017,ADO,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000018,ADRB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000019,AFF3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000020,AFG2B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000021,AGBL2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000022,AGT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000023,AIDA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000024,AKAP6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000025,ALDH2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000026,ANAPC4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000027,ANK1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000028,ANKLE1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000029,ANKLE1 - ABHD8,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000030,ANKRD33BP2 - TRIM51CP,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000031,ANKRD55,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000032,ANKS1B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000033,ANO8,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000034,AOC1 - KCNH2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000035,AP4B1-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000036,AP5B1 - OVOL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000037,APH1B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000038,APOB,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000039,APOC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000040,APOC1 - APOC1P1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000041,APOC1P1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000042,APOC4-APOC2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000043,APOE,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000044,APOE - APOC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000045,APOL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000046,APOL1 - MYH9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000047,APOL4 - APOL2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000048,AQP4-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000049,ARAP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000050,ARHGAP42,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000051,ARID5B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000052,ARPIN-AP3S2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000053,ATG5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000054,ATP2B1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000055,ATP5MGP4 - RNU7-197P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000056,ATXN2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000057,BABAM1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000058,BACH2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000059,BANK1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000060,BANK1 - SLC39A8,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000061,BBLNP2 - ZNRF3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000062,BBS4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000063,BCAM,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000064,BCAM - NECTIN2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000065,BCDIN3D - RPL35AP28,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000066,BCL2L11,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000067,BCL3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000068,BCLAF1P1 - TSLP,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000069,BDNF,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000070,BDNF-AS,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000071,BICC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000072,BIN1 - NIFKP9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000073,BLK,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000074,BORCS7-ASMT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000075,BRINP3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000076,C12ORF42,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000077,C19ORF12 - CCNE1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000078,C1ORF167,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000079,C1QTNF6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000080,C5ORF67,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000081,C5ORF67 - MAP3K1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000082,CABCOCO1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000083,CACNA1D,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000084,CACNB2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000085,CAMK2B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000086,CAPZB,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000087,CARF,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000088,CASC15,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000089,CASC16,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000090,CASC19,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000091,CASC8,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000092,CASC9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000093,CASP8,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000094,CASS4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000095,CAST,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000096,CASZ1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000097,CBLB - Y_RNA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000098,CBLC,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000099,CCDC170,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000100,CCDC170 - ESR1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000101,CCDC71L - LINC02577,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000102,CCDST,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000103,CCK - SALL4P6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000104,CCL21 - SPATA31F1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000105,CCND1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000106,CCND2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000107,CCND2-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000108,CCR6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000109,CCSER1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000110,CD28,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000111,CD28 - KRT18P39,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000112,CD2AP,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000113,CD2AP - ADGRF2P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000114,CD40,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000115,CD69,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000116,CD69 - GCNAP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000117,CDC123 - RN7SL198P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000118,CDC27,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000119,CDH13,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000120,CDK5RAP2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000121,CDKAL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000122,CDKN2A-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000123,CDKN2B-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000124,CDYL2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000125,CEACAM16-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000126,CEACAM16-AS1 - BCL3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000127,CELF2-DT - ORMDL1P1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000128,CELSR2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000129,CELSR2 - PSRC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000130,CENPW - MIR588,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000131,CEP170B - PLD4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000132,CEP68,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000133,CERS5 - LIMA1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000134,CFAP144P2 - IL1RL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000135,CFAP20DC,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000136,CFDP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000137,CHCHD4P2 - RPL36P14,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000138,CLCN6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000139,CLEC16A,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000140,CLNK - LINC02498,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000141,CLU,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000142,CNNM2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000143,COBLL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000144,COG6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000145,COL4A2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000146,COL6A3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000147,COL6A5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000148,COX7CP3 - SETP16,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000149,CPS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000150,CR1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000151,CR1-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000152,CRTC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000153,CSK,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000154,CTBP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000155,CTLA4 - ICOS,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000156,CTRB2 - CTRB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000157,CUX2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000158,CXCL8,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000159,CXXC5 - RNU6-236P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000160,CYB561 - PPIAP55,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000161,CYB5B - NFAT5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000162,CYP1A2 - CSK,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000163,D2HGDH,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000164,DAB2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000165,DCLK2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000166,DDX6 - COX7CP3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000167,DENND1A,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000168,DGKB,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000169,DIRC3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000170,DNAJC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000171,DNAJC1 - ADIPOR1P1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000172,DPEP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000173,DPP4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000174,DPY19L3-DT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000175,DRAIC,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000176,DUSP9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000177,EBF1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000178,EBF2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000179,EDNRA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000180,EEF1A1P11 - RN7SL831P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000181,EFEMP2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000182,EIF2S2P3 - HHEX,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000183,ELL,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000184,EMBP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000185,EMBP1 - RNA5SP533,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000186,EMSY,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000187,EMSY - LINC02757,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000188,EPHA1-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000189,ERBB2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000190,ERBB3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000191,ESR1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000192,ETV5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000193,FAIM2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000194,FAM167A - BLK,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000195,FAP - IFIH1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000196,FCER1G,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000197,FCRL3 - VDAC1P9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000198,FES,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000199,FGD6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000200,FGFR2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000201,FGFR2 - ATE1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000202,FIGN - PRPS1P1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000203,FLG,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000204,FLT1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000205,FLT3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000206,FTO,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000207,FURIN,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000208,GAPDHP64 - NEFHP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000209,GATM,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000210,GCKR,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000211,GCNT4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000212,GGCX,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000213,GGNBP2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000214,GIP,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000215,GIPC2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000216,GIPR,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000217,GLB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000218,GLIS3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000219,GNAI2P1 - RPL30P11,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000220,GNB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000221,GOLGA6GP - ADAMTS7,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000222,GOSR2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000223,GPSM1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000224,GRB14 - COBLL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000225,GRN,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000226,GS1-279B7.1 - RNU7-183P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000227,GSDMB,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000228,GTF2I,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000229,GTF2IRD1 - GTF2I-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000230,GTF3AP1 - IL33,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000231,GTF3AP5 - AGMO,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000232,GUCY1A1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000233,GUSBP5 - KRT18P51,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000234,H1-2 - H2BC4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000235,H2BC4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000236,H2BP1 - RPL22P6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000237,H3P5 - LBH,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000238,HBB,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000239,HCG27 - HLA-C,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000240,HCN1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000241,HDAC9 - TWIST1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000242,HHEX - Y_RNA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000243,HHIPL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000244,HIC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000245,HIGD1AP4 - SCG2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000246,HLA-B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000247,HLA-DPB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000248,HLA-DQA1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000249,HLA-DQA1 - HLA-DQB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000250,HLA-DQB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000251,HLA-DQB1 - MTCO3P1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000252,HLA-DQB2 - HLA-DOB,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000253,HLA-DRB1 - HLA-DQA1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000254,HLA-DRB5 - RNU1-61P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000255,HLA-DRB6 - HLA-DRB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000256,HLA-DRB9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000257,HLA-DRB9 - HLA-DRB5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000258,HMG20A,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000259,HMG20A - LINGO1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000260,HNF1A,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000261,HNF1B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000262,HNF4A-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000263,HNF4G,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000264,HORMAD2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000265,HOTTIP,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000266,HOXC4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000267,HOXD-AS2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000268,HRCT1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000269,HS6ST3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000270,HSPA8P5 - CCND2-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000271,IDE,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000272,IFIH1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000273,IGF2BP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000274,IGF2BP2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000275,IGF2R - SLC22A1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000276,IKZF3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000277,IL13,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000278,IL18R1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000279,IL1R1-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000280,IL1RL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000281,IL2RA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000282,IL2RA - RPL32P23,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000283,IL4R,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000284,INHBC,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000285,INPP5D,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000286,INSR,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000287,IPO9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000288,IRF1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000289,IRF4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000290,IRF5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000291,ISCA1P1 - HTR1A,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000292,ITGAX,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000293,ITPK1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000294,ITPR1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000295,JADE2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000296,JAZF1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000297,JCAD,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000298,JUND - MIR3188,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000299,KCNAB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000300,KCNE2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000301,KCNJ11,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000302,KCNK3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000303,KCNN4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000304,KCNQ1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000305,KCNQ1OT1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000306,KCNU1 - SMARCE1P4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000307,KIF11,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000308,KLC1-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000309,KLF4 - PPIAP88,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000310,KREMEN1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000311,KRT18P47 - CARMAL,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000312,KRT8P26 - AP5B1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000313,LARP4B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000314,LCE1D - LCE1C,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000315,LDLR,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000316,LEF1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000317,LINC00299,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000318,LINC00314,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000319,LINC00609 - MBIP,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000320,LINC00841 - LINC03089,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000321,LINC01080,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000322,LINC01101 - Y_RNA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000323,LINC01104,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000324,LINC01149,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000325,LINC01320,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000326,LINC01475,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000327,LINC01488 - PNCRNA-D,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000328,LINC01512,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000329,LINC01741 - SEC16B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000330,LINC01752 - LINC02871,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000331,LINC01804,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000332,LINC01808 - CISD1P1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000333,LINC01875 - TMEM18,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000334,LINC02098 - ETS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000335,LINC02132 - LINC01082,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000336,LINC02227,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000337,LINC02227 - EBF1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000338,LINC02260 - KIT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000339,LINC02357,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000340,LINC02357 - RBPJ,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000341,LINC02452 - ELK3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000342,LINC02498,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000343,LINC02498 - MIR572,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000344,LINC02571 - HLA-B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000345,LINC02625,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000346,LINC02676 - LINC00709,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000347,LINC02694,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000348,LINC02750 - OR4C50P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000349,LINC02796,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000350,LINC02831,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000351,LINC02852 - LETR1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000352,LINC02920 - CYCSP42,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000353,LINC02929,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000354,LINC02950,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000355,LINC02950 - RN7SL178P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000356,LINC02952 - LINC02747,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000357,LINC03004,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000358,LINC03089 - LINC02881,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000359,LINC03111 - RNU4-17P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000360,LINGO1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000361,LINGO2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000362,LIPA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000363,LNCNEF,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000364,LNCNEF - LINC01747,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000365,LNCOB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000366,LNCRNA-IUR - FAM76B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000367,LONRF2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000368,LPA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000369,LPA - PLG,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000370,LPAL2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000371,LPL,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000372,LPP,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000373,LRFN2 - UNC5CL,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000374,LRP2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000375,LSP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000376,LYPLAL1-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000377,MAD1L1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000378,MADD,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000379,MAFTRR,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000380,MAP2K3 - KCNJ12,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000381,MAP2K5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000382,MAPK8IP1P1 - ARL17B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000383,MAPT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000384,MARCHF1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000385,MARK4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000386,MDM4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000387,MECP2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000388,MED24,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000389,MEF2C-AS1 - LINC02161,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000390,MIA3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000391,MICA - LINC01149,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000392,MICA-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000393,MICOS10,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000394,MIER3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000395,MIR31HG,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000396,MIR3681HG,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000397,MIR4422HG,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000398,MIR4432HG,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000399,MIR4686 - ASCL2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000400,MIR548G - RPL31P26,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000401,MIR670HG,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000402,MLLT10,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000403,MLLT10 - DNAJC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000404,MMEL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000405,MORF4L1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000406,MPPED2-AS1 - DCDC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000407,MRFAP1P1 - DUSP9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000408,MRPS30 - HCN1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000409,MRPS30-DT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000410,MRTFA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000411,MS4A4A,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000412,MS4A6A,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000413,MTCO3P1 - HLA-DQB3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000414,MTHFR,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000415,MTNR1B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000416,MTUS2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000417,MUC12-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000418,MUC16 - BOLA3P2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000419,MYL2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000420,MYL3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000421,MYO19,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000422,NBEAL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000423,NDFIP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000424,NECTIN2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000425,NEGR1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000426,NEK10,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000427,NEK6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000428,NFAT5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000429,NFATC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000430,NFIC,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000431,NFKBIE,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000432,NFKBIE - TMEM151B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000433,NGF-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000434,NHLRC2 - ADRB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000435,NKPD1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000436,NKX6-3 - ANK1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000437,NMT1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000438,NMT2 - FAM171A1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000439,NOS3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000440,NOTCH2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000441,NOTCH4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000442,NOTCH4 - TSBP1-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000443,NPC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000444,NPM1P10 - HACE1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000445,NPM1P47 - C2CD4B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000446,NPNT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000447,NPR3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000448,NPR3 - LINC02120,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000449,NRXN3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000450,NSUN3 - ARMC10P1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000451,NT5C2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000452,NUP160,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000453,NUP160 - PTPRJ,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000454,NYAP2 - MIR5702,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000455,OR4C13 - OR4C12,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000456,ORMDL3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000457,OVOL1 - CFL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000458,PABPC4-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000459,PADI2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000460,PADI4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000461,PARTICL,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000462,PAX4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000463,PAX9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000464,PCAT1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000465,PCSK9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000466,PDE10A,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000467,PDE8B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000468,PDGFDDN,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000469,PDILT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000470,PDS5B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000471,PDZRN4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000472,PEX14,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000473,PFDN1 - HBEGF,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000474,PGAM1P5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000475,PHACTR1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000476,PHTF1 - RSBN1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000477,PICALM - RNU6-560P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000478,PILRA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000479,PITPNB,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000480,PKMP4 - HNF4G,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000481,PLCB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000482,PLCB2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000483,PLCD3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000484,PLCE1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000485,PLCL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000486,PLCL2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000487,PLG,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000488,PLG - MAP3K4-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000489,PLPP3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000490,PMS2P1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000491,POC1B-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000492,POC5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000493,POM121C,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000494,POM121L9P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000495,POU5F1B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000496,PPARG,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000497,PPIAP66 - RPL5P7,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000498,PPIAP88 - RNU6-996P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000499,PRC1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000500,PRC1-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000501,PRDM16,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000502,PRDM8 - FGF5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000503,PRDX4P1 - THAP12P9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000504,PRKAG2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000505,PRKCQ,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000506,PRKN,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000507,PRMT5P1 - EDNRA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000508,PROX1-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000509,PSD4 - PAX8-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000510,PTCSC2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000511,PTHLH - CCDC91,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000512,PTK2B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000513,PTPN11,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000514,PTPN2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000515,PTPRJ,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000516,PVR,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000517,RAB20,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000518,RAD50,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000519,RAD51B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000520,RANBP17,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000521,RANBP6 - GTF3AP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000522,RARB,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000523,RASA2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000524,RASGRP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000525,RAVER1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000526,REL,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000527,REL-DT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000528,RELB,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000529,RELN,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000530,RGL3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000531,RGS14,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000532,RN7SKP15 - PTHLH,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000533,RN7SL167P - NTM,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000534,RN7SL222P - PPIAP43,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000535,RN7SL335P - BLTP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000536,RN7SL363P - FURIN,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000537,RN7SL836P - GIPR,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000538,RNA5SP271 - KCNB2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000539,RNASET2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000540,RNASET2 - MIR3939,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000541,RNF32-DT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000542,RNF6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000543,RNU1-58P - PPP1R2P6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000544,RNU1-89P - TERF1P3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000545,RNU1-96P - Y_RNA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000546,RNU4-17P - MC4R,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000547,RNU6-560P - LINC02695,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000548,RORA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000549,RPL13AP18 - RNU6-1213P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000550,RPL17P33 - LINC00589,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000551,RPL31P43 - CHCHD4P2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000552,RPL35P4 - HNRNPA1P73,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000553,RPL37P11 - KCNK3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000554,RPS17P5 - TNPO3P2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000555,RPS26,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000556,RPS26 - ERBB3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000557,RPS3AP18 - TMEM154,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000558,RPS4XP9 - RSPO3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000559,RPSAP22 - PARTICL,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000560,RPSAP52,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000561,RPTOR,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000562,RREB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000563,RTN4RL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000564,RYK,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000565,SAE1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000566,SAMD5 - SASH1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000567,SCAANT1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000568,SCARB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000569,SDCCAG8,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000570,SEC16B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000571,SELENOTP1 - TPD52L3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000572,SF3A2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000573,SFMBT1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000574,SGF29,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000575,SH2B1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000576,SH2B3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000577,SHROOM3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000578,SIPA1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000579,SIPA1L3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000580,SIVA1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000581,SLC13A3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000582,SLC1A2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000583,SLC22A2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000584,SLC24A4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000585,SLC25A26,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000586,SLC25A46 - BCLAF1P1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000587,SLC28A2-AS1 - RNU6-953P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000588,SLC2A9,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000589,SLC30A8,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000590,SLC30A8 - MED30,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000591,SLC34A1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000592,SLC39A8,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000593,SLC4A7,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000594,SLC7A10 - CEBPA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000595,SMAD3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000596,SMARCA4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000597,SMARCA4 - LDLR,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000598,SMIM30 - PPP1R3A,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000599,SND1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000600,SND1 - MIR129-1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000601,SNRPEP3 - GP2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000602,SORCS3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000603,SORL1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000604,SOX6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000605,SPATA13,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000606,SPATA16 - NLGN1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000607,SPEF2 - IL7R,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000608,SPRED2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000609,SRC - RPL7AP14,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000610,SSBP4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000611,STAT4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000612,STAT6,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000613,STXBP4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000614,SUOX,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000615,SWAP70,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000616,SYN2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000617,SYNGR1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000618,TACC3 - FGFR3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000619,TAGAP,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000620,TAGAP-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000621,TARID,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000622,TBKBP1 - TBX21,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000623,TBX2-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000624,TBX3-AS1 - UBA52P7,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000625,TCF21,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000626,TCF7L2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000627,TERT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000628,TERT - MIR4457,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000629,TESHL,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000630,TFAP2B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000631,TG,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000632,TGFB1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000633,TH2LCRR,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000634,THADA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000635,THSD7A,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000636,TICAM1 - PLIN3-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000637,TLE1-DT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000638,TLR1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000639,TLR3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000640,TMEM219,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000641,TMOD4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000642,TNFAIP3 - LINC02865,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000643,TNFRSF14-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000644,TNFSF4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000645,TNNI3K,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000646,TNPO3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000647,TNRC6B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000648,TOMM40,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000649,TOX3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000650,TPO,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000651,TPPP - ZDHHC11B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000652,TRAF1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000653,TREM2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000654,TRIB1AL,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000655,TRIM66,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000656,TRPA2P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000657,TSBP1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000658,TSBP1-AS1 - HLA-DRA,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000659,TSLP,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000660,TSPAN14,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000661,TSPOAP1-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000662,TTC28,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000663,TTC28 - CHEK2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000664,TYK2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000665,UBAC2 - CCR12P,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000666,UBASH3A,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000667,UBE2E2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000668,UBE2H-DT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000669,UBE3C,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000670,ULK4,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000671,UMOD,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000672,UNCX - MICALL2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000673,USP37,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000674,USP38-DT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000675,USP6NL-AS1 - ECHDC3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000676,VAV3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000677,VEGFA - LINC02537,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000678,VHRT,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000679,VPS33B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000680,WDR12,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000681,WDR36 - RPS3AP21,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000682,WDR72,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000683,WFS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000684,WFS1 - PPP2R2C,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000685,WNT2B,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000686,Y_RNA - CXCR5,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000687,ZBED3-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000688,ZCCHC7,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000689,ZFPM2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000690,ZMIZ1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000691,ZNF318 - ABCC10,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000692,ZNF365 - LINC02929,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000693,ZNF646P1 - LINC00558,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000694,ZNF652-AS1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000695,ZNF77,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000696,ZNF831,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000697,ZNRF3,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000698,ZPBP2,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000699,ZPBP2 - GSDMB,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000700,ZPR1,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog
+GENE_000701,ZSCAN12,,Imported from GWAS Catalog mapped_gene field,GWAS Catalog

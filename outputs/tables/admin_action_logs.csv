@@ -1,0 +1,4 @@
+﻿log_id,username,action,details,created_at
+3,layan,self_register_user,User created an account through self-registration.,2026-05-26T22:33:01
+2,admin,create_user_account,"Created username=lana, role=admin, is_active=1",2026-05-26T22:25:18
+1,admin,create_default_admin,Default Day 37 admin account created.,2026-05-26T21:56:18

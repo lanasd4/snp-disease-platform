@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Streamlit runtime logs
+streamlit_*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Large downloaded GWAS online snapshots (re-downloadable via Admin > Online Updates,
+# should not be committed - one snapshot alone is 60-70MB, several already cached here)
+data/raw/online/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+
+# Local-only archive: old backups, legacy code, logs, pre-refactor snapshots
+archive/
+
+# Local secrets (admin bootstrap credentials etc.)
+.streamlit/secrets.toml
+
+# Analysis cache (rebuilt from the GWAS Catalog snapshot)
+analysis/cache/
+
+# Local working database with your own accounts (never published)
+database/*.local.db
+database/*.build.db
+
+# account listings never published
+outputs/tables/*user_accounts*

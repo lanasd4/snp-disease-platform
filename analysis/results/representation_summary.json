@@ -1,0 +1,39 @@
+{
+  "catalog_file": "gwas_online_snapshot_20260703_175831.zip",
+  "overall": [
+    {
+      "scope": "All GWAS Catalog studies",
+      "studies": 73443,
+      "studies_with_arab_discovery": 666,
+      "pct_studies_arab_discovery": 0.91,
+      "studies_with_me_discovery": 2342,
+      "pct_studies_me_discovery": 3.19,
+      "pct_studies_arab_any_stage": 1.32,
+      "pct_studies_european_only": 64.67,
+      "discovery_participants": 4725389948,
+      "pct_participants_arab": 0.04,
+      "pct_participants_arab_or_me": 0.047
+    },
+    {
+      "scope": "Studies on the 10 platform diseases",
+      "studies": 848,
+      "studies_with_arab_discovery": 13,
+      "pct_studies_arab_discovery": 1.53,
+      "studies_with_me_discovery": 23,
+      "pct_studies_me_discovery": 2.71,
+      "pct_studies_arab_any_stage": 1.65,
+      "pct_studies_european_only": 40.8,
+      "discovery_participants": 141118290,
+      "pct_participants_arab": 0.032,
+      "pct_participants_arab_or_me": 0.042
+    }
+  ],
+  "figures": [
+    "analysis/figures/fig1_participants_by_ancestry.png",
+    "analysis/figures/fig1_participants_by_ancestry.svg",
+    "analysis/figures/fig2_studies_by_disease.png",
+    "analysis/figures/fig2_studies_by_disease.svg",
+    "analysis/figures/fig3_trend_by_year.png",
+    "analysis/figures/fig3_trend_by_year.svg"
+  ]
+}

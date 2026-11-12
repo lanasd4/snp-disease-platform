@@ -1,0 +1,4 @@
+﻿edge_type,edge_count,max_weight,mean_weight,total_records
+Disease-Gene,262,69.6,25.6791,349
+Disease-SNP,315,69.6,26.3657,349
+SNP-Gene,310,69.6,26.3749,349

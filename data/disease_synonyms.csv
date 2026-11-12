@@ -1,0 +1,61 @@
+﻿synonym_id,disease_id,synonym,language,synonym_type
+1,1,Type 2 Diabetes,English,scientific
+2,1,T2D,English,abbreviation
+3,1,Diabetes Mellitus Type 2,English,scientific
+4,1,Diabetes,English,common
+5,1,السكري,Arabic,common
+6,1,سكري,Arabic,common
+7,1,مرض السكري,Arabic,common
+8,1,مرض السكر,Arabic,common
+9,1,سكر,Arabic,common
+10,1,السكري من النوع الثاني,Arabic,scientific
+11,2,Obesity,English,scientific
+12,2,السمنة,Arabic,common
+13,2,سمنة,Arabic,common
+14,2,البدانة,Arabic,common
+15,2,بدانة,Arabic,common
+16,3,Hypertension,English,scientific
+17,3,High Blood Pressure,English,common
+18,3,ارتفاع ضغط الدم,Arabic,scientific
+19,3,الضغط,Arabic,common
+20,3,ضغط,Arabic,common
+21,3,ارتفاع الضغط,Arabic,common
+22,4,Coronary Artery Disease,English,scientific
+23,4,CAD,English,abbreviation
+24,4,Coronary Heart Disease,English,scientific
+25,4,مرض الشريان التاجي,Arabic,scientific
+26,4,الشريان التاجي,Arabic,common
+27,4,أمراض القلب الإكليلية,Arabic,scientific
+28,4,أمراض القلب التاجية,Arabic,common
+29,5,Chronic Kidney Disease,English,scientific
+30,5,CKD,English,abbreviation
+31,5,مرض الكلى المزمن,Arabic,scientific
+32,5,الكلى المزمن,Arabic,common
+33,5,الفشل الكلوي المزمن,Arabic,common
+34,5,الفشل الكلوي,Arabic,common
+35,6,Asthma,English,scientific
+36,6,الربو,Arabic,common
+37,6,ربو,Arabic,common
+38,7,Hypothyroidism,English,scientific
+39,7,Underactive Thyroid,English,common
+40,7,قصور الغدة الدرقية,Arabic,scientific
+41,7,خمول الغدة الدرقية,Arabic,common
+42,7,كسل الغدة الدرقية,Arabic,common
+43,7,قصور الدرقية,Arabic,common
+44,8,Rheumatoid Arthritis,English,scientific
+45,8,RA,English,abbreviation
+46,8,التهاب المفاصل الرثياني,Arabic,scientific
+47,8,التهاب المفاصل الروماتويدي,Arabic,scientific
+48,8,الروماتويد,Arabic,common
+49,8,الروماتيزم,Arabic,common
+50,9,Alzheimer's Disease,English,scientific
+51,9,Alzheimer Disease,English,scientific
+52,9,Alzheimer,English,common
+53,9,مرض الزهايمر,Arabic,scientific
+54,9,الزهايمر,Arabic,common
+55,9,ألزهايمر,Arabic,common
+56,9,خرف الزهايمر,Arabic,common
+57,10,Breast Cancer,English,scientific
+58,10,Breast Carcinoma,English,scientific
+59,10,سرطان الثدي,Arabic,scientific
+60,10,ورم الثدي الخبيث,Arabic,common

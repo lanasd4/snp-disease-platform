@@ -1,0 +1,15 @@
+{
+  "file_name": "associations_normalized_v1.csv",
+  "source_input_file": "normalized_disease_associations.csv",
+  "project_day": 20,
+  "stage": "Gene and SNP Normalization",
+  "is_real_data": true,
+  "is_gene_snp_normalized": true,
+  "created_at": "2026-11-11T21:45:06",
+  "input_rows": 3387,
+  "usable_association_rows": 3384,
+  "unique_genes": 701,
+  "unique_snps": 1390,
+  "linking_issue_rows": 3,
+  "note": "gene_id, snp_id, and association_temp_id are staging identifiers for processed CSV files. Final database IDs may be assigned during SQLite loading."
+}

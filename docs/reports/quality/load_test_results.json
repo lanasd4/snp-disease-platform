@@ -1,0 +1,50 @@
+[
+  {
+    "users": 1,
+    "requests": 3,
+    "success_rate": 1.0,
+    "median_s": 0.15,
+    "p95_s": 1.94,
+    "max_s": 1.94,
+    "interaction_median_s": 0.12,
+    "interaction_p95_s": 0.14,
+    "throughput_per_s": 0.89,
+    "errors": []
+  },
+  {
+    "users": 10,
+    "requests": 30,
+    "success_rate": 1.0,
+    "median_s": 2.81,
+    "p95_s": 4.44,
+    "max_s": 4.91,
+    "interaction_median_s": 1.87,
+    "interaction_p95_s": 2.22,
+    "throughput_per_s": 1.24,
+    "errors": []
+  },
+  {
+    "users": 20,
+    "requests": 60,
+    "success_rate": 1.0,
+    "median_s": 5.59,
+    "p95_s": 7.53,
+    "max_s": 7.85,
+    "interaction_median_s": 3.89,
+    "interaction_p95_s": 4.25,
+    "throughput_per_s": 1.25,
+    "errors": []
+  },
+  {
+    "users": 50,
+    "requests": 150,
+    "success_rate": 1.0,
+    "median_s": 15.85,
+    "p95_s": 20.64,
+    "max_s": 21.4,
+    "interaction_median_s": 10.49,
+    "interaction_p95_s": 10.99,
+    "throughput_per_s": 1.16,
+    "errors": []
+  }
+]

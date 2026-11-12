@@ -1,0 +1,4 @@
+﻿test_type,query,mode,found,result_count,message,suggestion_count
+ranked_disease_search,Type 2 Diabetes,disease,True,10,Ranked results found.,
+ranked_snp_search,rs7903146,snp,True,8,Ranked results found.,
+ranked_typo_search,diabetis,disease,False,0,No ranked results found. Closest disease suggestions are available.,2.0

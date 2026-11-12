@@ -1,0 +1,11 @@
+scope,studies,studies_with_arab_discovery,pct_studies_arab_discovery,studies_with_me_discovery,pct_studies_me_discovery,pct_studies_arab_any_stage,pct_studies_european_only,discovery_participants,pct_participants_arab,pct_participants_arab_or_me,significant_associations,significant_from_arab_or_me_studies
+Type 2 Diabetes,156,5,3.21,8,5.13,3.21,26.28,27428893,0.137,0.139,6827,804
+Obesity,49,1,2.04,1,2.04,2.04,40.82,6253445,0.002,0.002,1029,8
+Hypertension,74,0,0.0,0,0.0,0.0,28.38,13318289,0.0,0.0,2219,0
+Coronary Artery Disease,74,2,2.7,4,5.41,2.7,39.19,14318493,0.047,0.109,2256,50
+Chronic Kidney Disease,44,0,0.0,0,0.0,0.0,38.64,8510961,0.0,0.0,174,0
+Asthma,110,0,0.0,4,3.64,0.91,56.36,25418304,0.0,0.019,2703,133
+Hypothyroidism,37,0,0.0,1,2.7,0.0,37.84,15160162,0.0,0.0,2172,414
+Rheumatoid Arthritis,63,2,3.17,2,3.17,3.17,36.51,8267315,0.011,0.011,962,129
+Alzheimer's Disease,135,3,2.22,3,2.22,2.22,49.63,12865362,0.0,0.0,1101,10
+Breast Cancer,106,0,0.0,0,0.0,0.0,49.06,9577066,0.0,0.0,1298,0

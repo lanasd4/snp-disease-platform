@@ -1,0 +1,6 @@
+sample,target,classifier,annotated_items,precision,recall,f1,precision_ci,recall_ci,f1_ci,false_positives,false_negatives,est_positives_in_population
+A,Arab or Middle Eastern,legacy,323,0.9953,0.9722,0.9836,"[0.9858, 1.0]","[0.9587, 0.986]","[0.9744, 0.9929]",1,6,216.0
+A,Arab or Middle Eastern,v1,323,1.0,0.9259,0.9615,"[1.0, 1.0]","[0.8945, 0.9539]","[0.9443, 0.9764]",0,16,216.0
+A,Arab or Middle Eastern,v2,323,1.0,1.0,1.0,"[1.0, 1.0]","[1.0, 1.0]","[1.0, 1.0]",0,0,216.0
+A,Arab only,v1,323,1.0,0.8788,0.9355,"[1.0, 1.0]","[0.8125, 0.9362]","[0.8966, 0.967]",0,12,99.0
+A,Arab only,v2,323,1.0,1.0,1.0,"[1.0, 1.0]","[1.0, 1.0]","[1.0, 1.0]",0,0,99.0

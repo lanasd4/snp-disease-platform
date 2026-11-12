@@ -1,0 +1,11 @@
+﻿metric,value
+raw_rows,3387
+accepted_rows,3387
+rejected_rows,0
+raw_columns_count,39
+accepted_columns_count,28
+missing_rsid_rows,0
+missing_disease_trait_rows,0
+missing_p_value_rows,0
+missing_mapped_gene_rows,3
+duplicate_rsid_disease_pairs,1940

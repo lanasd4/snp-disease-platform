@@ -1,0 +1,4 @@
+﻿rsid,disease_name,gene_symbol,p_value,study_title,pubmed_id,publication_year,population,region,country,odds_ratio,effect_size,risk_allele,effect_allele,source_database,disease_name_normalized,gene_symbol_normalized,rsid_normalized,ingestion_created_at,rejection_reason
+bad_snp,Obesity,FTO,3e-05,Invalid rsID example,34567890,2022,Mixed,,USA,1.1,,A,,admin_test,obesity,FTO,bad_snp,2026-05-28T15:52:00,invalid_or_missing_rsid
+rs9939609,,FTO,4e-07,Missing disease example,45678901,2023,European,,Germany,1.18,,A,,admin_test,,FTO,rs9939609,2026-05-28T15:52:00,missing_disease_name
+rs699,Hypertension,AGT,,Invalid p-value example,56789012,2024,Middle Eastern,,Jordan,1.15,,G,,admin_test,hypertension,AGT,rs699,2026-05-28T15:52:00,missing_or_invalid_p_value

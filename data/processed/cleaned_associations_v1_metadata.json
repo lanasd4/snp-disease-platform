@@ -1,0 +1,14 @@
+{
+  "file_name": "cleaned_associations_v1.csv",
+  "source_raw_file": "gwas_catalog_platform_subset_raw.tsv",
+  "is_real_data": true,
+  "is_cleaned_data": true,
+  "project_day": 18,
+  "stage": "Initial Data Cleaning",
+  "created_at": "2026-11-11T21:45:02",
+  "raw_rows": 3387,
+  "accepted_rows": 3387,
+  "rejected_rows": 0,
+  "core_acceptance_rule": "Rows must have disease_trait, rsid, and p_value.",
+  "note": "This is the first cleaned version. Disease normalization will be handled on Day 19."
+}

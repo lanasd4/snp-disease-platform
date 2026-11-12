@@ -1,0 +1,10 @@
+﻿page_name,arabic_name,status,purpose
+Home,الرئيسية,created,Main dashboard overview
+Search,البحث,created_placeholder,Ranked search integration starts Day 32
+Ranking,التصنيف,created_placeholder,Association ranking display
+AI Explanation,الشرح الذكي,created_placeholder,Arabic explanation agent
+Study Summaries,ملخص الدراسات,created_placeholder,Study evidence summaries
+Circos Plot,مخطط سيركوس,created_placeholder,Circular visualization
+PRS Prototype,نموذج PRS,created_placeholder,Research-only PRS prototype
+Admin Dashboard,لوحة الإدارة,created_placeholder,Data and model status
+About / Data Sources,حول / مصادر البيانات,created,Project scope and sources

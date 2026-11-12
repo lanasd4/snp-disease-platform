@@ -1,0 +1,888 @@
+﻿edge_id,source,target,source_label,target_label,edge_type,weight,mean_weight,record_count,rsids,diseases,genes,rank_labels,pubmed_ids,source_database
+edge_00518,disease_type_2_diabetes,gene_tcf7l2,Type 2 Diabetes,TCF7L2,Disease-Gene,69.6,59.066,10,rs4506565; rs7901695; rs7903146,Type 2 Diabetes,TCF7L2,Low; Moderate,,Demo; GWAS Catalog
+edge_00324,disease_obesity,gene_fto,Obesity,FTO,Disease-Gene,66.09,43.0408,12,rs11075990; rs1121980; rs1421085; rs1558902; rs17817449; rs17817964; rs7185735; rs8043757; rs9939609; rs9941349,Obesity,FTO,Low; Moderate,,Demo; GWAS Catalog
+edge_00093,disease_chronic_kidney_disease,gene_cst3,Chronic Kidney Disease,CST3,Disease-Gene,61.09,61.09,1,rs911119,Chronic Kidney Disease,CST3,Moderate,,GWAS Catalog
+edge_00119,disease_chronic_kidney_disease,gene_slc2a9,Chronic Kidney Disease,SLC2A9,Disease-Gene,50.2,50.2,1,rs3775948,Chronic Kidney Disease,SLC2A9,Moderate,,GWAS Catalog
+edge_00107,disease_chronic_kidney_disease,gene_nrxn2,Chronic Kidney Disease,NRXN2,Disease-Gene,49.22,49.22,1,rs504915,Chronic Kidney Disease,NRXN2,Low,,GWAS Catalog
+edge_00127,disease_chronic_kidney_disease,gene_umod,Chronic Kidney Disease,UMOD,Disease-Gene,47.5,43.5,2,rs12917707,Chronic Kidney Disease,UMOD,Low,,Demo; GWAS Catalog
+edge_00505,disease_type_2_diabetes,gene_kcnq1,Type 2 Diabetes,KCNQ1,Disease-Gene,44.47,39.0767,3,rs2237892; rs2237897,Type 2 Diabetes,KCNQ1,Low,,GWAS Catalog
+edge_00516,disease_type_2_diabetes,gene_slc30a8,Type 2 Diabetes,SLC30A8,Disease-Gene,39.75,39.75,5,rs13266634,Type 2 Diabetes,SLC30A8,Low,,GWAS Catalog
+edge_00295,disease_obesity,gene_ac093326_1_tmem18,Obesity,AC093326.1 - TMEM18,Disease-Gene,38.87,32.6333,3,rs10189761; rs2903492; rs6711012,Obesity,AC093326.1 - TMEM18,Low,,GWAS Catalog
+edge_00494,disease_type_2_diabetes,gene_cdkn2b_as1_al157937_1,Type 2 Diabetes,CDKN2B-AS1 - AL157937.1,Disease-Gene,38.62,33.7783,6,rs10811661; rs2383208; rs7018475,Type 2 Diabetes,CDKN2B-AS1 - AL157937.1,Low,,GWAS Catalog
+edge_00503,disease_type_2_diabetes,gene_igf2bp2,Type 2 Diabetes,IGF2BP2,Disease-Gene,38.29,35.66,5,rs4402960; rs6769511,Type 2 Diabetes,IGF2BP2,Low,,GWAS Catalog
+edge_00356,disease_obesity,gene_rnu4_17p_ac090771_1,Obesity,RNU4-17P - AC090771.1,Disease-Gene,37.15,31.782,5,rs10871777; rs11152213; rs17782313; rs538656; rs8089364,Obesity,RNU4-17P - AC090771.1,Low,,GWAS Catalog
+edge_00245,disease_hypertension,gene_hectd4,Hypertension,HECTD4,Disease-Gene,36.84,36.84,1,rs11066280,Hypertension,HECTD4,Low,,GWAS Catalog
+edge_00297,disease_obesity,gene_ac108467_1_thap12p9,Obesity,AC108467.1 - THAP12P9,Disease-Gene,36.17,31.68,3,rs10938397; rs13130484; rs348495,Obesity,AC108467.1 - THAP12P9,Low,,GWAS Catalog
+edge_00241,disease_hypertension,gene_cnnm2,Hypertension,CNNM2,Disease-Gene,36.12,36.12,2,rs11191548,Hypertension,CNNM2,Low,,GWAS Catalog
+edge_00498,disease_type_2_diabetes,gene_fto,Type 2 Diabetes,FTO,Disease-Gene,34.89,32.1925,4,rs8050136; rs9939609,Type 2 Diabetes,FTO,Low,,GWAS Catalog
+edge_00310,disease_obesity,gene_bcdin3d_ac131157_1,Obesity,BCDIN3D - AC131157.1,Disease-Gene,34.7,32.2,2,rs7138803,Obesity,BCDIN3D - AC131157.1,Low,,GWAS Catalog
+edge_00111,disease_chronic_kidney_disease,gene_pkd2,Chronic Kidney Disease,PKD2,Disease-Gene,34.32,34.32,1,rs2725220,Chronic Kidney Disease,PKD2,Low,,GWAS Catalog
+edge_00493,disease_type_2_diabetes,gene_cdkal1,Type 2 Diabetes,CDKAL1,Disease-Gene,34.32,28.355,8,rs10946398; rs4712523; rs4712524; rs7754840; rs9295474; rs9465871,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00104,disease_chronic_kidney_disease,gene_linc01991_ac092941_1,Chronic Kidney Disease,LINC01991 - AC092941.1,Disease-Gene,34.16,34.16,1,rs10937329,Chronic Kidney Disease,LINC01991 - AC092941.1,Low,,GWAS Catalog
+edge_00499,disease_type_2_diabetes,gene_hhex_al590080_1,Type 2 Diabetes,HHEX - AL590080.1,Disease-Gene,33.99,31.36,4,rs1111875; rs5015480,Type 2 Diabetes,HHEX - AL590080.1,Low,,GWAS Catalog
+edge_00091,disease_chronic_kidney_disease,gene_bcas3,Chronic Kidney Disease,BCAS3,Disease-Gene,32.45,29.9667,3,rs11868441; rs9895661,Chronic Kidney Disease,BCAS3,Low,,GWAS Catalog
+edge_00513,disease_type_2_diabetes,gene_pparg,Type 2 Diabetes,PPARG,Disease-Gene,31.54,31.54,3,rs1801282,Type 2 Diabetes,PPARG,Low,,GWAS Catalog
+edge_00242,disease_hypertension,gene_csk,Hypertension,CSK,Disease-Gene,31.44,31.44,1,rs1378942,Hypertension,CSK,Low,,GWAS Catalog
+edge_00303,disease_obesity,gene_al136114_1,Obesity,AL136114.1,Disease-Gene,31.01,31.01,1,rs633715,Obesity,AL136114.1,Low,,GWAS Catalog
+edge_00296,disease_obesity,gene_ac103796_1,Obesity,AC103796.1,Disease-Gene,30.77,30.77,1,rs2030323,Obesity,AC103796.1,Low,,GWAS Catalog
+edge_00362,disease_obesity,gene_tfap2b,Obesity,TFAP2B,Disease-Gene,30.67,30.57,3,rs2206277; rs987237,Obesity,TFAP2B,Low,,GWAS Catalog
+edge_00254,disease_hypertension,gene_prdm8_fgf5,Hypertension,PRDM8 - FGF5,Disease-Gene,30.54,30.54,1,rs16998073,Hypertension,PRDM8 - FGF5,Low,,GWAS Catalog
+edge_00233,disease_hypertension,gene_agt,Hypertension,AGT,Disease-Gene,30.44,30.44,1,rs699,Hypertension,AGT,Low,,Demo
+edge_00504,disease_type_2_diabetes,gene_kcnj11,Type 2 Diabetes,KCNJ11,Disease-Gene,30.27,28.7533,3,rs5215; rs5219,Type 2 Diabetes,KCNJ11,Low,,GWAS Catalog
+edge_00235,disease_hypertension,gene_atp2b1,Hypertension,ATP2B1,Disease-Gene,29.68,29.68,1,rs17249754,Hypertension,ATP2B1,Low,,GWAS Catalog
+edge_00115,disease_chronic_kidney_disease,gene_rpl21p41_ac098969_2,Chronic Kidney Disease,RPL21P41 - AC098969.2,Disease-Gene,29.64,29.64,1,rs13069000,Chronic Kidney Disease,RPL21P41 - AC098969.2,Low,,GWAS Catalog
+edge_00117,disease_chronic_kidney_disease,gene_shroom3,Chronic Kidney Disease,SHROOM3,Disease-Gene,29.64,27.85,2,rs13146355; rs17319721,Chronic Kidney Disease,SHROOM3,Low,,GWAS Catalog
+edge_00357,disease_obesity,gene_rps17p5_al049693_1,Obesity,RPS17P5 - AL049693.1,Disease-Gene,29.42,29.42,1,rs2207139,Obesity,RPS17P5 - AL049693.1,Low,,GWAS Catalog
+edge_00236,disease_hypertension,gene_atxn2,Hypertension,ATXN2,Disease-Gene,28.97,28.97,1,rs653178,Hypertension,ATXN2,Low,,GWAS Catalog
+edge_00196,disease_coronary_artery_disease,gene_cdkn2a,Coronary Artery Disease,CDKN2A,Disease-Gene,28.92,28.92,1,rs10757278,Coronary Artery Disease,CDKN2A,Low,,Demo
+edge_00082,disease_chronic_kidney_disease,gene_ac091151_7,Chronic Kidney Disease,AC091151.7,Disease-Gene,28.81,28.81,1,rs7227483,Chronic Kidney Disease,AC091151.7,Low,,GWAS Catalog
+edge_00301,disease_obesity,gene_adcy3_dnajc27,Obesity,ADCY3 - DNAJC27,Disease-Gene,28.74,28.74,1,rs10182181,Obesity,ADCY3 - DNAJC27,Low,,GWAS Catalog
+edge_00348,disease_obesity,gene_nrxn3,Obesity,NRXN3,Disease-Gene,28.74,24.4875,4,rs10146997; rs11624704; rs2370983; rs7141420,Obesity,NRXN3,Low,,GWAS Catalog
+edge_00306,disease_obesity,gene_al513166_1,Obesity,AL513166.1,Disease-Gene,28.6,27.8533,3,rs2568958; rs3101336; rs7531118,Obesity,AL513166.1,Low,,GWAS Catalog
+edge_00126,disease_chronic_kidney_disease,gene_ube2q2,Chronic Kidney Disease,UBE2Q2,Disease-Gene,28.52,28.52,1,rs1394125,Chronic Kidney Disease,UBE2Q2,Low,,GWAS Catalog
+edge_00368,disease_obesity,gene_zpr1,Obesity,ZPR1,Disease-Gene,28.29,28.29,1,rs2075290,Obesity,ZPR1,Low,,GWAS Catalog
+edge_00330,disease_obesity,gene_herpud1_cetp,Obesity,HERPUD1 - CETP,Disease-Gene,28.24,28.24,1,rs3764261,Obesity,HERPUD1 - CETP,Low,,GWAS Catalog
+edge_00308,disease_obesity,gene_apoa5,Obesity,APOA5,Disease-Gene,28.15,28.15,1,rs2266788,Obesity,APOA5,Low,,GWAS Catalog
+edge_00106,disease_chronic_kidney_disease,gene_mpped2_as1_al122014_1,Chronic Kidney Disease,MPPED2-AS1 - AL122014.1,Disease-Gene,27.97,25.63,3,rs10767873; rs3925584; rs963837,Chronic Kidney Disease,MPPED2-AS1 - AL122014.1,Low,,GWAS Catalog
+edge_00312,disease_obesity,gene_bud13,Obesity,BUD13,Disease-Gene,27.91,27.91,1,rs10790162,Obesity,BUD13,Low,,GWAS Catalog
+edge_00092,disease_chronic_kidney_disease,gene_cps1,Chronic Kidney Disease,CPS1,Disease-Gene,27.84,27.84,1,rs7422339,Chronic Kidney Disease,CPS1,Low,,GWAS Catalog
+edge_00122,disease_chronic_kidney_disease,gene_slc7a9,Chronic Kidney Disease,SLC7A9,Disease-Gene,27.62,27.62,1,rs12460876,Chronic Kidney Disease,SLC7A9,Low,,GWAS Catalog
+edge_00029,disease_asthma,gene_il33,Asthma,IL33,Disease-Gene,27.48,27.48,1,rs3939286,Asthma,IL33,Low,,Demo
+edge_00120,disease_chronic_kidney_disease,gene_slc34a1,Chronic Kidney Disease,SLC34A1,Disease-Gene,27.39,27.39,1,rs6420094,Chronic Kidney Disease,SLC34A1,Low,,GWAS Catalog
+edge_00317,disease_obesity,gene_dgkg,Obesity,DGKG,Disease-Gene,27.25,27.25,1,rs9816226,Obesity,DGKG,Low,,GWAS Catalog
+edge_00097,disease_chronic_kidney_disease,gene_gckr,Chronic Kidney Disease,GCKR,Disease-Gene,27.17,27.17,1,rs1260326,Chronic Kidney Disease,GCKR,Low,,GWAS Catalog
+edge_00105,disease_chronic_kidney_disease,gene_mecom,Chronic Kidney Disease,MECOM,Disease-Gene,27.17,27.17,1,rs16853722,Chronic Kidney Disease,MECOM,Low,,GWAS Catalog
+edge_00326,disease_obesity,gene_gipr,Obesity,GIPR,Disease-Gene,27.17,26.92,2,rs10423928; rs1800437,Obesity,GIPR,Low,,GWAS Catalog
+edge_00205,disease_coronary_artery_disease,gene_myl2,Coronary Artery Disease,MYL2,Disease-Gene,27.12,27.12,1,rs3782889,Coronary Artery Disease,MYL2,Low,,GWAS Catalog
+edge_00089,disease_chronic_kidney_disease,gene_alms1p1,Chronic Kidney Disease,ALMS1P1,Disease-Gene,27.07,27.07,1,rs13538,Chronic Kidney Disease,ALMS1P1,Low,,GWAS Catalog
+edge_00197,disease_coronary_artery_disease,gene_cdkn2b_as1,Coronary Artery Disease,CDKN2B-AS1,Disease-Gene,27.07,24.7167,3,rs1333042; rs1333049; rs4977574,Coronary Artery Disease,CDKN2B-AS1,Low,,GWAS Catalog
+edge_00345,disease_obesity,gene_mfap3,Obesity,MFAP3,Disease-Gene,27.07,27.07,1,rs7708584,Obesity,MFAP3,Low,,GWAS Catalog
+edge_00025,disease_asthma,gene_hla_dqa1_hla_dqb1,Asthma,HLA-DQA1 - HLA-DQB1,Disease-Gene,27.01,27.01,1,rs9273349,Asthma,HLA-DQA1 - HLA-DQB1,Low,,GWAS Catalog
+edge_00110,disease_chronic_kidney_disease,gene_pip5k1b,Chronic Kidney Disease,PIP5K1B,Disease-Gene,26.98,26.98,1,rs4744712,Chronic Kidney Disease,PIP5K1B,Low,,GWAS Catalog
+edge_00084,disease_chronic_kidney_disease,gene_al157371_2,Chronic Kidney Disease,AL157371.2,Disease-Gene,26.96,26.96,1,rs881858,Chronic Kidney Disease,AL157371.2,Low,,GWAS Catalog
+edge_00131,disease_chronic_kidney_disease,gene_wdr72,Chronic Kidney Disease,WDR72,Disease-Gene,26.94,26.4933,3,rs17730281; rs17730436; rs491567,Chronic Kidney Disease,WDR72,Low,,GWAS Catalog
+edge_00249,disease_hypertension,gene_mthfr,Hypertension,MTHFR,Disease-Gene,26.8,26.8,1,rs17367504,Hypertension,MTHFR,Low,,GWAS Catalog
+edge_00304,disease_obesity,gene_al136114_1_sec16b,Obesity,AL136114.1 - SEC16B,Disease-Gene,26.8,26.8,1,rs543874,Obesity,AL136114.1 - SEC16B,Low,,GWAS Catalog
+edge_00359,disease_obesity,gene_sh2b1,Obesity,SH2B1,Disease-Gene,26.72,26.72,1,rs7498665,Obesity,SH2B1,Low,,GWAS Catalog
+edge_00194,disease_coronary_artery_disease,gene_adamts7,Coronary Artery Disease,ADAMTS7,Disease-Gene,26.62,26.62,1,rs1994016,Coronary Artery Disease,ADAMTS7,Low,,GWAS Catalog
+edge_00344,disease_obesity,gene_map2k5,Obesity,MAP2K5,Disease-Gene,26.59,26.59,1,rs8028313,Obesity,MAP2K5,Low,,GWAS Catalog
+edge_00204,disease_coronary_artery_disease,gene_mras,Coronary Artery Disease,MRAS,Disease-Gene,26.56,26.56,1,rs9818870,Coronary Artery Disease,MRAS,Low,,GWAS Catalog
+edge_00086,disease_chronic_kidney_disease,gene_al590133_1_anxa9,Chronic Kidney Disease,AL590133.1 - ANXA9,Disease-Gene,26.49,26.49,1,rs267734,Chronic Kidney Disease,AL590133.1 - ANXA9,Low,,GWAS Catalog
+edge_00096,disease_chronic_kidney_disease,gene_gbap1,Chronic Kidney Disease,GBAP1,Disease-Gene,26.35,26.35,1,rs2049805,Chronic Kidney Disease,GBAP1,Low,,GWAS Catalog
+edge_00325,disease_obesity,gene_gckr,Obesity,GCKR,Disease-Gene,26.35,22.885,2,rs1260326; rs780093,Obesity,GCKR,Low,,GWAS Catalog
+edge_00351,disease_obesity,gene_poc5,Obesity,POC5,Disease-Gene,26.27,26.27,1,rs2307111,Obesity,POC5,Low,,GWAS Catalog
+edge_00112,disease_chronic_kidney_disease,gene_prkag2,Chronic Kidney Disease,PRKAG2,Disease-Gene,26.22,26.22,1,rs7805747,Chronic Kidney Disease,PRKAG2,Low,,GWAS Catalog
+edge_00329,disease_obesity,gene_gprc5b_gpr139,Obesity,GPRC5B - GPR139,Disease-Gene,26.22,25.5133,3,rs11639988; rs12446554; rs12446632,Obesity,GPRC5B - GPR139,Low,,GWAS Catalog
+edge_00118,disease_chronic_kidney_disease,gene_slc22a2,Chronic Kidney Disease,SLC22A2,Disease-Gene,26.14,26.14,1,rs2279463,Chronic Kidney Disease,SLC22A2,Low,,GWAS Catalog
+edge_00327,disease_obesity,gene_gnat2,Obesity,GNAT2,Disease-Gene,26.06,26.06,1,rs17024258,Obesity,GNAT2,Low,,GWAS Catalog
+edge_00482,disease_type_2_diabetes,gene_ac062015_1_mir5702,Type 2 Diabetes,AC062015.1 - MIR5702,Disease-Gene,26.06,26.06,1,rs2943641,Type 2 Diabetes,AC062015.1 - MIR5702,Low,,GWAS Catalog
+edge_00085,disease_chronic_kidney_disease,gene_al356534_1,Chronic Kidney Disease,AL356534.1,Disease-Gene,26.04,26.04,1,rs1936800,Chronic Kidney Disease,AL356534.1,Low,,GWAS Catalog
+edge_00203,disease_coronary_artery_disease,gene_jcad,Coronary Artery Disease,JCAD,Disease-Gene,26.04,26.04,1,rs3739998,Coronary Artery Disease,JCAD,Low,,GWAS Catalog
+edge_00364,disease_obesity,gene_trim66,Obesity,TRIM66,Disease-Gene,26.04,26.04,1,rs11042023,Obesity,TRIM66,Low,,GWAS Catalog
+edge_00095,disease_chronic_kidney_disease,gene_dach1,Chronic Kidney Disease,DACH1,Disease-Gene,25.82,25.82,1,rs626277,Chronic Kidney Disease,DACH1,Low,,GWAS Catalog
+edge_00125,disease_chronic_kidney_disease,gene_tfdp2,Chronic Kidney Disease,TFDP2,Disease-Gene,25.82,25.82,1,rs347685,Chronic Kidney Disease,TFDP2,Low,,GWAS Catalog
+edge_00314,disease_obesity,gene_cadm2,Obesity,CADM2,Disease-Gene,25.82,25.82,1,rs13078807,Obesity,CADM2,Low,,GWAS Catalog
+edge_00090,disease_chronic_kidney_disease,gene_atxn2,Chronic Kidney Disease,ATXN2,Disease-Gene,25.77,25.77,1,rs653178,Chronic Kidney Disease,ATXN2,Low,,GWAS Catalog
+edge_00227,disease_hypertension,gene_ac016766_1,Hypertension,AC016766.1,Disease-Gene,25.77,25.77,1,rs16849225,Hypertension,AC016766.1,Low,,GWAS Catalog
+edge_00129,disease_chronic_kidney_disease,gene_uncx_ac073094_1,Chronic Kidney Disease,UNCX - AC073094.1,Disease-Gene,25.72,25.72,1,rs10277115,Chronic Kidney Disease,UNCX - AC073094.1,Low,,GWAS Catalog
+edge_00193,disease_coronary_artery_disease,gene_acad10,Coronary Artery Disease,ACAD10,Disease-Gene,25.72,25.72,1,rs11066015,Coronary Artery Disease,ACAD10,Low,,GWAS Catalog
+edge_00081,disease_chronic_kidney_disease,gene_ac051619_2_rnu6_953p,Chronic Kidney Disease,AC051619.2 - RNU6-953P,Disease-Gene,25.67,25.67,1,rs2453533,Chronic Kidney Disease,AC051619.2 - RNU6-953P,Low,,GWAS Catalog
+edge_00198,disease_coronary_artery_disease,gene_celsr2_psrc1,Coronary Artery Disease,CELSR2 - PSRC1,Disease-Gene,25.63,25.63,1,rs646776,Coronary Artery Disease,CELSR2 - PSRC1,Low,,GWAS Catalog
+edge_00109,disease_chronic_kidney_disease,gene_pdilt,Chronic Kidney Disease,PDILT,Disease-Gene,25.59,25.59,1,rs11864909,Chronic Kidney Disease,PDILT,Low,,GWAS Catalog
+edge_00225,disease_hypertension,gene_ac008125_1_ac078880_1,Hypertension,AC008125.1 - AC078880.1,Disease-Gene,25.59,25.59,1,rs35444,Hypertension,AC008125.1 - AC078880.1,Low,,GWAS Catalog
+edge_00247,disease_hypertension,gene_lpl,Hypertension,LPL,Disease-Gene,25.59,25.59,1,rs15285,Hypertension,LPL,Low,,GWAS Catalog
+edge_00289,disease_obesity,gene_ac007092_1,Obesity,AC007092.1,Disease-Gene,25.59,25.59,1,rs887912,Obesity,AC007092.1,Low,,GWAS Catalog
+edge_00291,disease_obesity,gene_ac018706_1_ac010719_1,Obesity,AC018706.1 - AC010719.1,Disease-Gene,25.59,25.59,1,rs10261878,Obesity,AC018706.1 - AC010719.1,Low,,GWAS Catalog
+edge_00311,disease_obesity,gene_bcdin3d_as1,Obesity,BCDIN3D-AS1,Disease-Gene,25.45,25.45,1,rs10875976,Obesity,BCDIN3D-AS1,Low,,GWAS Catalog
+edge_00340,disease_obesity,gene_lingo2,Obesity,LINGO2,Disease-Gene,25.45,24.96,2,rs10968576; rs1412239,Obesity,LINGO2,Low,,GWAS Catalog
+edge_00088,disease_chronic_kidney_disease,gene_aldh2,Chronic Kidney Disease,ALDH2,Disease-Gene,25.37,25.37,1,rs671,Chronic Kidney Disease,ALDH2,Low,,GWAS Catalog
+edge_00108,disease_chronic_kidney_disease,gene_pax8_as1,Chronic Kidney Disease,PAX8-AS1,Disease-Gene,25.37,25.37,1,rs11123170,Chronic Kidney Disease,PAX8-AS1,Low,,GWAS Catalog
+edge_00240,disease_hypertension,gene_casz1,Hypertension,CASZ1,Disease-Gene,25.37,25.37,1,rs880315,Hypertension,CASZ1,Low,,GWAS Catalog
+edge_00244,disease_hypertension,gene_gckr,Hypertension,GCKR,Disease-Gene,25.37,25.37,1,rs780093,Hypertension,GCKR,Low,,GWAS Catalog
+edge_00331,disease_obesity,gene_hnf4g_ac011029_1,Obesity,HNF4G - AC011029.1,Disease-Gene,25.32,25.32,1,rs4735692,Obesity,HNF4G - AC011029.1,Low,,GWAS Catalog
+edge_00228,disease_hypertension,gene_ac069114_1_cbln2,Hypertension,AC069114.1 - CBLN2,Disease-Gene,25.21,25.21,1,rs2217560,Hypertension,AC069114.1 - CBLN2,Low,,GWAS Catalog
+edge_00007,disease_asthma,gene_al162384_1_gtf3ap1,Asthma,AL162384.1 - GTF3AP1,Disease-Gene,25.16,25.16,1,rs1342326,Asthma,AL162384.1 - GTF3AP1,Low,,GWAS Catalog
+edge_00079,disease_chronic_kidney_disease,gene_ac009159_3_ac009159_1,Chronic Kidney Disease,AC009159.3 - AC009159.1,Disease-Gene,25.14,25.14,1,rs889472,Chronic Kidney Disease,AC009159.3 - AC009159.1,Low,,GWAS Catalog
+edge_00100,disease_chronic_kidney_disease,gene_hcp5,Chronic Kidney Disease,HCP5,Disease-Gene,25.14,25.14,1,rs3828890,Chronic Kidney Disease,HCP5,Low,,GWAS Catalog
+edge_00121,disease_chronic_kidney_disease,gene_slc6a13,Chronic Kidney Disease,SLC6A13,Disease-Gene,25.14,25.14,1,rs10774021,Chronic Kidney Disease,SLC6A13,Low,,GWAS Catalog
+edge_00238,disease_hypertension,gene_cabcoco1,Hypertension,CABCOCO1,Disease-Gene,25.14,25.14,1,rs1530440,Hypertension,CABCOCO1,Low,,GWAS Catalog
+edge_00328,disease_obesity,gene_gpn1,Obesity,GPN1,Disease-Gene,25.14,25.14,1,rs3749147,Obesity,GPN1,Low,,GWAS Catalog
+edge_00101,disease_chronic_kidney_disease,gene_hectd4,Chronic Kidney Disease,HECTD4,Disease-Gene,25.0,25.0,1,rs2074356,Chronic Kidney Disease,HECTD4,Low,,GWAS Catalog
+edge_00116,disease_chronic_kidney_disease,gene_rsbn1l_tmem60,Chronic Kidney Disease,RSBN1L - TMEM60,Disease-Gene,25.0,25.0,1,rs6465825,Chronic Kidney Disease,RSBN1L - TMEM60,Low,,GWAS Catalog
+edge_00293,disease_obesity,gene_ac090771_1_ac090621_1,Obesity,AC090771.1 - AC090621.1,Disease-Gene,25.0,21.985,2,rs12970134; rs489693,Obesity,AC090771.1 - AC090621.1,Low,,GWAS Catalog
+edge_00305,disease_obesity,gene_al356295_1,Obesity,AL356295.1,Disease-Gene,25.0,25.0,1,rs9568867,Obesity,AL356295.1,Low,,GWAS Catalog
+edge_00313,disease_obesity,gene_c2orf16,Obesity,C2ORF16,Disease-Gene,25.0,25.0,1,rs1919128,Obesity,C2ORF16,Low,,GWAS Catalog
+edge_00338,disease_obesity,gene_linc01122,Obesity,LINC01122,Disease-Gene,25.0,25.0,1,rs6731302,Obesity,LINC01122,Low,,GWAS Catalog
+edge_00027,disease_asthma,gene_il18r1,Asthma,IL18R1,Disease-Gene,24.92,24.92,1,rs3771166,Asthma,IL18R1,Low,,GWAS Catalog
+edge_00237,disease_hypertension,gene_bud13,Hypertension,BUD13,Disease-Gene,24.92,24.92,1,rs11825181,Hypertension,BUD13,Low,,GWAS Catalog
+edge_00256,disease_hypertension,gene_zpr1,Hypertension,ZPR1,Disease-Gene,24.92,24.92,1,rs11823543,Hypertension,ZPR1,Low,,GWAS Catalog
+edge_00319,disease_obesity,gene_etv5,Obesity,ETV5,Disease-Gene,24.92,24.92,1,rs1516725,Obesity,ETV5,Low,,GWAS Catalog
+edge_00492,disease_type_2_diabetes,gene_c11orf65,Type 2 Diabetes,C11ORF65,Disease-Gene,24.92,24.92,1,rs11212617,Type 2 Diabetes,C11ORF65,Low,,GWAS Catalog
+edge_00038,disease_asthma,gene_smad3,Asthma,SMAD3,Disease-Gene,24.87,24.87,1,rs744910,Asthma,SMAD3,Low,,GWAS Catalog
+edge_00128,disease_chronic_kidney_disease,gene_uncx,Chronic Kidney Disease,UNCX,Disease-Gene,24.87,24.87,1,rs10275044,Chronic Kidney Disease,UNCX,Low,,GWAS Catalog
+edge_00352,disease_obesity,gene_poc5_slc25a5p9,Obesity,POC5 - SLC25A5P9,Disease-Gene,24.87,24.87,1,rs2112347,Obesity,POC5 - SLC25A5P9,Low,,GWAS Catalog
+edge_00023,disease_asthma,gene_gsdma,Asthma,GSDMA,Disease-Gene,24.82,24.82,1,rs3894194,Asthma,GSDMA,Low,,GWAS Catalog
+edge_00230,disease_hypertension,gene_ac091180_3,Hypertension,AC091180.3,Disease-Gene,24.82,24.82,1,rs16948048,Hypertension,AC091180.3,Low,,GWAS Catalog
+edge_00322,disease_obesity,gene_fpgt_tnni3k,Obesity,FPGT-TNNI3K,Disease-Gene,24.82,24.755,2,rs1514174; rs1514177,Obesity,FPGT-TNNI3K,Low,,GWAS Catalog
+edge_00367,disease_obesity,gene_znf512,Obesity,ZNF512,Disease-Gene,24.82,24.82,1,rs13022873,Obesity,ZNF512,Low,,GWAS Catalog
+edge_00354,disease_obesity,gene_rabep2,Obesity,RABEP2,Disease-Gene,24.76,24.76,1,rs7184597,Obesity,RABEP2,Low,,GWAS Catalog
+edge_00014,disease_asthma,gene_chordc1p4,Asthma,CHORDC1P4,Disease-Gene,24.73,24.73,1,rs643507,Asthma,CHORDC1P4,Low,,GWAS Catalog
+edge_00191,disease_coronary_artery_disease,gene_abo,Coronary Artery Disease,ABO,Disease-Gene,24.73,24.73,1,rs514659,Coronary Artery Disease,ABO,Low,,GWAS Catalog
+edge_00098,disease_chronic_kidney_disease,gene_gnas,Chronic Kidney Disease,GNAS,Disease-Gene,24.71,24.71,1,rs6026584,Chronic Kidney Disease,GNAS,Low,,GWAS Catalog
+edge_00229,disease_hypertension,gene_ac091114_1,Hypertension,AC091114.1,Disease-Gene,24.71,24.71,1,rs2954033,Hypertension,AC091114.1,Low,,GWAS Catalog
+edge_00243,disease_hypertension,gene_enpep,Hypertension,ENPEP,Disease-Gene,24.71,24.71,1,rs6825911,Hypertension,ENPEP,Low,,GWAS Catalog
+edge_00292,disease_obesity,gene_ac034111_2,Obesity,AC034111.2,Disease-Gene,24.71,24.71,1,rs7826222,Obesity,AC034111.2,Low,,GWAS Catalog
+edge_00028,disease_asthma,gene_il2rb,Asthma,IL2RB,Disease-Gene,24.69,24.69,1,rs2284033,Asthma,IL2RB,Low,,GWAS Catalog
+edge_00123,disease_chronic_kidney_disease,gene_stc1_rnu1_148p,Chronic Kidney Disease,STC1 - RNU1-148P,Disease-Gene,24.69,24.69,1,rs10109414,Chronic Kidney Disease,STC1 - RNU1-148P,Low,,GWAS Catalog
+edge_00130,disease_chronic_kidney_disease,gene_wdr37,Chronic Kidney Disease,WDR37,Disease-Gene,24.69,24.69,1,rs10794720,Chronic Kidney Disease,WDR37,Low,,GWAS Catalog
+edge_00239,disease_hypertension,gene_capza1,Hypertension,CAPZA1,Disease-Gene,24.69,24.69,1,rs17030613,Hypertension,CAPZA1,Low,,GWAS Catalog
+edge_00252,disease_hypertension,gene_plcd3,Hypertension,PLCD3,Disease-Gene,24.69,24.69,1,rs12946454,Hypertension,PLCD3,Low,,GWAS Catalog
+edge_00332,disease_obesity,gene_hs6st3,Obesity,HS6ST3,Disease-Gene,24.69,24.69,1,rs7989336,Obesity,HS6ST3,Low,,GWAS Catalog
+edge_00486,disease_type_2_diabetes,gene_ac116317_2_wfs1,Type 2 Diabetes,AC116317.2 - WFS1,Disease-Gene,24.69,24.69,1,rs4689388,Type 2 Diabetes,AC116317.2 - WFS1,Low,,GWAS Catalog
+edge_00250,disease_hypertension,gene_npr3_ac025459_1,Hypertension,NPR3 - AC025459.1,Disease-Gene,24.55,24.55,1,rs1173766,Hypertension,NPR3 - AC025459.1,Low,,GWAS Catalog
+edge_00339,disease_obesity,gene_linc01524,Obesity,LINC01524,Disease-Gene,24.55,24.55,1,rs13041126,Obesity,LINC01524,Low,,GWAS Catalog
+edge_00358,disease_obesity,gene_rptor,Obesity,RPTOR,Disease-Gene,24.55,24.55,1,rs7503807,Obesity,RPTOR,Low,,GWAS Catalog
+edge_00031,disease_asthma,gene_pde4d,Asthma,PDE4D,Disease-Gene,24.47,24.47,1,rs1588265,Asthma,PDE4D,Low,,GWAS Catalog
+edge_00298,disease_obesity,gene_ac118549_1,Obesity,AC118549.1,Disease-Gene,24.47,24.47,1,rs17381664,Obesity,AC118549.1,Low,,GWAS Catalog
+edge_00342,disease_obesity,gene_lyplal1_as1_al356364_1,Obesity,LYPLAL1-AS1 - AL356364.1,Disease-Gene,24.47,24.47,1,rs2605100,Obesity,LYPLAL1-AS1 - AL356364.1,Low,,GWAS Catalog
+edge_00515,disease_type_2_diabetes,gene_sdhaf4,Type 2 Diabetes,SDHAF4,Disease-Gene,24.47,24.47,1,rs1048886,Type 2 Diabetes,SDHAF4,Low,,GWAS Catalog
+edge_00234,disease_hypertension,gene_apoa5,Hypertension,APOA5,Disease-Gene,24.42,24.42,1,rs2266788,Hypertension,APOA5,Low,,GWAS Catalog
+edge_00300,disease_obesity,gene_adcy3,Obesity,ADCY3,Disease-Gene,24.42,24.42,1,rs7586879,Obesity,ADCY3,Low,,GWAS Catalog
+edge_00302,disease_obesity,gene_adcy9,Obesity,ADCY9,Disease-Gene,24.42,24.42,1,rs2531995,Obesity,ADCY9,Low,,GWAS Catalog
+edge_00481,disease_type_2_diabetes,gene_ac023442_2_linc02745,Type 2 Diabetes,AC023442.2 - LINC02745,Disease-Gene,24.34,24.34,1,rs9300039,Type 2 Diabetes,AC023442.2 - LINC02745,Low,,GWAS Catalog
+edge_00485,disease_type_2_diabetes,gene_ac110620_2,Type 2 Diabetes,AC110620.2,Disease-Gene,24.31,24.31,1,rs6723108,Type 2 Diabetes,AC110620.2,Low,,GWAS Catalog
+edge_00248,disease_hypertension,gene_mecom_as1,Hypertension,MECOM-AS1,Disease-Gene,24.28,24.28,1,rs1918974,Hypertension,MECOM-AS1,Low,,GWAS Catalog
+edge_00021,disease_asthma,gene_fth1p5_al158050_2,Asthma,FTH1P5 - AL158050.2,Disease-Gene,24.26,24.26,1,rs7775861,Asthma,FTH1P5 - AL158050.2,Low,,GWAS Catalog
+edge_00024,disease_asthma,gene_gsdmb,Asthma,GSDMB,Disease-Gene,24.24,24.24,1,rs2305480,Asthma,GSDMB,Low,,GWAS Catalog
+edge_00026,disease_asthma,gene_il13,Asthma,IL13,Disease-Gene,24.24,24.24,1,rs1295686,Asthma,IL13,Low,,GWAS Catalog
+edge_00034,disease_asthma,gene_rora,Asthma,RORA,Disease-Gene,24.24,24.24,1,rs11071559,Asthma,RORA,Low,,GWAS Catalog
+edge_00094,disease_chronic_kidney_disease,gene_dab2,Chronic Kidney Disease,DAB2,Disease-Gene,24.24,24.24,1,rs11959928,Chronic Kidney Disease,DAB2,Low,,GWAS Catalog
+edge_00099,disease_chronic_kidney_disease,gene_grik2,Chronic Kidney Disease,GRIK2,Disease-Gene,24.24,24.24,1,rs2797369,Chronic Kidney Disease,GRIK2,Low,,GWAS Catalog
+edge_00102,disease_chronic_kidney_disease,gene_krt8p26_ap001266_2,Chronic Kidney Disease,KRT8P26 - AP001266.2,Disease-Gene,24.24,24.24,1,rs4014195,Chronic Kidney Disease,KRT8P26 - AP001266.2,Low,,GWAS Catalog
+edge_00113,disease_chronic_kidney_disease,gene_psma5_sypl2,Chronic Kidney Disease,PSMA5 - SYPL2,Disease-Gene,24.24,24.24,1,rs1933182,Chronic Kidney Disease,PSMA5 - SYPL2,Low,,GWAS Catalog
+edge_00018,disease_asthma,gene_dennd1a,Asthma,DENND1A,Disease-Gene,24.1,24.1,1,rs10818854,Asthma,DENND1A,Low,,GWAS Catalog
+edge_00036,disease_asthma,gene_slc22a5,Asthma,SLC22A5,Disease-Gene,24.1,24.1,1,rs2073643,Asthma,SLC22A5,Low,,GWAS Catalog
+edge_00080,disease_chronic_kidney_disease,gene_ac010729_1_linc01810,Chronic Kidney Disease,AC010729.1 - LINC01810,Disease-Gene,24.1,24.1,1,rs16864170,Chronic Kidney Disease,AC010729.1 - LINC01810,Low,,GWAS Catalog
+edge_00114,disease_chronic_kidney_disease,gene_rgs14,Chronic Kidney Disease,RGS14,Disease-Gene,24.1,24.1,1,rs12654812,Chronic Kidney Disease,RGS14,Low,,GWAS Catalog
+edge_00124,disease_chronic_kidney_disease,gene_tfap2d_tfap2b,Chronic Kidney Disease,TFAP2D - TFAP2B,Disease-Gene,24.1,24.1,1,rs2206271,Chronic Kidney Disease,TFAP2D - TFAP2B,Low,,GWAS Catalog
+edge_00255,disease_hypertension,gene_stk39,Hypertension,STK39,Disease-Gene,24.1,24.1,1,rs6749447,Hypertension,STK39,Low,,GWAS Catalog
+edge_00033,disease_asthma,gene_rad50,Asthma,RAD50,Disease-Gene,24.02,24.02,1,rs2244012,Asthma,RAD50,Low,,GWAS Catalog
+edge_00361,disease_obesity,gene_tbce,Obesity,TBCE,Disease-Gene,24.02,24.02,1,rs6429082,Obesity,TBCE,Low,,GWAS Catalog
+edge_00006,disease_asthma,gene_al008718_2_al008718_1,Asthma,AL008718.2 - AL008718.1,Disease-Gene,23.97,23.97,1,rs58667,Asthma,AL008718.2 - AL008718.1,Low,,GWAS Catalog
+edge_00360,disease_obesity,gene_sox6,Obesity,SOX6,Disease-Gene,23.97,23.945,2,rs297325; rs4756846,Obesity,SOX6,Low,,GWAS Catalog
+edge_00511,disease_type_2_diabetes,gene_pcnx2,Type 2 Diabetes,PCNX2,Disease-Gene,23.97,23.97,1,rs12027542,Type 2 Diabetes,PCNX2,Low,,GWAS Catalog
+edge_00035,disease_asthma,gene_rpl36p1_tshz2,Asthma,RPL36P1 - TSHZ2,Disease-Gene,23.92,23.92,1,rs6097169,Asthma,RPL36P1 - TSHZ2,Low,,GWAS Catalog
+edge_00202,disease_coronary_artery_disease,gene_hnf1a,Coronary Artery Disease,HNF1A,Disease-Gene,23.92,23.92,1,rs2259816,Coronary Artery Disease,HNF1A,Low,,GWAS Catalog
+edge_00484,disease_type_2_diabetes,gene_ac090984_1,Type 2 Diabetes,AC090984.1,Disease-Gene,23.92,23.92,1,rs7119,Type 2 Diabetes,AC090984.1,Low,,GWAS Catalog
+edge_00001,disease_asthma,gene_ac005871_2,Asthma,AC005871.2,Disease-Gene,23.89,23.89,1,rs4752066,Asthma,AC005871.2,Low,,GWAS Catalog
+edge_00200,disease_coronary_artery_disease,gene_flt1,Coronary Artery Disease,FLT1,Disease-Gene,23.89,23.89,1,rs9508025,Coronary Artery Disease,FLT1,Low,,GWAS Catalog
+edge_00506,disease_type_2_diabetes,gene_linc01339,Type 2 Diabetes,LINC01339,Disease-Gene,23.86,23.86,1,rs12518099,Type 2 Diabetes,LINC01339,Low,,GWAS Catalog
+edge_00231,disease_hypertension,gene_ac093426_1_chrm3,Hypertension,AC093426.1 - CHRM3,Disease-Gene,23.83,23.83,1,rs2820037,Hypertension,AC093426.1 - CHRM3,Low,,GWAS Catalog
+edge_00346,disease_obesity,gene_mtrnr2l7_al132657_1,Obesity,MTRNR2L7 - AL132657.1,Disease-Gene,23.81,23.81,1,rs7474896,Obesity,MTRNR2L7 - AL132657.1,Low,,GWAS Catalog
+edge_00030,disease_asthma,gene_linc02086,Asthma,LINC02086,Disease-Gene,23.79,23.79,1,rs8074700,Asthma,LINC02086,Low,,GWAS Catalog
+edge_00199,disease_coronary_artery_disease,gene_cux2,Coronary Artery Disease,CUX2,Disease-Gene,23.79,23.79,1,rs886126,Coronary Artery Disease,CUX2,Low,,GWAS Catalog
+edge_00318,disease_obesity,gene_eml6,Obesity,EML6,Disease-Gene,23.79,23.79,1,rs6726292,Obesity,EML6,Low,,GWAS Catalog
+edge_00334,disease_obesity,gene_itpr3,Obesity,ITPR3,Disease-Gene,23.79,23.79,1,rs999943,Obesity,ITPR3,Low,,GWAS Catalog
+edge_00490,disease_type_2_diabetes,gene_al359922_1,Type 2 Diabetes,AL359922.1,Disease-Gene,23.79,23.79,1,rs564398,Type 2 Diabetes,AL359922.1,Low,,GWAS Catalog
+edge_00003,disease_asthma,gene_ac103702_2,Asthma,AC103702.2,Disease-Gene,23.65,23.65,1,rs2326017,Asthma,AC103702.2,Low,,GWAS Catalog
+edge_00004,disease_asthma,gene_adcy3,Asthma,ADCY3,Disease-Gene,23.65,23.65,1,rs2033654,Asthma,ADCY3,Low,,GWAS Catalog
+edge_00083,disease_chronic_kidney_disease,gene_ac116345_3,Chronic Kidney Disease,AC116345.3,Disease-Gene,23.65,23.65,1,rs17663555,Chronic Kidney Disease,AC116345.3,Low,,GWAS Catalog
+edge_00201,disease_coronary_artery_disease,gene_fmn2,Coronary Artery Disease,FMN2,Disease-Gene,23.65,23.65,1,rs17672135,Coronary Artery Disease,FMN2,Low,,GWAS Catalog
+edge_00489,disease_type_2_diabetes,gene_al050338_2,Type 2 Diabetes,AL050338.2,Disease-Gene,23.65,23.65,1,rs642858,Type 2 Diabetes,AL050338.2,Low,,GWAS Catalog
+edge_00002,disease_asthma,gene_ac093913_1_ac020589_1,Asthma,AC093913.1 - AC020589.1,Disease-Gene,23.57,23.57,1,rs1317830,Asthma,AC093913.1 - AC020589.1,Low,,GWAS Catalog
+edge_00020,disease_asthma,gene_efr3b,Asthma,EFR3B,Disease-Gene,23.57,23.57,1,rs1530016,Asthma,EFR3B,Low,,GWAS Catalog
+edge_00022,disease_asthma,gene_gpr12_fgfr1op2p1,Asthma,GPR12 - FGFR1OP2P1,Disease-Gene,23.57,23.57,1,rs9319321,Asthma,GPR12 - FGFR1OP2P1,Low,,GWAS Catalog
+edge_00039,disease_asthma,gene_stard13_as,Asthma,STARD13-AS,Disease-Gene,23.57,23.57,1,rs2555603,Asthma,STARD13-AS,Low,,GWAS Catalog
+edge_00363,disease_obesity,gene_tram1l1_ac107399_1,Obesity,TRAM1L1 - AC107399.1,Disease-Gene,23.57,23.57,1,rs10433903,Obesity,TRAM1L1 - AC107399.1,Low,,GWAS Catalog
+edge_00496,disease_type_2_diabetes,gene_dcdc2c,Type 2 Diabetes,DCDC2C,Disease-Gene,23.57,23.57,1,rs11677370,Type 2 Diabetes,DCDC2C,Low,,GWAS Catalog
+edge_00521,disease_type_2_diabetes,gene_zpld1_ac063938_1,Type 2 Diabetes,ZPLD1 - AC063938.1,Disease-Gene,23.57,23.57,1,rs2063640,Type 2 Diabetes,ZPLD1 - AC063938.1,Low,,GWAS Catalog
+edge_00005,disease_asthma,gene_adcy3_dnajc27,Asthma,ADCY3 - DNAJC27,Disease-Gene,23.52,23.52,1,rs713587,Asthma,ADCY3 - DNAJC27,Low,,GWAS Catalog
+edge_00013,disease_asthma,gene_bola2p1_ap000894_1,Asthma,BOLA2P1 - AP000894.1,Disease-Gene,23.52,23.52,1,rs1291183,Asthma,BOLA2P1 - AP000894.1,Low,,GWAS Catalog
+edge_00206,disease_coronary_artery_disease,gene_sez6l,Coronary Artery Disease,SEZ6L,Disease-Gene,23.52,23.52,1,rs688034,Coronary Artery Disease,SEZ6L,Low,,GWAS Catalog
+edge_00307,disease_obesity,gene_ano3,Obesity,ANO3,Disease-Gene,23.52,23.52,1,rs12295638,Obesity,ANO3,Low,,GWAS Catalog
+edge_00321,disease_obesity,gene_fbn2,Obesity,FBN2,Disease-Gene,23.52,23.52,1,rs374748,Obesity,FBN2,Low,,GWAS Catalog
+edge_00355,disease_obesity,gene_rarb,Obesity,RARB,Disease-Gene,23.52,23.52,1,rs1435703,Obesity,RARB,Low,,GWAS Catalog
+edge_00480,disease_type_2_diabetes,gene_ac008940_1_map3k1,Type 2 Diabetes,AC008940.1 - MAP3K1,Disease-Gene,23.52,23.52,1,rs10461617,Type 2 Diabetes,AC008940.1 - MAP3K1,Low,,GWAS Catalog
+edge_00501,disease_type_2_diabetes,gene_hunk,Type 2 Diabetes,HUNK,Disease-Gene,23.52,23.52,1,rs2833610,Type 2 Diabetes,HUNK,Low,,GWAS Catalog
+edge_00519,disease_type_2_diabetes,gene_tgfbr3,Type 2 Diabetes,TGFBR3,Disease-Gene,23.52,23.52,1,rs11165354,Type 2 Diabetes,TGFBR3,Low,,GWAS Catalog
+edge_00087,disease_chronic_kidney_disease,gene_al591419_1_al591499_1,Chronic Kidney Disease,AL591419.1 - AL591499.1,Disease-Gene,23.47,23.47,1,rs9397738,Chronic Kidney Disease,AL591419.1 - AL591499.1,Low,,GWAS Catalog
+edge_00232,disease_hypertension,gene_adh1b_adh7,Hypertension,ADH1B - ADH7,Disease-Gene,23.47,23.47,1,rs991316,Hypertension,ADH1B - ADH7,Low,,GWAS Catalog
+edge_00294,disease_obesity,gene_ac090948_4,Obesity,AC090948.4,Disease-Gene,23.47,23.47,1,rs12635698,Obesity,AC090948.4,Low,,GWAS Catalog
+edge_00343,disease_obesity,gene_macrod2,Obesity,MACROD2,Disease-Gene,23.47,23.47,1,rs6110577,Obesity,MACROD2,Low,,GWAS Catalog
+edge_00349,disease_obesity,gene_pald1_prf1,Obesity,PALD1 - PRF1,Disease-Gene,23.47,23.47,1,rs10999409,Obesity,PALD1 - PRF1,Low,,GWAS Catalog
+edge_00487,disease_type_2_diabetes,gene_ache,Type 2 Diabetes,ACHE,Disease-Gene,23.47,23.47,1,rs7636,Type 2 Diabetes,ACHE,Low,,GWAS Catalog
+edge_00517,disease_type_2_diabetes,gene_tcerg1l,Type 2 Diabetes,TCERG1L,Disease-Gene,23.47,23.47,1,rs10741243,Type 2 Diabetes,TCERG1L,Low,,GWAS Catalog
+edge_00017,disease_asthma,gene_ctnna3,Asthma,CTNNA3,Disease-Gene,23.44,23.44,1,rs10762058,Asthma,CTNNA3,Low,,GWAS Catalog
+edge_00195,disease_coronary_artery_disease,gene_cdh13,Coronary Artery Disease,CDH13,Disease-Gene,23.44,23.44,1,rs8055236,Coronary Artery Disease,CDH13,Low,,GWAS Catalog
+edge_00251,disease_hypertension,gene_nr2f2_as1,Hypertension,NR2F2-AS1,Disease-Gene,23.44,23.44,1,rs2398162,Hypertension,NR2F2-AS1,Low,,GWAS Catalog
+edge_00335,disease_obesity,gene_klhl32,Obesity,KLHL32,Disease-Gene,23.44,23.44,1,rs974417,Obesity,KLHL32,Low,,GWAS Catalog
+edge_00336,disease_obesity,gene_lemd2_mln,Obesity,LEMD2 - MLN,Disease-Gene,23.44,23.44,1,rs2274459,Obesity,LEMD2 - MLN,Low,,GWAS Catalog
+edge_00008,disease_asthma,gene_al591222_3_al512635_1,Asthma,AL591222.3 - AL512635.1,Disease-Gene,23.41,23.41,1,rs16937883,Asthma,AL591222.3 - AL512635.1,Low,,GWAS Catalog
+edge_00032,disease_asthma,gene_prkcq,Asthma,PRKCQ,Disease-Gene,23.41,23.41,1,rs11259403,Asthma,PRKCQ,Low,,GWAS Catalog
+edge_00037,disease_asthma,gene_slc24a2,Asthma,SLC24A2,Disease-Gene,23.41,23.41,1,rs3780215,Asthma,SLC24A2,Low,,GWAS Catalog
+edge_00495,disease_type_2_diabetes,gene_cr2,Type 2 Diabetes,CR2,Disease-Gene,23.41,23.41,1,rs17045328,Type 2 Diabetes,CR2,Low,,GWAS Catalog
+edge_00500,disease_type_2_diabetes,gene_higd1c,Type 2 Diabetes,HIGD1C,Disease-Gene,23.41,23.41,1,rs12304921,Type 2 Diabetes,HIGD1C,Low,,GWAS Catalog
+edge_00502,disease_type_2_diabetes,gene_ide_kif11,Type 2 Diabetes,IDE - KIF11,Disease-Gene,23.41,23.41,1,rs6583826,Type 2 Diabetes,IDE - KIF11,Low,,GWAS Catalog
+edge_00512,disease_type_2_diabetes,gene_pex5l,Type 2 Diabetes,PEX5L,Disease-Gene,23.41,23.41,1,rs7630877,Type 2 Diabetes,PEX5L,Low,,GWAS Catalog
+edge_00520,disease_type_2_diabetes,gene_tspan8,Type 2 Diabetes,TSPAN8,Disease-Gene,23.41,23.41,1,rs1495377,Type 2 Diabetes,TSPAN8,Low,,GWAS Catalog
+edge_00010,disease_asthma,gene_ap002761_2_ap002761_1,Asthma,AP002761.2 - AP002761.1,Disease-Gene,23.38,23.38,1,rs11603160,Asthma,AP002761.2 - AP002761.1,Low,,GWAS Catalog
+edge_00226,disease_hypertension,gene_ac009117_2_cdh13,Hypertension,AC009117.2 - CDH13,Disease-Gene,23.38,23.38,1,rs11646213,Hypertension,AC009117.2 - CDH13,Low,,GWAS Catalog
+edge_00353,disease_obesity,gene_ppiap68_ac007679_2,Obesity,PPIAP68 - AC007679.2,Disease-Gene,23.38,23.38,1,rs7603514,Obesity,PPIAP68 - AC007679.2,Low,,GWAS Catalog
+edge_00012,disease_asthma,gene_arrdc2_ac020904_2,Asthma,ARRDC2 - AC020904.2,Disease-Gene,23.36,23.36,1,rs12984174,Asthma,ARRDC2 - AC020904.2,Low,,GWAS Catalog
+edge_00015,disease_asthma,gene_cps1,Asthma,CPS1,Disease-Gene,23.36,23.36,1,rs12468557,Asthma,CPS1,Low,,GWAS Catalog
+edge_00483,disease_type_2_diabetes,gene_ac072028_1,Type 2 Diabetes,AC072028.1,Disease-Gene,23.36,23.36,1,rs3773506,Type 2 Diabetes,AC072028.1,Low,,GWAS Catalog
+edge_00488,disease_type_2_diabetes,gene_acp7,Type 2 Diabetes,ACP7,Disease-Gene,23.36,23.36,1,rs472265,Type 2 Diabetes,ACP7,Low,,GWAS Catalog
+edge_00491,disease_type_2_diabetes,gene_anxa5_tmem155,Type 2 Diabetes,ANXA5 - TMEM155,Disease-Gene,23.36,23.36,1,rs7659604,Type 2 Diabetes,ANXA5 - TMEM155,Low,,GWAS Catalog
+edge_00509,disease_type_2_diabetes,gene_lpin2,Type 2 Diabetes,LPIN2,Disease-Gene,23.36,23.36,1,rs10460009,Type 2 Diabetes,LPIN2,Low,,GWAS Catalog
+edge_00510,disease_type_2_diabetes,gene_marchf1,Type 2 Diabetes,MARCHF1,Disease-Gene,23.36,23.36,1,rs3792615,Type 2 Diabetes,MARCHF1,Low,,GWAS Catalog
+edge_00016,disease_asthma,gene_crb1,Asthma,CRB1,Disease-Gene,21.8,21.8,1,rs2786098,Asthma,CRB1,Low,,GWAS Catalog
+edge_00192,disease_coronary_artery_disease,gene_ac025773_1_ac025187_1,Coronary Artery Disease,AC025773.1 - AC025187.1,Disease-Gene,21.62,21.62,1,rs11748327,Coronary Artery Disease,AC025773.1 - AC025187.1,Low,,GWAS Catalog
+edge_00246,disease_hypertension,gene_linc01320,Hypertension,LINC01320,Disease-Gene,20.37,20.37,1,rs10495809,Hypertension,LINC01320,Low,,GWAS Catalog
+edge_00103,disease_chronic_kidney_disease,gene_linc01804,Chronic Kidney Disease,LINC01804,Disease-Gene,19.42,19.42,1,rs6431731,Chronic Kidney Disease,LINC01804,Low,,GWAS Catalog
+edge_00347,disease_obesity,gene_ncam2,Obesity,NCAM2,Disease-Gene,19.42,19.42,1,rs11088859,Obesity,NCAM2,Low,,GWAS Catalog
+edge_00514,disease_type_2_diabetes,gene_rbms1,Type 2 Diabetes,RBMS1,Disease-Gene,19.42,19.42,1,rs7593730,Type 2 Diabetes,RBMS1,Low,,GWAS Catalog
+edge_00299,disease_obesity,gene_ac124242_3,Obesity,AC124242.3,Disease-Gene,19.28,19.28,1,rs17126232,Obesity,AC124242.3,Low,,GWAS Catalog
+edge_00333,disease_obesity,gene_inhbb_linc01101,Obesity,INHBB - LINC01101,Disease-Gene,19.1,19.1,1,rs7581710,Obesity,INHBB - LINC01101,Low,,GWAS Catalog
+edge_00309,disease_obesity,gene_arg1,Obesity,ARG1,Disease-Gene,19.02,19.02,1,rs2807278,Obesity,ARG1,Low,,GWAS Catalog
+edge_00337,disease_obesity,gene_lhfpl3,Obesity,LHFPL3,Disease-Gene,18.86,18.86,1,rs10953454,Obesity,LHFPL3,Low,,GWAS Catalog
+edge_00350,disease_obesity,gene_pcdh9,Obesity,PCDH9,Disease-Gene,18.86,18.86,1,rs17081231,Obesity,PCDH9,Low,,GWAS Catalog
+edge_00365,disease_obesity,gene_ttc28,Obesity,TTC28,Disease-Gene,18.86,18.86,1,rs5762430,Obesity,TTC28,Low,,GWAS Catalog
+edge_00366,disease_obesity,gene_wwox,Obesity,WWOX,Disease-Gene,18.83,18.83,1,rs9923451,Obesity,WWOX,Low,,GWAS Catalog
+edge_00019,disease_asthma,gene_dmxl2_scg3,Asthma,DMXL2 - SCG3,Disease-Gene,18.65,18.65,1,rs17525472,Asthma,DMXL2 - SCG3,Low,,GWAS Catalog
+edge_00290,disease_obesity,gene_ac012669_1_ac009478_1,Obesity,AC012669.1 - AC009478.1,Disease-Gene,18.65,18.65,1,rs16867321,Obesity,AC012669.1 - AC009478.1,Low,,GWAS Catalog
+edge_00315,disease_obesity,gene_cdh12,Obesity,CDH12,Disease-Gene,18.65,18.65,1,rs4701252,Obesity,CDH12,Low,,GWAS Catalog
+edge_00253,disease_hypertension,gene_polr2m_aldh1a2,Hypertension,POLR2M - ALDH1A2,Disease-Gene,18.57,18.57,1,rs1550576,Hypertension,POLR2M - ALDH1A2,Low,,GWAS Catalog
+edge_00323,disease_obesity,gene_fth1p5_al158050_2,Obesity,FTH1P5 - AL158050.2,Disease-Gene,18.57,18.57,1,rs1555967,Obesity,FTH1P5 - AL158050.2,Low,,GWAS Catalog
+edge_00508,disease_type_2_diabetes,gene_linc02030,Type 2 Diabetes,LINC02030,Disease-Gene,18.57,18.57,1,rs358806,Type 2 Diabetes,LINC02030,Low,,GWAS Catalog
+edge_00316,disease_obesity,gene_cyb5r2_ovch2,Obesity,CYB5R2 - OVCH2,Disease-Gene,18.47,18.47,1,rs7932813,Obesity,CYB5R2 - OVCH2,Low,,GWAS Catalog
+edge_00341,disease_obesity,gene_lpl_ac100802_1,Obesity,LPL - AC100802.1,Disease-Gene,18.47,18.47,1,rs2083637,Obesity,LPL - AC100802.1,Low,,GWAS Catalog
+edge_00009,disease_asthma,gene_al627443_1_tbxt,Asthma,AL627443.1 - TBXT,Disease-Gene,18.44,18.44,1,rs6456042,Asthma,AL627443.1 - TBXT,Low,,GWAS Catalog
+edge_00507,disease_type_2_diabetes,gene_linc01918_gpr45,Type 2 Diabetes,LINC01918 - GPR45,Disease-Gene,18.44,18.44,1,rs6712932,Type 2 Diabetes,LINC01918 - GPR45,Low,,GWAS Catalog
+edge_00320,disease_obesity,gene_fat1_ac108865_1,Obesity,FAT1 - AC108865.1,Disease-Gene,18.41,18.41,1,rs925642,Obesity,FAT1 - AC108865.1,Low,,GWAS Catalog
+edge_00011,disease_asthma,gene_ap5s1_mavs,Asthma,AP5S1 - MAVS,Disease-Gene,18.38,18.38,1,rs4815617,Asthma,AP5S1 - MAVS,Low,,GWAS Catalog
+edge_00497,disease_type_2_diabetes,gene_elmo1,Type 2 Diabetes,ELMO1,Disease-Gene,18.38,18.38,1,rs741301,Type 2 Diabetes,ELMO1,Low,,GWAS Catalog
+edge_00572,disease_type_2_diabetes,snp_rs7903146,Type 2 Diabetes,rs7903146,Disease-SNP,69.6,65.225,8,rs7903146,Type 2 Diabetes,TCF7L2,Moderate,,Demo; GWAS Catalog
+edge_00468,disease_obesity,snp_rs8043757,Obesity,rs8043757,Disease-SNP,66.09,66.09,1,rs8043757,Obesity,FTO,Moderate,,GWAS Catalog
+edge_00406,disease_obesity,snp_rs1558902,Obesity,rs1558902,Disease-SNP,65.29,63.6233,3,rs1558902,Obesity,FTO,Moderate,,GWAS Catalog
+edge_00187,disease_chronic_kidney_disease,snp_rs911119,Chronic Kidney Disease,rs911119,Disease-SNP,61.09,61.09,1,rs911119,Chronic Kidney Disease,CST3,Moderate,,GWAS Catalog
+edge_00454,disease_obesity,snp_rs7185735,Obesity,rs7185735,Disease-SNP,56.64,56.64,1,rs7185735,Obesity,FTO,Moderate,,GWAS Catalog
+edge_00168,disease_chronic_kidney_disease,snp_rs3775948,Chronic Kidney Disease,rs3775948,Disease-SNP,50.2,50.2,1,rs3775948,Chronic Kidney Disease,SLC2A9,Moderate,,GWAS Catalog
+edge_00174,disease_chronic_kidney_disease,snp_rs504915,Chronic Kidney Disease,rs504915,Disease-SNP,49.22,49.22,1,rs504915,Chronic Kidney Disease,NRXN2,Low,,GWAS Catalog
+edge_00146,disease_chronic_kidney_disease,snp_rs12917707,Chronic Kidney Disease,rs12917707,Disease-SNP,47.5,43.5,2,rs12917707,Chronic Kidney Disease,UMOD,Low,,Demo; GWAS Catalog
+edge_00540,disease_type_2_diabetes,snp_rs2237892,Type 2 Diabetes,rs2237892,Disease-SNP,44.47,44.47,2,rs2237892,Type 2 Diabetes,KCNQ1,Low,,GWAS Catalog
+edge_00383,disease_obesity,snp_rs11075990,Obesity,rs11075990,Disease-SNP,43.9,43.9,1,rs11075990,Obesity,FTO,Low,,GWAS Catalog
+edge_00571,disease_type_2_diabetes,snp_rs7901695,Type 2 Diabetes,rs7901695,Disease-SNP,42.69,42.69,1,rs7901695,Type 2 Diabetes,TCF7L2,Low,,GWAS Catalog
+edge_00535,disease_type_2_diabetes,snp_rs13266634,Type 2 Diabetes,rs13266634,Disease-SNP,39.75,39.75,5,rs13266634,Type 2 Diabetes,SLC30A8,Low,,GWAS Catalog
+edge_00448,disease_obesity,snp_rs6711012,Obesity,rs6711012,Disease-SNP,38.87,38.87,1,rs6711012,Obesity,AC093326.1 - TMEM18,Low,,GWAS Catalog
+edge_00542,disease_type_2_diabetes,snp_rs2383208,Type 2 Diabetes,rs2383208,Disease-SNP,38.62,38.62,2,rs2383208,Type 2 Diabetes,CDKN2B-AS1 - AL157937.1,Low,,GWAS Catalog
+edge_00400,disease_obesity,snp_rs1421085,Obesity,rs1421085,Disease-SNP,38.29,38.29,1,rs1421085,Obesity,FTO,Low,,GWAS Catalog
+edge_00548,disease_type_2_diabetes,snp_rs4402960,Type 2 Diabetes,rs4402960,Disease-SNP,38.29,38.29,4,rs4402960,Type 2 Diabetes,IGF2BP2,Low,,GWAS Catalog
+edge_00442,disease_obesity,snp_rs538656,Obesity,rs538656,Disease-SNP,37.15,37.15,1,rs538656,Obesity,RNU4-17P - AC090771.1,Low,,GWAS Catalog
+edge_00258,disease_hypertension,snp_rs11066280,Hypertension,rs11066280,Disease-SNP,36.84,36.84,1,rs11066280,Hypertension,HECTD4,Low,,GWAS Catalog
+edge_00378,disease_obesity,snp_rs10938397,Obesity,rs10938397,Disease-SNP,36.17,36.17,1,rs10938397,Obesity,AC108467.1 - THAP12P9,Low,,GWAS Catalog
+edge_00259,disease_hypertension,snp_rs11191548,Hypertension,rs11191548,Disease-SNP,36.12,36.12,2,rs11191548,Hypertension,CNNM2,Low,,GWAS Catalog
+edge_00526,disease_type_2_diabetes,snp_rs10811661,Type 2 Diabetes,rs10811661,Disease-SNP,35.32,35.32,3,rs10811661,Type 2 Diabetes,CDKN2B-AS1 - AL157937.1,Low,,GWAS Catalog
+edge_00573,disease_type_2_diabetes,snp_rs8050136,Type 2 Diabetes,rs8050136,Disease-SNP,34.89,34.89,3,rs8050136,Type 2 Diabetes,FTO,Low,,GWAS Catalog
+edge_00451,disease_obesity,snp_rs7138803,Obesity,rs7138803,Disease-SNP,34.7,32.2,2,rs7138803,Obesity,BCDIN3D - AC131157.1,Low,,GWAS Catalog
+edge_00165,disease_chronic_kidney_disease,snp_rs2725220,Chronic Kidney Disease,rs2725220,Disease-SNP,34.32,34.32,1,rs2725220,Chronic Kidney Disease,PKD2,Low,,GWAS Catalog
+edge_00551,disease_type_2_diabetes,snp_rs4712523,Type 2 Diabetes,rs4712523,Disease-SNP,34.32,34.32,2,rs4712523,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00138,disease_chronic_kidney_disease,snp_rs10937329,Chronic Kidney Disease,rs10937329,Disease-SNP,34.16,34.16,1,rs10937329,Chronic Kidney Disease,LINC01991 - AC092941.1,Low,,GWAS Catalog
+edge_00528,disease_type_2_diabetes,snp_rs1111875,Type 2 Diabetes,rs1111875,Disease-SNP,33.99,33.99,3,rs1111875,Type 2 Diabetes,HHEX - AL590080.1,Low,,GWAS Catalog
+edge_00398,disease_obesity,snp_rs13130484,Obesity,rs13130484,Disease-SNP,33.42,33.42,1,rs13130484,Obesity,AC108467.1 - THAP12P9,Low,,GWAS Catalog
+edge_00376,disease_obesity,snp_rs10871777,Obesity,rs10871777,Disease-SNP,33.1,33.1,1,rs10871777,Obesity,RNU4-17P - AC090771.1,Low,,GWAS Catalog
+edge_00190,disease_chronic_kidney_disease,snp_rs9895661,Chronic Kidney Disease,rs9895661,Disease-SNP,32.45,32.45,2,rs9895661,Chronic Kidney Disease,BCAS3,Low,,GWAS Catalog
+edge_00371,disease_obesity,snp_rs10189761,Obesity,rs10189761,Disease-SNP,31.54,31.54,1,rs10189761,Obesity,AC093326.1 - TMEM18,Low,,GWAS Catalog
+edge_00538,disease_type_2_diabetes,snp_rs1801282,Type 2 Diabetes,rs1801282,Disease-SNP,31.54,31.54,3,rs1801282,Type 2 Diabetes,PPARG,Low,,GWAS Catalog
+edge_00265,disease_hypertension,snp_rs1378942,Hypertension,rs1378942,Disease-SNP,31.44,31.44,1,rs1378942,Hypertension,CSK,Low,,GWAS Catalog
+edge_00446,disease_obesity,snp_rs633715,Obesity,rs633715,Disease-SNP,31.01,31.01,1,rs633715,Obesity,AL136114.1,Low,,GWAS Catalog
+edge_00385,disease_obesity,snp_rs11152213,Obesity,rs11152213,Disease-SNP,30.77,30.77,1,rs11152213,Obesity,RNU4-17P - AC090771.1,Low,,GWAS Catalog
+edge_00417,disease_obesity,snp_rs2030323,Obesity,rs2030323,Disease-SNP,30.77,30.77,1,rs2030323,Obesity,AC103796.1,Low,,GWAS Catalog
+edge_00421,disease_obesity,snp_rs2206277,Obesity,rs2206277,Disease-SNP,30.67,30.67,1,rs2206277,Obesity,TFAP2B,Low,,GWAS Catalog
+edge_00271,disease_hypertension,snp_rs16998073,Hypertension,rs16998073,Disease-SNP,30.54,30.54,1,rs16998073,Hypertension,PRDM8 - FGF5,Low,,GWAS Catalog
+edge_00475,disease_obesity,snp_rs987237,Obesity,rs987237,Disease-SNP,30.52,30.52,2,rs987237,Obesity,TFAP2B,Low,,GWAS Catalog
+edge_00285,disease_hypertension,snp_rs699,Hypertension,rs699,Disease-SNP,30.44,30.44,1,rs699,Hypertension,AGT,Low,,Demo
+edge_00570,disease_type_2_diabetes,snp_rs7754840,Type 2 Diabetes,rs7754840,Disease-SNP,30.38,30.38,2,rs7754840,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00469,disease_obesity,snp_rs8089364,Obesity,rs8089364,Disease-SNP,30.27,30.27,1,rs8089364,Obesity,RNU4-17P - AC090771.1,Low,,GWAS Catalog
+edge_00556,disease_type_2_diabetes,snp_rs5219,Type 2 Diabetes,rs5219,Disease-SNP,30.27,30.27,2,rs5219,Type 2 Diabetes,KCNJ11,Low,,GWAS Catalog
+edge_00273,disease_hypertension,snp_rs17249754,Hypertension,rs17249754,Disease-SNP,29.68,29.68,1,rs17249754,Hypertension,ATP2B1,Low,,GWAS Catalog
+edge_00147,disease_chronic_kidney_disease,snp_rs13069000,Chronic Kidney Disease,rs13069000,Disease-SNP,29.64,29.64,1,rs13069000,Chronic Kidney Disease,RPL21P41 - AC098969.2,Low,,GWAS Catalog
+edge_00153,disease_chronic_kidney_disease,snp_rs17319721,Chronic Kidney Disease,rs17319721,Disease-SNP,29.64,29.64,1,rs17319721,Chronic Kidney Disease,SHROOM3,Low,,GWAS Catalog
+edge_00422,disease_obesity,snp_rs2207139,Obesity,rs2207139,Disease-SNP,29.42,29.42,1,rs2207139,Obesity,RPS17P5 - AL049693.1,Low,,GWAS Catalog
+edge_00282,disease_hypertension,snp_rs653178,Hypertension,rs653178,Disease-SNP,28.97,28.97,1,rs653178,Hypertension,ATXN2,Low,,GWAS Catalog
+edge_00207,disease_coronary_artery_disease,snp_rs10757278,Coronary Artery Disease,rs10757278,Disease-SNP,28.92,28.92,1,rs10757278,Coronary Artery Disease,CDKN2A,Low,,Demo
+edge_00182,disease_chronic_kidney_disease,snp_rs7227483,Chronic Kidney Disease,rs7227483,Disease-SNP,28.81,28.81,1,rs7227483,Chronic Kidney Disease,AC091151.7,Low,,GWAS Catalog
+edge_00370,disease_obesity,snp_rs10182181,Obesity,rs10182181,Disease-SNP,28.74,28.74,1,rs10182181,Obesity,ADCY3 - DNAJC27,Low,,GWAS Catalog
+edge_00452,disease_obesity,snp_rs7141420,Obesity,rs7141420,Disease-SNP,28.74,28.74,1,rs7141420,Obesity,NRXN3,Low,,GWAS Catalog
+edge_00458,disease_obesity,snp_rs7531118,Obesity,rs7531118,Disease-SNP,28.6,28.6,1,rs7531118,Obesity,AL513166.1,Low,,GWAS Catalog
+edge_00150,disease_chronic_kidney_disease,snp_rs1394125,Chronic Kidney Disease,rs1394125,Disease-SNP,28.52,28.52,1,rs1394125,Chronic Kidney Disease,UBE2Q2,Low,,GWAS Catalog
+edge_00418,disease_obesity,snp_rs2075290,Obesity,rs2075290,Disease-SNP,28.29,28.29,1,rs2075290,Obesity,ZPR1,Low,,GWAS Catalog
+edge_00541,disease_type_2_diabetes,snp_rs2237897,Type 2 Diabetes,rs2237897,Disease-SNP,28.29,28.29,1,rs2237897,Type 2 Diabetes,KCNQ1,Low,,GWAS Catalog
+edge_00437,disease_obesity,snp_rs3764261,Obesity,rs3764261,Disease-SNP,28.24,28.24,1,rs3764261,Obesity,HERPUD1 - CETP,Low,,GWAS Catalog
+edge_00477,disease_obesity,snp_rs9939609,Obesity,rs9939609,Disease-SNP,28.2,28.2,1,rs9939609,Obesity,FTO,Low,,Demo
+edge_00423,disease_obesity,snp_rs2266788,Obesity,rs2266788,Disease-SNP,28.15,28.15,1,rs2266788,Obesity,APOA5,Low,,GWAS Catalog
+edge_00428,disease_obesity,snp_rs2568958,Obesity,rs2568958,Disease-SNP,28.02,28.02,1,rs2568958,Obesity,AL513166.1,Low,,GWAS Catalog
+edge_00135,disease_chronic_kidney_disease,snp_rs10767873,Chronic Kidney Disease,rs10767873,Disease-SNP,27.97,27.97,1,rs10767873,Chronic Kidney Disease,MPPED2-AS1 - AL122014.1,Low,,GWAS Catalog
+edge_00375,disease_obesity,snp_rs10790162,Obesity,rs10790162,Disease-SNP,27.91,27.91,1,rs10790162,Obesity,BUD13,Low,,GWAS Catalog
+edge_00183,disease_chronic_kidney_disease,snp_rs7422339,Chronic Kidney Disease,rs7422339,Disease-SNP,27.84,27.84,1,rs7422339,Chronic Kidney Disease,CPS1,Low,,GWAS Catalog
+edge_00143,disease_chronic_kidney_disease,snp_rs12460876,Chronic Kidney Disease,rs12460876,Disease-SNP,27.62,27.62,1,rs12460876,Chronic Kidney Disease,SLC7A9,Low,,GWAS Catalog
+edge_00412,disease_obesity,snp_rs17782313,Obesity,rs17782313,Disease-SNP,27.62,27.62,1,rs17782313,Obesity,RNU4-17P - AC090771.1,Low,,GWAS Catalog
+edge_00431,disease_obesity,snp_rs2903492,Obesity,rs2903492,Disease-SNP,27.49,27.49,1,rs2903492,Obesity,AC093326.1 - TMEM18,Low,,GWAS Catalog
+edge_00066,disease_asthma,snp_rs3939286,Asthma,rs3939286,Disease-SNP,27.48,27.48,1,rs3939286,Asthma,IL33,Low,,Demo
+edge_00177,disease_chronic_kidney_disease,snp_rs6420094,Chronic Kidney Disease,rs6420094,Disease-SNP,27.39,27.39,1,rs6420094,Chronic Kidney Disease,SLC34A1,Low,,GWAS Catalog
+edge_00474,disease_obesity,snp_rs9816226,Obesity,rs9816226,Disease-SNP,27.25,27.25,1,rs9816226,Obesity,DGKG,Low,,GWAS Catalog
+edge_00144,disease_chronic_kidney_disease,snp_rs1260326,Chronic Kidney Disease,rs1260326,Disease-SNP,27.17,27.17,1,rs1260326,Chronic Kidney Disease,GCKR,Low,,GWAS Catalog
+edge_00151,disease_chronic_kidney_disease,snp_rs16853722,Chronic Kidney Disease,rs16853722,Disease-SNP,27.17,27.17,1,rs16853722,Chronic Kidney Disease,MECOM,Low,,GWAS Catalog
+edge_00415,disease_obesity,snp_rs1800437,Obesity,rs1800437,Disease-SNP,27.17,27.17,1,rs1800437,Obesity,GIPR,Low,,GWAS Catalog
+edge_00216,disease_coronary_artery_disease,snp_rs3782889,Coronary Artery Disease,rs3782889,Disease-SNP,27.12,27.12,1,rs3782889,Coronary Artery Disease,MYL2,Low,,GWAS Catalog
+edge_00149,disease_chronic_kidney_disease,snp_rs13538,Chronic Kidney Disease,rs13538,Disease-SNP,27.07,27.07,1,rs13538,Chronic Kidney Disease,ALMS1P1,Low,,GWAS Catalog
+edge_00217,disease_coronary_artery_disease,snp_rs4977574,Coronary Artery Disease,rs4977574,Disease-SNP,27.07,27.07,1,rs4977574,Coronary Artery Disease,CDKN2B-AS1,Low,,GWAS Catalog
+edge_00462,disease_obesity,snp_rs7708584,Obesity,rs7708584,Disease-SNP,27.07,27.07,1,rs7708584,Obesity,MFAP3,Low,,GWAS Catalog
+edge_00077,disease_asthma,snp_rs9273349,Asthma,rs9273349,Disease-SNP,27.01,27.01,1,rs9273349,Asthma,HLA-DQA1 - HLA-DQB1,Low,,GWAS Catalog
+edge_00172,disease_chronic_kidney_disease,snp_rs4744712,Chronic Kidney Disease,rs4744712,Disease-SNP,26.98,26.98,1,rs4744712,Chronic Kidney Disease,PIP5K1B,Low,,GWAS Catalog
+edge_00185,disease_chronic_kidney_disease,snp_rs881858,Chronic Kidney Disease,rs881858,Disease-SNP,26.96,26.96,1,rs881858,Chronic Kidney Disease,AL157371.2,Low,,GWAS Catalog
+edge_00156,disease_chronic_kidney_disease,snp_rs17730436,Chronic Kidney Disease,rs17730436,Disease-SNP,26.94,26.94,1,rs17730436,Chronic Kidney Disease,WDR72,Low,,GWAS Catalog
+edge_00211,disease_coronary_artery_disease,snp_rs1333049,Coronary Artery Disease,rs1333049,Disease-SNP,26.94,26.94,1,rs1333049,Coronary Artery Disease,CDKN2B-AS1,Low,,GWAS Catalog
+edge_00433,disease_obesity,snp_rs3101336,Obesity,rs3101336,Disease-SNP,26.94,26.94,1,rs3101336,Obesity,AL513166.1,Low,,GWAS Catalog
+edge_00274,disease_hypertension,snp_rs17367504,Hypertension,rs17367504,Disease-SNP,26.8,26.8,1,rs17367504,Hypertension,MTHFR,Low,,GWAS Catalog
+edge_00443,disease_obesity,snp_rs543874,Obesity,rs543874,Disease-SNP,26.8,26.8,1,rs543874,Obesity,AL136114.1 - SEC16B,Low,,GWAS Catalog
+edge_00173,disease_chronic_kidney_disease,snp_rs491567,Chronic Kidney Disease,rs491567,Disease-SNP,26.72,26.72,1,rs491567,Chronic Kidney Disease,WDR72,Low,,GWAS Catalog
+edge_00456,disease_obesity,snp_rs7498665,Obesity,rs7498665,Disease-SNP,26.72,26.72,1,rs7498665,Obesity,SH2B1,Low,,GWAS Catalog
+edge_00373,disease_obesity,snp_rs10423928,Obesity,rs10423928,Disease-SNP,26.67,26.67,1,rs10423928,Obesity,GIPR,Low,,GWAS Catalog
+edge_00213,disease_coronary_artery_disease,snp_rs1994016,Coronary Artery Disease,rs1994016,Disease-SNP,26.62,26.62,1,rs1994016,Coronary Artery Disease,ADAMTS7,Low,,GWAS Catalog
+edge_00467,disease_obesity,snp_rs8028313,Obesity,rs8028313,Disease-SNP,26.59,26.59,1,rs8028313,Obesity,MAP2K5,Low,,GWAS Catalog
+edge_00224,disease_coronary_artery_disease,snp_rs9818870,Coronary Artery Disease,rs9818870,Disease-SNP,26.56,26.56,1,rs9818870,Coronary Artery Disease,MRAS,Low,,GWAS Catalog
+edge_00164,disease_chronic_kidney_disease,snp_rs267734,Chronic Kidney Disease,rs267734,Disease-SNP,26.49,26.49,1,rs267734,Chronic Kidney Disease,AL590133.1 - ANXA9,Low,,GWAS Catalog
+edge_00159,disease_chronic_kidney_disease,snp_rs2049805,Chronic Kidney Disease,rs2049805,Disease-SNP,26.35,26.35,1,rs2049805,Chronic Kidney Disease,GBAP1,Low,,GWAS Catalog
+edge_00463,disease_obesity,snp_rs780093,Obesity,rs780093,Disease-SNP,26.35,26.35,1,rs780093,Obesity,GCKR,Low,,GWAS Catalog
+edge_00425,disease_obesity,snp_rs2307111,Obesity,rs2307111,Disease-SNP,26.27,26.27,1,rs2307111,Obesity,POC5,Low,,GWAS Catalog
+edge_00184,disease_chronic_kidney_disease,snp_rs7805747,Chronic Kidney Disease,rs7805747,Disease-SNP,26.22,26.22,1,rs7805747,Chronic Kidney Disease,PRKAG2,Low,,GWAS Catalog
+edge_00390,disease_obesity,snp_rs12446554,Obesity,rs12446554,Disease-SNP,26.22,26.22,1,rs12446554,Obesity,GPRC5B - GPR139,Low,,GWAS Catalog
+edge_00549,disease_type_2_diabetes,snp_rs4506565,Type 2 Diabetes,rs4506565,Disease-SNP,26.17,26.17,1,rs4506565,Type 2 Diabetes,TCF7L2,Low,,GWAS Catalog
+edge_00162,disease_chronic_kidney_disease,snp_rs2279463,Chronic Kidney Disease,rs2279463,Disease-SNP,26.14,26.14,1,rs2279463,Chronic Kidney Disease,SLC22A2,Low,,GWAS Catalog
+edge_00478,disease_obesity,snp_rs9941349,Obesity,rs9941349,Disease-SNP,26.14,26.14,1,rs9941349,Obesity,FTO,Low,,GWAS Catalog
+edge_00148,disease_chronic_kidney_disease,snp_rs13146355,Chronic Kidney Disease,rs13146355,Disease-SNP,26.06,26.06,1,rs13146355,Chronic Kidney Disease,SHROOM3,Low,,GWAS Catalog
+edge_00408,disease_obesity,snp_rs17024258,Obesity,rs17024258,Disease-SNP,26.06,26.06,1,rs17024258,Obesity,GNAT2,Low,,GWAS Catalog
+edge_00544,disease_type_2_diabetes,snp_rs2943641,Type 2 Diabetes,rs2943641,Disease-SNP,26.06,26.06,1,rs2943641,Type 2 Diabetes,AC062015.1 - MIR5702,Low,,GWAS Catalog
+edge_00158,disease_chronic_kidney_disease,snp_rs1936800,Chronic Kidney Disease,rs1936800,Disease-SNP,26.04,26.04,1,rs1936800,Chronic Kidney Disease,AL356534.1,Low,,GWAS Catalog
+edge_00215,disease_coronary_artery_disease,snp_rs3739998,Coronary Artery Disease,rs3739998,Disease-SNP,26.04,26.04,1,rs3739998,Coronary Artery Disease,JCAD,Low,,GWAS Catalog
+edge_00382,disease_obesity,snp_rs11042023,Obesity,rs11042023,Disease-SNP,26.04,26.04,1,rs11042023,Obesity,TRIM66,Low,,GWAS Catalog
+edge_00155,disease_chronic_kidney_disease,snp_rs17730281,Chronic Kidney Disease,rs17730281,Disease-SNP,25.82,25.82,1,rs17730281,Chronic Kidney Disease,WDR72,Low,,GWAS Catalog
+edge_00167,disease_chronic_kidney_disease,snp_rs347685,Chronic Kidney Disease,rs347685,Disease-SNP,25.82,25.82,1,rs347685,Chronic Kidney Disease,TFDP2,Low,,GWAS Catalog
+edge_00176,disease_chronic_kidney_disease,snp_rs626277,Chronic Kidney Disease,rs626277,Disease-SNP,25.82,25.82,1,rs626277,Chronic Kidney Disease,DACH1,Low,,GWAS Catalog
+edge_00397,disease_obesity,snp_rs13078807,Obesity,rs13078807,Disease-SNP,25.82,25.82,1,rs13078807,Obesity,CADM2,Low,,GWAS Catalog
+edge_00180,disease_chronic_kidney_disease,snp_rs653178,Chronic Kidney Disease,rs653178,Disease-SNP,25.77,25.77,1,rs653178,Chronic Kidney Disease,ATXN2,Low,,GWAS Catalog
+edge_00269,disease_hypertension,snp_rs16849225,Hypertension,rs16849225,Disease-SNP,25.77,25.77,1,rs16849225,Hypertension,AC016766.1,Low,,GWAS Catalog
+edge_00134,disease_chronic_kidney_disease,snp_rs10277115,Chronic Kidney Disease,rs10277115,Disease-SNP,25.72,25.72,1,rs10277115,Chronic Kidney Disease,UNCX - AC073094.1,Low,,GWAS Catalog
+edge_00208,disease_coronary_artery_disease,snp_rs11066015,Coronary Artery Disease,rs11066015,Disease-SNP,25.72,25.72,1,rs11066015,Coronary Artery Disease,ACAD10,Low,,GWAS Catalog
+edge_00555,disease_type_2_diabetes,snp_rs5215,Type 2 Diabetes,rs5215,Disease-SNP,25.72,25.72,1,rs5215,Type 2 Diabetes,KCNJ11,Low,,GWAS Catalog
+edge_00163,disease_chronic_kidney_disease,snp_rs2453533,Chronic Kidney Disease,rs2453533,Disease-SNP,25.67,25.67,1,rs2453533,Chronic Kidney Disease,AC051619.2 - RNU6-953P,Low,,GWAS Catalog
+edge_00219,disease_coronary_artery_disease,snp_rs646776,Coronary Artery Disease,rs646776,Disease-SNP,25.63,25.63,1,rs646776,Coronary Artery Disease,CELSR2 - PSRC1,Low,,GWAS Catalog
+edge_00140,disease_chronic_kidney_disease,snp_rs11864909,Chronic Kidney Disease,rs11864909,Disease-SNP,25.59,25.59,1,rs11864909,Chronic Kidney Disease,PDILT,Low,,GWAS Catalog
+edge_00266,disease_hypertension,snp_rs15285,Hypertension,rs15285,Disease-SNP,25.59,25.59,1,rs15285,Hypertension,LPL,Low,,GWAS Catalog
+edge_00281,disease_hypertension,snp_rs35444,Hypertension,rs35444,Disease-SNP,25.59,25.59,1,rs35444,Hypertension,AC008125.1 - AC078880.1,Low,,GWAS Catalog
+edge_00372,disease_obesity,snp_rs10261878,Obesity,rs10261878,Disease-SNP,25.59,25.59,1,rs10261878,Obesity,AC018706.1 - AC010719.1,Low,,GWAS Catalog
+edge_00414,disease_obesity,snp_rs17817964,Obesity,rs17817964,Disease-SNP,25.59,25.59,1,rs17817964,Obesity,FTO,Low,,GWAS Catalog
+edge_00470,disease_obesity,snp_rs887912,Obesity,rs887912,Disease-SNP,25.59,25.59,1,rs887912,Obesity,AC007092.1,Low,,GWAS Catalog
+edge_00377,disease_obesity,snp_rs10875976,Obesity,rs10875976,Disease-SNP,25.45,25.45,1,rs10875976,Obesity,BCDIN3D-AS1,Low,,GWAS Catalog
+edge_00391,disease_obesity,snp_rs12446632,Obesity,rs12446632,Disease-SNP,25.45,25.45,1,rs12446632,Obesity,GPRC5B - GPR139,Low,,GWAS Catalog
+edge_00399,disease_obesity,snp_rs1412239,Obesity,rs1412239,Disease-SNP,25.45,25.45,1,rs1412239,Obesity,LINGO2,Low,,GWAS Catalog
+edge_00434,disease_obesity,snp_rs348495,Obesity,rs348495,Disease-SNP,25.45,25.45,1,rs348495,Obesity,AC108467.1 - THAP12P9,Low,,GWAS Catalog
+edge_00139,disease_chronic_kidney_disease,snp_rs11123170,Chronic Kidney Disease,rs11123170,Disease-SNP,25.37,25.37,1,rs11123170,Chronic Kidney Disease,PAX8-AS1,Low,,GWAS Catalog
+edge_00181,disease_chronic_kidney_disease,snp_rs671,Chronic Kidney Disease,rs671,Disease-SNP,25.37,25.37,1,rs671,Chronic Kidney Disease,ALDH2,Low,,GWAS Catalog
+edge_00286,disease_hypertension,snp_rs780093,Hypertension,rs780093,Disease-SNP,25.37,25.37,1,rs780093,Hypertension,GCKR,Low,,GWAS Catalog
+edge_00287,disease_hypertension,snp_rs880315,Hypertension,rs880315,Disease-SNP,25.37,25.37,1,rs880315,Hypertension,CASZ1,Low,,GWAS Catalog
+edge_00552,disease_type_2_diabetes,snp_rs4712524,Type 2 Diabetes,rs4712524,Disease-SNP,25.37,25.37,1,rs4712524,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00439,disease_obesity,snp_rs4735692,Obesity,rs4735692,Disease-SNP,25.32,25.32,1,rs4735692,Obesity,HNF4G - AC011029.1,Low,,GWAS Catalog
+edge_00276,disease_hypertension,snp_rs2217560,Hypertension,rs2217560,Disease-SNP,25.21,25.21,1,rs2217560,Hypertension,AC069114.1 - CBLN2,Low,,GWAS Catalog
+edge_00050,disease_asthma,snp_rs1342326,Asthma,rs1342326,Disease-SNP,25.16,25.16,1,rs1342326,Asthma,AL162384.1 - GTF3AP1,Low,,GWAS Catalog
+edge_00136,disease_chronic_kidney_disease,snp_rs10774021,Chronic Kidney Disease,rs10774021,Disease-SNP,25.14,25.14,1,rs10774021,Chronic Kidney Disease,SLC6A13,Low,,GWAS Catalog
+edge_00169,disease_chronic_kidney_disease,snp_rs3828890,Chronic Kidney Disease,rs3828890,Disease-SNP,25.14,25.14,1,rs3828890,Chronic Kidney Disease,HCP5,Low,,GWAS Catalog
+edge_00186,disease_chronic_kidney_disease,snp_rs889472,Chronic Kidney Disease,rs889472,Disease-SNP,25.14,25.14,1,rs889472,Chronic Kidney Disease,AC009159.3 - AC009159.1,Low,,GWAS Catalog
+edge_00189,disease_chronic_kidney_disease,snp_rs963837,Chronic Kidney Disease,rs963837,Disease-SNP,25.14,25.14,1,rs963837,Chronic Kidney Disease,MPPED2-AS1 - AL122014.1,Low,,GWAS Catalog
+edge_00267,disease_hypertension,snp_rs1530440,Hypertension,rs1530440,Disease-SNP,25.14,25.14,1,rs1530440,Hypertension,CABCOCO1,Low,,GWAS Catalog
+edge_00436,disease_obesity,snp_rs3749147,Obesity,rs3749147,Disease-SNP,25.14,25.14,1,rs3749147,Obesity,GPN1,Low,,GWAS Catalog
+edge_00562,disease_type_2_diabetes,snp_rs6769511,Type 2 Diabetes,rs6769511,Disease-SNP,25.14,25.14,1,rs6769511,Type 2 Diabetes,IGF2BP2,Low,,GWAS Catalog
+edge_00141,disease_chronic_kidney_disease,snp_rs11868441,Chronic Kidney Disease,rs11868441,Disease-SNP,25.0,25.0,1,rs11868441,Chronic Kidney Disease,BCAS3,Low,,GWAS Catalog
+edge_00160,disease_chronic_kidney_disease,snp_rs2074356,Chronic Kidney Disease,rs2074356,Disease-SNP,25.0,25.0,1,rs2074356,Chronic Kidney Disease,HECTD4,Low,,GWAS Catalog
+edge_00179,disease_chronic_kidney_disease,snp_rs6465825,Chronic Kidney Disease,rs6465825,Disease-SNP,25.0,25.0,1,rs6465825,Chronic Kidney Disease,RSBN1L - TMEM60,Low,,GWAS Catalog
+edge_00394,disease_obesity,snp_rs12970134,Obesity,rs12970134,Disease-SNP,25.0,25.0,1,rs12970134,Obesity,AC090771.1 - AC090621.1,Low,,GWAS Catalog
+edge_00416,disease_obesity,snp_rs1919128,Obesity,rs1919128,Disease-SNP,25.0,25.0,1,rs1919128,Obesity,C2ORF16,Low,,GWAS Catalog
+edge_00450,disease_obesity,snp_rs6731302,Obesity,rs6731302,Disease-SNP,25.0,25.0,1,rs6731302,Obesity,LINC01122,Low,,GWAS Catalog
+edge_00472,disease_obesity,snp_rs9568867,Obesity,rs9568867,Disease-SNP,25.0,25.0,1,rs9568867,Obesity,AL356295.1,Low,,GWAS Catalog
+edge_00063,disease_asthma,snp_rs3771166,Asthma,rs3771166,Disease-SNP,24.92,24.92,1,rs3771166,Asthma,IL18R1,Low,,GWAS Catalog
+edge_00262,disease_hypertension,snp_rs11823543,Hypertension,rs11823543,Disease-SNP,24.92,24.92,1,rs11823543,Hypertension,ZPR1,Low,,GWAS Catalog
+edge_00263,disease_hypertension,snp_rs11825181,Hypertension,rs11825181,Disease-SNP,24.92,24.92,1,rs11825181,Hypertension,BUD13,Low,,GWAS Catalog
+edge_00404,disease_obesity,snp_rs1516725,Obesity,rs1516725,Disease-SNP,24.92,24.92,1,rs1516725,Obesity,ETV5,Low,,GWAS Catalog
+edge_00426,disease_obesity,snp_rs2370983,Obesity,rs2370983,Disease-SNP,24.92,24.92,1,rs2370983,Obesity,NRXN3,Low,,GWAS Catalog
+edge_00530,disease_type_2_diabetes,snp_rs11212617,Type 2 Diabetes,rs11212617,Disease-SNP,24.92,24.92,1,rs11212617,Type 2 Diabetes,C11ORF65,Low,,GWAS Catalog
+edge_00074,disease_asthma,snp_rs744910,Asthma,rs744910,Disease-SNP,24.87,24.87,1,rs744910,Asthma,SMAD3,Low,,GWAS Catalog
+edge_00133,disease_chronic_kidney_disease,snp_rs10275044,Chronic Kidney Disease,rs10275044,Disease-SNP,24.87,24.87,1,rs10275044,Chronic Kidney Disease,UNCX,Low,,GWAS Catalog
+edge_00388,disease_obesity,snp_rs11639988,Obesity,rs11639988,Disease-SNP,24.87,24.87,1,rs11639988,Obesity,GPRC5B - GPR139,Low,,GWAS Catalog
+edge_00420,disease_obesity,snp_rs2112347,Obesity,rs2112347,Disease-SNP,24.87,24.87,1,rs2112347,Obesity,POC5 - SLC25A5P9,Low,,GWAS Catalog
+edge_00065,disease_asthma,snp_rs3894194,Asthma,rs3894194,Disease-SNP,24.82,24.82,1,rs3894194,Asthma,GSDMA,Low,,GWAS Catalog
+edge_00270,disease_hypertension,snp_rs16948048,Hypertension,rs16948048,Disease-SNP,24.82,24.82,1,rs16948048,Hypertension,AC091180.3,Low,,GWAS Catalog
+edge_00395,disease_obesity,snp_rs13022873,Obesity,rs13022873,Disease-SNP,24.82,24.82,1,rs13022873,Obesity,ZNF512,Low,,GWAS Catalog
+edge_00403,disease_obesity,snp_rs1514177,Obesity,rs1514177,Disease-SNP,24.82,24.82,1,rs1514177,Obesity,FPGT-TNNI3K,Low,,GWAS Catalog
+edge_00453,disease_obesity,snp_rs7184597,Obesity,rs7184597,Disease-SNP,24.76,24.76,1,rs7184597,Obesity,RABEP2,Low,,GWAS Catalog
+edge_00071,disease_asthma,snp_rs643507,Asthma,rs643507,Disease-SNP,24.73,24.73,1,rs643507,Asthma,CHORDC1P4,Low,,GWAS Catalog
+edge_00218,disease_coronary_artery_disease,snp_rs514659,Coronary Artery Disease,rs514659,Disease-SNP,24.73,24.73,1,rs514659,Coronary Artery Disease,ABO,Low,,GWAS Catalog
+edge_00175,disease_chronic_kidney_disease,snp_rs6026584,Chronic Kidney Disease,rs6026584,Disease-SNP,24.71,24.71,1,rs6026584,Chronic Kidney Disease,GNAS,Low,,GWAS Catalog
+edge_00280,disease_hypertension,snp_rs2954033,Hypertension,rs2954033,Disease-SNP,24.71,24.71,1,rs2954033,Hypertension,AC091114.1,Low,,GWAS Catalog
+edge_00284,disease_hypertension,snp_rs6825911,Hypertension,rs6825911,Disease-SNP,24.71,24.71,1,rs6825911,Hypertension,ENPEP,Low,,GWAS Catalog
+edge_00464,disease_obesity,snp_rs7826222,Obesity,rs7826222,Disease-SNP,24.71,24.71,1,rs7826222,Obesity,AC034111.2,Low,,GWAS Catalog
+edge_00058,disease_asthma,snp_rs2284033,Asthma,rs2284033,Disease-SNP,24.69,24.69,1,rs2284033,Asthma,IL2RB,Low,,GWAS Catalog
+edge_00132,disease_chronic_kidney_disease,snp_rs10109414,Chronic Kidney Disease,rs10109414,Disease-SNP,24.69,24.69,1,rs10109414,Chronic Kidney Disease,STC1 - RNU1-148P,Low,,GWAS Catalog
+edge_00137,disease_chronic_kidney_disease,snp_rs10794720,Chronic Kidney Disease,rs10794720,Disease-SNP,24.69,24.69,1,rs10794720,Chronic Kidney Disease,WDR37,Low,,GWAS Catalog
+edge_00264,disease_hypertension,snp_rs12946454,Hypertension,rs12946454,Disease-SNP,24.69,24.69,1,rs12946454,Hypertension,PLCD3,Low,,GWAS Catalog
+edge_00272,disease_hypertension,snp_rs17030613,Hypertension,rs17030613,Disease-SNP,24.69,24.69,1,rs17030613,Hypertension,CAPZA1,Low,,GWAS Catalog
+edge_00402,disease_obesity,snp_rs1514174,Obesity,rs1514174,Disease-SNP,24.69,24.69,1,rs1514174,Obesity,FPGT-TNNI3K,Low,,GWAS Catalog
+edge_00466,disease_obesity,snp_rs7989336,Obesity,rs7989336,Disease-SNP,24.69,24.69,1,rs7989336,Obesity,HS6ST3,Low,,GWAS Catalog
+edge_00527,disease_type_2_diabetes,snp_rs10946398,Type 2 Diabetes,rs10946398,Disease-SNP,24.69,24.69,1,rs10946398,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00550,disease_type_2_diabetes,snp_rs4689388,Type 2 Diabetes,rs4689388,Disease-SNP,24.69,24.69,1,rs4689388,Type 2 Diabetes,AC116317.2 - WFS1,Low,,GWAS Catalog
+edge_00261,disease_hypertension,snp_rs1173766,Hypertension,rs1173766,Disease-SNP,24.55,24.55,1,rs1173766,Hypertension,NPR3 - AC025459.1,Low,,GWAS Catalog
+edge_00396,disease_obesity,snp_rs13041126,Obesity,rs13041126,Disease-SNP,24.55,24.55,1,rs13041126,Obesity,LINC01524,Low,,GWAS Catalog
+edge_00457,disease_obesity,snp_rs7503807,Obesity,rs7503807,Disease-SNP,24.55,24.55,1,rs7503807,Obesity,RPTOR,Low,,GWAS Catalog
+edge_00052,disease_asthma,snp_rs1588265,Asthma,rs1588265,Disease-SNP,24.47,24.47,1,rs1588265,Asthma,PDE4D,Low,,GWAS Catalog
+edge_00380,disease_obesity,snp_rs10968576,Obesity,rs10968576,Disease-SNP,24.47,24.47,1,rs10968576,Obesity,LINGO2,Low,,GWAS Catalog
+edge_00411,disease_obesity,snp_rs17381664,Obesity,rs17381664,Disease-SNP,24.47,24.47,1,rs17381664,Obesity,AC118549.1,Low,,GWAS Catalog
+edge_00429,disease_obesity,snp_rs2605100,Obesity,rs2605100,Disease-SNP,24.47,24.47,1,rs2605100,Obesity,LYPLAL1-AS1 - AL356364.1,Low,,GWAS Catalog
+edge_00524,disease_type_2_diabetes,snp_rs1048886,Type 2 Diabetes,rs1048886,Disease-SNP,24.47,24.47,1,rs1048886,Type 2 Diabetes,SDHAF4,Low,,GWAS Catalog
+edge_00277,disease_hypertension,snp_rs2266788,Hypertension,rs2266788,Disease-SNP,24.42,24.42,1,rs2266788,Hypertension,APOA5,Low,,GWAS Catalog
+edge_00427,disease_obesity,snp_rs2531995,Obesity,rs2531995,Disease-SNP,24.42,24.42,1,rs2531995,Obesity,ADCY9,Low,,GWAS Catalog
+edge_00460,disease_obesity,snp_rs7586879,Obesity,rs7586879,Disease-SNP,24.42,24.42,1,rs7586879,Obesity,ADCY3,Low,,GWAS Catalog
+edge_00369,disease_obesity,snp_rs10146997,Obesity,rs10146997,Disease-SNP,24.37,24.37,1,rs10146997,Obesity,NRXN3,Low,,GWAS Catalog
+edge_00575,disease_type_2_diabetes,snp_rs9300039,Type 2 Diabetes,rs9300039,Disease-SNP,24.34,24.34,1,rs9300039,Type 2 Diabetes,AC023442.2 - LINC02745,Low,,GWAS Catalog
+edge_00561,disease_type_2_diabetes,snp_rs6723108,Type 2 Diabetes,rs6723108,Disease-SNP,24.31,24.31,1,rs6723108,Type 2 Diabetes,AC110620.2,Low,,GWAS Catalog
+edge_00275,disease_hypertension,snp_rs1918974,Hypertension,rs1918974,Disease-SNP,24.28,24.28,1,rs1918974,Hypertension,MECOM-AS1,Low,,GWAS Catalog
+edge_00075,disease_asthma,snp_rs7775861,Asthma,rs7775861,Disease-SNP,24.26,24.26,1,rs7775861,Asthma,FTH1P5 - AL158050.2,Low,,GWAS Catalog
+edge_00042,disease_asthma,snp_rs11071559,Asthma,rs11071559,Disease-SNP,24.24,24.24,1,rs11071559,Asthma,RORA,Low,,GWAS Catalog
+edge_00047,disease_asthma,snp_rs1295686,Asthma,rs1295686,Disease-SNP,24.24,24.24,1,rs1295686,Asthma,IL13,Low,,GWAS Catalog
+edge_00059,disease_asthma,snp_rs2305480,Asthma,rs2305480,Disease-SNP,24.24,24.24,1,rs2305480,Asthma,GSDMB,Low,,GWAS Catalog
+edge_00142,disease_chronic_kidney_disease,snp_rs11959928,Chronic Kidney Disease,rs11959928,Disease-SNP,24.24,24.24,1,rs11959928,Chronic Kidney Disease,DAB2,Low,,GWAS Catalog
+edge_00157,disease_chronic_kidney_disease,snp_rs1933182,Chronic Kidney Disease,rs1933182,Disease-SNP,24.24,24.24,1,rs1933182,Chronic Kidney Disease,PSMA5 - SYPL2,Low,,GWAS Catalog
+edge_00166,disease_chronic_kidney_disease,snp_rs2797369,Chronic Kidney Disease,rs2797369,Disease-SNP,24.24,24.24,1,rs2797369,Chronic Kidney Disease,GRIK2,Low,,GWAS Catalog
+edge_00171,disease_chronic_kidney_disease,snp_rs4014195,Chronic Kidney Disease,rs4014195,Disease-SNP,24.24,24.24,1,rs4014195,Chronic Kidney Disease,KRT8P26 - AP001266.2,Low,,GWAS Catalog
+edge_00041,disease_asthma,snp_rs10818854,Asthma,rs10818854,Disease-SNP,24.1,24.1,1,rs10818854,Asthma,DENND1A,Low,,GWAS Catalog
+edge_00056,disease_asthma,snp_rs2073643,Asthma,rs2073643,Disease-SNP,24.1,24.1,1,rs2073643,Asthma,SLC22A5,Low,,GWAS Catalog
+edge_00145,disease_chronic_kidney_disease,snp_rs12654812,Chronic Kidney Disease,rs12654812,Disease-SNP,24.1,24.1,1,rs12654812,Chronic Kidney Disease,RGS14,Low,,GWAS Catalog
+edge_00152,disease_chronic_kidney_disease,snp_rs16864170,Chronic Kidney Disease,rs16864170,Disease-SNP,24.1,24.1,1,rs16864170,Chronic Kidney Disease,AC010729.1 - LINC01810,Low,,GWAS Catalog
+edge_00161,disease_chronic_kidney_disease,snp_rs2206271,Chronic Kidney Disease,rs2206271,Disease-SNP,24.1,24.1,1,rs2206271,Chronic Kidney Disease,TFAP2D - TFAP2B,Low,,GWAS Catalog
+edge_00283,disease_hypertension,snp_rs6749447,Hypertension,rs6749447,Disease-SNP,24.1,24.1,1,rs6749447,Hypertension,STK39,Low,,GWAS Catalog
+edge_00577,disease_type_2_diabetes,snp_rs9939609,Type 2 Diabetes,rs9939609,Disease-SNP,24.1,24.1,1,rs9939609,Type 2 Diabetes,FTO,Low,,GWAS Catalog
+edge_00057,disease_asthma,snp_rs2244012,Asthma,rs2244012,Disease-SNP,24.02,24.02,1,rs2244012,Asthma,RAD50,Low,,GWAS Catalog
+edge_00447,disease_obesity,snp_rs6429082,Obesity,rs6429082,Disease-SNP,24.02,24.02,1,rs6429082,Obesity,TBCE,Low,,GWAS Catalog
+edge_00576,disease_type_2_diabetes,snp_rs9465871,Type 2 Diabetes,rs9465871,Disease-SNP,24.02,24.02,1,rs9465871,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00069,disease_asthma,snp_rs58667,Asthma,rs58667,Disease-SNP,23.97,23.97,1,rs58667,Asthma,AL008718.2 - AL008718.1,Low,,GWAS Catalog
+edge_00432,disease_obesity,snp_rs297325,Obesity,rs297325,Disease-SNP,23.97,23.97,1,rs297325,Obesity,SOX6,Low,,GWAS Catalog
+edge_00532,disease_type_2_diabetes,snp_rs12027542,Type 2 Diabetes,rs12027542,Disease-SNP,23.97,23.97,1,rs12027542,Type 2 Diabetes,PCNX2,Low,,GWAS Catalog
+edge_00070,disease_asthma,snp_rs6097169,Asthma,rs6097169,Disease-SNP,23.92,23.92,1,rs6097169,Asthma,RPL36P1 - TSHZ2,Low,,GWAS Catalog
+edge_00214,disease_coronary_artery_disease,snp_rs2259816,Coronary Artery Disease,rs2259816,Disease-SNP,23.92,23.92,1,rs2259816,Coronary Artery Disease,HNF1A,Low,,GWAS Catalog
+edge_00440,disease_obesity,snp_rs4756846,Obesity,rs4756846,Disease-SNP,23.92,23.92,1,rs4756846,Obesity,SOX6,Low,,GWAS Catalog
+edge_00564,disease_type_2_diabetes,snp_rs7119,Type 2 Diabetes,rs7119,Disease-SNP,23.92,23.92,1,rs7119,Type 2 Diabetes,AC090984.1,Low,,GWAS Catalog
+edge_00067,disease_asthma,snp_rs4752066,Asthma,rs4752066,Disease-SNP,23.89,23.89,1,rs4752066,Asthma,AC005871.2,Low,,GWAS Catalog
+edge_00223,disease_coronary_artery_disease,snp_rs9508025,Coronary Artery Disease,rs9508025,Disease-SNP,23.89,23.89,1,rs9508025,Coronary Artery Disease,FLT1,Low,,GWAS Catalog
+edge_00534,disease_type_2_diabetes,snp_rs12518099,Type 2 Diabetes,rs12518099,Disease-SNP,23.86,23.86,1,rs12518099,Type 2 Diabetes,LINC01339,Low,,GWAS Catalog
+edge_00279,disease_hypertension,snp_rs2820037,Hypertension,rs2820037,Disease-SNP,23.83,23.83,1,rs2820037,Hypertension,AC093426.1 - CHRM3,Low,,GWAS Catalog
+edge_00455,disease_obesity,snp_rs7474896,Obesity,rs7474896,Disease-SNP,23.81,23.81,1,rs7474896,Obesity,MTRNR2L7 - AL132657.1,Low,,GWAS Catalog
+edge_00076,disease_asthma,snp_rs8074700,Asthma,rs8074700,Disease-SNP,23.79,23.79,1,rs8074700,Asthma,LINC02086,Low,,GWAS Catalog
+edge_00222,disease_coronary_artery_disease,snp_rs886126,Coronary Artery Disease,rs886126,Disease-SNP,23.79,23.79,1,rs886126,Coronary Artery Disease,CUX2,Low,,GWAS Catalog
+edge_00449,disease_obesity,snp_rs6726292,Obesity,rs6726292,Disease-SNP,23.79,23.79,1,rs6726292,Obesity,EML6,Low,,GWAS Catalog
+edge_00479,disease_obesity,snp_rs999943,Obesity,rs999943,Disease-SNP,23.79,23.79,1,rs999943,Obesity,ITPR3,Low,,GWAS Catalog
+edge_00557,disease_type_2_diabetes,snp_rs564398,Type 2 Diabetes,rs564398,Disease-SNP,23.79,23.79,1,rs564398,Type 2 Diabetes,AL359922.1,Low,,GWAS Catalog
+edge_00170,disease_chronic_kidney_disease,snp_rs3925584,Chronic Kidney Disease,rs3925584,Disease-SNP,23.78,23.78,1,rs3925584,Chronic Kidney Disease,MPPED2-AS1 - AL122014.1,Low,,GWAS Catalog
+edge_00055,disease_asthma,snp_rs2033654,Asthma,rs2033654,Disease-SNP,23.65,23.65,1,rs2033654,Asthma,ADCY3,Low,,GWAS Catalog
+edge_00060,disease_asthma,snp_rs2326017,Asthma,rs2326017,Disease-SNP,23.65,23.65,1,rs2326017,Asthma,AC103702.2,Low,,GWAS Catalog
+edge_00154,disease_chronic_kidney_disease,snp_rs17663555,Chronic Kidney Disease,rs17663555,Disease-SNP,23.65,23.65,1,rs17663555,Chronic Kidney Disease,AC116345.3,Low,,GWAS Catalog
+edge_00212,disease_coronary_artery_disease,snp_rs17672135,Coronary Artery Disease,rs17672135,Disease-SNP,23.65,23.65,1,rs17672135,Coronary Artery Disease,FMN2,Low,,GWAS Catalog
+edge_00558,disease_type_2_diabetes,snp_rs642858,Type 2 Diabetes,rs642858,Disease-SNP,23.65,23.65,1,rs642858,Type 2 Diabetes,AL050338.2,Low,,GWAS Catalog
+edge_00049,disease_asthma,snp_rs1317830,Asthma,rs1317830,Disease-SNP,23.57,23.57,1,rs1317830,Asthma,AC093913.1 - AC020589.1,Low,,GWAS Catalog
+edge_00051,disease_asthma,snp_rs1530016,Asthma,rs1530016,Disease-SNP,23.57,23.57,1,rs1530016,Asthma,EFR3B,Low,,GWAS Catalog
+edge_00061,disease_asthma,snp_rs2555603,Asthma,rs2555603,Disease-SNP,23.57,23.57,1,rs2555603,Asthma,STARD13-AS,Low,,GWAS Catalog
+edge_00078,disease_asthma,snp_rs9319321,Asthma,rs9319321,Disease-SNP,23.57,23.57,1,rs9319321,Asthma,GPR12 - FGFR1OP2P1,Low,,GWAS Catalog
+edge_00374,disease_obesity,snp_rs10433903,Obesity,rs10433903,Disease-SNP,23.57,23.57,1,rs10433903,Obesity,TRAM1L1 - AC107399.1,Low,,GWAS Catalog
+edge_00531,disease_type_2_diabetes,snp_rs11677370,Type 2 Diabetes,rs11677370,Disease-SNP,23.57,23.57,1,rs11677370,Type 2 Diabetes,DCDC2C,Low,,GWAS Catalog
+edge_00539,disease_type_2_diabetes,snp_rs2063640,Type 2 Diabetes,rs2063640,Disease-SNP,23.57,23.57,1,rs2063640,Type 2 Diabetes,ZPLD1 - AC063938.1,Low,,GWAS Catalog
+edge_00046,disease_asthma,snp_rs1291183,Asthma,rs1291183,Disease-SNP,23.52,23.52,1,rs1291183,Asthma,BOLA2P1 - AP000894.1,Low,,GWAS Catalog
+edge_00073,disease_asthma,snp_rs713587,Asthma,rs713587,Disease-SNP,23.52,23.52,1,rs713587,Asthma,ADCY3 - DNAJC27,Low,,GWAS Catalog
+edge_00220,disease_coronary_artery_disease,snp_rs688034,Coronary Artery Disease,rs688034,Disease-SNP,23.52,23.52,1,rs688034,Coronary Artery Disease,SEZ6L,Low,,GWAS Catalog
+edge_00389,disease_obesity,snp_rs12295638,Obesity,rs12295638,Disease-SNP,23.52,23.52,1,rs12295638,Obesity,ANO3,Low,,GWAS Catalog
+edge_00401,disease_obesity,snp_rs1435703,Obesity,rs1435703,Disease-SNP,23.52,23.52,1,rs1435703,Obesity,RARB,Low,,GWAS Catalog
+edge_00435,disease_obesity,snp_rs374748,Obesity,rs374748,Disease-SNP,23.52,23.52,1,rs374748,Obesity,FBN2,Low,,GWAS Catalog
+edge_00523,disease_type_2_diabetes,snp_rs10461617,Type 2 Diabetes,rs10461617,Disease-SNP,23.52,23.52,1,rs10461617,Type 2 Diabetes,AC008940.1 - MAP3K1,Low,,GWAS Catalog
+edge_00529,disease_type_2_diabetes,snp_rs11165354,Type 2 Diabetes,rs11165354,Disease-SNP,23.52,23.52,1,rs11165354,Type 2 Diabetes,TGFBR3,Low,,GWAS Catalog
+edge_00543,disease_type_2_diabetes,snp_rs2833610,Type 2 Diabetes,rs2833610,Disease-SNP,23.52,23.52,1,rs2833610,Type 2 Diabetes,HUNK,Low,,GWAS Catalog
+edge_00188,disease_chronic_kidney_disease,snp_rs9397738,Chronic Kidney Disease,rs9397738,Disease-SNP,23.47,23.47,1,rs9397738,Chronic Kidney Disease,AL591419.1 - AL591499.1,Low,,GWAS Catalog
+edge_00288,disease_hypertension,snp_rs991316,Hypertension,rs991316,Disease-SNP,23.47,23.47,1,rs991316,Hypertension,ADH1B - ADH7,Low,,GWAS Catalog
+edge_00381,disease_obesity,snp_rs10999409,Obesity,rs10999409,Disease-SNP,23.47,23.47,1,rs10999409,Obesity,PALD1 - PRF1,Low,,GWAS Catalog
+edge_00393,disease_obesity,snp_rs12635698,Obesity,rs12635698,Disease-SNP,23.47,23.47,1,rs12635698,Obesity,AC090948.4,Low,,GWAS Catalog
+edge_00445,disease_obesity,snp_rs6110577,Obesity,rs6110577,Disease-SNP,23.47,23.47,1,rs6110577,Obesity,MACROD2,Low,,GWAS Catalog
+edge_00525,disease_type_2_diabetes,snp_rs10741243,Type 2 Diabetes,rs10741243,Disease-SNP,23.47,23.47,1,rs10741243,Type 2 Diabetes,TCERG1L,Low,,GWAS Catalog
+edge_00554,disease_type_2_diabetes,snp_rs5015480,Type 2 Diabetes,rs5015480,Disease-SNP,23.47,23.47,1,rs5015480,Type 2 Diabetes,HHEX - AL590080.1,Low,,GWAS Catalog
+edge_00568,disease_type_2_diabetes,snp_rs7636,Type 2 Diabetes,rs7636,Disease-SNP,23.47,23.47,1,rs7636,Type 2 Diabetes,ACHE,Low,,GWAS Catalog
+edge_00040,disease_asthma,snp_rs10762058,Asthma,rs10762058,Disease-SNP,23.44,23.44,1,rs10762058,Asthma,CTNNA3,Low,,GWAS Catalog
+edge_00221,disease_coronary_artery_disease,snp_rs8055236,Coronary Artery Disease,rs8055236,Disease-SNP,23.44,23.44,1,rs8055236,Coronary Artery Disease,CDH13,Low,,GWAS Catalog
+edge_00278,disease_hypertension,snp_rs2398162,Hypertension,rs2398162,Disease-SNP,23.44,23.44,1,rs2398162,Hypertension,NR2F2-AS1,Low,,GWAS Catalog
+edge_00424,disease_obesity,snp_rs2274459,Obesity,rs2274459,Disease-SNP,23.44,23.44,1,rs2274459,Obesity,LEMD2 - MLN,Low,,GWAS Catalog
+edge_00473,disease_obesity,snp_rs974417,Obesity,rs974417,Disease-SNP,23.44,23.44,1,rs974417,Obesity,KLHL32,Low,,GWAS Catalog
+edge_00043,disease_asthma,snp_rs11259403,Asthma,rs11259403,Disease-SNP,23.41,23.41,1,rs11259403,Asthma,PRKCQ,Low,,GWAS Catalog
+edge_00053,disease_asthma,snp_rs16937883,Asthma,rs16937883,Disease-SNP,23.41,23.41,1,rs16937883,Asthma,AL591222.3 - AL512635.1,Low,,GWAS Catalog
+edge_00064,disease_asthma,snp_rs3780215,Asthma,rs3780215,Disease-SNP,23.41,23.41,1,rs3780215,Asthma,SLC24A2,Low,,GWAS Catalog
+edge_00533,disease_type_2_diabetes,snp_rs12304921,Type 2 Diabetes,rs12304921,Disease-SNP,23.41,23.41,1,rs12304921,Type 2 Diabetes,HIGD1C,Low,,GWAS Catalog
+edge_00536,disease_type_2_diabetes,snp_rs1495377,Type 2 Diabetes,rs1495377,Disease-SNP,23.41,23.41,1,rs1495377,Type 2 Diabetes,TSPAN8,Low,,GWAS Catalog
+edge_00537,disease_type_2_diabetes,snp_rs17045328,Type 2 Diabetes,rs17045328,Disease-SNP,23.41,23.41,1,rs17045328,Type 2 Diabetes,CR2,Low,,GWAS Catalog
+edge_00559,disease_type_2_diabetes,snp_rs6583826,Type 2 Diabetes,rs6583826,Disease-SNP,23.41,23.41,1,rs6583826,Type 2 Diabetes,IDE - KIF11,Low,,GWAS Catalog
+edge_00567,disease_type_2_diabetes,snp_rs7630877,Type 2 Diabetes,rs7630877,Disease-SNP,23.41,23.41,1,rs7630877,Type 2 Diabetes,PEX5L,Low,,GWAS Catalog
+edge_00044,disease_asthma,snp_rs11603160,Asthma,rs11603160,Disease-SNP,23.38,23.38,1,rs11603160,Asthma,AP002761.2 - AP002761.1,Low,,GWAS Catalog
+edge_00260,disease_hypertension,snp_rs11646213,Hypertension,rs11646213,Disease-SNP,23.38,23.38,1,rs11646213,Hypertension,AC009117.2 - CDH13,Low,,GWAS Catalog
+edge_00461,disease_obesity,snp_rs7603514,Obesity,rs7603514,Disease-SNP,23.38,23.38,1,rs7603514,Obesity,PPIAP68 - AC007679.2,Low,,GWAS Catalog
+edge_00045,disease_asthma,snp_rs12468557,Asthma,rs12468557,Disease-SNP,23.36,23.36,1,rs12468557,Asthma,CPS1,Low,,GWAS Catalog
+edge_00048,disease_asthma,snp_rs12984174,Asthma,rs12984174,Disease-SNP,23.36,23.36,1,rs12984174,Asthma,ARRDC2 - AC020904.2,Low,,GWAS Catalog
+edge_00522,disease_type_2_diabetes,snp_rs10460009,Type 2 Diabetes,rs10460009,Disease-SNP,23.36,23.36,1,rs10460009,Type 2 Diabetes,LPIN2,Low,,GWAS Catalog
+edge_00546,disease_type_2_diabetes,snp_rs3773506,Type 2 Diabetes,rs3773506,Disease-SNP,23.36,23.36,1,rs3773506,Type 2 Diabetes,AC072028.1,Low,,GWAS Catalog
+edge_00547,disease_type_2_diabetes,snp_rs3792615,Type 2 Diabetes,rs3792615,Disease-SNP,23.36,23.36,1,rs3792615,Type 2 Diabetes,MARCHF1,Low,,GWAS Catalog
+edge_00553,disease_type_2_diabetes,snp_rs472265,Type 2 Diabetes,rs472265,Disease-SNP,23.36,23.36,1,rs472265,Type 2 Diabetes,ACP7,Low,,GWAS Catalog
+edge_00569,disease_type_2_diabetes,snp_rs7659604,Type 2 Diabetes,rs7659604,Disease-SNP,23.36,23.36,1,rs7659604,Type 2 Diabetes,ANXA5 - TMEM155,Low,,GWAS Catalog
+edge_00574,disease_type_2_diabetes,snp_rs9295474,Type 2 Diabetes,rs9295474,Disease-SNP,23.36,23.36,1,rs9295474,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00062,disease_asthma,snp_rs2786098,Asthma,rs2786098,Disease-SNP,21.8,21.8,1,rs2786098,Asthma,CRB1,Low,,GWAS Catalog
+edge_00209,disease_coronary_artery_disease,snp_rs11748327,Coronary Artery Disease,rs11748327,Disease-SNP,21.62,21.62,1,rs11748327,Coronary Artery Disease,AC025773.1 - AC025187.1,Low,,GWAS Catalog
+edge_00413,disease_obesity,snp_rs17817449,Obesity,rs17817449,Disease-SNP,21.35,21.35,1,rs17817449,Obesity,FTO,Low,,GWAS Catalog
+edge_00257,disease_hypertension,snp_rs10495809,Hypertension,rs10495809,Disease-SNP,20.37,20.37,1,rs10495809,Hypertension,LINC01320,Low,,GWAS Catalog
+edge_00210,disease_coronary_artery_disease,snp_rs1333042,Coronary Artery Disease,rs1333042,Disease-SNP,20.14,20.14,1,rs1333042,Coronary Artery Disease,CDKN2B-AS1,Low,,GWAS Catalog
+edge_00387,disease_obesity,snp_rs11624704,Obesity,rs11624704,Disease-SNP,19.92,19.92,1,rs11624704,Obesity,NRXN3,Low,,GWAS Catalog
+edge_00563,disease_type_2_diabetes,snp_rs7018475,Type 2 Diabetes,rs7018475,Disease-SNP,19.47,19.47,1,rs7018475,Type 2 Diabetes,CDKN2B-AS1 - AL157937.1,Low,,GWAS Catalog
+edge_00178,disease_chronic_kidney_disease,snp_rs6431731,Chronic Kidney Disease,rs6431731,Disease-SNP,19.42,19.42,1,rs6431731,Chronic Kidney Disease,LINC01804,Low,,GWAS Catalog
+edge_00384,disease_obesity,snp_rs11088859,Obesity,rs11088859,Disease-SNP,19.42,19.42,1,rs11088859,Obesity,NCAM2,Low,,GWAS Catalog
+edge_00386,disease_obesity,snp_rs1121980,Obesity,rs1121980,Disease-SNP,19.42,19.42,1,rs1121980,Obesity,FTO,Low,,GWAS Catalog
+edge_00392,disease_obesity,snp_rs1260326,Obesity,rs1260326,Disease-SNP,19.42,19.42,1,rs1260326,Obesity,GCKR,Low,,GWAS Catalog
+edge_00566,disease_type_2_diabetes,snp_rs7593730,Type 2 Diabetes,rs7593730,Disease-SNP,19.42,19.42,1,rs7593730,Type 2 Diabetes,RBMS1,Low,,GWAS Catalog
+edge_00410,disease_obesity,snp_rs17126232,Obesity,rs17126232,Disease-SNP,19.28,19.28,1,rs17126232,Obesity,AC124242.3,Low,,GWAS Catalog
+edge_00459,disease_obesity,snp_rs7581710,Obesity,rs7581710,Disease-SNP,19.1,19.1,1,rs7581710,Obesity,INHBB - LINC01101,Low,,GWAS Catalog
+edge_00430,disease_obesity,snp_rs2807278,Obesity,rs2807278,Disease-SNP,19.02,19.02,1,rs2807278,Obesity,ARG1,Low,,GWAS Catalog
+edge_00441,disease_obesity,snp_rs489693,Obesity,rs489693,Disease-SNP,18.97,18.97,1,rs489693,Obesity,AC090771.1 - AC090621.1,Low,,GWAS Catalog
+edge_00379,disease_obesity,snp_rs10953454,Obesity,rs10953454,Disease-SNP,18.86,18.86,1,rs10953454,Obesity,LHFPL3,Low,,GWAS Catalog
+edge_00409,disease_obesity,snp_rs17081231,Obesity,rs17081231,Disease-SNP,18.86,18.86,1,rs17081231,Obesity,PCDH9,Low,,GWAS Catalog
+edge_00444,disease_obesity,snp_rs5762430,Obesity,rs5762430,Disease-SNP,18.86,18.86,1,rs5762430,Obesity,TTC28,Low,,GWAS Catalog
+edge_00476,disease_obesity,snp_rs9923451,Obesity,rs9923451,Disease-SNP,18.83,18.83,1,rs9923451,Obesity,WWOX,Low,,GWAS Catalog
+edge_00054,disease_asthma,snp_rs17525472,Asthma,rs17525472,Disease-SNP,18.65,18.65,1,rs17525472,Asthma,DMXL2 - SCG3,Low,,GWAS Catalog
+edge_00407,disease_obesity,snp_rs16867321,Obesity,rs16867321,Disease-SNP,18.65,18.65,1,rs16867321,Obesity,AC012669.1 - AC009478.1,Low,,GWAS Catalog
+edge_00438,disease_obesity,snp_rs4701252,Obesity,rs4701252,Disease-SNP,18.65,18.65,1,rs4701252,Obesity,CDH12,Low,,GWAS Catalog
+edge_00268,disease_hypertension,snp_rs1550576,Hypertension,rs1550576,Disease-SNP,18.57,18.57,1,rs1550576,Hypertension,POLR2M - ALDH1A2,Low,,GWAS Catalog
+edge_00405,disease_obesity,snp_rs1555967,Obesity,rs1555967,Disease-SNP,18.57,18.57,1,rs1555967,Obesity,FTH1P5 - AL158050.2,Low,,GWAS Catalog
+edge_00545,disease_type_2_diabetes,snp_rs358806,Type 2 Diabetes,rs358806,Disease-SNP,18.57,18.57,1,rs358806,Type 2 Diabetes,LINC02030,Low,,GWAS Catalog
+edge_00419,disease_obesity,snp_rs2083637,Obesity,rs2083637,Disease-SNP,18.47,18.47,1,rs2083637,Obesity,LPL - AC100802.1,Low,,GWAS Catalog
+edge_00465,disease_obesity,snp_rs7932813,Obesity,rs7932813,Disease-SNP,18.47,18.47,1,rs7932813,Obesity,CYB5R2 - OVCH2,Low,,GWAS Catalog
+edge_00072,disease_asthma,snp_rs6456042,Asthma,rs6456042,Disease-SNP,18.44,18.44,1,rs6456042,Asthma,AL627443.1 - TBXT,Low,,GWAS Catalog
+edge_00560,disease_type_2_diabetes,snp_rs6712932,Type 2 Diabetes,rs6712932,Disease-SNP,18.44,18.44,1,rs6712932,Type 2 Diabetes,LINC01918 - GPR45,Low,,GWAS Catalog
+edge_00471,disease_obesity,snp_rs925642,Obesity,rs925642,Disease-SNP,18.41,18.41,1,rs925642,Obesity,FAT1 - AC108865.1,Low,,GWAS Catalog
+edge_00068,disease_asthma,snp_rs4815617,Asthma,rs4815617,Disease-SNP,18.38,18.38,1,rs4815617,Asthma,AP5S1 - MAVS,Low,,GWAS Catalog
+edge_00565,disease_type_2_diabetes,snp_rs741301,Type 2 Diabetes,rs741301,Disease-SNP,18.38,18.38,1,rs741301,Type 2 Diabetes,ELMO1,Low,,GWAS Catalog
+edge_00853,snp_rs7903146,gene_tcf7l2,rs7903146,TCF7L2,SNP-Gene,69.6,65.225,8,rs7903146,Type 2 Diabetes,TCF7L2,Moderate,,Demo; GWAS Catalog
+edge_00857,snp_rs8043757,gene_fto,rs8043757,FTO,SNP-Gene,66.09,66.09,1,rs8043757,Obesity,FTO,Moderate,,GWAS Catalog
+edge_00677,snp_rs1558902,gene_fto,rs1558902,FTO,SNP-Gene,65.29,63.6233,3,rs1558902,Obesity,FTO,Moderate,,GWAS Catalog
+edge_00867,snp_rs911119,gene_cst3,rs911119,CST3,SNP-Gene,61.09,61.09,1,rs911119,Chronic Kidney Disease,CST3,Moderate,,GWAS Catalog
+edge_00830,snp_rs7185735,gene_fto,rs7185735,FTO,SNP-Gene,56.64,56.64,1,rs7185735,Obesity,FTO,Moderate,,GWAS Catalog
+edge_00764,snp_rs3775948,gene_slc2a9,rs3775948,SLC2A9,SNP-Gene,50.2,50.2,1,rs3775948,Chronic Kidney Disease,SLC2A9,Moderate,,GWAS Catalog
+edge_00789,snp_rs504915,gene_nrxn2,rs504915,NRXN2,SNP-Gene,49.22,49.22,1,rs504915,Chronic Kidney Disease,NRXN2,Low,,GWAS Catalog
+edge_00646,snp_rs12917707,gene_umod,rs12917707,UMOD,SNP-Gene,47.5,43.5,2,rs12917707,Chronic Kidney Disease,UMOD,Low,,Demo; GWAS Catalog
+edge_00723,snp_rs2237892,gene_kcnq1,rs2237892,KCNQ1,SNP-Gene,44.47,44.47,2,rs2237892,Type 2 Diabetes,KCNQ1,Low,,GWAS Catalog
+edge_00612,snp_rs11075990,gene_fto,rs11075990,FTO,SNP-Gene,43.9,43.9,1,rs11075990,Obesity,FTO,Low,,GWAS Catalog
+edge_00852,snp_rs7901695,gene_tcf7l2,rs7901695,TCF7L2,SNP-Gene,42.69,42.69,1,rs7901695,Type 2 Diabetes,TCF7L2,Low,,GWAS Catalog
+edge_00658,snp_rs13266634,gene_slc30a8,rs13266634,SLC30A8,SNP-Gene,39.75,39.75,5,rs13266634,Type 2 Diabetes,SLC30A8,Low,,GWAS Catalog
+edge_00814,snp_rs6711012,gene_ac093326_1_tmem18,rs6711012,AC093326.1 - TMEM18,SNP-Gene,38.87,38.87,1,rs6711012,Obesity,AC093326.1 - TMEM18,Low,,GWAS Catalog
+edge_00735,snp_rs2383208,gene_cdkn2b_as1_al157937_1,rs2383208,CDKN2B-AS1 - AL157937.1,SNP-Gene,38.62,38.62,2,rs2383208,Type 2 Diabetes,CDKN2B-AS1 - AL157937.1,Low,,GWAS Catalog
+edge_00666,snp_rs1421085,gene_fto,rs1421085,FTO,SNP-Gene,38.29,38.29,1,rs1421085,Obesity,FTO,Low,,GWAS Catalog
+edge_00773,snp_rs4402960,gene_igf2bp2,rs4402960,IGF2BP2,SNP-Gene,38.29,38.29,4,rs4402960,Type 2 Diabetes,IGF2BP2,Low,,GWAS Catalog
+edge_00793,snp_rs538656,gene_rnu4_17p_ac090771_1,rs538656,RNU4-17P - AC090771.1,SNP-Gene,37.15,37.15,1,rs538656,Obesity,RNU4-17P - AC090771.1,Low,,GWAS Catalog
+edge_00610,snp_rs11066280,gene_hectd4,rs11066280,HECTD4,SNP-Gene,36.84,36.84,1,rs11066280,Hypertension,HECTD4,Low,,GWAS Catalog
+edge_00603,snp_rs10938397,gene_ac108467_1_thap12p9,rs10938397,AC108467.1 - THAP12P9,SNP-Gene,36.17,36.17,1,rs10938397,Obesity,AC108467.1 - THAP12P9,Low,,GWAS Catalog
+edge_00618,snp_rs11191548,gene_cnnm2,rs11191548,CNNM2,SNP-Gene,36.12,36.12,2,rs11191548,Hypertension,CNNM2,Low,,GWAS Catalog
+edge_00598,snp_rs10811661,gene_cdkn2b_as1_al157937_1,rs10811661,CDKN2B-AS1 - AL157937.1,SNP-Gene,35.32,35.32,3,rs10811661,Type 2 Diabetes,CDKN2B-AS1 - AL157937.1,Low,,GWAS Catalog
+edge_00858,snp_rs8050136,gene_fto,rs8050136,FTO,SNP-Gene,34.89,34.89,3,rs8050136,Type 2 Diabetes,FTO,Low,,GWAS Catalog
+edge_00827,snp_rs7138803,gene_bcdin3d_ac131157_1,rs7138803,BCDIN3D - AC131157.1,SNP-Gene,34.7,32.2,2,rs7138803,Obesity,BCDIN3D - AC131157.1,Low,,GWAS Catalog
+edge_00743,snp_rs2725220,gene_pkd2,rs2725220,PKD2,SNP-Gene,34.32,34.32,1,rs2725220,Chronic Kidney Disease,PKD2,Low,,GWAS Catalog
+edge_00777,snp_rs4712523,gene_cdkal1,rs4712523,CDKAL1,SNP-Gene,34.32,34.32,2,rs4712523,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00602,snp_rs10937329,gene_linc01991_ac092941_1,rs10937329,LINC01991 - AC092941.1,SNP-Gene,34.16,34.16,1,rs10937329,Chronic Kidney Disease,LINC01991 - AC092941.1,Low,,GWAS Catalog
+edge_00614,snp_rs1111875,gene_hhex_al590080_1,rs1111875,HHEX - AL590080.1,SNP-Gene,33.99,33.99,3,rs1111875,Type 2 Diabetes,HHEX - AL590080.1,Low,,GWAS Catalog
+edge_00655,snp_rs13130484,gene_ac108467_1_thap12p9,rs13130484,AC108467.1 - THAP12P9,SNP-Gene,33.42,33.42,1,rs13130484,Obesity,AC108467.1 - THAP12P9,Low,,GWAS Catalog
+edge_00600,snp_rs10871777,gene_rnu4_17p_ac090771_1,rs10871777,RNU4-17P - AC090771.1,SNP-Gene,33.1,33.1,1,rs10871777,Obesity,RNU4-17P - AC090771.1,Low,,GWAS Catalog
+edge_00882,snp_rs9895661,gene_bcas3,rs9895661,BCAS3,SNP-Gene,32.45,32.45,2,rs9895661,Chronic Kidney Disease,BCAS3,Low,,GWAS Catalog
+edge_00581,snp_rs10189761,gene_ac093326_1_tmem18,rs10189761,AC093326.1 - TMEM18,SNP-Gene,31.54,31.54,1,rs10189761,Obesity,AC093326.1 - TMEM18,Low,,GWAS Catalog
+edge_00704,snp_rs1801282,gene_pparg,rs1801282,PPARG,SNP-Gene,31.54,31.54,3,rs1801282,Type 2 Diabetes,PPARG,Low,,GWAS Catalog
+edge_00663,snp_rs1378942,gene_csk,rs1378942,CSK,SNP-Gene,31.44,31.44,1,rs1378942,Hypertension,CSK,Low,,GWAS Catalog
+edge_00802,snp_rs633715,gene_al136114_1,rs633715,AL136114.1,SNP-Gene,31.01,31.01,1,rs633715,Obesity,AL136114.1,Low,,GWAS Catalog
+edge_00616,snp_rs11152213,gene_rnu4_17p_ac090771_1,rs11152213,RNU4-17P - AC090771.1,SNP-Gene,30.77,30.77,1,rs11152213,Obesity,RNU4-17P - AC090771.1,Low,,GWAS Catalog
+edge_00710,snp_rs2030323,gene_ac103796_1,rs2030323,AC103796.1,SNP-Gene,30.77,30.77,1,rs2030323,Obesity,AC103796.1,Low,,GWAS Catalog
+edge_00720,snp_rs2206277,gene_tfap2b,rs2206277,TFAP2B,SNP-Gene,30.67,30.67,1,rs2206277,Obesity,TFAP2B,Low,,GWAS Catalog
+edge_00685,snp_rs16998073,gene_prdm8_fgf5,rs16998073,PRDM8 - FGF5,SNP-Gene,30.54,30.54,1,rs16998073,Hypertension,PRDM8 - FGF5,Low,,GWAS Catalog
+edge_00881,snp_rs987237,gene_tfap2b,rs987237,TFAP2B,SNP-Gene,30.52,30.52,2,rs987237,Obesity,TFAP2B,Low,,GWAS Catalog
+edge_00823,snp_rs699,gene_agt,rs699,AGT,SNP-Gene,30.44,30.44,1,rs699,Hypertension,AGT,Low,,Demo
+edge_00847,snp_rs7754840,gene_cdkal1,rs7754840,CDKAL1,SNP-Gene,30.38,30.38,2,rs7754840,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00792,snp_rs5219,gene_kcnj11,rs5219,KCNJ11,SNP-Gene,30.27,30.27,2,rs5219,Type 2 Diabetes,KCNJ11,Low,,GWAS Catalog
+edge_00861,snp_rs8089364,gene_rnu4_17p_ac090771_1,rs8089364,RNU4-17P - AC090771.1,SNP-Gene,30.27,30.27,1,rs8089364,Obesity,RNU4-17P - AC090771.1,Low,,GWAS Catalog
+edge_00691,snp_rs17249754,gene_atp2b1,rs17249754,ATP2B1,SNP-Gene,29.68,29.68,1,rs17249754,Hypertension,ATP2B1,Low,,GWAS Catalog
+edge_00653,snp_rs13069000,gene_rpl21p41_ac098969_2,rs13069000,RPL21P41 - AC098969.2,SNP-Gene,29.64,29.64,1,rs13069000,Chronic Kidney Disease,RPL21P41 - AC098969.2,Low,,GWAS Catalog
+edge_00692,snp_rs17319721,gene_shroom3,rs17319721,SHROOM3,SNP-Gene,29.64,29.64,1,rs17319721,Chronic Kidney Disease,SHROOM3,Low,,GWAS Catalog
+edge_00721,snp_rs2207139,gene_rps17p5_al049693_1,rs2207139,RPS17P5 - AL049693.1,SNP-Gene,29.42,29.42,1,rs2207139,Obesity,RPS17P5 - AL049693.1,Low,,GWAS Catalog
+edge_00811,snp_rs653178,gene_atxn2,rs653178,ATXN2,SNP-Gene,28.97,27.37,2,rs653178,Chronic Kidney Disease; Hypertension,ATXN2,Low,,GWAS Catalog
+edge_00592,snp_rs10757278,gene_cdkn2a,rs10757278,CDKN2A,SNP-Gene,28.92,28.92,1,rs10757278,Coronary Artery Disease,CDKN2A,Low,,Demo
+edge_00831,snp_rs7227483,gene_ac091151_7,rs7227483,AC091151.7,SNP-Gene,28.81,28.81,1,rs7227483,Chronic Kidney Disease,AC091151.7,Low,,GWAS Catalog
+edge_00580,snp_rs10182181,gene_adcy3_dnajc27,rs10182181,ADCY3 - DNAJC27,SNP-Gene,28.74,28.74,1,rs10182181,Obesity,ADCY3 - DNAJC27,Low,,GWAS Catalog
+edge_00828,snp_rs7141420,gene_nrxn3,rs7141420,NRXN3,SNP-Gene,28.74,28.74,1,rs7141420,Obesity,NRXN3,Low,,GWAS Catalog
+edge_00838,snp_rs7531118,gene_al513166_1,rs7531118,AL513166.1,SNP-Gene,28.6,28.6,1,rs7531118,Obesity,AL513166.1,Low,,GWAS Catalog
+edge_00664,snp_rs1394125,gene_ube2q2,rs1394125,UBE2Q2,SNP-Gene,28.52,28.52,1,rs1394125,Chronic Kidney Disease,UBE2Q2,Low,,GWAS Catalog
+edge_00716,snp_rs2075290,gene_zpr1,rs2075290,ZPR1,SNP-Gene,28.29,28.29,1,rs2075290,Obesity,ZPR1,Low,,GWAS Catalog
+edge_00724,snp_rs2237897,gene_kcnq1,rs2237897,KCNQ1,SNP-Gene,28.29,28.29,1,rs2237897,Type 2 Diabetes,KCNQ1,Low,,GWAS Catalog
+edge_00761,snp_rs3764261,gene_herpud1_cetp,rs3764261,HERPUD1 - CETP,SNP-Gene,28.24,28.24,1,rs3764261,Obesity,HERPUD1 - CETP,Low,,GWAS Catalog
+edge_00885,snp_rs9939609,gene_fto,rs9939609,FTO,SNP-Gene,28.2,26.15,2,rs9939609,Obesity; Type 2 Diabetes,FTO,Low,,Demo; GWAS Catalog
+edge_00727,snp_rs2266788,gene_apoa5,rs2266788,APOA5,SNP-Gene,28.15,26.285,2,rs2266788,Hypertension; Obesity,APOA5,Low,,GWAS Catalog
+edge_00740,snp_rs2568958,gene_al513166_1,rs2568958,AL513166.1,SNP-Gene,28.02,28.02,1,rs2568958,Obesity,AL513166.1,Low,,GWAS Catalog
+edge_00594,snp_rs10767873,gene_mpped2_as1_al122014_1,rs10767873,MPPED2-AS1 - AL122014.1,SNP-Gene,27.97,27.97,1,rs10767873,Chronic Kidney Disease,MPPED2-AS1 - AL122014.1,Low,,GWAS Catalog
+edge_00596,snp_rs10790162,gene_bud13,rs10790162,BUD13,SNP-Gene,27.91,27.91,1,rs10790162,Obesity,BUD13,Low,,GWAS Catalog
+edge_00833,snp_rs7422339,gene_cps1,rs7422339,CPS1,SNP-Gene,27.84,27.84,1,rs7422339,Chronic Kidney Disease,CPS1,Low,,GWAS Catalog
+edge_00639,snp_rs12460876,gene_slc7a9,rs12460876,SLC7A9,SNP-Gene,27.62,27.62,1,rs12460876,Chronic Kidney Disease,SLC7A9,Low,,GWAS Catalog
+edge_00700,snp_rs17782313,gene_rnu4_17p_ac090771_1,rs17782313,RNU4-17P - AC090771.1,SNP-Gene,27.62,27.62,1,rs17782313,Obesity,RNU4-17P - AC090771.1,Low,,GWAS Catalog
+edge_00749,snp_rs2903492,gene_ac093326_1_tmem18,rs2903492,AC093326.1 - TMEM18,SNP-Gene,27.49,27.49,1,rs2903492,Obesity,AC093326.1 - TMEM18,Low,,GWAS Catalog
+edge_00771,snp_rs3939286,gene_il33,rs3939286,IL33,SNP-Gene,27.48,27.48,1,rs3939286,Asthma,IL33,Low,,Demo
+edge_00803,snp_rs6420094,gene_slc34a1,rs6420094,SLC34A1,SNP-Gene,27.39,27.39,1,rs6420094,Chronic Kidney Disease,SLC34A1,Low,,GWAS Catalog
+edge_00879,snp_rs9816226,gene_dgkg,rs9816226,DGKG,SNP-Gene,27.25,27.25,1,rs9816226,Obesity,DGKG,Low,,GWAS Catalog
+edge_00642,snp_rs1260326,gene_gckr,rs1260326,GCKR,SNP-Gene,27.17,23.295,2,rs1260326,Chronic Kidney Disease; Obesity,GCKR,Low,,GWAS Catalog
+edge_00680,snp_rs16853722,gene_mecom,rs16853722,MECOM,SNP-Gene,27.17,27.17,1,rs16853722,Chronic Kidney Disease,MECOM,Low,,GWAS Catalog
+edge_00703,snp_rs1800437,gene_gipr,rs1800437,GIPR,SNP-Gene,27.17,27.17,1,rs1800437,Obesity,GIPR,Low,,GWAS Catalog
+edge_00766,snp_rs3782889,gene_myl2,rs3782889,MYL2,SNP-Gene,27.12,27.12,1,rs3782889,Coronary Artery Disease,MYL2,Low,,GWAS Catalog
+edge_00662,snp_rs13538,gene_alms1p1,rs13538,ALMS1P1,SNP-Gene,27.07,27.07,1,rs13538,Chronic Kidney Disease,ALMS1P1,Low,,GWAS Catalog
+edge_00787,snp_rs4977574,gene_cdkn2b_as1,rs4977574,CDKN2B-AS1,SNP-Gene,27.07,27.07,1,rs4977574,Coronary Artery Disease,CDKN2B-AS1,Low,,GWAS Catalog
+edge_00846,snp_rs7708584,gene_mfap3,rs7708584,MFAP3,SNP-Gene,27.07,27.07,1,rs7708584,Obesity,MFAP3,Low,,GWAS Catalog
+edge_00869,snp_rs9273349,gene_hla_dqa1_hla_dqb1,rs9273349,HLA-DQA1 - HLA-DQB1,SNP-Gene,27.01,27.01,1,rs9273349,Asthma,HLA-DQA1 - HLA-DQB1,Low,,GWAS Catalog
+edge_00781,snp_rs4744712,gene_pip5k1b,rs4744712,PIP5K1B,SNP-Gene,26.98,26.98,1,rs4744712,Chronic Kidney Disease,PIP5K1B,Low,,GWAS Catalog
+edge_00863,snp_rs881858,gene_al157371_2,rs881858,AL157371.2,SNP-Gene,26.96,26.96,1,rs881858,Chronic Kidney Disease,AL157371.2,Low,,GWAS Catalog
+edge_00660,snp_rs1333049,gene_cdkn2b_as1,rs1333049,CDKN2B-AS1,SNP-Gene,26.94,26.94,1,rs1333049,Coronary Artery Disease,CDKN2B-AS1,Low,,GWAS Catalog
+edge_00699,snp_rs17730436,gene_wdr72,rs17730436,WDR72,SNP-Gene,26.94,26.94,1,rs17730436,Chronic Kidney Disease,WDR72,Low,,GWAS Catalog
+edge_00753,snp_rs3101336,gene_al513166_1,rs3101336,AL513166.1,SNP-Gene,26.94,26.94,1,rs3101336,Obesity,AL513166.1,Low,,GWAS Catalog
+edge_00693,snp_rs17367504,gene_mthfr,rs17367504,MTHFR,SNP-Gene,26.8,26.8,1,rs17367504,Hypertension,MTHFR,Low,,GWAS Catalog
+edge_00794,snp_rs543874,gene_al136114_1_sec16b,rs543874,AL136114.1 - SEC16B,SNP-Gene,26.8,26.8,1,rs543874,Obesity,AL136114.1 - SEC16B,Low,,GWAS Catalog
+edge_00786,snp_rs491567,gene_wdr72,rs491567,WDR72,SNP-Gene,26.72,26.72,1,rs491567,Chronic Kidney Disease,WDR72,Low,,GWAS Catalog
+edge_00836,snp_rs7498665,gene_sh2b1,rs7498665,SH2B1,SNP-Gene,26.72,26.72,1,rs7498665,Obesity,SH2B1,Low,,GWAS Catalog
+edge_00585,snp_rs10423928,gene_gipr,rs10423928,GIPR,SNP-Gene,26.67,26.67,1,rs10423928,Obesity,GIPR,Low,,GWAS Catalog
+edge_00709,snp_rs1994016,gene_adamts7,rs1994016,ADAMTS7,SNP-Gene,26.62,26.62,1,rs1994016,Coronary Artery Disease,ADAMTS7,Low,,GWAS Catalog
+edge_00856,snp_rs8028313,gene_map2k5,rs8028313,MAP2K5,SNP-Gene,26.59,26.59,1,rs8028313,Obesity,MAP2K5,Low,,GWAS Catalog
+edge_00880,snp_rs9818870,gene_mras,rs9818870,MRAS,SNP-Gene,26.56,26.56,1,rs9818870,Coronary Artery Disease,MRAS,Low,,GWAS Catalog
+edge_00742,snp_rs267734,gene_al590133_1_anxa9,rs267734,AL590133.1 - ANXA9,SNP-Gene,26.49,26.49,1,rs267734,Chronic Kidney Disease,AL590133.1 - ANXA9,Low,,GWAS Catalog
+edge_00712,snp_rs2049805,gene_gbap1,rs2049805,GBAP1,SNP-Gene,26.35,26.35,1,rs2049805,Chronic Kidney Disease,GBAP1,Low,,GWAS Catalog
+edge_00849,snp_rs780093,gene_gckr,rs780093,GCKR,SNP-Gene,26.35,25.86,2,rs780093,Hypertension; Obesity,GCKR,Low,,GWAS Catalog
+edge_00732,snp_rs2307111,gene_poc5,rs2307111,POC5,SNP-Gene,26.27,26.27,1,rs2307111,Obesity,POC5,Low,,GWAS Catalog
+edge_00637,snp_rs12446554,gene_gprc5b_gpr139,rs12446554,GPRC5B - GPR139,SNP-Gene,26.22,26.22,1,rs12446554,Obesity,GPRC5B - GPR139,Low,,GWAS Catalog
+edge_00850,snp_rs7805747,gene_prkag2,rs7805747,PRKAG2,SNP-Gene,26.22,26.22,1,rs7805747,Chronic Kidney Disease,PRKAG2,Low,,GWAS Catalog
+edge_00774,snp_rs4506565,gene_tcf7l2,rs4506565,TCF7L2,SNP-Gene,26.17,26.17,1,rs4506565,Type 2 Diabetes,TCF7L2,Low,,GWAS Catalog
+edge_00729,snp_rs2279463,gene_slc22a2,rs2279463,SLC22A2,SNP-Gene,26.14,26.14,1,rs2279463,Chronic Kidney Disease,SLC22A2,Low,,GWAS Catalog
+edge_00886,snp_rs9941349,gene_fto,rs9941349,FTO,SNP-Gene,26.14,26.14,1,rs9941349,Obesity,FTO,Low,,GWAS Catalog
+edge_00656,snp_rs13146355,gene_shroom3,rs13146355,SHROOM3,SNP-Gene,26.06,26.06,1,rs13146355,Chronic Kidney Disease,SHROOM3,Low,,GWAS Catalog
+edge_00686,snp_rs17024258,gene_gnat2,rs17024258,GNAT2,SNP-Gene,26.06,26.06,1,rs17024258,Obesity,GNAT2,Low,,GWAS Catalog
+edge_00750,snp_rs2943641,gene_ac062015_1_mir5702,rs2943641,AC062015.1 - MIR5702,SNP-Gene,26.06,26.06,1,rs2943641,Type 2 Diabetes,AC062015.1 - MIR5702,Low,,GWAS Catalog
+edge_00608,snp_rs11042023,gene_trim66,rs11042023,TRIM66,SNP-Gene,26.04,26.04,1,rs11042023,Obesity,TRIM66,Low,,GWAS Catalog
+edge_00708,snp_rs1936800,gene_al356534_1,rs1936800,AL356534.1,SNP-Gene,26.04,26.04,1,rs1936800,Chronic Kidney Disease,AL356534.1,Low,,GWAS Catalog
+edge_00758,snp_rs3739998,gene_jcad,rs3739998,JCAD,SNP-Gene,26.04,26.04,1,rs3739998,Coronary Artery Disease,JCAD,Low,,GWAS Catalog
+edge_00654,snp_rs13078807,gene_cadm2,rs13078807,CADM2,SNP-Gene,25.82,25.82,1,rs13078807,Obesity,CADM2,Low,,GWAS Catalog
+edge_00698,snp_rs17730281,gene_wdr72,rs17730281,WDR72,SNP-Gene,25.82,25.82,1,rs17730281,Chronic Kidney Disease,WDR72,Low,,GWAS Catalog
+edge_00754,snp_rs347685,gene_tfdp2,rs347685,TFDP2,SNP-Gene,25.82,25.82,1,rs347685,Chronic Kidney Disease,TFDP2,Low,,GWAS Catalog
+edge_00801,snp_rs626277,gene_dach1,rs626277,DACH1,SNP-Gene,25.82,25.82,1,rs626277,Chronic Kidney Disease,DACH1,Low,,GWAS Catalog
+edge_00679,snp_rs16849225,gene_ac016766_1,rs16849225,AC016766.1,SNP-Gene,25.77,25.77,1,rs16849225,Hypertension,AC016766.1,Low,,GWAS Catalog
+edge_00584,snp_rs10277115,gene_uncx_ac073094_1,rs10277115,UNCX - AC073094.1,SNP-Gene,25.72,25.72,1,rs10277115,Chronic Kidney Disease,UNCX - AC073094.1,Low,,GWAS Catalog
+edge_00609,snp_rs11066015,gene_acad10,rs11066015,ACAD10,SNP-Gene,25.72,25.72,1,rs11066015,Coronary Artery Disease,ACAD10,Low,,GWAS Catalog
+edge_00791,snp_rs5215,gene_kcnj11,rs5215,KCNJ11,SNP-Gene,25.72,25.72,1,rs5215,Type 2 Diabetes,KCNJ11,Low,,GWAS Catalog
+edge_00737,snp_rs2453533,gene_ac051619_2_rnu6_953p,rs2453533,AC051619.2 - RNU6-953P,SNP-Gene,25.67,25.67,1,rs2453533,Chronic Kidney Disease,AC051619.2 - RNU6-953P,Low,,GWAS Catalog
+edge_00810,snp_rs646776,gene_celsr2_psrc1,rs646776,CELSR2 - PSRC1,SNP-Gene,25.63,25.63,1,rs646776,Coronary Artery Disease,CELSR2 - PSRC1,Low,,GWAS Catalog
+edge_00582,snp_rs10261878,gene_ac018706_1_ac010719_1,rs10261878,AC018706.1 - AC010719.1,SNP-Gene,25.59,25.59,1,rs10261878,Obesity,AC018706.1 - AC010719.1,Low,,GWAS Catalog
+edge_00631,snp_rs11864909,gene_pdilt,rs11864909,PDILT,SNP-Gene,25.59,25.59,1,rs11864909,Chronic Kidney Disease,PDILT,Low,,GWAS Catalog
+edge_00672,snp_rs15285,gene_lpl,rs15285,LPL,SNP-Gene,25.59,25.59,1,rs15285,Hypertension,LPL,Low,,GWAS Catalog
+edge_00702,snp_rs17817964,gene_fto,rs17817964,FTO,SNP-Gene,25.59,25.59,1,rs17817964,Obesity,FTO,Low,,GWAS Catalog
+edge_00756,snp_rs35444,gene_ac008125_1_ac078880_1,rs35444,AC008125.1 - AC078880.1,SNP-Gene,25.59,25.59,1,rs35444,Hypertension,AC008125.1 - AC078880.1,Low,,GWAS Catalog
+edge_00865,snp_rs887912,gene_ac007092_1,rs887912,AC007092.1,SNP-Gene,25.59,25.59,1,rs887912,Obesity,AC007092.1,Low,,GWAS Catalog
+edge_00601,snp_rs10875976,gene_bcdin3d_as1,rs10875976,BCDIN3D-AS1,SNP-Gene,25.45,25.45,1,rs10875976,Obesity,BCDIN3D-AS1,Low,,GWAS Catalog
+edge_00638,snp_rs12446632,gene_gprc5b_gpr139,rs12446632,GPRC5B - GPR139,SNP-Gene,25.45,25.45,1,rs12446632,Obesity,GPRC5B - GPR139,Low,,GWAS Catalog
+edge_00665,snp_rs1412239,gene_lingo2,rs1412239,LINGO2,SNP-Gene,25.45,25.45,1,rs1412239,Obesity,LINGO2,Low,,GWAS Catalog
+edge_00755,snp_rs348495,gene_ac108467_1_thap12p9,rs348495,AC108467.1 - THAP12P9,SNP-Gene,25.45,25.45,1,rs348495,Obesity,AC108467.1 - THAP12P9,Low,,GWAS Catalog
+edge_00615,snp_rs11123170,gene_pax8_as1,rs11123170,PAX8-AS1,SNP-Gene,25.37,25.37,1,rs11123170,Chronic Kidney Disease,PAX8-AS1,Low,,GWAS Catalog
+edge_00778,snp_rs4712524,gene_cdkal1,rs4712524,CDKAL1,SNP-Gene,25.37,25.37,1,rs4712524,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00813,snp_rs671,gene_aldh2,rs671,ALDH2,SNP-Gene,25.37,25.37,1,rs671,Chronic Kidney Disease,ALDH2,Low,,GWAS Catalog
+edge_00862,snp_rs880315,gene_casz1,rs880315,CASZ1,SNP-Gene,25.37,25.37,1,rs880315,Hypertension,CASZ1,Low,,GWAS Catalog
+edge_00780,snp_rs4735692,gene_hnf4g_ac011029_1,rs4735692,HNF4G - AC011029.1,SNP-Gene,25.32,25.32,1,rs4735692,Obesity,HNF4G - AC011029.1,Low,,GWAS Catalog
+edge_00722,snp_rs2217560,gene_ac069114_1_cbln2,rs2217560,AC069114.1 - CBLN2,SNP-Gene,25.21,25.21,1,rs2217560,Hypertension,AC069114.1 - CBLN2,Low,,GWAS Catalog
+edge_00661,snp_rs1342326,gene_al162384_1_gtf3ap1,rs1342326,AL162384.1 - GTF3AP1,SNP-Gene,25.16,25.16,1,rs1342326,Asthma,AL162384.1 - GTF3AP1,Low,,GWAS Catalog
+edge_00595,snp_rs10774021,gene_slc6a13,rs10774021,SLC6A13,SNP-Gene,25.14,25.14,1,rs10774021,Chronic Kidney Disease,SLC6A13,Low,,GWAS Catalog
+edge_00674,snp_rs1530440,gene_cabcoco1,rs1530440,CABCOCO1,SNP-Gene,25.14,25.14,1,rs1530440,Hypertension,CABCOCO1,Low,,GWAS Catalog
+edge_00760,snp_rs3749147,gene_gpn1,rs3749147,GPN1,SNP-Gene,25.14,25.14,1,rs3749147,Obesity,GPN1,Low,,GWAS Catalog
+edge_00768,snp_rs3828890,gene_hcp5,rs3828890,HCP5,SNP-Gene,25.14,25.14,1,rs3828890,Chronic Kidney Disease,HCP5,Low,,GWAS Catalog
+edge_00820,snp_rs6769511,gene_igf2bp2,rs6769511,IGF2BP2,SNP-Gene,25.14,25.14,1,rs6769511,Type 2 Diabetes,IGF2BP2,Low,,GWAS Catalog
+edge_00866,snp_rs889472,gene_ac009159_3_ac009159_1,rs889472,AC009159.3 - AC009159.1,SNP-Gene,25.14,25.14,1,rs889472,Chronic Kidney Disease,AC009159.3 - AC009159.1,Low,,GWAS Catalog
+edge_00877,snp_rs963837,gene_mpped2_as1_al122014_1,rs963837,MPPED2-AS1 - AL122014.1,SNP-Gene,25.14,25.14,1,rs963837,Chronic Kidney Disease,MPPED2-AS1 - AL122014.1,Low,,GWAS Catalog
+edge_00632,snp_rs11868441,gene_bcas3,rs11868441,BCAS3,SNP-Gene,25.0,25.0,1,rs11868441,Chronic Kidney Disease,BCAS3,Low,,GWAS Catalog
+edge_00649,snp_rs12970134,gene_ac090771_1_ac090621_1,rs12970134,AC090771.1 - AC090621.1,SNP-Gene,25.0,25.0,1,rs12970134,Obesity,AC090771.1 - AC090621.1,Low,,GWAS Catalog
+edge_00706,snp_rs1919128,gene_c2orf16,rs1919128,C2ORF16,SNP-Gene,25.0,25.0,1,rs1919128,Obesity,C2ORF16,Low,,GWAS Catalog
+edge_00715,snp_rs2074356,gene_hectd4,rs2074356,HECTD4,SNP-Gene,25.0,25.0,1,rs2074356,Chronic Kidney Disease,HECTD4,Low,,GWAS Catalog
+edge_00809,snp_rs6465825,gene_rsbn1l_tmem60,rs6465825,RSBN1L - TMEM60,SNP-Gene,25.0,25.0,1,rs6465825,Chronic Kidney Disease,RSBN1L - TMEM60,Low,,GWAS Catalog
+edge_00818,snp_rs6731302,gene_linc01122,rs6731302,LINC01122,SNP-Gene,25.0,25.0,1,rs6731302,Obesity,LINC01122,Low,,GWAS Catalog
+edge_00876,snp_rs9568867,gene_al356295_1,rs9568867,AL356295.1,SNP-Gene,25.0,25.0,1,rs9568867,Obesity,AL356295.1,Low,,GWAS Catalog
+edge_00619,snp_rs11212617,gene_c11orf65,rs11212617,C11ORF65,SNP-Gene,24.92,24.92,1,rs11212617,Type 2 Diabetes,C11ORF65,Low,,GWAS Catalog
+edge_00629,snp_rs11823543,gene_zpr1,rs11823543,ZPR1,SNP-Gene,24.92,24.92,1,rs11823543,Hypertension,ZPR1,Low,,GWAS Catalog
+edge_00630,snp_rs11825181,gene_bud13,rs11825181,BUD13,SNP-Gene,24.92,24.92,1,rs11825181,Hypertension,BUD13,Low,,GWAS Catalog
+edge_00671,snp_rs1516725,gene_etv5,rs1516725,ETV5,SNP-Gene,24.92,24.92,1,rs1516725,Obesity,ETV5,Low,,GWAS Catalog
+edge_00734,snp_rs2370983,gene_nrxn3,rs2370983,NRXN3,SNP-Gene,24.92,24.92,1,rs2370983,Obesity,NRXN3,Low,,GWAS Catalog
+edge_00762,snp_rs3771166,gene_il18r1,rs3771166,IL18R1,SNP-Gene,24.92,24.92,1,rs3771166,Asthma,IL18R1,Low,,GWAS Catalog
+edge_00583,snp_rs10275044,gene_uncx,rs10275044,UNCX,SNP-Gene,24.87,24.87,1,rs10275044,Chronic Kidney Disease,UNCX,Low,,GWAS Catalog
+edge_00624,snp_rs11639988,gene_gprc5b_gpr139,rs11639988,GPRC5B - GPR139,SNP-Gene,24.87,24.87,1,rs11639988,Obesity,GPRC5B - GPR139,Low,,GWAS Catalog
+edge_00718,snp_rs2112347,gene_poc5_slc25a5p9,rs2112347,POC5 - SLC25A5P9,SNP-Gene,24.87,24.87,1,rs2112347,Obesity,POC5 - SLC25A5P9,Low,,GWAS Catalog
+edge_00834,snp_rs744910,gene_smad3,rs744910,SMAD3,SNP-Gene,24.87,24.87,1,rs744910,Asthma,SMAD3,Low,,GWAS Catalog
+edge_00651,snp_rs13022873,gene_znf512,rs13022873,ZNF512,SNP-Gene,24.82,24.82,1,rs13022873,Obesity,ZNF512,Low,,GWAS Catalog
+edge_00670,snp_rs1514177,gene_fpgt_tnni3k,rs1514177,FPGT-TNNI3K,SNP-Gene,24.82,24.82,1,rs1514177,Obesity,FPGT-TNNI3K,Low,,GWAS Catalog
+edge_00684,snp_rs16948048,gene_ac091180_3,rs16948048,AC091180.3,SNP-Gene,24.82,24.82,1,rs16948048,Hypertension,AC091180.3,Low,,GWAS Catalog
+edge_00769,snp_rs3894194,gene_gsdma,rs3894194,GSDMA,SNP-Gene,24.82,24.82,1,rs3894194,Asthma,GSDMA,Low,,GWAS Catalog
+edge_00829,snp_rs7184597,gene_rabep2,rs7184597,RABEP2,SNP-Gene,24.76,24.76,1,rs7184597,Obesity,RABEP2,Low,,GWAS Catalog
+edge_00790,snp_rs514659,gene_abo,rs514659,ABO,SNP-Gene,24.73,24.73,1,rs514659,Coronary Artery Disease,ABO,Low,,GWAS Catalog
+edge_00807,snp_rs643507,gene_chordc1p4,rs643507,CHORDC1P4,SNP-Gene,24.73,24.73,1,rs643507,Asthma,CHORDC1P4,Low,,GWAS Catalog
+edge_00751,snp_rs2954033,gene_ac091114_1,rs2954033,AC091114.1,SNP-Gene,24.71,24.71,1,rs2954033,Hypertension,AC091114.1,Low,,GWAS Catalog
+edge_00798,snp_rs6026584,gene_gnas,rs6026584,GNAS,SNP-Gene,24.71,24.71,1,rs6026584,Chronic Kidney Disease,GNAS,Low,,GWAS Catalog
+edge_00821,snp_rs6825911,gene_enpep,rs6825911,ENPEP,SNP-Gene,24.71,24.71,1,rs6825911,Hypertension,ENPEP,Low,,GWAS Catalog
+edge_00851,snp_rs7826222,gene_ac034111_2,rs7826222,AC034111.2,SNP-Gene,24.71,24.71,1,rs7826222,Obesity,AC034111.2,Low,,GWAS Catalog
+edge_00578,snp_rs10109414,gene_stc1_rnu1_148p,rs10109414,STC1 - RNU1-148P,SNP-Gene,24.69,24.69,1,rs10109414,Chronic Kidney Disease,STC1 - RNU1-148P,Low,,GWAS Catalog
+edge_00597,snp_rs10794720,gene_wdr37,rs10794720,WDR37,SNP-Gene,24.69,24.69,1,rs10794720,Chronic Kidney Disease,WDR37,Low,,GWAS Catalog
+edge_00604,snp_rs10946398,gene_cdkal1,rs10946398,CDKAL1,SNP-Gene,24.69,24.69,1,rs10946398,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00647,snp_rs12946454,gene_plcd3,rs12946454,PLCD3,SNP-Gene,24.69,24.69,1,rs12946454,Hypertension,PLCD3,Low,,GWAS Catalog
+edge_00669,snp_rs1514174,gene_fpgt_tnni3k,rs1514174,FPGT-TNNI3K,SNP-Gene,24.69,24.69,1,rs1514174,Obesity,FPGT-TNNI3K,Low,,GWAS Catalog
+edge_00687,snp_rs17030613,gene_capza1,rs17030613,CAPZA1,SNP-Gene,24.69,24.69,1,rs17030613,Hypertension,CAPZA1,Low,,GWAS Catalog
+edge_00730,snp_rs2284033,gene_il2rb,rs2284033,IL2RB,SNP-Gene,24.69,24.69,1,rs2284033,Asthma,IL2RB,Low,,GWAS Catalog
+edge_00775,snp_rs4689388,gene_ac116317_2_wfs1,rs4689388,AC116317.2 - WFS1,SNP-Gene,24.69,24.69,1,rs4689388,Type 2 Diabetes,AC116317.2 - WFS1,Low,,GWAS Catalog
+edge_00855,snp_rs7989336,gene_hs6st3,rs7989336,HS6ST3,SNP-Gene,24.69,24.69,1,rs7989336,Obesity,HS6ST3,Low,,GWAS Catalog
+edge_00627,snp_rs1173766,gene_npr3_ac025459_1,rs1173766,NPR3 - AC025459.1,SNP-Gene,24.55,24.55,1,rs1173766,Hypertension,NPR3 - AC025459.1,Low,,GWAS Catalog
+edge_00652,snp_rs13041126,gene_linc01524,rs13041126,LINC01524,SNP-Gene,24.55,24.55,1,rs13041126,Obesity,LINC01524,Low,,GWAS Catalog
+edge_00837,snp_rs7503807,gene_rptor,rs7503807,RPTOR,SNP-Gene,24.55,24.55,1,rs7503807,Obesity,RPTOR,Low,,GWAS Catalog
+edge_00589,snp_rs1048886,gene_sdhaf4,rs1048886,SDHAF4,SNP-Gene,24.47,24.47,1,rs1048886,Type 2 Diabetes,SDHAF4,Low,,GWAS Catalog
+edge_00606,snp_rs10968576,gene_lingo2,rs10968576,LINGO2,SNP-Gene,24.47,24.47,1,rs10968576,Obesity,LINGO2,Low,,GWAS Catalog
+edge_00678,snp_rs1588265,gene_pde4d,rs1588265,PDE4D,SNP-Gene,24.47,24.47,1,rs1588265,Asthma,PDE4D,Low,,GWAS Catalog
+edge_00694,snp_rs17381664,gene_ac118549_1,rs17381664,AC118549.1,SNP-Gene,24.47,24.47,1,rs17381664,Obesity,AC118549.1,Low,,GWAS Catalog
+edge_00741,snp_rs2605100,gene_lyplal1_as1_al356364_1,rs2605100,LYPLAL1-AS1 - AL356364.1,SNP-Gene,24.47,24.47,1,rs2605100,Obesity,LYPLAL1-AS1 - AL356364.1,Low,,GWAS Catalog
+edge_00738,snp_rs2531995,gene_adcy9,rs2531995,ADCY9,SNP-Gene,24.42,24.42,1,rs2531995,Obesity,ADCY9,Low,,GWAS Catalog
+edge_00840,snp_rs7586879,gene_adcy3,rs7586879,ADCY3,SNP-Gene,24.42,24.42,1,rs7586879,Obesity,ADCY3,Low,,GWAS Catalog
+edge_00579,snp_rs10146997,gene_nrxn3,rs10146997,NRXN3,SNP-Gene,24.37,24.37,1,rs10146997,Obesity,NRXN3,Low,,GWAS Catalog
+edge_00871,snp_rs9300039,gene_ac023442_2_linc02745,rs9300039,AC023442.2 - LINC02745,SNP-Gene,24.34,24.34,1,rs9300039,Type 2 Diabetes,AC023442.2 - LINC02745,Low,,GWAS Catalog
+edge_00816,snp_rs6723108,gene_ac110620_2,rs6723108,AC110620.2,SNP-Gene,24.31,24.31,1,rs6723108,Type 2 Diabetes,AC110620.2,Low,,GWAS Catalog
+edge_00705,snp_rs1918974,gene_mecom_as1,rs1918974,MECOM-AS1,SNP-Gene,24.28,24.28,1,rs1918974,Hypertension,MECOM-AS1,Low,,GWAS Catalog
+edge_00848,snp_rs7775861,gene_fth1p5_al158050_2,rs7775861,FTH1P5 - AL158050.2,SNP-Gene,24.26,24.26,1,rs7775861,Asthma,FTH1P5 - AL158050.2,Low,,GWAS Catalog
+edge_00611,snp_rs11071559,gene_rora,rs11071559,RORA,SNP-Gene,24.24,24.24,1,rs11071559,Asthma,RORA,Low,,GWAS Catalog
+edge_00633,snp_rs11959928,gene_dab2,rs11959928,DAB2,SNP-Gene,24.24,24.24,1,rs11959928,Chronic Kidney Disease,DAB2,Low,,GWAS Catalog
+edge_00648,snp_rs1295686,gene_il13,rs1295686,IL13,SNP-Gene,24.24,24.24,1,rs1295686,Asthma,IL13,Low,,GWAS Catalog
+edge_00707,snp_rs1933182,gene_psma5_sypl2,rs1933182,PSMA5 - SYPL2,SNP-Gene,24.24,24.24,1,rs1933182,Chronic Kidney Disease,PSMA5 - SYPL2,Low,,GWAS Catalog
+edge_00731,snp_rs2305480,gene_gsdmb,rs2305480,GSDMB,SNP-Gene,24.24,24.24,1,rs2305480,Asthma,GSDMB,Low,,GWAS Catalog
+edge_00745,snp_rs2797369,gene_grik2,rs2797369,GRIK2,SNP-Gene,24.24,24.24,1,rs2797369,Chronic Kidney Disease,GRIK2,Low,,GWAS Catalog
+edge_00772,snp_rs4014195,gene_krt8p26_ap001266_2,rs4014195,KRT8P26 - AP001266.2,SNP-Gene,24.24,24.24,1,rs4014195,Chronic Kidney Disease,KRT8P26 - AP001266.2,Low,,GWAS Catalog
+edge_00599,snp_rs10818854,gene_dennd1a,rs10818854,DENND1A,SNP-Gene,24.1,24.1,1,rs10818854,Asthma,DENND1A,Low,,GWAS Catalog
+edge_00644,snp_rs12654812,gene_rgs14,rs12654812,RGS14,SNP-Gene,24.1,24.1,1,rs12654812,Chronic Kidney Disease,RGS14,Low,,GWAS Catalog
+edge_00681,snp_rs16864170,gene_ac010729_1_linc01810,rs16864170,AC010729.1 - LINC01810,SNP-Gene,24.1,24.1,1,rs16864170,Chronic Kidney Disease,AC010729.1 - LINC01810,Low,,GWAS Catalog
+edge_00714,snp_rs2073643,gene_slc22a5,rs2073643,SLC22A5,SNP-Gene,24.1,24.1,1,rs2073643,Asthma,SLC22A5,Low,,GWAS Catalog
+edge_00719,snp_rs2206271,gene_tfap2d_tfap2b,rs2206271,TFAP2D - TFAP2B,SNP-Gene,24.1,24.1,1,rs2206271,Chronic Kidney Disease,TFAP2D - TFAP2B,Low,,GWAS Catalog
+edge_00819,snp_rs6749447,gene_stk39,rs6749447,STK39,SNP-Gene,24.1,24.1,1,rs6749447,Hypertension,STK39,Low,,GWAS Catalog
+edge_00725,snp_rs2244012,gene_rad50,rs2244012,RAD50,SNP-Gene,24.02,24.02,1,rs2244012,Asthma,RAD50,Low,,GWAS Catalog
+edge_00805,snp_rs6429082,gene_tbce,rs6429082,TBCE,SNP-Gene,24.02,24.02,1,rs6429082,Obesity,TBCE,Low,,GWAS Catalog
+edge_00874,snp_rs9465871,gene_cdkal1,rs9465871,CDKAL1,SNP-Gene,24.02,24.02,1,rs9465871,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00634,snp_rs12027542,gene_pcnx2,rs12027542,PCNX2,SNP-Gene,23.97,23.97,1,rs12027542,Type 2 Diabetes,PCNX2,Low,,GWAS Catalog
+edge_00752,snp_rs297325,gene_sox6,rs297325,SOX6,SNP-Gene,23.97,23.97,1,rs297325,Obesity,SOX6,Low,,GWAS Catalog
+edge_00797,snp_rs58667,gene_al008718_2_al008718_1,rs58667,AL008718.2 - AL008718.1,SNP-Gene,23.97,23.97,1,rs58667,Asthma,AL008718.2 - AL008718.1,Low,,GWAS Catalog
+edge_00726,snp_rs2259816,gene_hnf1a,rs2259816,HNF1A,SNP-Gene,23.92,23.92,1,rs2259816,Coronary Artery Disease,HNF1A,Low,,GWAS Catalog
+edge_00783,snp_rs4756846,gene_sox6,rs4756846,SOX6,SNP-Gene,23.92,23.92,1,rs4756846,Obesity,SOX6,Low,,GWAS Catalog
+edge_00799,snp_rs6097169,gene_rpl36p1_tshz2,rs6097169,RPL36P1 - TSHZ2,SNP-Gene,23.92,23.92,1,rs6097169,Asthma,RPL36P1 - TSHZ2,Low,,GWAS Catalog
+edge_00825,snp_rs7119,gene_ac090984_1,rs7119,AC090984.1,SNP-Gene,23.92,23.92,1,rs7119,Type 2 Diabetes,AC090984.1,Low,,GWAS Catalog
+edge_00782,snp_rs4752066,gene_ac005871_2,rs4752066,AC005871.2,SNP-Gene,23.89,23.89,1,rs4752066,Asthma,AC005871.2,Low,,GWAS Catalog
+edge_00875,snp_rs9508025,gene_flt1,rs9508025,FLT1,SNP-Gene,23.89,23.89,1,rs9508025,Coronary Artery Disease,FLT1,Low,,GWAS Catalog
+edge_00641,snp_rs12518099,gene_linc01339,rs12518099,LINC01339,SNP-Gene,23.86,23.86,1,rs12518099,Type 2 Diabetes,LINC01339,Low,,GWAS Catalog
+edge_00747,snp_rs2820037,gene_ac093426_1_chrm3,rs2820037,AC093426.1 - CHRM3,SNP-Gene,23.83,23.83,1,rs2820037,Hypertension,AC093426.1 - CHRM3,Low,,GWAS Catalog
+edge_00835,snp_rs7474896,gene_mtrnr2l7_al132657_1,rs7474896,MTRNR2L7 - AL132657.1,SNP-Gene,23.81,23.81,1,rs7474896,Obesity,MTRNR2L7 - AL132657.1,Low,,GWAS Catalog
+edge_00795,snp_rs564398,gene_al359922_1,rs564398,AL359922.1,SNP-Gene,23.79,23.79,1,rs564398,Type 2 Diabetes,AL359922.1,Low,,GWAS Catalog
+edge_00817,snp_rs6726292,gene_eml6,rs6726292,EML6,SNP-Gene,23.79,23.79,1,rs6726292,Obesity,EML6,Low,,GWAS Catalog
+edge_00860,snp_rs8074700,gene_linc02086,rs8074700,LINC02086,SNP-Gene,23.79,23.79,1,rs8074700,Asthma,LINC02086,Low,,GWAS Catalog
+edge_00864,snp_rs886126,gene_cux2,rs886126,CUX2,SNP-Gene,23.79,23.79,1,rs886126,Coronary Artery Disease,CUX2,Low,,GWAS Catalog
+edge_00887,snp_rs999943,gene_itpr3,rs999943,ITPR3,SNP-Gene,23.79,23.79,1,rs999943,Obesity,ITPR3,Low,,GWAS Catalog
+edge_00770,snp_rs3925584,gene_mpped2_as1_al122014_1,rs3925584,MPPED2-AS1 - AL122014.1,SNP-Gene,23.78,23.78,1,rs3925584,Chronic Kidney Disease,MPPED2-AS1 - AL122014.1,Low,,GWAS Catalog
+edge_00696,snp_rs17663555,gene_ac116345_3,rs17663555,AC116345.3,SNP-Gene,23.65,23.65,1,rs17663555,Chronic Kidney Disease,AC116345.3,Low,,GWAS Catalog
+edge_00697,snp_rs17672135,gene_fmn2,rs17672135,FMN2,SNP-Gene,23.65,23.65,1,rs17672135,Coronary Artery Disease,FMN2,Low,,GWAS Catalog
+edge_00711,snp_rs2033654,gene_adcy3,rs2033654,ADCY3,SNP-Gene,23.65,23.65,1,rs2033654,Asthma,ADCY3,Low,,GWAS Catalog
+edge_00733,snp_rs2326017,gene_ac103702_2,rs2326017,AC103702.2,SNP-Gene,23.65,23.65,1,rs2326017,Asthma,AC103702.2,Low,,GWAS Catalog
+edge_00804,snp_rs642858,gene_al050338_2,rs642858,AL050338.2,SNP-Gene,23.65,23.65,1,rs642858,Type 2 Diabetes,AL050338.2,Low,,GWAS Catalog
+edge_00586,snp_rs10433903,gene_tram1l1_ac107399_1,rs10433903,TRAM1L1 - AC107399.1,SNP-Gene,23.57,23.57,1,rs10433903,Obesity,TRAM1L1 - AC107399.1,Low,,GWAS Catalog
+edge_00626,snp_rs11677370,gene_dcdc2c,rs11677370,DCDC2C,SNP-Gene,23.57,23.57,1,rs11677370,Type 2 Diabetes,DCDC2C,Low,,GWAS Catalog
+edge_00657,snp_rs1317830,gene_ac093913_1_ac020589_1,rs1317830,AC093913.1 - AC020589.1,SNP-Gene,23.57,23.57,1,rs1317830,Asthma,AC093913.1 - AC020589.1,Low,,GWAS Catalog
+edge_00673,snp_rs1530016,gene_efr3b,rs1530016,EFR3B,SNP-Gene,23.57,23.57,1,rs1530016,Asthma,EFR3B,Low,,GWAS Catalog
+edge_00713,snp_rs2063640,gene_zpld1_ac063938_1,rs2063640,ZPLD1 - AC063938.1,SNP-Gene,23.57,23.57,1,rs2063640,Type 2 Diabetes,ZPLD1 - AC063938.1,Low,,GWAS Catalog
+edge_00739,snp_rs2555603,gene_stard13_as,rs2555603,STARD13-AS,SNP-Gene,23.57,23.57,1,rs2555603,Asthma,STARD13-AS,Low,,GWAS Catalog
+edge_00872,snp_rs9319321,gene_gpr12_fgfr1op2p1,rs9319321,GPR12 - FGFR1OP2P1,SNP-Gene,23.57,23.57,1,rs9319321,Asthma,GPR12 - FGFR1OP2P1,Low,,GWAS Catalog
+edge_00588,snp_rs10461617,gene_ac008940_1_map3k1,rs10461617,AC008940.1 - MAP3K1,SNP-Gene,23.52,23.52,1,rs10461617,Type 2 Diabetes,AC008940.1 - MAP3K1,Low,,GWAS Catalog
+edge_00617,snp_rs11165354,gene_tgfbr3,rs11165354,TGFBR3,SNP-Gene,23.52,23.52,1,rs11165354,Type 2 Diabetes,TGFBR3,Low,,GWAS Catalog
+edge_00635,snp_rs12295638,gene_ano3,rs12295638,ANO3,SNP-Gene,23.52,23.52,1,rs12295638,Obesity,ANO3,Low,,GWAS Catalog
+edge_00645,snp_rs1291183,gene_bola2p1_ap000894_1,rs1291183,BOLA2P1 - AP000894.1,SNP-Gene,23.52,23.52,1,rs1291183,Asthma,BOLA2P1 - AP000894.1,Low,,GWAS Catalog
+edge_00667,snp_rs1435703,gene_rarb,rs1435703,RARB,SNP-Gene,23.52,23.52,1,rs1435703,Obesity,RARB,Low,,GWAS Catalog
+edge_00748,snp_rs2833610,gene_hunk,rs2833610,HUNK,SNP-Gene,23.52,23.52,1,rs2833610,Type 2 Diabetes,HUNK,Low,,GWAS Catalog
+edge_00759,snp_rs374748,gene_fbn2,rs374748,FBN2,SNP-Gene,23.52,23.52,1,rs374748,Obesity,FBN2,Low,,GWAS Catalog
+edge_00822,snp_rs688034,gene_sez6l,rs688034,SEZ6L,SNP-Gene,23.52,23.52,1,rs688034,Coronary Artery Disease,SEZ6L,Low,,GWAS Catalog
+edge_00826,snp_rs713587,gene_adcy3_dnajc27,rs713587,ADCY3 - DNAJC27,SNP-Gene,23.52,23.52,1,rs713587,Asthma,ADCY3 - DNAJC27,Low,,GWAS Catalog
+edge_00591,snp_rs10741243,gene_tcerg1l,rs10741243,TCERG1L,SNP-Gene,23.47,23.47,1,rs10741243,Type 2 Diabetes,TCERG1L,Low,,GWAS Catalog
+edge_00607,snp_rs10999409,gene_pald1_prf1,rs10999409,PALD1 - PRF1,SNP-Gene,23.47,23.47,1,rs10999409,Obesity,PALD1 - PRF1,Low,,GWAS Catalog
+edge_00643,snp_rs12635698,gene_ac090948_4,rs12635698,AC090948.4,SNP-Gene,23.47,23.47,1,rs12635698,Obesity,AC090948.4,Low,,GWAS Catalog
+edge_00788,snp_rs5015480,gene_hhex_al590080_1,rs5015480,HHEX - AL590080.1,SNP-Gene,23.47,23.47,1,rs5015480,Type 2 Diabetes,HHEX - AL590080.1,Low,,GWAS Catalog
+edge_00800,snp_rs6110577,gene_macrod2,rs6110577,MACROD2,SNP-Gene,23.47,23.47,1,rs6110577,Obesity,MACROD2,Low,,GWAS Catalog
+edge_00844,snp_rs7636,gene_ache,rs7636,ACHE,SNP-Gene,23.47,23.47,1,rs7636,Type 2 Diabetes,ACHE,Low,,GWAS Catalog
+edge_00873,snp_rs9397738,gene_al591419_1_al591499_1,rs9397738,AL591419.1 - AL591499.1,SNP-Gene,23.47,23.47,1,rs9397738,Chronic Kidney Disease,AL591419.1 - AL591499.1,Low,,GWAS Catalog
+edge_00883,snp_rs991316,gene_adh1b_adh7,rs991316,ADH1B - ADH7,SNP-Gene,23.47,23.47,1,rs991316,Hypertension,ADH1B - ADH7,Low,,GWAS Catalog
+edge_00593,snp_rs10762058,gene_ctnna3,rs10762058,CTNNA3,SNP-Gene,23.44,23.44,1,rs10762058,Asthma,CTNNA3,Low,,GWAS Catalog
+edge_00728,snp_rs2274459,gene_lemd2_mln,rs2274459,LEMD2 - MLN,SNP-Gene,23.44,23.44,1,rs2274459,Obesity,LEMD2 - MLN,Low,,GWAS Catalog
+edge_00736,snp_rs2398162,gene_nr2f2_as1,rs2398162,NR2F2-AS1,SNP-Gene,23.44,23.44,1,rs2398162,Hypertension,NR2F2-AS1,Low,,GWAS Catalog
+edge_00859,snp_rs8055236,gene_cdh13,rs8055236,CDH13,SNP-Gene,23.44,23.44,1,rs8055236,Coronary Artery Disease,CDH13,Low,,GWAS Catalog
+edge_00878,snp_rs974417,gene_klhl32,rs974417,KLHL32,SNP-Gene,23.44,23.44,1,rs974417,Obesity,KLHL32,Low,,GWAS Catalog
+edge_00621,snp_rs11259403,gene_prkcq,rs11259403,PRKCQ,SNP-Gene,23.41,23.41,1,rs11259403,Asthma,PRKCQ,Low,,GWAS Catalog
+edge_00636,snp_rs12304921,gene_higd1c,rs12304921,HIGD1C,SNP-Gene,23.41,23.41,1,rs12304921,Type 2 Diabetes,HIGD1C,Low,,GWAS Catalog
+edge_00668,snp_rs1495377,gene_tspan8,rs1495377,TSPAN8,SNP-Gene,23.41,23.41,1,rs1495377,Type 2 Diabetes,TSPAN8,Low,,GWAS Catalog
+edge_00683,snp_rs16937883,gene_al591222_3_al512635_1,rs16937883,AL591222.3 - AL512635.1,SNP-Gene,23.41,23.41,1,rs16937883,Asthma,AL591222.3 - AL512635.1,Low,,GWAS Catalog
+edge_00688,snp_rs17045328,gene_cr2,rs17045328,CR2,SNP-Gene,23.41,23.41,1,rs17045328,Type 2 Diabetes,CR2,Low,,GWAS Catalog
+edge_00765,snp_rs3780215,gene_slc24a2,rs3780215,SLC24A2,SNP-Gene,23.41,23.41,1,rs3780215,Asthma,SLC24A2,Low,,GWAS Catalog
+edge_00812,snp_rs6583826,gene_ide_kif11,rs6583826,IDE - KIF11,SNP-Gene,23.41,23.41,1,rs6583826,Type 2 Diabetes,IDE - KIF11,Low,,GWAS Catalog
+edge_00843,snp_rs7630877,gene_pex5l,rs7630877,PEX5L,SNP-Gene,23.41,23.41,1,rs7630877,Type 2 Diabetes,PEX5L,Low,,GWAS Catalog
+edge_00622,snp_rs11603160,gene_ap002761_2_ap002761_1,rs11603160,AP002761.2 - AP002761.1,SNP-Gene,23.38,23.38,1,rs11603160,Asthma,AP002761.2 - AP002761.1,Low,,GWAS Catalog
+edge_00625,snp_rs11646213,gene_ac009117_2_cdh13,rs11646213,AC009117.2 - CDH13,SNP-Gene,23.38,23.38,1,rs11646213,Hypertension,AC009117.2 - CDH13,Low,,GWAS Catalog
+edge_00842,snp_rs7603514,gene_ppiap68_ac007679_2,rs7603514,PPIAP68 - AC007679.2,SNP-Gene,23.38,23.38,1,rs7603514,Obesity,PPIAP68 - AC007679.2,Low,,GWAS Catalog
+edge_00587,snp_rs10460009,gene_lpin2,rs10460009,LPIN2,SNP-Gene,23.36,23.36,1,rs10460009,Type 2 Diabetes,LPIN2,Low,,GWAS Catalog
+edge_00640,snp_rs12468557,gene_cps1,rs12468557,CPS1,SNP-Gene,23.36,23.36,1,rs12468557,Asthma,CPS1,Low,,GWAS Catalog
+edge_00650,snp_rs12984174,gene_arrdc2_ac020904_2,rs12984174,ARRDC2 - AC020904.2,SNP-Gene,23.36,23.36,1,rs12984174,Asthma,ARRDC2 - AC020904.2,Low,,GWAS Catalog
+edge_00763,snp_rs3773506,gene_ac072028_1,rs3773506,AC072028.1,SNP-Gene,23.36,23.36,1,rs3773506,Type 2 Diabetes,AC072028.1,Low,,GWAS Catalog
+edge_00767,snp_rs3792615,gene_marchf1,rs3792615,MARCHF1,SNP-Gene,23.36,23.36,1,rs3792615,Type 2 Diabetes,MARCHF1,Low,,GWAS Catalog
+edge_00779,snp_rs472265,gene_acp7,rs472265,ACP7,SNP-Gene,23.36,23.36,1,rs472265,Type 2 Diabetes,ACP7,Low,,GWAS Catalog
+edge_00845,snp_rs7659604,gene_anxa5_tmem155,rs7659604,ANXA5 - TMEM155,SNP-Gene,23.36,23.36,1,rs7659604,Type 2 Diabetes,ANXA5 - TMEM155,Low,,GWAS Catalog
+edge_00870,snp_rs9295474,gene_cdkal1,rs9295474,CDKAL1,SNP-Gene,23.36,23.36,1,rs9295474,Type 2 Diabetes,CDKAL1,Low,,GWAS Catalog
+edge_00744,snp_rs2786098,gene_crb1,rs2786098,CRB1,SNP-Gene,21.8,21.8,1,rs2786098,Asthma,CRB1,Low,,GWAS Catalog
+edge_00628,snp_rs11748327,gene_ac025773_1_ac025187_1,rs11748327,AC025773.1 - AC025187.1,SNP-Gene,21.62,21.62,1,rs11748327,Coronary Artery Disease,AC025773.1 - AC025187.1,Low,,GWAS Catalog
+edge_00701,snp_rs17817449,gene_fto,rs17817449,FTO,SNP-Gene,21.35,21.35,1,rs17817449,Obesity,FTO,Low,,GWAS Catalog
+edge_00590,snp_rs10495809,gene_linc01320,rs10495809,LINC01320,SNP-Gene,20.37,20.37,1,rs10495809,Hypertension,LINC01320,Low,,GWAS Catalog
+edge_00659,snp_rs1333042,gene_cdkn2b_as1,rs1333042,CDKN2B-AS1,SNP-Gene,20.14,20.14,1,rs1333042,Coronary Artery Disease,CDKN2B-AS1,Low,,GWAS Catalog
+edge_00623,snp_rs11624704,gene_nrxn3,rs11624704,NRXN3,SNP-Gene,19.92,19.92,1,rs11624704,Obesity,NRXN3,Low,,GWAS Catalog
+edge_00824,snp_rs7018475,gene_cdkn2b_as1_al157937_1,rs7018475,CDKN2B-AS1 - AL157937.1,SNP-Gene,19.47,19.47,1,rs7018475,Type 2 Diabetes,CDKN2B-AS1 - AL157937.1,Low,,GWAS Catalog
+edge_00613,snp_rs11088859,gene_ncam2,rs11088859,NCAM2,SNP-Gene,19.42,19.42,1,rs11088859,Obesity,NCAM2,Low,,GWAS Catalog
+edge_00620,snp_rs1121980,gene_fto,rs1121980,FTO,SNP-Gene,19.42,19.42,1,rs1121980,Obesity,FTO,Low,,GWAS Catalog
+edge_00806,snp_rs6431731,gene_linc01804,rs6431731,LINC01804,SNP-Gene,19.42,19.42,1,rs6431731,Chronic Kidney Disease,LINC01804,Low,,GWAS Catalog
+edge_00841,snp_rs7593730,gene_rbms1,rs7593730,RBMS1,SNP-Gene,19.42,19.42,1,rs7593730,Type 2 Diabetes,RBMS1,Low,,GWAS Catalog
+edge_00690,snp_rs17126232,gene_ac124242_3,rs17126232,AC124242.3,SNP-Gene,19.28,19.28,1,rs17126232,Obesity,AC124242.3,Low,,GWAS Catalog
+edge_00839,snp_rs7581710,gene_inhbb_linc01101,rs7581710,INHBB - LINC01101,SNP-Gene,19.1,19.1,1,rs7581710,Obesity,INHBB - LINC01101,Low,,GWAS Catalog
+edge_00746,snp_rs2807278,gene_arg1,rs2807278,ARG1,SNP-Gene,19.02,19.02,1,rs2807278,Obesity,ARG1,Low,,GWAS Catalog
+edge_00785,snp_rs489693,gene_ac090771_1_ac090621_1,rs489693,AC090771.1 - AC090621.1,SNP-Gene,18.97,18.97,1,rs489693,Obesity,AC090771.1 - AC090621.1,Low,,GWAS Catalog
+edge_00605,snp_rs10953454,gene_lhfpl3,rs10953454,LHFPL3,SNP-Gene,18.86,18.86,1,rs10953454,Obesity,LHFPL3,Low,,GWAS Catalog
+edge_00689,snp_rs17081231,gene_pcdh9,rs17081231,PCDH9,SNP-Gene,18.86,18.86,1,rs17081231,Obesity,PCDH9,Low,,GWAS Catalog
+edge_00796,snp_rs5762430,gene_ttc28,rs5762430,TTC28,SNP-Gene,18.86,18.86,1,rs5762430,Obesity,TTC28,Low,,GWAS Catalog
+edge_00884,snp_rs9923451,gene_wwox,rs9923451,WWOX,SNP-Gene,18.83,18.83,1,rs9923451,Obesity,WWOX,Low,,GWAS Catalog
+edge_00682,snp_rs16867321,gene_ac012669_1_ac009478_1,rs16867321,AC012669.1 - AC009478.1,SNP-Gene,18.65,18.65,1,rs16867321,Obesity,AC012669.1 - AC009478.1,Low,,GWAS Catalog
+edge_00695,snp_rs17525472,gene_dmxl2_scg3,rs17525472,DMXL2 - SCG3,SNP-Gene,18.65,18.65,1,rs17525472,Asthma,DMXL2 - SCG3,Low,,GWAS Catalog
+edge_00776,snp_rs4701252,gene_cdh12,rs4701252,CDH12,SNP-Gene,18.65,18.65,1,rs4701252,Obesity,CDH12,Low,,GWAS Catalog
+edge_00675,snp_rs1550576,gene_polr2m_aldh1a2,rs1550576,POLR2M - ALDH1A2,SNP-Gene,18.57,18.57,1,rs1550576,Hypertension,POLR2M - ALDH1A2,Low,,GWAS Catalog
+edge_00676,snp_rs1555967,gene_fth1p5_al158050_2,rs1555967,FTH1P5 - AL158050.2,SNP-Gene,18.57,18.57,1,rs1555967,Obesity,FTH1P5 - AL158050.2,Low,,GWAS Catalog
+edge_00757,snp_rs358806,gene_linc02030,rs358806,LINC02030,SNP-Gene,18.57,18.57,1,rs358806,Type 2 Diabetes,LINC02030,Low,,GWAS Catalog
+edge_00717,snp_rs2083637,gene_lpl_ac100802_1,rs2083637,LPL - AC100802.1,SNP-Gene,18.47,18.47,1,rs2083637,Obesity,LPL - AC100802.1,Low,,GWAS Catalog
+edge_00854,snp_rs7932813,gene_cyb5r2_ovch2,rs7932813,CYB5R2 - OVCH2,SNP-Gene,18.47,18.47,1,rs7932813,Obesity,CYB5R2 - OVCH2,Low,,GWAS Catalog
+edge_00808,snp_rs6456042,gene_al627443_1_tbxt,rs6456042,AL627443.1 - TBXT,SNP-Gene,18.44,18.44,1,rs6456042,Asthma,AL627443.1 - TBXT,Low,,GWAS Catalog
+edge_00815,snp_rs6712932,gene_linc01918_gpr45,rs6712932,LINC01918 - GPR45,SNP-Gene,18.44,18.44,1,rs6712932,Type 2 Diabetes,LINC01918 - GPR45,Low,,GWAS Catalog
+edge_00868,snp_rs925642,gene_fat1_ac108865_1,rs925642,FAT1 - AC108865.1,SNP-Gene,18.41,18.41,1,rs925642,Obesity,FAT1 - AC108865.1,Low,,GWAS Catalog
+edge_00784,snp_rs4815617,gene_ap5s1_mavs,rs4815617,AP5S1 - MAVS,SNP-Gene,18.38,18.38,1,rs4815617,Asthma,AP5S1 - MAVS,Low,,GWAS Catalog
+edge_00832,snp_rs741301,gene_elmo1,rs741301,ELMO1,SNP-Gene,18.38,18.38,1,rs741301,Type 2 Diabetes,ELMO1,Low,,GWAS Catalog

@@ -1,0 +1,3 @@
+﻿rsid,disease_name,gene_symbol,p_value,study_title,pubmed_id,publication_year,population,region,country,odds_ratio,effect_size,risk_allele,effect_allele,source_database,disease_name_normalized,gene_symbol_normalized,rsid_normalized,ingestion_created_at
+rs2237892,Type 2 Diabetes,KCNQ1,2.5e-06,Example study for KCNQ1,23456789,2021,East Asian,,Japan,1.22,,C,,admin_test,type 2 diabetes,KCNQ1,rs2237892,2026-05-28T15:52:00
+rs7903146,Type 2 Diabetes,TCF7L2,1e-08,Example GWAS study for Type 2 Diabetes,12345678,2020,European,,UK,1.35,,T,,admin_test,type 2 diabetes,TCF7L2,rs7903146,2026-05-28T15:52:00

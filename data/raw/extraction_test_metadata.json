@@ -1,0 +1,18 @@
+{
+  "file_name": "day16_extraction_test.csv",
+  "source_name": "Day16_Test_Source",
+  "is_real_data": false,
+  "project_day": 16,
+  "stage": "Extraction Skeleton Test",
+  "created_at": "2026-05-04T08:59:50",
+  "rows": 3,
+  "columns": [
+    "rsid",
+    "disease_trait",
+    "mapped_gene",
+    "p_value",
+    "population",
+    "source_database"
+  ],
+  "note": "This is a test raw file only. Real GWAS Catalog extraction starts later."
+}

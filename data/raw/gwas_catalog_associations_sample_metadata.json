@@ -1,0 +1,52 @@
+{
+  "file_name": "gwas_catalog_day17_associations_sample_raw.tsv",
+  "source_name": "GWAS Catalog",
+  "selected_url": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2020/05/20/gwas-catalog-associations.tsv",
+  "final_url": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2020/05/20/gwas-catalog-associations.tsv",
+  "tried_urls": [
+    "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations.tsv",
+    "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations_ontology-annotated.tsv",
+    "http://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations.tsv",
+    "http://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations_ontology-annotated.tsv",
+    "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2020/05/20/gwas-catalog-associations.tsv",
+    "http://ftp.ebi.ac.uk/pub/databases/gwas/releases/2020/05/20/gwas-catalog-associations.tsv",
+    "https://www.ebi.ac.uk/gwas/api/search/downloads/alternative",
+    "https://www.ebi.ac.uk/gwas/api/search/downloads/full"
+  ],
+  "failed_urls": [
+    {
+      "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations.tsv",
+      "error_type": "HTTPError",
+      "status_code": 404,
+      "message": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations_ontology-annotated.tsv",
+      "error_type": "HTTPError",
+      "status_code": 404,
+      "message": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "http://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations.tsv",
+      "error_type": "HTTPError",
+      "status_code": 404,
+      "message": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "http://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations_ontology-annotated.tsv",
+      "error_type": "HTTPError",
+      "status_code": 404,
+      "message": "HTTP Error 404: Not Found"
+    }
+  ],
+  "content_type": "text/tab-separated-values",
+  "content_disposition": "",
+  "is_real_data": true,
+  "is_partial_sample": true,
+  "max_lines_requested": 5000,
+  "lines_saved": 5000,
+  "project_day": 17,
+  "stage": "First Real Raw Data Sample",
+  "downloaded_at": "2026-05-04T09:15:48",
+  "note": "This is a partial raw sample from GWAS Catalog. It is saved as plain TSV and has not been cleaned or normalized."
+}

@@ -1,0 +1,13 @@
+﻿component,status,purpose
+Disease Search,available,Search by disease name
+SNP Search,available,Search by rsID
+Quick Examples,added,Ready search examples
+Search History,added,Show recent searches
+Rank Filter,available,Filter by rank label
+Gene Filter,available,Filter by gene symbol
+Min Score Filter,available,Filter by importance score
+Max p-value Filter,available,Filter by p-value
+Sort Options,added,"Sort by score, p-value, study count, or gene"
+CSV Export,added,Download filtered results
+Suggestions,improved,Show closest suggestion only for typos
+DuplicateElementId Fix,fixed,All widgets have unique keys

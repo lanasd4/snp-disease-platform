@@ -1,0 +1,30 @@
+{
+  "selected_model": "qwen3:latest",
+  "benchmarks": [
+    {
+      "model": "gemma:latest",
+      "total_seconds": 17.959,
+      "first_token_seconds": 10.781,
+      "quality_score": 3,
+      "memory_usage": "not_available_from_ollama_tags",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "model": "qwen3:latest",
+      "total_seconds": 7.141,
+      "first_token_seconds": 5.115,
+      "quality_score": 3,
+      "memory_usage": "not_available_from_ollama_tags",
+      "ok": true,
+      "error": ""
+    }
+  ],
+  "reason": "Selected fastest acceptable local model.",
+  "candidates": [
+    "gemma:latest",
+    "qwen3:latest"
+  ],
+  "from_cache": false,
+  "cache_version": 2
+}

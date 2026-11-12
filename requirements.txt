@@ -1,0 +1,17 @@
+# App runtime dependencies.
+# Lower bounds include security fixes (pip-audit, 2026-11-10); upper bounds
+# avoid untested major versions (pandas 3 / plotly 7 / numpy 3 change APIs).
+streamlit>=1.67,<2
+pandas>=2.3,<3
+numpy>=2,<3
+plotly>=6.9,<7
+scikit-learn>=1.8,<2
+joblib>=1.5
+openpyxl>=3.1
+
+# Transitive dependencies pinned to patched versions.
+tornado>=6.6
+pillow>=13.0
+urllib3>=2.8
+requests>=2.33
+gitpython>=3.2.1

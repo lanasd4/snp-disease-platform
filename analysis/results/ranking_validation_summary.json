@@ -1,0 +1,18 @@
+{
+  "pooled": {
+    "importance_score": {
+      "mean_auc": 0.6215,
+      "permutation_p": 0.0002,
+      "diseases": 10
+    },
+    "pvalue_only": {
+      "mean_auc": 0.6687,
+      "permutation_p": 0.0002,
+      "diseases": 10
+    }
+  },
+  "figures": [
+    "analysis/figures/fig4_ranking_validation.png",
+    "analysis/figures/fig4_ranking_validation.svg"
+  ]
+}

@@ -1,0 +1,4 @@
+﻿population_region_id,country,region,population_label,is_arab_related,notes
+1,International,Global,Mixed ancestry,N,Sample global population record
+2,Middle East,Middle East,Middle Eastern population,Y,Sample regional population record
+3,Arab Region,Arab Region,Arab-related population,Y,Sample Arab-related population record

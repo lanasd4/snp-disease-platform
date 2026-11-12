@@ -1,0 +1,9 @@
+﻿rsid,gene_symbol,disease_name,disease_arabic_name,importance_score,rank_label,rank_label_arabic,p_value,risk_allele
+rs7903146,TCF7L2,Type 2 Diabetes,السكري من النوع الثاني,69.6,Moderate,متوسط,1e-05,T
+rs7903146,TCF7L2,Type 2 Diabetes,السكري من النوع الثاني,64.6,Moderate,متوسط,1e-48,T
+rs7903146,TCF7L2,Type 2 Diabetes,السكري من النوع الثاني,64.6,Moderate,متوسط,1e-35,T
+rs7903146,TCF7L2,Type 2 Diabetes,السكري من النوع الثاني,64.6,Moderate,متوسط,9.999999999999999e-31,T
+rs7903146,TCF7L2,Type 2 Diabetes,السكري من النوع الثاني,64.6,Moderate,متوسط,2e-15,T
+rs7903146,TCF7L2,Type 2 Diabetes,السكري من النوع الثاني,64.6,Moderate,متوسط,8e-12,T
+rs7903146,TCF7L2,Type 2 Diabetes,السكري من النوع الثاني,64.6,Moderate,متوسط,1e-08,T
+rs7903146,TCF7L2,Type 2 Diabetes,السكري من النوع الثاني,64.6,Moderate,متوسط,5e-08,A

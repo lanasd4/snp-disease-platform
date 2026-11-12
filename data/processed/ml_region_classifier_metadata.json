@@ -1,0 +1,27 @@
+{
+  "file_name": "ml_region_classifier_pipeline.joblib",
+  "project_day": 30,
+  "stage": "Initial ML Arab/Middle East Region Classifier",
+  "created_at": "2026-05-14T21:13:13",
+  "model_type": "TF-IDF + Logistic Regression",
+  "training_rows_total": 94,
+  "train_size": 70,
+  "test_size": 24,
+  "labels": [
+    "Arab_Middle_East",
+    "Other",
+    "Unknown_Review"
+  ],
+  "metrics": {
+    "accuracy": 0.9167,
+    "precision_macro": 0.9352,
+    "recall_macro": 0.8667,
+    "f1_macro": 0.8826,
+    "precision_weighted": 0.9248,
+    "recall_weighted": 0.9167,
+    "f1_weighted": 0.9084
+  },
+  "split_note": "Stratified train/test split was used.",
+  "model_path": "/content/drive/MyDrive/SNP_Disease_Platform/outputs/models/ml_region_classifier_pipeline.joblib",
+  "note": "Prototype ML classifier for regional text classification. Not a definitive population genetics classifier."
+}

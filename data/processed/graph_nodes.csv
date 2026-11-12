@@ -1,0 +1,567 @@
+﻿node_id,label,arabic_label,node_type,weight,degree_hint,record_count,source
+disease_type_2_diabetes,Type 2 Diabetes,السكري من النوع الثاني,Disease,69.6,56,83,ranked_associations
+disease_obesity,Obesity,السمنة,Disease,66.09,111,115,ranked_associations
+disease_chronic_kidney_disease,Chronic Kidney Disease,مرض الكلى المزمن,Disease,61.09,59,61,ranked_associations
+disease_hypertension,Hypertension,ارتفاع ضغط الدم,Disease,36.84,32,33,ranked_associations
+disease_coronary_artery_disease,Coronary Artery Disease,مرض الشريان التاجي,Disease,28.92,18,18,ranked_associations
+disease_asthma,Asthma,الربو,Disease,27.48,39,39,ranked_associations
+gene_tcf7l2,TCF7L2,,Gene,69.6,3,10,ranked_associations
+gene_fto,FTO,,Gene,66.09,11,16,ranked_associations
+gene_cst3,CST3,,Gene,61.09,1,1,ranked_associations
+gene_slc2a9,SLC2A9,,Gene,50.2,1,1,ranked_associations
+gene_nrxn2,NRXN2,,Gene,49.22,1,1,ranked_associations
+gene_umod,UMOD,,Gene,47.5,1,2,ranked_associations
+gene_kcnq1,KCNQ1,,Gene,44.47,2,3,ranked_associations
+gene_slc30a8,SLC30A8,,Gene,39.75,1,5,ranked_associations
+gene_ac093326_1_tmem18,AC093326.1 - TMEM18,,Gene,38.87,3,3,ranked_associations
+gene_cdkn2b_as1_al157937_1,CDKN2B-AS1 - AL157937.1,,Gene,38.62,3,6,ranked_associations
+gene_igf2bp2,IGF2BP2,,Gene,38.29,2,5,ranked_associations
+gene_rnu4_17p_ac090771_1,RNU4-17P - AC090771.1,,Gene,37.15,5,5,ranked_associations
+gene_hectd4,HECTD4,,Gene,36.84,2,2,ranked_associations
+gene_ac108467_1_thap12p9,AC108467.1 - THAP12P9,,Gene,36.17,3,3,ranked_associations
+gene_cnnm2,CNNM2,,Gene,36.12,1,2,ranked_associations
+gene_bcdin3d_ac131157_1,BCDIN3D - AC131157.1,,Gene,34.7,1,2,ranked_associations
+gene_cdkal1,CDKAL1,,Gene,34.32,6,8,ranked_associations
+gene_pkd2,PKD2,,Gene,34.32,1,1,ranked_associations
+gene_linc01991_ac092941_1,LINC01991 - AC092941.1,,Gene,34.16,1,1,ranked_associations
+gene_hhex_al590080_1,HHEX - AL590080.1,,Gene,33.99,2,4,ranked_associations
+gene_bcas3,BCAS3,,Gene,32.45,2,3,ranked_associations
+gene_pparg,PPARG,,Gene,31.54,1,3,ranked_associations
+gene_csk,CSK,,Gene,31.44,1,1,ranked_associations
+gene_al136114_1,AL136114.1,,Gene,31.01,1,1,ranked_associations
+gene_ac103796_1,AC103796.1,,Gene,30.77,1,1,ranked_associations
+gene_tfap2b,TFAP2B,,Gene,30.67,2,3,ranked_associations
+gene_prdm8_fgf5,PRDM8 - FGF5,,Gene,30.54,1,1,ranked_associations
+gene_agt,AGT,,Gene,30.44,1,1,ranked_associations
+gene_kcnj11,KCNJ11,,Gene,30.27,2,3,ranked_associations
+gene_atp2b1,ATP2B1,,Gene,29.68,1,1,ranked_associations
+gene_rpl21p41_ac098969_2,RPL21P41 - AC098969.2,,Gene,29.64,1,1,ranked_associations
+gene_shroom3,SHROOM3,,Gene,29.64,2,2,ranked_associations
+gene_rps17p5_al049693_1,RPS17P5 - AL049693.1,,Gene,29.42,1,1,ranked_associations
+gene_atxn2,ATXN2,,Gene,28.97,1,2,ranked_associations
+gene_cdkn2a,CDKN2A,,Gene,28.92,1,1,ranked_associations
+gene_ac091151_7,AC091151.7,,Gene,28.81,1,1,ranked_associations
+gene_adcy3_dnajc27,ADCY3 - DNAJC27,,Gene,28.74,2,2,ranked_associations
+gene_nrxn3,NRXN3,,Gene,28.74,4,4,ranked_associations
+gene_al513166_1,AL513166.1,,Gene,28.6,3,3,ranked_associations
+gene_ube2q2,UBE2Q2,,Gene,28.52,1,1,ranked_associations
+gene_zpr1,ZPR1,,Gene,28.29,2,2,ranked_associations
+gene_herpud1_cetp,HERPUD1 - CETP,,Gene,28.24,1,1,ranked_associations
+gene_apoa5,APOA5,,Gene,28.15,1,2,ranked_associations
+gene_mpped2_as1_al122014_1,MPPED2-AS1 - AL122014.1,,Gene,27.97,3,3,ranked_associations
+gene_bud13,BUD13,,Gene,27.91,2,2,ranked_associations
+gene_cps1,CPS1,,Gene,27.84,2,2,ranked_associations
+gene_slc7a9,SLC7A9,,Gene,27.62,1,1,ranked_associations
+gene_il33,IL33,,Gene,27.48,1,1,ranked_associations
+gene_slc34a1,SLC34A1,,Gene,27.39,1,1,ranked_associations
+gene_dgkg,DGKG,,Gene,27.25,1,1,ranked_associations
+gene_gckr,GCKR,,Gene,27.17,2,4,ranked_associations
+gene_gipr,GIPR,,Gene,27.17,2,2,ranked_associations
+gene_mecom,MECOM,,Gene,27.17,1,1,ranked_associations
+gene_myl2,MYL2,,Gene,27.12,1,1,ranked_associations
+gene_alms1p1,ALMS1P1,,Gene,27.07,1,1,ranked_associations
+gene_cdkn2b_as1,CDKN2B-AS1,,Gene,27.07,3,3,ranked_associations
+gene_mfap3,MFAP3,,Gene,27.07,1,1,ranked_associations
+gene_hla_dqa1_hla_dqb1,HLA-DQA1 - HLA-DQB1,,Gene,27.01,1,1,ranked_associations
+gene_pip5k1b,PIP5K1B,,Gene,26.98,1,1,ranked_associations
+gene_al157371_2,AL157371.2,,Gene,26.96,1,1,ranked_associations
+gene_wdr72,WDR72,,Gene,26.94,3,3,ranked_associations
+gene_al136114_1_sec16b,AL136114.1 - SEC16B,,Gene,26.8,1,1,ranked_associations
+gene_mthfr,MTHFR,,Gene,26.8,1,1,ranked_associations
+gene_sh2b1,SH2B1,,Gene,26.72,1,1,ranked_associations
+gene_adamts7,ADAMTS7,,Gene,26.62,1,1,ranked_associations
+gene_map2k5,MAP2K5,,Gene,26.59,1,1,ranked_associations
+gene_mras,MRAS,,Gene,26.56,1,1,ranked_associations
+gene_al590133_1_anxa9,AL590133.1 - ANXA9,,Gene,26.49,1,1,ranked_associations
+gene_gbap1,GBAP1,,Gene,26.35,1,1,ranked_associations
+gene_poc5,POC5,,Gene,26.27,1,1,ranked_associations
+gene_gprc5b_gpr139,GPRC5B - GPR139,,Gene,26.22,3,3,ranked_associations
+gene_prkag2,PRKAG2,,Gene,26.22,1,1,ranked_associations
+gene_slc22a2,SLC22A2,,Gene,26.14,1,1,ranked_associations
+gene_ac062015_1_mir5702,AC062015.1 - MIR5702,,Gene,26.06,1,1,ranked_associations
+gene_gnat2,GNAT2,,Gene,26.06,1,1,ranked_associations
+gene_al356534_1,AL356534.1,,Gene,26.04,1,1,ranked_associations
+gene_jcad,JCAD,,Gene,26.04,1,1,ranked_associations
+gene_trim66,TRIM66,,Gene,26.04,1,1,ranked_associations
+gene_cadm2,CADM2,,Gene,25.82,1,1,ranked_associations
+gene_dach1,DACH1,,Gene,25.82,1,1,ranked_associations
+gene_tfdp2,TFDP2,,Gene,25.82,1,1,ranked_associations
+gene_ac016766_1,AC016766.1,,Gene,25.77,1,1,ranked_associations
+gene_acad10,ACAD10,,Gene,25.72,1,1,ranked_associations
+gene_uncx_ac073094_1,UNCX - AC073094.1,,Gene,25.72,1,1,ranked_associations
+gene_ac051619_2_rnu6_953p,AC051619.2 - RNU6-953P,,Gene,25.67,1,1,ranked_associations
+gene_celsr2_psrc1,CELSR2 - PSRC1,,Gene,25.63,1,1,ranked_associations
+gene_ac007092_1,AC007092.1,,Gene,25.59,1,1,ranked_associations
+gene_ac008125_1_ac078880_1,AC008125.1 - AC078880.1,,Gene,25.59,1,1,ranked_associations
+gene_ac018706_1_ac010719_1,AC018706.1 - AC010719.1,,Gene,25.59,1,1,ranked_associations
+gene_lpl,LPL,,Gene,25.59,1,1,ranked_associations
+gene_pdilt,PDILT,,Gene,25.59,1,1,ranked_associations
+gene_bcdin3d_as1,BCDIN3D-AS1,,Gene,25.45,1,1,ranked_associations
+gene_lingo2,LINGO2,,Gene,25.45,2,2,ranked_associations
+gene_aldh2,ALDH2,,Gene,25.37,1,1,ranked_associations
+gene_casz1,CASZ1,,Gene,25.37,1,1,ranked_associations
+gene_pax8_as1,PAX8-AS1,,Gene,25.37,1,1,ranked_associations
+gene_hnf4g_ac011029_1,HNF4G - AC011029.1,,Gene,25.32,1,1,ranked_associations
+gene_ac069114_1_cbln2,AC069114.1 - CBLN2,,Gene,25.21,1,1,ranked_associations
+gene_al162384_1_gtf3ap1,AL162384.1 - GTF3AP1,,Gene,25.16,1,1,ranked_associations
+gene_ac009159_3_ac009159_1,AC009159.3 - AC009159.1,,Gene,25.14,1,1,ranked_associations
+gene_cabcoco1,CABCOCO1,,Gene,25.14,1,1,ranked_associations
+gene_gpn1,GPN1,,Gene,25.14,1,1,ranked_associations
+gene_hcp5,HCP5,,Gene,25.14,1,1,ranked_associations
+gene_slc6a13,SLC6A13,,Gene,25.14,1,1,ranked_associations
+gene_ac090771_1_ac090621_1,AC090771.1 - AC090621.1,,Gene,25.0,2,2,ranked_associations
+gene_al356295_1,AL356295.1,,Gene,25.0,1,1,ranked_associations
+gene_c2orf16,C2ORF16,,Gene,25.0,1,1,ranked_associations
+gene_linc01122,LINC01122,,Gene,25.0,1,1,ranked_associations
+gene_rsbn1l_tmem60,RSBN1L - TMEM60,,Gene,25.0,1,1,ranked_associations
+gene_c11orf65,C11ORF65,,Gene,24.92,1,1,ranked_associations
+gene_etv5,ETV5,,Gene,24.92,1,1,ranked_associations
+gene_il18r1,IL18R1,,Gene,24.92,1,1,ranked_associations
+gene_poc5_slc25a5p9,POC5 - SLC25A5P9,,Gene,24.87,1,1,ranked_associations
+gene_smad3,SMAD3,,Gene,24.87,1,1,ranked_associations
+gene_uncx,UNCX,,Gene,24.87,1,1,ranked_associations
+gene_ac091180_3,AC091180.3,,Gene,24.82,1,1,ranked_associations
+gene_fpgt_tnni3k,FPGT-TNNI3K,,Gene,24.82,2,2,ranked_associations
+gene_gsdma,GSDMA,,Gene,24.82,1,1,ranked_associations
+gene_znf512,ZNF512,,Gene,24.82,1,1,ranked_associations
+gene_rabep2,RABEP2,,Gene,24.76,1,1,ranked_associations
+gene_abo,ABO,,Gene,24.73,1,1,ranked_associations
+gene_chordc1p4,CHORDC1P4,,Gene,24.73,1,1,ranked_associations
+gene_ac034111_2,AC034111.2,,Gene,24.71,1,1,ranked_associations
+gene_ac091114_1,AC091114.1,,Gene,24.71,1,1,ranked_associations
+gene_enpep,ENPEP,,Gene,24.71,1,1,ranked_associations
+gene_gnas,GNAS,,Gene,24.71,1,1,ranked_associations
+gene_ac116317_2_wfs1,AC116317.2 - WFS1,,Gene,24.69,1,1,ranked_associations
+gene_capza1,CAPZA1,,Gene,24.69,1,1,ranked_associations
+gene_hs6st3,HS6ST3,,Gene,24.69,1,1,ranked_associations
+gene_il2rb,IL2RB,,Gene,24.69,1,1,ranked_associations
+gene_plcd3,PLCD3,,Gene,24.69,1,1,ranked_associations
+gene_stc1_rnu1_148p,STC1 - RNU1-148P,,Gene,24.69,1,1,ranked_associations
+gene_wdr37,WDR37,,Gene,24.69,1,1,ranked_associations
+gene_linc01524,LINC01524,,Gene,24.55,1,1,ranked_associations
+gene_npr3_ac025459_1,NPR3 - AC025459.1,,Gene,24.55,1,1,ranked_associations
+gene_rptor,RPTOR,,Gene,24.55,1,1,ranked_associations
+gene_ac118549_1,AC118549.1,,Gene,24.47,1,1,ranked_associations
+gene_lyplal1_as1_al356364_1,LYPLAL1-AS1 - AL356364.1,,Gene,24.47,1,1,ranked_associations
+gene_pde4d,PDE4D,,Gene,24.47,1,1,ranked_associations
+gene_sdhaf4,SDHAF4,,Gene,24.47,1,1,ranked_associations
+gene_adcy3,ADCY3,,Gene,24.42,2,2,ranked_associations
+gene_adcy9,ADCY9,,Gene,24.42,1,1,ranked_associations
+gene_ac023442_2_linc02745,AC023442.2 - LINC02745,,Gene,24.34,1,1,ranked_associations
+gene_ac110620_2,AC110620.2,,Gene,24.31,1,1,ranked_associations
+gene_mecom_as1,MECOM-AS1,,Gene,24.28,1,1,ranked_associations
+gene_fth1p5_al158050_2,FTH1P5 - AL158050.2,,Gene,24.26,2,2,ranked_associations
+gene_dab2,DAB2,,Gene,24.24,1,1,ranked_associations
+gene_grik2,GRIK2,,Gene,24.24,1,1,ranked_associations
+gene_gsdmb,GSDMB,,Gene,24.24,1,1,ranked_associations
+gene_il13,IL13,,Gene,24.24,1,1,ranked_associations
+gene_krt8p26_ap001266_2,KRT8P26 - AP001266.2,,Gene,24.24,1,1,ranked_associations
+gene_psma5_sypl2,PSMA5 - SYPL2,,Gene,24.24,1,1,ranked_associations
+gene_rora,RORA,,Gene,24.24,1,1,ranked_associations
+gene_ac010729_1_linc01810,AC010729.1 - LINC01810,,Gene,24.1,1,1,ranked_associations
+gene_dennd1a,DENND1A,,Gene,24.1,1,1,ranked_associations
+gene_rgs14,RGS14,,Gene,24.1,1,1,ranked_associations
+gene_slc22a5,SLC22A5,,Gene,24.1,1,1,ranked_associations
+gene_stk39,STK39,,Gene,24.1,1,1,ranked_associations
+gene_tfap2d_tfap2b,TFAP2D - TFAP2B,,Gene,24.1,1,1,ranked_associations
+gene_rad50,RAD50,,Gene,24.02,1,1,ranked_associations
+gene_tbce,TBCE,,Gene,24.02,1,1,ranked_associations
+gene_al008718_2_al008718_1,AL008718.2 - AL008718.1,,Gene,23.97,1,1,ranked_associations
+gene_pcnx2,PCNX2,,Gene,23.97,1,1,ranked_associations
+gene_sox6,SOX6,,Gene,23.97,2,2,ranked_associations
+gene_ac090984_1,AC090984.1,,Gene,23.92,1,1,ranked_associations
+gene_hnf1a,HNF1A,,Gene,23.92,1,1,ranked_associations
+gene_rpl36p1_tshz2,RPL36P1 - TSHZ2,,Gene,23.92,1,1,ranked_associations
+gene_ac005871_2,AC005871.2,,Gene,23.89,1,1,ranked_associations
+gene_flt1,FLT1,,Gene,23.89,1,1,ranked_associations
+gene_linc01339,LINC01339,,Gene,23.86,1,1,ranked_associations
+gene_ac093426_1_chrm3,AC093426.1 - CHRM3,,Gene,23.83,1,1,ranked_associations
+gene_mtrnr2l7_al132657_1,MTRNR2L7 - AL132657.1,,Gene,23.81,1,1,ranked_associations
+gene_al359922_1,AL359922.1,,Gene,23.79,1,1,ranked_associations
+gene_cux2,CUX2,,Gene,23.79,1,1,ranked_associations
+gene_eml6,EML6,,Gene,23.79,1,1,ranked_associations
+gene_itpr3,ITPR3,,Gene,23.79,1,1,ranked_associations
+gene_linc02086,LINC02086,,Gene,23.79,1,1,ranked_associations
+gene_ac103702_2,AC103702.2,,Gene,23.65,1,1,ranked_associations
+gene_ac116345_3,AC116345.3,,Gene,23.65,1,1,ranked_associations
+gene_al050338_2,AL050338.2,,Gene,23.65,1,1,ranked_associations
+gene_fmn2,FMN2,,Gene,23.65,1,1,ranked_associations
+gene_ac093913_1_ac020589_1,AC093913.1 - AC020589.1,,Gene,23.57,1,1,ranked_associations
+gene_dcdc2c,DCDC2C,,Gene,23.57,1,1,ranked_associations
+gene_efr3b,EFR3B,,Gene,23.57,1,1,ranked_associations
+gene_gpr12_fgfr1op2p1,GPR12 - FGFR1OP2P1,,Gene,23.57,1,1,ranked_associations
+gene_stard13_as,STARD13-AS,,Gene,23.57,1,1,ranked_associations
+gene_tram1l1_ac107399_1,TRAM1L1 - AC107399.1,,Gene,23.57,1,1,ranked_associations
+gene_zpld1_ac063938_1,ZPLD1 - AC063938.1,,Gene,23.57,1,1,ranked_associations
+gene_ac008940_1_map3k1,AC008940.1 - MAP3K1,,Gene,23.52,1,1,ranked_associations
+gene_ano3,ANO3,,Gene,23.52,1,1,ranked_associations
+gene_bola2p1_ap000894_1,BOLA2P1 - AP000894.1,,Gene,23.52,1,1,ranked_associations
+gene_fbn2,FBN2,,Gene,23.52,1,1,ranked_associations
+gene_hunk,HUNK,,Gene,23.52,1,1,ranked_associations
+gene_rarb,RARB,,Gene,23.52,1,1,ranked_associations
+gene_sez6l,SEZ6L,,Gene,23.52,1,1,ranked_associations
+gene_tgfbr3,TGFBR3,,Gene,23.52,1,1,ranked_associations
+gene_ac090948_4,AC090948.4,,Gene,23.47,1,1,ranked_associations
+gene_ache,ACHE,,Gene,23.47,1,1,ranked_associations
+gene_adh1b_adh7,ADH1B - ADH7,,Gene,23.47,1,1,ranked_associations
+gene_al591419_1_al591499_1,AL591419.1 - AL591499.1,,Gene,23.47,1,1,ranked_associations
+gene_macrod2,MACROD2,,Gene,23.47,1,1,ranked_associations
+gene_pald1_prf1,PALD1 - PRF1,,Gene,23.47,1,1,ranked_associations
+gene_tcerg1l,TCERG1L,,Gene,23.47,1,1,ranked_associations
+gene_cdh13,CDH13,,Gene,23.44,1,1,ranked_associations
+gene_ctnna3,CTNNA3,,Gene,23.44,1,1,ranked_associations
+gene_klhl32,KLHL32,,Gene,23.44,1,1,ranked_associations
+gene_lemd2_mln,LEMD2 - MLN,,Gene,23.44,1,1,ranked_associations
+gene_nr2f2_as1,NR2F2-AS1,,Gene,23.44,1,1,ranked_associations
+gene_al591222_3_al512635_1,AL591222.3 - AL512635.1,,Gene,23.41,1,1,ranked_associations
+gene_cr2,CR2,,Gene,23.41,1,1,ranked_associations
+gene_higd1c,HIGD1C,,Gene,23.41,1,1,ranked_associations
+gene_ide_kif11,IDE - KIF11,,Gene,23.41,1,1,ranked_associations
+gene_pex5l,PEX5L,,Gene,23.41,1,1,ranked_associations
+gene_prkcq,PRKCQ,,Gene,23.41,1,1,ranked_associations
+gene_slc24a2,SLC24A2,,Gene,23.41,1,1,ranked_associations
+gene_tspan8,TSPAN8,,Gene,23.41,1,1,ranked_associations
+gene_ac009117_2_cdh13,AC009117.2 - CDH13,,Gene,23.38,1,1,ranked_associations
+gene_ap002761_2_ap002761_1,AP002761.2 - AP002761.1,,Gene,23.38,1,1,ranked_associations
+gene_ppiap68_ac007679_2,PPIAP68 - AC007679.2,,Gene,23.38,1,1,ranked_associations
+gene_ac072028_1,AC072028.1,,Gene,23.36,1,1,ranked_associations
+gene_acp7,ACP7,,Gene,23.36,1,1,ranked_associations
+gene_anxa5_tmem155,ANXA5 - TMEM155,,Gene,23.36,1,1,ranked_associations
+gene_arrdc2_ac020904_2,ARRDC2 - AC020904.2,,Gene,23.36,1,1,ranked_associations
+gene_lpin2,LPIN2,,Gene,23.36,1,1,ranked_associations
+gene_marchf1,MARCHF1,,Gene,23.36,1,1,ranked_associations
+gene_crb1,CRB1,,Gene,21.8,1,1,ranked_associations
+gene_ac025773_1_ac025187_1,AC025773.1 - AC025187.1,,Gene,21.62,1,1,ranked_associations
+gene_linc01320,LINC01320,,Gene,20.37,1,1,ranked_associations
+gene_linc01804,LINC01804,,Gene,19.42,1,1,ranked_associations
+gene_ncam2,NCAM2,,Gene,19.42,1,1,ranked_associations
+gene_rbms1,RBMS1,,Gene,19.42,1,1,ranked_associations
+gene_ac124242_3,AC124242.3,,Gene,19.28,1,1,ranked_associations
+gene_inhbb_linc01101,INHBB - LINC01101,,Gene,19.1,1,1,ranked_associations
+gene_arg1,ARG1,,Gene,19.02,1,1,ranked_associations
+gene_lhfpl3,LHFPL3,,Gene,18.86,1,1,ranked_associations
+gene_pcdh9,PCDH9,,Gene,18.86,1,1,ranked_associations
+gene_ttc28,TTC28,,Gene,18.86,1,1,ranked_associations
+gene_wwox,WWOX,,Gene,18.83,1,1,ranked_associations
+gene_ac012669_1_ac009478_1,AC012669.1 - AC009478.1,,Gene,18.65,1,1,ranked_associations
+gene_cdh12,CDH12,,Gene,18.65,1,1,ranked_associations
+gene_dmxl2_scg3,DMXL2 - SCG3,,Gene,18.65,1,1,ranked_associations
+gene_linc02030,LINC02030,,Gene,18.57,1,1,ranked_associations
+gene_polr2m_aldh1a2,POLR2M - ALDH1A2,,Gene,18.57,1,1,ranked_associations
+gene_cyb5r2_ovch2,CYB5R2 - OVCH2,,Gene,18.47,1,1,ranked_associations
+gene_lpl_ac100802_1,LPL - AC100802.1,,Gene,18.47,1,1,ranked_associations
+gene_al627443_1_tbxt,AL627443.1 - TBXT,,Gene,18.44,1,1,ranked_associations
+gene_linc01918_gpr45,LINC01918 - GPR45,,Gene,18.44,1,1,ranked_associations
+gene_fat1_ac108865_1,FAT1 - AC108865.1,,Gene,18.41,1,1,ranked_associations
+gene_ap5s1_mavs,AP5S1 - MAVS,,Gene,18.38,1,1,ranked_associations
+gene_elmo1,ELMO1,,Gene,18.38,1,1,ranked_associations
+snp_rs7903146,rs7903146,,SNP,69.6,1,8,ranked_associations
+snp_rs8043757,rs8043757,,SNP,66.09,1,1,ranked_associations
+snp_rs1558902,rs1558902,,SNP,65.29,1,3,ranked_associations
+snp_rs911119,rs911119,,SNP,61.09,1,1,ranked_associations
+snp_rs7185735,rs7185735,,SNP,56.64,1,1,ranked_associations
+snp_rs3775948,rs3775948,,SNP,50.2,1,1,ranked_associations
+snp_rs504915,rs504915,,SNP,49.22,1,1,ranked_associations
+snp_rs12917707,rs12917707,,SNP,47.5,1,2,ranked_associations
+snp_rs2237892,rs2237892,,SNP,44.47,1,2,ranked_associations
+snp_rs11075990,rs11075990,,SNP,43.9,1,1,ranked_associations
+snp_rs7901695,rs7901695,,SNP,42.69,1,1,ranked_associations
+snp_rs13266634,rs13266634,,SNP,39.75,1,5,ranked_associations
+snp_rs6711012,rs6711012,,SNP,38.87,1,1,ranked_associations
+snp_rs2383208,rs2383208,,SNP,38.62,1,2,ranked_associations
+snp_rs1421085,rs1421085,,SNP,38.29,1,1,ranked_associations
+snp_rs4402960,rs4402960,,SNP,38.29,1,4,ranked_associations
+snp_rs538656,rs538656,,SNP,37.15,1,1,ranked_associations
+snp_rs11066280,rs11066280,,SNP,36.84,1,1,ranked_associations
+snp_rs10938397,rs10938397,,SNP,36.17,1,1,ranked_associations
+snp_rs11191548,rs11191548,,SNP,36.12,1,2,ranked_associations
+snp_rs10811661,rs10811661,,SNP,35.32,1,3,ranked_associations
+snp_rs8050136,rs8050136,,SNP,34.89,1,3,ranked_associations
+snp_rs7138803,rs7138803,,SNP,34.7,1,2,ranked_associations
+snp_rs2725220,rs2725220,,SNP,34.32,1,1,ranked_associations
+snp_rs4712523,rs4712523,,SNP,34.32,1,2,ranked_associations
+snp_rs10937329,rs10937329,,SNP,34.16,1,1,ranked_associations
+snp_rs1111875,rs1111875,,SNP,33.99,1,3,ranked_associations
+snp_rs13130484,rs13130484,,SNP,33.42,1,1,ranked_associations
+snp_rs10871777,rs10871777,,SNP,33.1,1,1,ranked_associations
+snp_rs9895661,rs9895661,,SNP,32.45,1,2,ranked_associations
+snp_rs10189761,rs10189761,,SNP,31.54,1,1,ranked_associations
+snp_rs1801282,rs1801282,,SNP,31.54,1,3,ranked_associations
+snp_rs1378942,rs1378942,,SNP,31.44,1,1,ranked_associations
+snp_rs633715,rs633715,,SNP,31.01,1,1,ranked_associations
+snp_rs11152213,rs11152213,,SNP,30.77,1,1,ranked_associations
+snp_rs2030323,rs2030323,,SNP,30.77,1,1,ranked_associations
+snp_rs2206277,rs2206277,,SNP,30.67,1,1,ranked_associations
+snp_rs16998073,rs16998073,,SNP,30.54,1,1,ranked_associations
+snp_rs987237,rs987237,,SNP,30.52,1,2,ranked_associations
+snp_rs699,rs699,,SNP,30.44,1,1,ranked_associations
+snp_rs7754840,rs7754840,,SNP,30.38,1,2,ranked_associations
+snp_rs5219,rs5219,,SNP,30.27,1,2,ranked_associations
+snp_rs8089364,rs8089364,,SNP,30.27,1,1,ranked_associations
+snp_rs17249754,rs17249754,,SNP,29.68,1,1,ranked_associations
+snp_rs13069000,rs13069000,,SNP,29.64,1,1,ranked_associations
+snp_rs17319721,rs17319721,,SNP,29.64,1,1,ranked_associations
+snp_rs2207139,rs2207139,,SNP,29.42,1,1,ranked_associations
+snp_rs653178,rs653178,,SNP,28.97,2,2,ranked_associations
+snp_rs10757278,rs10757278,,SNP,28.92,1,1,ranked_associations
+snp_rs7227483,rs7227483,,SNP,28.81,1,1,ranked_associations
+snp_rs10182181,rs10182181,,SNP,28.74,1,1,ranked_associations
+snp_rs7141420,rs7141420,,SNP,28.74,1,1,ranked_associations
+snp_rs7531118,rs7531118,,SNP,28.6,1,1,ranked_associations
+snp_rs1394125,rs1394125,,SNP,28.52,1,1,ranked_associations
+snp_rs2075290,rs2075290,,SNP,28.29,1,1,ranked_associations
+snp_rs2237897,rs2237897,,SNP,28.29,1,1,ranked_associations
+snp_rs3764261,rs3764261,,SNP,28.24,1,1,ranked_associations
+snp_rs9939609,rs9939609,,SNP,28.2,2,2,ranked_associations
+snp_rs2266788,rs2266788,,SNP,28.15,2,2,ranked_associations
+snp_rs2568958,rs2568958,,SNP,28.02,1,1,ranked_associations
+snp_rs10767873,rs10767873,,SNP,27.97,1,1,ranked_associations
+snp_rs10790162,rs10790162,,SNP,27.91,1,1,ranked_associations
+snp_rs7422339,rs7422339,,SNP,27.84,1,1,ranked_associations
+snp_rs12460876,rs12460876,,SNP,27.62,1,1,ranked_associations
+snp_rs17782313,rs17782313,,SNP,27.62,1,1,ranked_associations
+snp_rs2903492,rs2903492,,SNP,27.49,1,1,ranked_associations
+snp_rs3939286,rs3939286,,SNP,27.48,1,1,ranked_associations
+snp_rs6420094,rs6420094,,SNP,27.39,1,1,ranked_associations
+snp_rs9816226,rs9816226,,SNP,27.25,1,1,ranked_associations
+snp_rs1260326,rs1260326,,SNP,27.17,2,2,ranked_associations
+snp_rs16853722,rs16853722,,SNP,27.17,1,1,ranked_associations
+snp_rs1800437,rs1800437,,SNP,27.17,1,1,ranked_associations
+snp_rs3782889,rs3782889,,SNP,27.12,1,1,ranked_associations
+snp_rs13538,rs13538,,SNP,27.07,1,1,ranked_associations
+snp_rs4977574,rs4977574,,SNP,27.07,1,1,ranked_associations
+snp_rs7708584,rs7708584,,SNP,27.07,1,1,ranked_associations
+snp_rs9273349,rs9273349,,SNP,27.01,1,1,ranked_associations
+snp_rs4744712,rs4744712,,SNP,26.98,1,1,ranked_associations
+snp_rs881858,rs881858,,SNP,26.96,1,1,ranked_associations
+snp_rs1333049,rs1333049,,SNP,26.94,1,1,ranked_associations
+snp_rs17730436,rs17730436,,SNP,26.94,1,1,ranked_associations
+snp_rs3101336,rs3101336,,SNP,26.94,1,1,ranked_associations
+snp_rs17367504,rs17367504,,SNP,26.8,1,1,ranked_associations
+snp_rs543874,rs543874,,SNP,26.8,1,1,ranked_associations
+snp_rs491567,rs491567,,SNP,26.72,1,1,ranked_associations
+snp_rs7498665,rs7498665,,SNP,26.72,1,1,ranked_associations
+snp_rs10423928,rs10423928,,SNP,26.67,1,1,ranked_associations
+snp_rs1994016,rs1994016,,SNP,26.62,1,1,ranked_associations
+snp_rs8028313,rs8028313,,SNP,26.59,1,1,ranked_associations
+snp_rs9818870,rs9818870,,SNP,26.56,1,1,ranked_associations
+snp_rs267734,rs267734,,SNP,26.49,1,1,ranked_associations
+snp_rs2049805,rs2049805,,SNP,26.35,1,1,ranked_associations
+snp_rs780093,rs780093,,SNP,26.35,2,2,ranked_associations
+snp_rs2307111,rs2307111,,SNP,26.27,1,1,ranked_associations
+snp_rs12446554,rs12446554,,SNP,26.22,1,1,ranked_associations
+snp_rs7805747,rs7805747,,SNP,26.22,1,1,ranked_associations
+snp_rs4506565,rs4506565,,SNP,26.17,1,1,ranked_associations
+snp_rs2279463,rs2279463,,SNP,26.14,1,1,ranked_associations
+snp_rs9941349,rs9941349,,SNP,26.14,1,1,ranked_associations
+snp_rs13146355,rs13146355,,SNP,26.06,1,1,ranked_associations
+snp_rs17024258,rs17024258,,SNP,26.06,1,1,ranked_associations
+snp_rs2943641,rs2943641,,SNP,26.06,1,1,ranked_associations
+snp_rs11042023,rs11042023,,SNP,26.04,1,1,ranked_associations
+snp_rs1936800,rs1936800,,SNP,26.04,1,1,ranked_associations
+snp_rs3739998,rs3739998,,SNP,26.04,1,1,ranked_associations
+snp_rs13078807,rs13078807,,SNP,25.82,1,1,ranked_associations
+snp_rs17730281,rs17730281,,SNP,25.82,1,1,ranked_associations
+snp_rs347685,rs347685,,SNP,25.82,1,1,ranked_associations
+snp_rs626277,rs626277,,SNP,25.82,1,1,ranked_associations
+snp_rs16849225,rs16849225,,SNP,25.77,1,1,ranked_associations
+snp_rs10277115,rs10277115,,SNP,25.72,1,1,ranked_associations
+snp_rs11066015,rs11066015,,SNP,25.72,1,1,ranked_associations
+snp_rs5215,rs5215,,SNP,25.72,1,1,ranked_associations
+snp_rs2453533,rs2453533,,SNP,25.67,1,1,ranked_associations
+snp_rs646776,rs646776,,SNP,25.63,1,1,ranked_associations
+snp_rs10261878,rs10261878,,SNP,25.59,1,1,ranked_associations
+snp_rs11864909,rs11864909,,SNP,25.59,1,1,ranked_associations
+snp_rs15285,rs15285,,SNP,25.59,1,1,ranked_associations
+snp_rs17817964,rs17817964,,SNP,25.59,1,1,ranked_associations
+snp_rs35444,rs35444,,SNP,25.59,1,1,ranked_associations
+snp_rs887912,rs887912,,SNP,25.59,1,1,ranked_associations
+snp_rs10875976,rs10875976,,SNP,25.45,1,1,ranked_associations
+snp_rs12446632,rs12446632,,SNP,25.45,1,1,ranked_associations
+snp_rs1412239,rs1412239,,SNP,25.45,1,1,ranked_associations
+snp_rs348495,rs348495,,SNP,25.45,1,1,ranked_associations
+snp_rs11123170,rs11123170,,SNP,25.37,1,1,ranked_associations
+snp_rs4712524,rs4712524,,SNP,25.37,1,1,ranked_associations
+snp_rs671,rs671,,SNP,25.37,1,1,ranked_associations
+snp_rs880315,rs880315,,SNP,25.37,1,1,ranked_associations
+snp_rs4735692,rs4735692,,SNP,25.32,1,1,ranked_associations
+snp_rs2217560,rs2217560,,SNP,25.21,1,1,ranked_associations
+snp_rs1342326,rs1342326,,SNP,25.16,1,1,ranked_associations
+snp_rs10774021,rs10774021,,SNP,25.14,1,1,ranked_associations
+snp_rs1530440,rs1530440,,SNP,25.14,1,1,ranked_associations
+snp_rs3749147,rs3749147,,SNP,25.14,1,1,ranked_associations
+snp_rs3828890,rs3828890,,SNP,25.14,1,1,ranked_associations
+snp_rs6769511,rs6769511,,SNP,25.14,1,1,ranked_associations
+snp_rs889472,rs889472,,SNP,25.14,1,1,ranked_associations
+snp_rs963837,rs963837,,SNP,25.14,1,1,ranked_associations
+snp_rs11868441,rs11868441,,SNP,25.0,1,1,ranked_associations
+snp_rs12970134,rs12970134,,SNP,25.0,1,1,ranked_associations
+snp_rs1919128,rs1919128,,SNP,25.0,1,1,ranked_associations
+snp_rs2074356,rs2074356,,SNP,25.0,1,1,ranked_associations
+snp_rs6465825,rs6465825,,SNP,25.0,1,1,ranked_associations
+snp_rs6731302,rs6731302,,SNP,25.0,1,1,ranked_associations
+snp_rs9568867,rs9568867,,SNP,25.0,1,1,ranked_associations
+snp_rs11212617,rs11212617,,SNP,24.92,1,1,ranked_associations
+snp_rs11823543,rs11823543,,SNP,24.92,1,1,ranked_associations
+snp_rs11825181,rs11825181,,SNP,24.92,1,1,ranked_associations
+snp_rs1516725,rs1516725,,SNP,24.92,1,1,ranked_associations
+snp_rs2370983,rs2370983,,SNP,24.92,1,1,ranked_associations
+snp_rs3771166,rs3771166,,SNP,24.92,1,1,ranked_associations
+snp_rs10275044,rs10275044,,SNP,24.87,1,1,ranked_associations
+snp_rs11639988,rs11639988,,SNP,24.87,1,1,ranked_associations
+snp_rs2112347,rs2112347,,SNP,24.87,1,1,ranked_associations
+snp_rs744910,rs744910,,SNP,24.87,1,1,ranked_associations
+snp_rs13022873,rs13022873,,SNP,24.82,1,1,ranked_associations
+snp_rs1514177,rs1514177,,SNP,24.82,1,1,ranked_associations
+snp_rs16948048,rs16948048,,SNP,24.82,1,1,ranked_associations
+snp_rs3894194,rs3894194,,SNP,24.82,1,1,ranked_associations
+snp_rs7184597,rs7184597,,SNP,24.76,1,1,ranked_associations
+snp_rs514659,rs514659,,SNP,24.73,1,1,ranked_associations
+snp_rs643507,rs643507,,SNP,24.73,1,1,ranked_associations
+snp_rs2954033,rs2954033,,SNP,24.71,1,1,ranked_associations
+snp_rs6026584,rs6026584,,SNP,24.71,1,1,ranked_associations
+snp_rs6825911,rs6825911,,SNP,24.71,1,1,ranked_associations
+snp_rs7826222,rs7826222,,SNP,24.71,1,1,ranked_associations
+snp_rs10109414,rs10109414,,SNP,24.69,1,1,ranked_associations
+snp_rs10794720,rs10794720,,SNP,24.69,1,1,ranked_associations
+snp_rs10946398,rs10946398,,SNP,24.69,1,1,ranked_associations
+snp_rs12946454,rs12946454,,SNP,24.69,1,1,ranked_associations
+snp_rs1514174,rs1514174,,SNP,24.69,1,1,ranked_associations
+snp_rs17030613,rs17030613,,SNP,24.69,1,1,ranked_associations
+snp_rs2284033,rs2284033,,SNP,24.69,1,1,ranked_associations
+snp_rs4689388,rs4689388,,SNP,24.69,1,1,ranked_associations
+snp_rs7989336,rs7989336,,SNP,24.69,1,1,ranked_associations
+snp_rs1173766,rs1173766,,SNP,24.55,1,1,ranked_associations
+snp_rs13041126,rs13041126,,SNP,24.55,1,1,ranked_associations
+snp_rs7503807,rs7503807,,SNP,24.55,1,1,ranked_associations
+snp_rs1048886,rs1048886,,SNP,24.47,1,1,ranked_associations
+snp_rs10968576,rs10968576,,SNP,24.47,1,1,ranked_associations
+snp_rs1588265,rs1588265,,SNP,24.47,1,1,ranked_associations
+snp_rs17381664,rs17381664,,SNP,24.47,1,1,ranked_associations
+snp_rs2605100,rs2605100,,SNP,24.47,1,1,ranked_associations
+snp_rs2531995,rs2531995,,SNP,24.42,1,1,ranked_associations
+snp_rs7586879,rs7586879,,SNP,24.42,1,1,ranked_associations
+snp_rs10146997,rs10146997,,SNP,24.37,1,1,ranked_associations
+snp_rs9300039,rs9300039,,SNP,24.34,1,1,ranked_associations
+snp_rs6723108,rs6723108,,SNP,24.31,1,1,ranked_associations
+snp_rs1918974,rs1918974,,SNP,24.28,1,1,ranked_associations
+snp_rs7775861,rs7775861,,SNP,24.26,1,1,ranked_associations
+snp_rs11071559,rs11071559,,SNP,24.24,1,1,ranked_associations
+snp_rs11959928,rs11959928,,SNP,24.24,1,1,ranked_associations
+snp_rs1295686,rs1295686,,SNP,24.24,1,1,ranked_associations
+snp_rs1933182,rs1933182,,SNP,24.24,1,1,ranked_associations
+snp_rs2305480,rs2305480,,SNP,24.24,1,1,ranked_associations
+snp_rs2797369,rs2797369,,SNP,24.24,1,1,ranked_associations
+snp_rs4014195,rs4014195,,SNP,24.24,1,1,ranked_associations
+snp_rs10818854,rs10818854,,SNP,24.1,1,1,ranked_associations
+snp_rs12654812,rs12654812,,SNP,24.1,1,1,ranked_associations
+snp_rs16864170,rs16864170,,SNP,24.1,1,1,ranked_associations
+snp_rs2073643,rs2073643,,SNP,24.1,1,1,ranked_associations
+snp_rs2206271,rs2206271,,SNP,24.1,1,1,ranked_associations
+snp_rs6749447,rs6749447,,SNP,24.1,1,1,ranked_associations
+snp_rs2244012,rs2244012,,SNP,24.02,1,1,ranked_associations
+snp_rs6429082,rs6429082,,SNP,24.02,1,1,ranked_associations
+snp_rs9465871,rs9465871,,SNP,24.02,1,1,ranked_associations
+snp_rs12027542,rs12027542,,SNP,23.97,1,1,ranked_associations
+snp_rs297325,rs297325,,SNP,23.97,1,1,ranked_associations
+snp_rs58667,rs58667,,SNP,23.97,1,1,ranked_associations
+snp_rs2259816,rs2259816,,SNP,23.92,1,1,ranked_associations
+snp_rs4756846,rs4756846,,SNP,23.92,1,1,ranked_associations
+snp_rs6097169,rs6097169,,SNP,23.92,1,1,ranked_associations
+snp_rs7119,rs7119,,SNP,23.92,1,1,ranked_associations
+snp_rs4752066,rs4752066,,SNP,23.89,1,1,ranked_associations
+snp_rs9508025,rs9508025,,SNP,23.89,1,1,ranked_associations
+snp_rs12518099,rs12518099,,SNP,23.86,1,1,ranked_associations
+snp_rs2820037,rs2820037,,SNP,23.83,1,1,ranked_associations
+snp_rs7474896,rs7474896,,SNP,23.81,1,1,ranked_associations
+snp_rs564398,rs564398,,SNP,23.79,1,1,ranked_associations
+snp_rs6726292,rs6726292,,SNP,23.79,1,1,ranked_associations
+snp_rs8074700,rs8074700,,SNP,23.79,1,1,ranked_associations
+snp_rs886126,rs886126,,SNP,23.79,1,1,ranked_associations
+snp_rs999943,rs999943,,SNP,23.79,1,1,ranked_associations
+snp_rs3925584,rs3925584,,SNP,23.78,1,1,ranked_associations
+snp_rs17663555,rs17663555,,SNP,23.65,1,1,ranked_associations
+snp_rs17672135,rs17672135,,SNP,23.65,1,1,ranked_associations
+snp_rs2033654,rs2033654,,SNP,23.65,1,1,ranked_associations
+snp_rs2326017,rs2326017,,SNP,23.65,1,1,ranked_associations
+snp_rs642858,rs642858,,SNP,23.65,1,1,ranked_associations
+snp_rs10433903,rs10433903,,SNP,23.57,1,1,ranked_associations
+snp_rs11677370,rs11677370,,SNP,23.57,1,1,ranked_associations
+snp_rs1317830,rs1317830,,SNP,23.57,1,1,ranked_associations
+snp_rs1530016,rs1530016,,SNP,23.57,1,1,ranked_associations
+snp_rs2063640,rs2063640,,SNP,23.57,1,1,ranked_associations
+snp_rs2555603,rs2555603,,SNP,23.57,1,1,ranked_associations
+snp_rs9319321,rs9319321,,SNP,23.57,1,1,ranked_associations
+snp_rs10461617,rs10461617,,SNP,23.52,1,1,ranked_associations
+snp_rs11165354,rs11165354,,SNP,23.52,1,1,ranked_associations
+snp_rs12295638,rs12295638,,SNP,23.52,1,1,ranked_associations
+snp_rs1291183,rs1291183,,SNP,23.52,1,1,ranked_associations
+snp_rs1435703,rs1435703,,SNP,23.52,1,1,ranked_associations
+snp_rs2833610,rs2833610,,SNP,23.52,1,1,ranked_associations
+snp_rs374748,rs374748,,SNP,23.52,1,1,ranked_associations
+snp_rs688034,rs688034,,SNP,23.52,1,1,ranked_associations
+snp_rs713587,rs713587,,SNP,23.52,1,1,ranked_associations
+snp_rs10741243,rs10741243,,SNP,23.47,1,1,ranked_associations
+snp_rs10999409,rs10999409,,SNP,23.47,1,1,ranked_associations
+snp_rs12635698,rs12635698,,SNP,23.47,1,1,ranked_associations
+snp_rs5015480,rs5015480,,SNP,23.47,1,1,ranked_associations
+snp_rs6110577,rs6110577,,SNP,23.47,1,1,ranked_associations
+snp_rs7636,rs7636,,SNP,23.47,1,1,ranked_associations
+snp_rs9397738,rs9397738,,SNP,23.47,1,1,ranked_associations
+snp_rs991316,rs991316,,SNP,23.47,1,1,ranked_associations
+snp_rs10762058,rs10762058,,SNP,23.44,1,1,ranked_associations
+snp_rs2274459,rs2274459,,SNP,23.44,1,1,ranked_associations
+snp_rs2398162,rs2398162,,SNP,23.44,1,1,ranked_associations
+snp_rs8055236,rs8055236,,SNP,23.44,1,1,ranked_associations
+snp_rs974417,rs974417,,SNP,23.44,1,1,ranked_associations
+snp_rs11259403,rs11259403,,SNP,23.41,1,1,ranked_associations
+snp_rs12304921,rs12304921,,SNP,23.41,1,1,ranked_associations
+snp_rs1495377,rs1495377,,SNP,23.41,1,1,ranked_associations
+snp_rs16937883,rs16937883,,SNP,23.41,1,1,ranked_associations
+snp_rs17045328,rs17045328,,SNP,23.41,1,1,ranked_associations
+snp_rs3780215,rs3780215,,SNP,23.41,1,1,ranked_associations
+snp_rs6583826,rs6583826,,SNP,23.41,1,1,ranked_associations
+snp_rs7630877,rs7630877,,SNP,23.41,1,1,ranked_associations
+snp_rs11603160,rs11603160,,SNP,23.38,1,1,ranked_associations
+snp_rs11646213,rs11646213,,SNP,23.38,1,1,ranked_associations
+snp_rs7603514,rs7603514,,SNP,23.38,1,1,ranked_associations
+snp_rs10460009,rs10460009,,SNP,23.36,1,1,ranked_associations
+snp_rs12468557,rs12468557,,SNP,23.36,1,1,ranked_associations
+snp_rs12984174,rs12984174,,SNP,23.36,1,1,ranked_associations
+snp_rs3773506,rs3773506,,SNP,23.36,1,1,ranked_associations
+snp_rs3792615,rs3792615,,SNP,23.36,1,1,ranked_associations
+snp_rs472265,rs472265,,SNP,23.36,1,1,ranked_associations
+snp_rs7659604,rs7659604,,SNP,23.36,1,1,ranked_associations
+snp_rs9295474,rs9295474,,SNP,23.36,1,1,ranked_associations
+snp_rs2786098,rs2786098,,SNP,21.8,1,1,ranked_associations
+snp_rs11748327,rs11748327,,SNP,21.62,1,1,ranked_associations
+snp_rs17817449,rs17817449,,SNP,21.35,1,1,ranked_associations
+snp_rs10495809,rs10495809,,SNP,20.37,1,1,ranked_associations
+snp_rs1333042,rs1333042,,SNP,20.14,1,1,ranked_associations
+snp_rs11624704,rs11624704,,SNP,19.92,1,1,ranked_associations
+snp_rs7018475,rs7018475,,SNP,19.47,1,1,ranked_associations
+snp_rs11088859,rs11088859,,SNP,19.42,1,1,ranked_associations
+snp_rs1121980,rs1121980,,SNP,19.42,1,1,ranked_associations
+snp_rs6431731,rs6431731,,SNP,19.42,1,1,ranked_associations
+snp_rs7593730,rs7593730,,SNP,19.42,1,1,ranked_associations
+snp_rs17126232,rs17126232,,SNP,19.28,1,1,ranked_associations
+snp_rs7581710,rs7581710,,SNP,19.1,1,1,ranked_associations
+snp_rs2807278,rs2807278,,SNP,19.02,1,1,ranked_associations
+snp_rs489693,rs489693,,SNP,18.97,1,1,ranked_associations
+snp_rs10953454,rs10953454,,SNP,18.86,1,1,ranked_associations
+snp_rs17081231,rs17081231,,SNP,18.86,1,1,ranked_associations
+snp_rs5762430,rs5762430,,SNP,18.86,1,1,ranked_associations
+snp_rs9923451,rs9923451,,SNP,18.83,1,1,ranked_associations
+snp_rs16867321,rs16867321,,SNP,18.65,1,1,ranked_associations
+snp_rs17525472,rs17525472,,SNP,18.65,1,1,ranked_associations
+snp_rs4701252,rs4701252,,SNP,18.65,1,1,ranked_associations
+snp_rs1550576,rs1550576,,SNP,18.57,1,1,ranked_associations
+snp_rs1555967,rs1555967,,SNP,18.57,1,1,ranked_associations
+snp_rs358806,rs358806,,SNP,18.57,1,1,ranked_associations
+snp_rs2083637,rs2083637,,SNP,18.47,1,1,ranked_associations
+snp_rs7932813,rs7932813,,SNP,18.47,1,1,ranked_associations
+snp_rs6456042,rs6456042,,SNP,18.44,1,1,ranked_associations
+snp_rs6712932,rs6712932,,SNP,18.44,1,1,ranked_associations
+snp_rs925642,rs925642,,SNP,18.41,1,1,ranked_associations
+snp_rs4815617,rs4815617,,SNP,18.38,1,1,ranked_associations
+snp_rs741301,rs741301,,SNP,18.38,1,1,ranked_associations

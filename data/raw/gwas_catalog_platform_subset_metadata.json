@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-11-11T21:45:00",
+  "catalog_file": "gwas_online_snapshot_20260703_175831.zip",
+  "p_value_threshold": 5e-08,
+  "snps_per_disease": 150,
+  "arab_reserved_snps": 30,
+  "max_rows_per_snp": 5,
+  "total_rows": 3387,
+  "per_disease": [
+    {
+      "disease": "Type 2 Diabetes",
+      "snps": 150,
+      "rows": 506,
+      "arab_rows": 61,
+      "studies": 56
+    },
+    {
+      "disease": "Obesity",
+      "snps": 150,
+      "rows": 216,
+      "arab_rows": 8,
+      "studies": 24
+    },
+    {
+      "disease": "Hypertension",
+      "snps": 150,
+      "rows": 320,
+      "arab_rows": 0,
+      "studies": 26
+    },
+    {
+      "disease": "Coronary Artery Disease",
+      "snps": 150,
+      "rows": 367,
+      "arab_rows": 24,
+      "studies": 35
+    },
+    {
+      "disease": "Chronic Kidney Disease",
+      "snps": 97,
+      "rows": 124,
+      "arab_rows": 0,
+      "studies": 30
+    },
+    {
+      "disease": "Asthma",
+      "snps": 150,
+      "rows": 399,
+      "arab_rows": 31,
+      "studies": 46
+    },
+    {
+      "disease": "Hypothyroidism",
+      "snps": 150,
+      "rows": 326,
+      "arab_rows": 52,
+      "studies": 20
+    },
+    {
+      "disease": "Rheumatoid Arthritis",
+      "snps": 150,
+      "rows": 368,
+      "arab_rows": 45,
+      "studies": 42
+    },
+    {
+      "disease": "Alzheimer's Disease",
+      "snps": 150,
+      "rows": 360,
+      "arab_rows": 10,
+      "studies": 40
+    },
+    {
+      "disease": "Breast Cancer",
+      "snps": 150,
+      "rows": 401,
+      "arab_rows": 0,
+      "studies": 50
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "file_name": "associations_ready_for_db.csv",
+  "source_input_file": "associations_normalized_v1.csv",
+  "project_day": 21,
+  "stage": "Deduplication and Entity Linking",
+  "is_real_data": true,
+  "is_ready_for_db": true,
+  "created_at": "2026-11-11T21:45:08",
+  "input_association_rows": 3384,
+  "ready_before_dedup_rows": 3384,
+  "ready_after_dedup_rows": 3382,
+  "duplicates_removed_rows": 2,
+  "linking_issue_rows": 0,
+  "unique_studies": 219,
+  "unique_population_regions": 359,
+  "note": "This file is prepared for database loading. SQLite loading will happen later."
+}

@@ -1,0 +1,10 @@
+﻿check,status,details,checked_at
+Ranked associations file exists,passed,data/processed/ranked_associations_initial.csv,2026-05-26 20:26:03
+Ranked associations not empty,passed,349 rows,2026-05-26 20:26:03
+Required columns,passed,All required columns are available,2026-05-26 20:26:03
+Missing rsID values,passed,0 missing/blank rsID values,2026-05-26 20:26:03
+p-value numeric validation,passed,0 invalid p-value entries,2026-05-26 20:26:03
+Importance score validation,passed,0 invalid score entries,2026-05-26 20:26:03
+Duplicate key check,warning,34 duplicated disease-rsid-gene rows,2026-05-26 20:26:03
+Arab-related classification column,passed,Found: is_arab_related_flag,2026-05-26 20:26:03
+Data source registry,passed,5 registered sources,2026-05-26 20:26:03

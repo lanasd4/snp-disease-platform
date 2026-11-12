@@ -1,0 +1,12 @@
+﻿metric,value
+association_rows,2975
+unique_diseases,10
+unique_snps,1390
+unique_genes,701
+rows_with_p_value,2975
+rows_with_or_or_effect_size,2470
+rows_with_risk_allele,2428
+rows_with_pubmed_id,2975
+rows_with_population_context,2975
+arab_related_rows,230
+rows_with_multiple_evidence,2237

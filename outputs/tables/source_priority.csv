@@ -1,0 +1,5 @@
+﻿priority,source_name,source_type,main_use,project_stage,decision,reason
+1,GWAS Catalog,Primary association source,"SNP-disease/trait associations, p-value, mapped genes, studies, ancestry/population fields",Start with this source in Day 16-17,FIRST SOURCE,Directly supports Disease ↔ SNP association search and later ranking features.
+2,ClinVar,Clinical variant interpretation source,"Clinical significance, variant-condition interpretation, review status",Use after initial GWAS data is loaded,SECONDARY ENRICHMENT,Useful for clinical interpretation but not the first source for GWAS association evidence.
+3,dbSNP,Variant reference source,"rsID validation, reference SNP details, variant identifiers",Use for rsID enrichment and validation,REFERENCE ENRICHMENT,"Important for SNP identity, but it does not by itself provide disease association ranking."
+4,PubMed,Literature metadata source,"PMID, article title, abstract, publication year, journal",Use for study summaries and AI explanation stage,LITERATURE ENRICHMENT,Supports study summarization and AI explanation but should not be the first extraction source.

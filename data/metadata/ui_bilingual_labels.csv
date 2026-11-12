@@ -1,0 +1,10 @@
+﻿page,english_label,arabic_label,purpose
+Home,Home,الرئيسية,Landing page and project overview
+Search,Smart Search,البحث الذكي,Search diseases and SNPs
+Ranking,Association Ranking,ترتيب الارتباطات,Rank SNP–Disease associations
+AI Explanation,AI Explanation,الشرح بالذكاء الاصطناعي,Explain genomic results in Arabic/English
+Study Summaries,Study Summaries,ملخص الدراسات,Summarize evidence records
+Circos Plot,Circos Plot,مخطط سيركوس,Visualize disease-gene-SNP relationships
+PRS Prototype,PRS Prototype,نموذج تقييم المخاطر الوراثية,Research-only PRS prototype
+Admin Dashboard,Admin Dashboard,لوحة تحكم الإدارة,"Manage sources, validation, files, and lineage"
+About,About / Data Sources,حول / مصادر البيانات,Explain platform scope and sources

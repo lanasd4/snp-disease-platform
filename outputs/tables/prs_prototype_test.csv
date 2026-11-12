@@ -1,0 +1,6 @@
+﻿rsid,gene_symbol,disease_name,risk_allele,p_value,importance_score,odds_ratio,effect_size,prototype_weight,genotype_dosage,prs_contribution,selected_disease,raw_score,normalized_score,risk_level
+rs3939286,IL33,Asthma,A,0.0008,27.48,1.15,,0.1398,0,0.0,Asthma,1.0225,44.1,متوسط تعليميًا
+rs9273349,HLA-DQA1 - HLA-DQB1,Asthma,C,7e-14,27.01,,,0.2701,1,0.2701,Asthma,1.0225,44.1,متوسط تعليميًا
+rs1342326,AL162384.1 - GTF3AP1,Asthma,C,9e-10,25.16,,,0.2516,2,0.5032,Asthma,1.0225,44.1,متوسط تعليميًا
+rs3771166,IL18R1,Asthma,G,3e-09,24.92,,,0.2492,1,0.2492,Asthma,1.0225,44.1,متوسط تعليميًا
+rs744910,SMAD3,Asthma,G,4e-09,24.87,,,0.2487,0,0.0,Asthma,1.0225,44.1,متوسط تعليميًا

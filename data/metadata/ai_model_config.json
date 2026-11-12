@@ -1,0 +1,10 @@
+{
+  "active_model": "gemma:latest",
+  "updated_at": "2026-07-20T12:21:01",
+  "storage": "data/metadata/ai_model_config.json",
+  "last_ai_response": {
+    "elapsed_seconds": 4.882,
+    "updated_at": "2026-07-13T21:14:32",
+    "model": "qwen3:latest"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "project_day": 22,
+  "stage": "Database Loading",
+  "is_real_data_loaded_to_sqlite": true,
+  "database_file": "C:\\Users\\Asus\\Desktop\\New folder\\SNP_Disease_Platform\\database\\snp_platform.build.db",
+  "created_at": "2026-11-11T21:45:11",
+  "summary": [
+    {
+      "metric": "genes_input_rows",
+      "value": 701
+    },
+    {
+      "metric": "genes_inserted",
+      "value": 701
+    },
+    {
+      "metric": "genes_existing",
+      "value": 0
+    },
+    {
+      "metric": "snps_input_rows",
+      "value": 1390
+    },
+    {
+      "metric": "snps_inserted",
+      "value": 1390
+    },
+    {
+      "metric": "snps_existing",
+      "value": 0
+    },
+    {
+      "metric": "studies_input_rows",
+      "value": 219
+    },
+    {
+      "metric": "studies_inserted",
+      "value": 219
+    },
+    {
+      "metric": "studies_existing",
+      "value": 0
+    },
+    {
+      "metric": "population_input_rows",
+      "value": 359
+    },
+    {
+      "metric": "population_inserted",
+      "value": 29
+    },
+    {
+      "metric": "population_existing",
+      "value": 330
+    },
+    {
+      "metric": "associations_input_rows",
+      "value": 3382
+    },
+    {
+      "metric": "associations_inserted",
+      "value": 2975
+    },
+    {
+      "metric": "associations_existing_or_skipped",
+      "value": 407
+    },
+    {
+      "metric": "loading_issue_rows",
+      "value": 0
+    }
+  ],
+  "note": "Processed real-data CSV files were loaded into SQLite. Existing records are reused where possible."
+}

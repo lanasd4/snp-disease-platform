@@ -1,0 +1,10 @@
+﻿component,weight,average_component_value_0_to_1,max_component_value_0_to_1,min_component_value_0_to_1
+p_value_strength_score,45,0.4753,1.0,0.074
+evidence_count_score,15,0.7206,1.0,0.3869
+study_count_score,10,0.6764,1.0,0.3869
+population_count_score,8,0.5957,1.0,0.3869
+source_count_score,5,1.0,1.0,1.0
+or_beta_score,5,0.8303,1.0,0.0
+risk_allele_score,5,0.8161,1.0,0.0
+pubmed_score,4,1.0,1.0,1.0
+arab_related_bonus,3,0.0773,1.0,0.0

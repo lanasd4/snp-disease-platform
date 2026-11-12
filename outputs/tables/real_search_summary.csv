@@ -1,0 +1,3 @@
+﻿test_type,query,found,result_count,message
+disease_search,Chronic Kidney Disease,True,50,Results found.
+snp_search,rs911119,True,1,Results found.

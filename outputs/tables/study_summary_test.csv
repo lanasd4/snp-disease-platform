@@ -1,0 +1,57 @@
+﻿study_title,pubmed_id,publication_year,journal,source_database,disease,disease_arabic,rsid,gene,p_value,importance_score,rank_label,rank_label_arabic,population,region,country,risk_allele,odds_ratio,effect_size,arab_related,arabic_summary,english_summary
+Sample association study for Type 2 Diabetes,غير متوفر,2024,غير متوفر,Demo,Type 2 Diabetes,السكري من النوع الثاني,rs7903146,TCF7L2,1e-05,69.6,Moderate,متوسط,Mixed ancestry,Global,غير متوفر,T,1.35,,N,"### ملخص الدراسة
+
+تشير البيانات المتاحة في المنصة إلى وجود سجل بحثي مرتبط بمرض/صفة **Type 2 Diabetes / السكري من النوع الثاني**، ويتضمن المتغير الجيني **rs7903146** المرتبط أو القريب من الجين **TCF7L2**.
+
+### معلومات الدراسة المتاحة
+
+- **عنوان الدراسة:** Sample association study for Type 2 Diabetes
+- **معرّف PubMed:** غير متوفر
+- **سنة النشر:** 2024
+- **المجلة:** غير متوفر
+- **مصدر البيانات:** Demo
+
+### سياق العينة والدليل
+
+- **السكان/العينة:** Mixed ancestry
+- **المنطقة:** Global
+- **الدولة:** غير متوفر
+- **قيمة الدلالة الإحصائية p-value:** 1e-05
+- **درجة الأهمية في المنصة:** 69.6
+- **تصنيف قوة الارتباط:** Moderate متوسط
+
+### حقول إضافية متاحة
+- **الأليل المرتبط بالخطر:** T
+- **Odds Ratio:** 1.35
+- **مؤشر الارتباط العربي/الإقليمي:** N### حدود الملخص
+
+يعتمد هذا الملخص على الحقول المتاحة داخل المنصة فقط، مثل عنوان الدراسة، معرّف PubMed، المرض، المتغير الجيني، الجين، السكان، وقيم الدليل الإحصائي. لا يعني هذا الملخص أن النص الكامل للدراسة قد تم تحليله داخل المنصة.
+
+تنبيه: هذه المعلومات لأغراض تعليمية وبحثية فقط، ولا تُستخدم للتشخيص الطبي أو اتخاذ قرارات علاجية.","### Study Summary
+
+The available platform data indicates a research record related to **Type 2 Diabetes**, involving the genetic variant **rs7903146** and the gene **TCF7L2**.
+
+### Available Study Metadata
+
+- **Study title:** Sample association study for Type 2 Diabetes
+- **PubMed ID:** غير متوفر
+- **Publication year:** 2024
+- **Journal:** غير متوفر
+- **Data source:** Demo
+
+### Evidence Context
+
+- **Population:** Mixed ancestry
+- **Region:** Global
+- **Country:** غير متوفر
+- **p-value:** 1e-05
+- **Platform importance score:** 69.6
+- **Rank label:** Moderate
+
+### Additional Available Fields
+- **Risk allele:** T
+- **Odds Ratio:** 1.35### Summary Limitations
+
+This summary is based only on structured fields available inside the platform. It does not indicate that the full study text has been analyzed.
+
+Notice: This information is for educational and research purposes only and must not be used for diagnosis or treatment decisions."

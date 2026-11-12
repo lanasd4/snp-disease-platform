@@ -1,0 +1,6 @@
+﻿rsid,disease,gene,p-value,study_title,pubmed_id,year,population,country,odds_ratio,risk_allele,source_database
+rs7903146,Type 2 Diabetes,TCF7L2,1e-8,Example GWAS study for Type 2 Diabetes,12345678,2020,European,UK,1.35,T,admin_test
+rs2237892,Type 2 Diabetes,KCNQ1,2.5e-6,Example study for KCNQ1,23456789,2021,East Asian,Japan,1.22,C,admin_test
+bad_snp,Obesity,FTO,3e-5,Invalid rsID example,34567890,2022,Mixed,USA,1.1,A,admin_test
+rs9939609,,FTO,4e-7,Missing disease example,45678901,2023,European,Germany,1.18,A,admin_test
+rs699,Hypertension,AGT,not_available,Invalid p-value example,56789012,2024,Middle Eastern,Jordan,1.15,G,admin_test

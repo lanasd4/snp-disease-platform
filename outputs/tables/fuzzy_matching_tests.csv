@@ -1,0 +1,39 @@
+﻿query,rank,suggested_disease_name,suggested_disease_arabic_name,matched_term,term_source,score,status
+diabet,1,Type 2 Diabetes,السكري من النوع الثاني,Type 2 Diabetes,canonical_name,0.88,suggestion_found
+diabet,2,Obesity,السمنة,Obesity,canonical_name,0.462,suggestion_found
+diabetis,1,Type 2 Diabetes,السكري من النوع الثاني,Type 2 Diabetes,canonical_name,0.609,suggestion_found
+diabetis,2,Obesity,السمنة,Obesity,canonical_name,0.4,suggestion_found
+type diabetes,1,Type 2 Diabetes,السكري من النوع الثاني,Type 2 Diabetes,canonical_name,0.929,suggestion_found
+type diabetes,2,Hypertension,ارتفاع ضغط الدم,Hypertension,canonical_name,0.48,suggestion_found
+type diabetes,3,Coronary Artery Disease,مرض الشريان التاجي,Coronary Artery Disease,canonical_name,0.389,suggestion_found
+type ii diabetes,1,Type 2 Diabetes,السكري من النوع الثاني,Type 2 Diabetes,canonical_name,0.903,suggestion_found
+type ii diabetes,2,Hypertension,ارتفاع ضغط الدم,Hypertension,canonical_name,0.429,suggestion_found
+type ii diabetes,3,Coronary Artery Disease,مرض الشريان التاجي,Coronary Artery Disease,canonical_name,0.359,suggestion_found
+t2 diab,1,Type 2 Diabetes,السكري من النوع الثاني,Type 2 Diabetes,canonical_name,0.636,suggestion_found
+سكر,1,Type 2 Diabetes,السكري من النوع الثاني,السكري من النوع الثاني,arabic_name,0.88,suggestion_found
+السكر,1,Type 2 Diabetes,السكري من النوع الثاني,السكري,synonym:Arabic:common,0.909,suggestion_found
+السكر,2,Asthma,الربو,الربو,arabic_name,0.6,suggestion_found
+السكر,3,Obesity,السمنة,السمنة,arabic_name,0.545,suggestion_found
+سكري,1,Type 2 Diabetes,السكري من النوع الثاني,السكري من النوع الثاني,arabic_name,0.88,suggestion_found
+السكري النوع الثاني,1,Type 2 Diabetes,السكري من النوع الثاني,السكري من النوع الثاني,arabic_name,0.927,suggestion_found
+السكري النوع الثاني,2,Coronary Artery Disease,مرض الشريان التاجي,مرض الشريان التاجي,arabic_name,0.541,suggestion_found
+السكري النوع الثاني,3,Chronic Kidney Disease,مرض الكلى المزمن,مرض الكلى المزمن,arabic_name,0.457,suggestion_found
+hypertention,1,Hypertension,ارتفاع ضغط الدم,Hypertension,canonical_name,0.917,suggestion_found
+hypertention,2,Type 2 Diabetes,السكري من النوع الثاني,Type 2 Diabetes,canonical_name,0.37,suggestion_found
+blood presure,1,Hypertension,ارتفاع ضغط الدم,High Blood Pressure,synonym:English:common,0.812,suggestion_found
+الضغط,1,Hypertension,ارتفاع ضغط الدم,الضغط,synonym:Arabic:common,1.0,suggestion_found
+الضغط,2,Asthma,الربو,الربو,arabic_name,0.4,suggestion_found
+الضغط,3,Obesity,السمنة,السمنة,arabic_name,0.364,suggestion_found
+ظغط,1,Hypertension,ارتفاع ضغط الدم,الضغط,synonym:Arabic:common,0.5,suggestion_found
+astma,1,Asthma,الربو,Asthma,canonical_name,0.909,suggestion_found
+ربو,1,Asthma,الربو,الربو,arabic_name,0.88,suggestion_found
+kidney diseas,1,Chronic Kidney Disease,مرض الكلى المزمن,Chronic Kidney Disease,canonical_name,0.88,suggestion_found
+kidney diseas,2,Coronary Artery Disease,مرض الشريان التاجي,Coronary Artery Disease,canonical_name,0.556,suggestion_found
+kidney diseas,3,Type 2 Diabetes,السكري من النوع الثاني,Type 2 Diabetes,canonical_name,0.357,suggestion_found
+renal function,1,Hypertension,ارتفاع ضغط الدم,Hypertension,canonical_name,0.462,suggestion_found
+obes,1,Obesity,السمنة,Obesity,canonical_name,0.88,suggestion_found
+bmi,1,Obesity,السمنة,Obesity,canonical_name,0.4,suggestion_found
+coronary heart,1,Coronary Artery Disease,مرض الشريان التاجي,Coronary Artery Disease,canonical_name,0.649,suggestion_found
+coronary heart,2,Chronic Kidney Disease,مرض الكلى المزمن,Chronic Kidney Disease,canonical_name,0.444,suggestion_found
+cad,1,Coronary Artery Disease,مرض الشريان التاجي,CAD,synonym:English:abbreviation,1.0,suggestion_found
+cad,2,Chronic Kidney Disease,مرض الكلى المزمن,CKD,synonym:English:abbreviation,0.667,suggestion_found

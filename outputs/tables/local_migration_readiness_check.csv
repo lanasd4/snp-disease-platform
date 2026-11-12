@@ -1,0 +1,25 @@
+﻿check,status,details
+Required file exists: main.py,passed,app/main.py
+Required file exists: ui_helpers.py,passed,app/ui_helpers.py
+Required file exists: search_components.py,passed,app/search_components.py
+Required file exists: admin_components.py,passed,app/admin_components.py
+Required file exists: styles.css,passed,app/styles.css
+Required file exists: ranked_associations_initial.csv,passed,data/processed/ranked_associations_initial.csv
+Required file exists: data_sources_registry.csv,passed,data/metadata/data_sources_registry.csv
+Python syntax: app/main.py,passed,No syntax errors
+Python syntax: app/ui_helpers.py,passed,No syntax errors
+Python syntax: app/search_components.py,passed,No syntax errors
+Python syntax: app/admin_components.py,passed,No syntax errors
+Old Admin page removed,passed,Old placeholder text not found
+Admin page linked,passed,Admin dashboard function is referenced in main.py
+Admin component: render_admin_dashboard_page,passed,Found
+Admin component: render_sources_tab,passed,Found
+Admin component: render_validation_tab,passed,Found
+Admin component: render_files_tab,passed,Found
+Admin component: run_validation_checks,passed,Found
+Admin component: load_registry,passed,Found
+Admin component: save_registry,passed,Found
+Relative path check: main.py,passed,No Colab/local hardcoded paths found
+Relative path check: ui_helpers.py,passed,No Colab/local hardcoded paths found
+Relative path check: search_components.py,passed,No Colab/local hardcoded paths found
+Relative path check: admin_components.py,passed,No Colab/local hardcoded paths found

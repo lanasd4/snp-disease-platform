@@ -1,0 +1,4 @@
+﻿source_row_number,disease_trait,match_status,disease_id,rsid,mapped_gene,reported_gene,p_value,linking_issue
+848,Hypertension,matched,3,rs113738722,,,2.0000000000000002e-23,missing_gene_symbol
+3056,Breast Cancer,matched,10,rs138060088,,,9e-43,missing_gene_symbol
+3171,Breast Cancer,matched,10,rs6223688,,,2.0000000000000002e-23,missing_gene_symbol

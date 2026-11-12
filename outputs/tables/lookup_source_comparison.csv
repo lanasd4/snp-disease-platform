@@ -1,0 +1,7 @@
+﻿user_query,csv_found,database_found,csv_canonical_name,database_canonical_name,comparison_status
+مرض السكر,True,True,Type 2 Diabetes,Type 2 Diabetes,MATCH
+T2D,True,True,Type 2 Diabetes,Type 2 Diabetes,MATCH
+الضغط,True,True,Hypertension,Hypertension,MATCH
+CAD,True,True,Coronary Artery Disease,Coronary Artery Disease,MATCH
+الربو,True,True,Asthma,Asthma,MATCH
+مرض غير موجود,False,False,,,MATCH

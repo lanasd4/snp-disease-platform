@@ -1,0 +1,11 @@
+﻿disease_id,canonical_name,arabic_name,category,active
+1,Type 2 Diabetes,السكري من النوع الثاني,Metabolic Disease,Y
+2,Obesity,السمنة,Metabolic Disease,Y
+3,Hypertension,ارتفاع ضغط الدم,Cardiovascular Disease,Y
+4,Coronary Artery Disease,مرض الشريان التاجي,Cardiovascular Disease,Y
+5,Chronic Kidney Disease,مرض الكلى المزمن,Kidney Disease,Y
+6,Asthma,الربو,Respiratory Disease,Y
+7,Hypothyroidism,قصور الغدة الدرقية,Endocrine Disease,Y
+8,Rheumatoid Arthritis,التهاب المفاصل الرثياني,Autoimmune Disease,Y
+9,Alzheimer's Disease,مرض الزهايمر,Neurodegenerative Disease,Y
+10,Breast Cancer,سرطان الثدي,Cancer,Y

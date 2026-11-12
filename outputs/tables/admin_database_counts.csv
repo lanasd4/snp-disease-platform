@@ -1,0 +1,12 @@
+﻿object,type,count,source
+Association,SQLite table,349,database/snp_platform.db
+Disease,SQLite table,6,database/snp_platform.db
+DiseaseSynonym,SQLite table,21,database/snp_platform.db
+Gene,SQLite table,251,database/snp_platform.db
+PopulationRegion,SQLite table,192,database/snp_platform.db
+SNP,SQLite table,310,database/snp_platform.db
+Study,SQLite table,56,database/snp_platform.db
+Ranked associations,Processed CSV,349,data/processed/ranked_associations_initial.csv
+Unique diseases,Processed CSV,6,data/processed/ranked_associations_initial.csv
+Unique SNPs,Processed CSV,310,data/processed/ranked_associations_initial.csv
+Unique genes,Processed CSV,250,data/processed/ranked_associations_initial.csv

@@ -1,0 +1,9 @@
+{
+  "population_sizes": {
+    "S3": 23892,
+    "S1": 217,
+    "S2": 6
+  },
+  "seed": 29,
+  "s3_sample_size": 100
+}

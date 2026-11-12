@@ -1,0 +1,10 @@
+﻿feature_name,missing_count,missing_percent,handling_strategy
+p_value_numeric,0,0.0,Core feature. Rows without p-value should be excluded or ranked low on Day 26.
+odds_ratio_numeric,505,16.97,Optional evidence feature. Do not fabricate values; use has_or_beta flag.
+effect_size_numeric,2975,100.0,Optional evidence feature. Do not fabricate values; use has_or_beta flag.
+risk_allele,547,18.39,Optional feature for PRS/interpretation. Use has_risk_allele flag.
+pubmed_id,0,0.0,Context feature. Keep missing as Unknown or use availability flag.
+study_title,0,0.0,Context feature. Keep missing as Unknown or use availability flag.
+population_label,0,0.0,Context feature. Keep missing as Unknown or use availability flag.
+region,0,0.0,Context feature. Keep missing as Unknown or use availability flag.
+source_database_clean,0,0.0,Context feature. Keep missing as Unknown or use availability flag.

@@ -1,0 +1,7 @@
+﻿check,status,details
+nodes_not_empty,PASS,nodes=566
+edges_not_empty,PASS,edges=887
+all_edge_sources_exist_in_nodes,PASS,
+all_edge_targets_exist_in_nodes,PASS,
+node_types,PASS,"SNP, Gene, Disease"
+edge_types,PASS,"Disease-SNP, SNP-Gene, Disease-Gene"

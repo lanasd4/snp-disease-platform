@@ -1,0 +1,9 @@
+﻿query,search_found,result_count,suggestion_rank,suggested_disease_name,suggested_disease_arabic_name,matched_term,score,message
+diabetis,False,0,1.0,Type 2 Diabetes,السكري من النوع الثاني,Type 2 Diabetes,0.609,No exact results found. Closest disease suggestions are available.
+diabetis,False,0,2.0,Obesity,السمنة,Obesity,0.4,No exact results found. Closest disease suggestions are available.
+astma,False,0,1.0,Asthma,الربو,Asthma,0.909,No exact results found. Closest disease suggestions are available.
+hypertention,False,0,1.0,Hypertension,ارتفاع ضغط الدم,Hypertension,0.917,No exact results found. Closest disease suggestions are available.
+hypertention,False,0,2.0,Type 2 Diabetes,السكري من النوع الثاني,Type 2 Diabetes,0.37,No exact results found. Closest disease suggestions are available.
+kidney diseas,True,20,,,,,,Results found.
+السكر,True,20,,,,,,Results found.
+ظغط,False,0,1.0,Hypertension,ارتفاع ضغط الدم,الضغط,0.5,No exact results found. Closest disease suggestions are available.

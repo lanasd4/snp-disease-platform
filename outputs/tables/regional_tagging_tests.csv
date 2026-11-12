@@ -1,0 +1,13 @@
+﻿test_text,expected_tag,predicted_tag,is_arab_related_rule,rule_confidence,matched_region_keywords,classification_reason,test_passed
+Qatari population with type 2 diabetes,Arab/Middle East,Arab/Middle East,Y,High,"qatar, qatari",Arab or Middle East keyword was found.,True
+Saudi Arabian cohort study,Arab/Middle East,Arab/Middle East,Y,High,"arab, arabian, saudi, saudi arabia",Arab or Middle East keyword was found.,True
+Middle Eastern ancestry participants,Arab/Middle East,Arab/Middle East,Y,High,"middle east, middle eastern",Arab or Middle East keyword was found.,True
+Palestinian families from the West Bank,Arab/Middle East,Arab/Middle East,Y,High,palestinian,Arab or Middle East keyword was found.,True
+European ancestry sample,Other,Other,N,High,"europe, european",Non-Arab/non-Middle-East population keyword was found.,True
+East Asian population,Other,Other,N,High,east asian,Non-Arab/non-Middle-East population keyword was found.,True
+Iranian cohort,Middle East - Non-Arab/Regional,Middle East - Non-Arab/Regional,Y,Medium,"iran, iranian",Non-Arab Middle East regional keyword was found.,True
+Unknown population,Unknown,Unknown,N,Low,unknown,Text indicates that region/population is unknown or not reported.,True
+دراسة على عينة سعودية,Arab/Middle East,Arab/Middle East,Y,High,سعودي,Arab or Middle East keyword was found.,True
+مرضى من فلسطين والاردن,Arab/Middle East,Arab/Middle East,Y,High,"اردن, الاردن, فلسطين",Arab or Middle East keyword was found.,True
+عينة من الشرق الاوسط,Arab/Middle East,Arab/Middle East,Y,High,الشرق الاوسط,Arab or Middle East keyword was found.,True
+سكان اوروبيون,Other,Other,N,High,اوروبي,Non-Arab/non-Middle-East population keyword was found.,True

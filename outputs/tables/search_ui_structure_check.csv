@@ -1,0 +1,12 @@
+﻿component,status,purpose
+Disease search input,created,Enter disease query
+Search button,created,Run ranked disease search
+Arab-related toggle,created,Filter Arab/Middle East related results
+Rank label filter,created,Filter by ranking class
+Gene filter,created,Filter results by gene symbol
+Minimum score slider,created,Filter by importance_score
+p-value filter,created,Filter by max p-value
+Table view,created,Show ranked results in table
+Cards view,created,Show ranked results as cards
+Result details panel,created,Show selected SNP details
+Fuzzy suggestions,created,Show closest disease suggestions if no results

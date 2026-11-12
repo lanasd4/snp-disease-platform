@@ -1,0 +1,3 @@
+﻿test_type,query_used,suggestion_status,query,normalized_query,disease_id,suggested_disease_name,suggested_disease_arabic_name,matched_term,term_source,score
+ranked_typo_search,diabetis,suggestion_found,diabetis,diabetis,1,Type 2 Diabetes,السكري من النوع الثاني,Type 2 Diabetes,canonical_name,0.609
+ranked_typo_search,diabetis,suggestion_found,diabetis,diabetis,2,Obesity,السمنة,Obesity,canonical_name,0.4

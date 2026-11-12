@@ -1,0 +1,11 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["archive"]
+
+[tool.ruff.lint]
+# Pyflakes (unused/undefined names) + syntax errors.
+select = ["F", "E9"]

@@ -1,0 +1,2 @@
+﻿disease_id,disease_name,disease_arabic_name,snp_id,rsid,gene_id,gene_symbol,p_value,risk_allele,study_title,pubmed_id,publication_year,population_label,region,is_arab_related,source_database,evidence_level,clinical_significance
+5,Chronic Kidney Disease,مرض الكلى المزمن,291,rs911119,98,CST3,1.9999999999999998e-138,,New loci associated with kidney function and chronic kidney disease.,,2010,20p11.21,20p11.21,N,GWAS Catalog,Real GWAS imported data,

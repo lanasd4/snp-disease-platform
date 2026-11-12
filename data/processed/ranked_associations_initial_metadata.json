@@ -1,0 +1,23 @@
+{
+  "file_name": "ranked_associations_initial.csv",
+  "project_day": 26,
+  "stage": "Rule-Based Association Ranking",
+  "is_ranked_associations_file": true,
+  "created_at": "2026-11-11T21:45:16",
+  "input_rows": 2975,
+  "ranked_rows": 2975,
+  "unique_diseases": 10,
+  "unique_snps": 1390,
+  "score_weights": {
+    "p_value_strength_score": 45,
+    "evidence_count_score": 15,
+    "study_count_score": 10,
+    "population_count_score": 8,
+    "source_count_score": 5,
+    "or_beta_score": 5,
+    "risk_allele_score": 5,
+    "pubmed_score": 4,
+    "arab_related_bonus": 3
+  },
+  "note": "Initial rule-based ranking on real data. This ranking is for research prioritization, not medical diagnosis."
+}

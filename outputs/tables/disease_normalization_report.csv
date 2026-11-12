@@ -1,0 +1,9 @@
+﻿metric,value
+input_rows,3387
+matched_rows,3387
+unmatched_rows,0
+review_needed_rows,0
+unique_input_disease_traits,10
+unique_matched_diseases,10
+dictionary_terms_count,80
+target_keyword_rules_count,34

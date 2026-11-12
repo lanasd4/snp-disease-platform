@@ -1,0 +1,6 @@
+﻿source_id,source_name,category,status,enabled,last_update,reliability,raw_path,processed_path,notes
+SRC_GWAS,GWAS Catalog,Genome-wide association studies,active,Y,2026-05-24,high,data/raw,data/processed/ranked_associations_initial.csv,Main association evidence source used for SNP-Disease ranking.
+SRC_DBSNP,dbSNP,SNP reference identifiers,planned,N,,high,,,Planned source for rsID reference enrichment.
+SRC_CLINVAR,ClinVar,Clinical variant interpretation,planned,N,,high,,,Planned source for clinical significance metadata.
+SRC_PUBMED,PubMed,Scientific literature,planned,N,,high,,,Planned source for study and publication summaries.
+SRC_ARAB,Arab-related Studies,Regional population evidence,prototype,Y,2026-05-24,medium,data/processed,data/processed/ranked_associations_initial.csv,Used for Arab-related classification and regional filtering.

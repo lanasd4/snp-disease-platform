@@ -1,0 +1,35 @@
+﻿column_name,non_empty_count,empty_count,example_values
+DATE ADDED TO CATALOG,4999,0,2012-10-19 | 2012-10-19 | 2012-10-19
+PUBMEDID,4999,0,21102463 | 21102463 | 21102463
+FIRST AUTHOR,4999,0,Franke A | Franke A | Franke A
+DATE,4999,0,2010-11-21 | 2010-11-21 | 2010-11-21
+JOURNAL,4999,0,Nat Genet | Nat Genet | Nat Genet
+LINK,4999,0,www.ncbi.nlm.nih.gov/pubmed/21102463 | www.ncbi.nlm.nih.gov/pubmed/21102463 | www.ncbi.nlm.nih.gov/pubmed/21102463
+STUDY,4999,0,Genome-wide meta-analysis increases to 71 the number of confirmed Crohn's disease susceptibility loci. | Genome-wide meta-analysis increases to 71 the number of confirmed Crohn's disease susceptibility loci. | Genome-wide meta-analysis increases to 71 the number of confirmed Crohn's disease susceptibility loci.
+DISEASE/TRAIT,4999,0,Crohn's disease | Crohn's disease | Crohn's disease
+INITIAL SAMPLE SIZE,4999,0,"6,333 European ancestry cases, 15,056 European ancestry controls | 6,333 European ancestry cases, 15,056 European ancestry controls | 6,333 European ancestry cases, 15,056 European ancestry controls"
+REPLICATION SAMPLE SIZE,2221,2778,"15,694 European ancestry cases, 14,026 European ancestry controls, 414 European ancestry trios | 15,694 European ancestry cases, 14,026 European ancestry controls, 414 European ancestry trios | 15,694 European ancestry cases, 14,026 European ancestry controls, 414 European ancestry trios"
+REGION,4992,7,10p15.1 | 16p12.1 | 1p31.3
+CHR_ID,4992,7,10 | 16 | 1
+CHR_POS,4992,7,6060049 | 28479196 | 67240275
+REPORTED GENE(S),4987,12,"IL2RA | IL27, SH2B1, EIF3C, LAT, CD19 | IL23R"
+MAPPED_GENE,4992,7,"IL2RA | CLN3, AC138894.1 | IL23R"
+UPSTREAM_GENE_ID,1487,3512,ENSG00000199349 | ENSG00000231681 | ENSG00000186075
+DOWNSTREAM_GENE_ID,1487,3512,ENSG00000136634 | ENSG00000235620 | ENSG00000073605
+SNP_GENE_IDS,3404,1595,"ENSG00000134460 | ENSG00000188603, ENSG00000261832 | ENSG00000162594"
+UPSTREAM_GENE_DISTANCE,1487,3512,18467 | 1871 | 6614
+DOWNSTREAM_GENE_DISTANCE,1487,3512,1043 | 9925 | 20085
+STRONGEST SNP-RISK ALLELE,4999,0,rs12722489-C | rs151181-G | rs11209026-G
+SNPS,4999,0,rs12722489 | rs151181 | rs11209026
+MERGED,4999,0,0 | 0 | 0
+SNP_ID_CURRENT,4892,107,12722489 | 151181 | 11209026
+CONTEXT,4992,7,intron_variant | intron_variant | missense_variant
+INTERGENIC,4898,101,0 | 0 | 0
+RISK ALLELE FREQUENCY,4905,94,0.852 | 0.386 | 0.932
+P-VALUE,4999,0,3E-9 | 2E-11 | 1E-64
+PVALUE_MLOG,4999,0,8.522878745280337 | 10.698970004336019 | 64.0
+P-VALUE (TEXT),2064,2935,"(Maternal alcohol consumption, 1df) | (Maternal alcohol consumption, 1df) | (EA)"
+OR or BETA,4230,769,1.11 | 1.07 | 2.66
+95% CI (TEXT),4214,785,[1.05-1.16] | [1.03-1.12] | [2.36-3.00]
+PLATFORM [SNPS PASSING QC],4999,0,"Affymetrix, Illumina [953241] (imputed) | Affymetrix, Illumina [953241] (imputed) | Affymetrix, Illumina [953241] (imputed)"
+CNV,4999,0,N | N | N

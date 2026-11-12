@@ -1,0 +1,24 @@
+﻿section,metric,value,notes
+active_search_file,ranked_associations_rows,349,Rows currently available to the active Search page.
+active_search_file,ranked_associations_columns,59,Columns in active ranked associations file.
+registry_status,planned,3,Number of data sources with this registry status.
+registry_status,uploaded,2,Number of data sources with this registry status.
+registry_status,active,1,Number of data sources with this registry status.
+registry_status,prototype,1,Number of data sources with this registry status.
+registry_status,nan,1,Number of data sources with this registry status.
+registry_status,approved,1,Number of data sources with this registry status.
+registry_status,processed,1,Number of data sources with this registry status.
+registry_source_type,nan,8,Number of data sources by source type.
+registry_source_type,admin_uploaded,1,Number of data sources by source type.
+registry_source_type,online_gwas,1,Number of data sources by source type.
+sqlite_tables,AdminActionLog,3,SQLite table row count.
+sqlite_tables,Association,349,SQLite table row count.
+sqlite_tables,Disease,6,SQLite table row count.
+sqlite_tables,DiseaseSynonym,21,SQLite table row count.
+sqlite_tables,Gene,251,SQLite table row count.
+sqlite_tables,PopulationRegion,192,SQLite table row count.
+sqlite_tables,SNP,310,SQLite table row count.
+sqlite_tables,Study,56,SQLite table row count.
+sqlite_tables,UserAccount,3,SQLite table row count.
+sqlite_tables,UserSearchHistory,8,SQLite table row count.
+sqlite_tables,sqlite_sequence,3,SQLite table row count.

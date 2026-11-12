@@ -1,0 +1,9 @@
+﻿metric,value
+input_association_rows,3384
+ready_before_dedup_rows,3384
+ready_after_dedup_rows,3382
+duplicates_removed_rows,2
+linking_issue_rows,0
+unique_studies,219
+unique_population_regions,359
+arab_related_population_regions,13

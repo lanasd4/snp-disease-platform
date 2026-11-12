@@ -1,0 +1,7 @@
+﻿found,user_query,disease_id,canonical_name,arabic_name,message
+True,مرض السكر,1.0,Type 2 Diabetes,السكري من النوع الثاني,
+True,T2D,1.0,Type 2 Diabetes,السكري من النوع الثاني,
+True,الضغط,3.0,Hypertension,ارتفاع ضغط الدم,
+True,CAD,4.0,Coronary Artery Disease,مرض الشريان التاجي,
+True,الربو,6.0,Asthma,الربو,
+False,مرض غير موجود,,,,No matching disease synonym was found.

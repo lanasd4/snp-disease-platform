@@ -1,0 +1,8 @@
+﻿user_query,arab_related_only,found,result_count,disease_name,rsid,gene_symbol,region,is_arab_related,p_value,odds_ratio
+مرض السكر,False,True,1,Type 2 Diabetes,rs7903146,TCF7L2,Global,N,1e-05,1.35
+T2D,False,True,1,Type 2 Diabetes,rs7903146,TCF7L2,Global,N,1e-05,1.35
+الضغط,False,True,1,Hypertension,rs699,AGT,Middle East,Y,0.001,1.18
+الضغط,True,True,1,Hypertension,rs699,AGT,Middle East,Y,0.001,1.18
+مرض الكلى المزمن,True,True,1,Chronic Kidney Disease,rs12917707,UMOD,Arab Region,Y,0.0003,1.2
+الربو,True,True,0,,,,,,,
+مرض غير موجود,False,False,0,,,,,,,

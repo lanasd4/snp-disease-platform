@@ -1,0 +1,8 @@
+﻿metric,value,train_size,test_size,split_note
+accuracy,0.9167,70,24,Stratified train/test split was used.
+precision_macro,0.9352,70,24,Stratified train/test split was used.
+recall_macro,0.8667,70,24,Stratified train/test split was used.
+f1_macro,0.8826,70,24,Stratified train/test split was used.
+precision_weighted,0.9248,70,24,Stratified train/test split was used.
+recall_weighted,0.9167,70,24,Stratified train/test split was used.
+f1_weighted,0.9084,70,24,Stratified train/test split was used.

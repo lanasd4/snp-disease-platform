@@ -1,0 +1,4 @@
+﻿rsid,disease_trait,mapped_gene,p_value,population,source_database
+rs7903146,Type 2 Diabetes,TCF7L2,2.45e-16,Arab / Middle Eastern,Day16_Test_Source
+rs699,Hypertension,AGT,1.20e-08,Mixed Population,Day16_Test_Source
+rs3939286,Asthma,IL33,3.10e-09,European,Day16_Test_Source

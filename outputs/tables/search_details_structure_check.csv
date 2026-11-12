@@ -1,0 +1,8 @@
+﻿component,status,purpose
+Disease Search,available,Search by disease name using ranked backend
+SNP Search,available,Search by rsID using ranked associations fallback
+Table View,available,Display ranked results in structured table
+Cards View,available,Display ranked results as stable native Streamlit cards
+Right Details Panel,available,"Display selected SNP, gene, disease, p-value, score, source, and Arabic explanation"
+No HTML Code Rendering,fixed,Avoid nested HTML rendering issues by using native Streamlit components
+Filters,available,"Rank label, gene, min score, max p-value, and Arab-related toggle"

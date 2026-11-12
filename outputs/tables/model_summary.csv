@@ -1,0 +1,8 @@
+﻿item,value
+model_type,TF-IDF + Logistic Regression
+input_file,/content/drive/MyDrive/SNP_Disease_Platform/data/processed/regional_training_set.csv
+training_rows_total,94
+train_size,70
+test_size,24
+labels,"Arab_Middle_East, Other, Unknown_Review"
+split_note,Stratified train/test split was used.

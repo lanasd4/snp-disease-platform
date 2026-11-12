@@ -1,0 +1,17 @@
+﻿metric,value
+genes_input_rows,701
+genes_inserted,701
+genes_existing,0
+snps_input_rows,1390
+snps_inserted,1390
+snps_existing,0
+studies_input_rows,219
+studies_inserted,219
+studies_existing,0
+population_input_rows,359
+population_inserted,29
+population_existing,330
+associations_input_rows,3382
+associations_inserted,2975
+associations_existing_or_skipped,407
+loading_issue_rows,0

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software or its analyses, please cite it as below, and cite the GWAS Catalog (see DATA_SOURCES.md)."
+title: "SNP-Disease Platform: an Arabic-supported platform for exploring SNP-disease associations and Arab representation in GWAS"
+type: software
+authors:
+  - given-names: Lana
+    family-names: "TODO-family-name"
+license: MIT
+version: 1.0.0
+date-released: "2026-11-11"
+keywords:
+  - GWAS
+  - SNP
+  - bioinformatics
+  - Arabic
+  - Middle East
+  - population representation
+  - Streamlit
+references:
+  - type: article
+    title: "The NHGRI-EBI GWAS Catalog: knowledgebase and deposition resource"
+    authors:
+      - family-names: Sollis
+        given-names: E
+      - name: "et al."
+    journal: "Nucleic Acids Research"
+    year: 2023
+    volume: 51
+    issue: D1
+    start: D977
+    end: D985
+    doi: "10.1093/nar/gkac1010"

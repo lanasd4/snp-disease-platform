@@ -1,0 +1,9 @@
+﻿component,status,purpose
+Admin Overview,available,"Show counts for diseases, SNPs, genes, and associations"
+Data Source Registry,available,Register and edit data sources metadata
+Enable/Disable Source Field,available,Prototype field for activating or disabling sources
+Raw File Upload/Register,prototype,Allow admin to upload/register raw data files
+Validation Checks,available,"Check ranked file, required columns, p-values, scores, duplicates, and Arab-related column"
+Files Overview,available,"Show latest files in raw, processed, database, outputs, and docs"
+Data Lineage,available,Explain Raw → Processed → SQLite/Ranked CSV → Search UI → Admin Dashboard
+Pipeline Controls,prototype,Run validation checks and monitor ranked file status

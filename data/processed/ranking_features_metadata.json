@@ -1,0 +1,11 @@
+{
+  "file_name": "ranking_features.csv",
+  "project_day": 25,
+  "stage": "Association Ranking Features",
+  "is_ranking_features_file": true,
+  "created_at": "2026-11-11T21:45:14",
+  "association_rows": 2975,
+  "unique_diseases": 10,
+  "unique_snps": 1390,
+  "note": "This file prepares ranking features only. Final score calculation is planned for Day 26."
+}

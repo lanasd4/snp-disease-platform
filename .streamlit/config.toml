@@ -1,0 +1,54 @@
+[browser]
+gatherUsageStats = false
+
+[server]
+# No local browser auto-open (required on hosting; run.bat opens the URL itself).
+headless = true
+# Admin uploads are CSV/TSV/JSON source files; 25 MB is far above real sizes.
+maxUploadSize = 25
+maxMessageSize = 50
+enableXsrfProtection = true
+# No source-file watching: new sessions start ~5x faster under load
+# (tests/load/load_test.py). For live reload while developing, run with
+# --server.fileWatcherType auto.
+fileWatcherType = "none"
+enableCORS = true
+
+[client]
+# Never show Python tracebacks (file paths, code) to visitors.
+showErrorDetails = false
+toolbarMode = "minimal"
+
+[runner]
+fastReruns = true
+
+# Brand theme - colors sampled from app/assets/logo.png.
+# base = "light" keeps the designed palette even when the visitor's device is
+# in dark mode (otherwise Streamlit switches text to light colors on our
+# light surfaces and the sidebar becomes unreadable).
+[theme]
+base = "light"
+primaryColor = "#0E7C8C"
+backgroundColor = "#F5F7FB"
+secondaryBackgroundColor = "#EAF0F6"
+textColor = "#182238"
+linkColor = "#1D4E9E"
+borderColor = "#DDE3EC"
+showWidgetBorder = true
+baseRadius = "10px"
+buttonRadius = "10px"
+font = "'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, 'Noto Sans Arabic', sans-serif"
+headingFont = "'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, 'Noto Sans Arabic', sans-serif"
+headingFontWeights = [800, 700, 700, 600, 600, 600]
+baseFontSize = 15
+metricValueFontWeight = 700
+dataframeHeaderBackgroundColor = "#EEF3F8"
+blueColor = "#1D4E9E"
+greenColor = "#1E7D4F"
+violetColor = "#5B3291"
+chartCategoricalColors = ["#0A2158", "#0E7C8C", "#5B3291", "#1D4E9E", "#3FA7B5", "#8A6BBE", "#6C86B8", "#9AD0D7", "#B9A7D9", "#C9D3E6"]
+
+[theme.sidebar]
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F2F5F9"
+textColor = "#182238"

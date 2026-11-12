@@ -1,0 +1,7 @@
+﻿association_id,disease_id,snp_id,study_id,population_region_id,p_value,odds_ratio,risk_allele,effect_allele,source_database,evidence_level,notes
+1,1,1,1,1,1e-05,1.35,T,T,Demo,Sample,"Demo association record, not final scientific evidence"
+2,2,2,2,1,2e-05,1.25,A,A,Demo,Sample,"Demo association record, not final scientific evidence"
+3,3,3,3,2,0.001,1.18,C,C,Demo,Sample,"Demo regional association record, not final scientific evidence"
+4,4,4,4,1,5e-07,1.42,G,G,Demo,Sample,"Demo association record, not final scientific evidence"
+5,5,5,5,3,0.0003,1.2,T,T,Demo,Sample,"Demo Arab-related association record, not final scientific evidence"
+6,6,6,6,1,0.0008,1.15,A,A,Demo,Sample,"Demo association record, not final scientific evidence"

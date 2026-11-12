@@ -1,0 +1,11 @@
+﻿disease_id,icon,gwas_mapped_traits,description_ar,description_en
+1,💧,type 2 diabetes mellitus,اضطراب مزمن في تنظيم سكر الدم بسبب مقاومة الإنسولين أو نقص إفرازه.,A chronic disorder of blood-sugar regulation caused by insulin resistance or reduced insulin secretion.
+2,⚖️,obesity disorder;morbid obesity,تراكم مفرط للدهون في الجسم يرفع خطر أمراض القلب والسكري.,Excess body-fat accumulation that raises the risk of heart disease and diabetes.
+3,🩺,hypertensive disorder;essential hypertension,ارتفاع مستمر في ضغط الدم داخل الشرايين، من أهم عوامل خطر الجلطات.,"Persistently raised arterial blood pressure, a major risk factor for stroke and heart attack."
+4,❤️,coronary artery disorder;coronary atherosclerosis,تضيّق الشرايين التي تغذي عضلة القلب نتيجة تراكم الترسبات.,Narrowing of the arteries that supply the heart muscle due to plaque build-up.
+5,🫘,chronic kidney disease,تراجع تدريجي ومستمر في وظائف الكلى لأكثر من ثلاثة أشهر.,"A gradual, lasting decline in kidney function for more than three months."
+6,🫁,asthma;childhood onset asthma;adult onset asthma;atopic asthma,التهاب مزمن في المجاري التنفسية يسبب نوبات ضيق تنفس وصفير.,Chronic airway inflammation causing episodes of breathlessness and wheezing.
+7,🦋,hypothyroidism,نقص إفراز هرمونات الغدة الدرقية مما يبطئ عمليات الأيض في الجسم.,Insufficient thyroid-hormone production that slows the body's metabolism.
+8,🦴,rheumatoid arthritis,مرض مناعي ذاتي يسبب التهابًا مزمنًا في المفاصل وتآكلها.,An autoimmune disease causing chronic joint inflammation and erosion.
+9,🧠,alzheimer disease;late-onset alzheimers disease,مرض تنكسي عصبي يسبب تراجعًا تدريجيًا في الذاكرة والقدرات الإدراكية.,A neurodegenerative disease causing progressive loss of memory and cognition.
+10,🎗️,breast carcinoma;breast cancer;estrogen-receptor negative breast cancer,ورم خبيث ينشأ في أنسجة الثدي، والأكثر شيوعًا بين السرطانات عند النساء.,"A malignant tumour of breast tissue, the most common cancer in women."

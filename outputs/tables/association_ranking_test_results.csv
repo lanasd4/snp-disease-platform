@@ -1,0 +1,6 @@
+﻿user_query,search_mode_requested,search_mode_used,arab_related_only,prefer_arab_related,found,result_count,message,rank_position,disease_name,disease_arabic_name,rsid,gene_symbol,region,is_arab_related,p_value,odds_ratio,association_score,rank_label,p_value_score,odds_ratio_score,evidence_score,source_score,population_relevance_score
+مرض السكر,auto,disease,False,False,True,1,,1.0,Type 2 Diabetes,السكري من النوع الثاني,rs7903146,TCF7L2,Global,N,1e-05,1.35,55.0,Moderate,35.0,15.0,5.0,0.0,0.0
+الضغط,auto,disease,False,True,True,1,,1.0,Hypertension,ارتفاع ضغط الدم,rs699,AGT,Middle East,Y,0.001,1.18,50.0,Moderate,25.0,10.0,5.0,0.0,10.0
+rs699,auto,snp,False,True,True,1,,1.0,Hypertension,ارتفاع ضغط الدم,rs699,AGT,Middle East,Y,0.001,1.18,50.0,Moderate,25.0,10.0,5.0,0.0,10.0
+الربو,auto,disease,False,False,True,1,,1.0,Asthma,الربو,rs3939286,IL33,Global,N,0.0008,1.15,40.0,Weak,25.0,10.0,5.0,0.0,0.0
+rs0000000,auto,snp,False,False,False,0,"SNP rsID was not found, so no disease associations can be returned.",,,,,,,,,,,,,,,,

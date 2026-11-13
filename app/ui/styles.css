@@ -619,3 +619,6 @@ code { direction: ltr; unicode-bidi: isolate; }
 
 /* Toggle switches: keep the track left-to-right so the knob stays inside it in RTL. */
 [data-testid="stCheckbox"] label:has(input[role="switch"]) > div:not([data-testid]) { direction: ltr; }
+
+/* Label above the autocomplete search box (the box itself is an iframe component). */
+.ac-label { font-size: 0.875rem; font-weight: 600; color: var(--navy); margin-bottom: -0.35rem; }

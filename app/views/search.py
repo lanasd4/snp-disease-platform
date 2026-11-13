@@ -21,6 +21,7 @@ from app.ui.components import (
     rank_text,
     section_title,
 )
+from app.ui.autocomplete import autocomplete
 from app.views.result_details import (
     build_ranking_reason,
     normalize_result_context,
@@ -134,24 +135,18 @@ def _render_search_panel() -> dict:
         # Clicking the active segment deselects it; treat that as "disease".
         mode = st.session_state.get(MODE_KEY) or "disease"
 
-        options = autocomplete_options(mode, load_tri_search_data(), is_rtl())
-        current = st.session_state.get(QUERY_KEY)
-        if current and current not in options:
-            options = [current, *options]  # keep free text the user typed
-        box, button = st.columns([12, 1], vertical_alignment="bottom")
-        with box:
-            st.selectbox(
-                t(f'search.input_{mode}'),
-                options,
-                index=None,
-                key=QUERY_KEY,
-                placeholder=t(f'search.placeholder_{mode}'),
-                accept_new_options=True,
-                filter_mode="fuzzy",
-            )
-        with button:
-            st.button("", icon=":material/search:", key=f"{KEY}_go", help=t('search.button'),
-                      type="primary", width="stretch")
+        st.markdown(f"<div class='ac-label'>{html.escape(t(f'search.input_{mode}'))}</div>",
+                    unsafe_allow_html=True)
+        submitted = autocomplete(
+            autocomplete_options(mode, load_tri_search_data(), is_rtl()),
+            key=f"{KEY}_box",
+            default=st.session_state.get(QUERY_KEY) or "",
+            placeholder=t(f'search.placeholder_{mode}'),
+            rtl=is_rtl(),
+            button_label=t('search.button'),
+        )
+        if submitted is not None:
+            st.session_state[QUERY_KEY] = submitted
 
         if mode == "disease":
             arabic = is_rtl()

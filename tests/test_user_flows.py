@@ -48,7 +48,7 @@ def test_clicking_a_disease_tile_opens_search_with_results():
     at.button(key="dz_btn_9").click().run()  # Alzheimer's disease
     _no_errors(at)
     assert at.session_state["current_page_key"] == "Search"
-    assert at.selectbox(key="srch_query").value == "مرض الزهايمر"
+    assert at.session_state["srch_query"] == "مرض الزهايمر"
     table = at.dataframe[0].value
     assert len(table) > 0 and "APOE" in set(table["gene"])
 
@@ -68,7 +68,8 @@ def test_home_search_box_routes_to_the_right_mode():
 @pytest.mark.parametrize("query, expected_gene", [("السكري", "TCF7L2"), ("Breast Cancer", None), ("الروماتيزم", None)])
 def test_disease_search_returns_one_row_per_variant(query, expected_gene):
     at = _open(_app(), 1)
-    at.selectbox(key="srch_query").set_value(query).run()
+    at.session_state["srch_query"] = query
+    at.run()
     _no_errors(at)
     table = at.dataframe[0].value
     assert len(table) > 0
@@ -101,7 +102,7 @@ def test_did_you_mean_suggestions(query, mode, expected):
 
 def test_arab_only_filter_keeps_only_arab_rows():
     at = _open(_app(), 1)
-    at.selectbox(key="srch_query").set_value("قصور الغدة الدرقية")
+    at.session_state["srch_query"] = "قصور الغدة الدرقية"
     at.toggle(key="srch_arab").set_value(True)
     at = at.run()
     _no_errors(at)
@@ -113,7 +114,7 @@ def test_quick_pick_fills_the_query():
     at = _open(_app(), 1)
     at.button_group(key="srch_pick_disease").set_value("قصور الغدة الدرقية").run()
     _no_errors(at)
-    assert at.selectbox(key="srch_query").value == "قصور الغدة الدرقية"
+    assert at.session_state["srch_query"] == "قصور الغدة الدرقية"
 
 
 # --- Language -------------------------------------------------------------------

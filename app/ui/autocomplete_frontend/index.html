@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --teal: #0E7C8C; --navy: #0A2158; --border: #D5DEEA; --muted: #5E6A82; --bg: #EEF2F8; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent;
+    font-family: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif; }
+  .row { display: flex; gap: 8px; align-items: stretch; padding: 2px; }
+  .field { position: relative; flex: 1; }
+  input { width: 100%; height: 44px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg);
+    padding: 0 14px; font-size: 15px; color: var(--navy); outline: none; font-family: inherit; }
+  input:focus { border-color: var(--teal); background: #fff; box-shadow: 0 0 0 3px rgba(14,124,140,.12); }
+  button.go { width: 52px; border: 0; border-radius: 10px; background: var(--teal); color: #fff; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; }
+  button.go:hover { background: #0B6874; }
+  ul { list-style: none; margin: 4px 0 0; padding: 4px; border: 1px solid var(--border); border-radius: 10px;
+    background: #fff; box-shadow: 0 8px 22px rgba(10,33,88,.10); display: none; }
+  ul.open { display: block; }
+  li { padding: 8px 12px; border-radius: 7px; cursor: pointer; color: var(--navy); font-size: 14px; }
+  li.active, li:hover { background: #E3F2F4; }
+  li mark { background: none; color: var(--teal); font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="field"><input id="q" type="text" autocomplete="off" spellcheck="false"></div>
+  <button class="go" id="go" type="button" aria-label="Search">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+         stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+  </button>
+</div>
+<ul id="list"></ul>
+<script>
+(function () {
+  const input = document.getElementById("q");
+  const list = document.getElementById("list");
+  const go = document.getElementById("go");
+  let options = [], maxItems = 8, active = -1, shown = [], lastDefault = null;
+
+  function send(type, data) {
+    window.parent.postMessage(Object.assign({ isStreamlitMessage: true, type: type }, data), "*");
+  }
+  function setHeight() {
+    send("streamlit:setFrameHeight", { height: document.body.scrollHeight + 4 });
+  }
+  function submit(value) {
+    value = (value || "").trim();
+    if (!value) return;
+    input.value = value;
+    close();
+    send("streamlit:setComponentValue", { value: { query: value, nonce: Date.now() }, dataType: "json" });
+  }
+  // Arabic letter forms and case are unified so "السمنه" matches "السمنة".
+  function norm(text) {
+    return (text || "").toLowerCase()
+      .replace(/[ً-ْٰ]/g, "")
+      .replace(/[أإآ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي").replace(/ؤ/g, "و").replace(/ئ/g, "ي")
+      .trim();
+  }
+  function score(option, q) {
+    const o = norm(option), oNoArticle = o.startsWith("ال") ? o.slice(2) : o;
+    if (o === q) return 0;
+    if (o.startsWith(q) || oNoArticle.startsWith(q)) return 1;
+    if (o.split(/\s+/).some(w => w.startsWith(q) || (w.startsWith("ال") && w.slice(2).startsWith(q)))) return 2;
+    if (o.includes(q)) return 3;
+    let i = 0;  // letters in order (tolerates a missing letter)
+    for (const ch of o) { if (ch === q[i]) i++; if (i === q.length) return 4; }
+    return -1;
+  }
+  function escapeHtml(t) {
+    return t.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+  function render() {
+    const q = norm(input.value);
+    if (!q) { close(); return; }
+    // Ties keep the server's order, which lists official names before synonyms.
+    shown = options.map((o, i) => [o, score(o, q), i]).filter(x => x[1] >= 0)
+      .sort((a, b) => a[1] - b[1] || a[2] - b[2]).slice(0, maxItems).map(x => x[0]);
+    active = -1;
+    list.innerHTML = shown.map((o, i) => `<li data-i="${i}">${escapeHtml(o)}</li>`).join("");
+    list.classList.toggle("open", shown.length > 0);
+    setHeight();
+  }
+  function close() { list.classList.remove("open"); list.innerHTML = ""; shown = []; active = -1; setHeight(); }
+  function highlight() {
+    [...list.children].forEach((li, i) => li.classList.toggle("active", i === active));
+  }
+
+  input.addEventListener("input", render);
+  input.addEventListener("focus", render);
+  input.addEventListener("keydown", e => {
+    if (e.key === "ArrowDown" && shown.length) { active = (active + 1) % shown.length; highlight(); e.preventDefault(); }
+    else if (e.key === "ArrowUp" && shown.length) { active = (active - 1 + shown.length) % shown.length; highlight(); e.preventDefault(); }
+    else if (e.key === "Enter") { submit(active >= 0 ? shown[active] : input.value); e.preventDefault(); }
+    else if (e.key === "Escape") { close(); }
+  });
+  list.addEventListener("mousedown", e => {
+    const li = e.target.closest("li");
+    if (li) { e.preventDefault(); submit(shown[+li.dataset.i]); }
+  });
+  input.addEventListener("blur", () => setTimeout(close, 120));
+  go.addEventListener("click", () => submit(input.value));
+
+  window.addEventListener("message", event => {
+    const data = event.data || {};
+    if (data.type !== "streamlit:render") return;
+    const args = data.args || {};
+    options = args.options || [];
+    maxItems = args.max_items || 8;
+    const rtl = !!args.rtl;
+    document.documentElement.dir = rtl ? "rtl" : "ltr";
+    input.placeholder = args.placeholder || "";
+    go.setAttribute("aria-label", args.button_label || "Search");
+    go.title = args.button_label || "Search";
+    if (args.default !== lastDefault) { input.value = args.default || ""; lastDefault = args.default; }
+    setHeight();
+  });
+  send("streamlit:componentReady", { apiVersion: 1 });
+  setHeight();
+})();
+</script>
+</body>
+</html>

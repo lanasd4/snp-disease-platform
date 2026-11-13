@@ -23,5 +23,8 @@ if errorlevel 1 (
     echo.
 )
 
-python -m streamlit run app\main.py --server.headless false
+rem Local accounts live in a separate, git-ignored database copy.
+if not defined SNP_DATABASE_PATH set "SNP_DATABASE_PATH=database\snp_platform.local.db"
+
+python -m streamlit run app\main.py --server.headless false --server.port 8510
 endlocal

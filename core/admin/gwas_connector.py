@@ -11,6 +11,8 @@ from typing import Dict, Any, Optional
 import urllib.parse
 import urllib.request
 import pandas as pd
+
+from core.diseases import resolve_disease_or_trait as resolve_disease
 import re
 import zipfile
 from core.paths import get_project_root
@@ -84,7 +86,7 @@ def discover_latest_gwas_associations_url(base_url: str = DEFAULT_GWAS_ASSOCIATI
 
     request = urllib.request.Request(
         base_url,
-        headers={"User-Agent": "SNP-Disease-Platform-Day41-GWAS-Discovery"}
+        headers={"User-Agent": "SNP-Disease-Platform/1.0"}
     )
 
     with urllib.request.urlopen(request, timeout=60) as response:
@@ -151,7 +153,7 @@ def download_text_snapshot(
     try:
         request = urllib.request.Request(
             url,
-            headers={"User-Agent": "SNP-Disease-Platform-Day41-Admin-Online-Update"}
+            headers={"User-Agent": "SNP-Disease-Platform/1.0"}
         )
 
         with urllib.request.urlopen(request, timeout=timeout) as response:
@@ -261,7 +263,11 @@ def convert_gwas_snapshot_to_ingestion_format(
     raw_df: pd.DataFrame,
     max_rows: int = 1000,
 ) -> pd.DataFrame:
-    df = raw_df.head(int(max_rows)).copy()
+    # Keep only associations for the platform's diseases, then cap the row count.
+    trait = _series_or_blank(raw_df, ["DISEASE/TRAIT", "MAPPED_TRAIT", "REPORTED TRAIT", "trait", "disease",
+                                      "disease_name"])
+    on_platform = trait.astype(str).apply(lambda t: resolve_disease(t) is not None)
+    df = raw_df[on_platform].head(int(max_rows)).copy()
 
     converted = pd.DataFrame()
 
@@ -413,7 +419,7 @@ def run_gwas_online_update(
     max_lines: int = 5000,
     max_rows_for_processing: int = 1000,
     uploaded_by: str = "admin",
-    notes: str = "Day 41 online GWAS update snapshot. Not merged into Search.",
+    notes: str = "Online GWAS Catalog snapshot. Not merged into Search.",
 ) -> Dict[str, Any]:
     """Controlled online update."""
     if str(url).endswith("/"):

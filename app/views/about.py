@@ -74,8 +74,8 @@ def render_about_page() -> None:
         f"{meta.get('arab_reserved_snps', 30)} مقعدًا لمتغيرات مدعومة بعينات عربية/شرق أوسطية، وحتى "
         f"{meta.get('max_rows_per_snp', 5)} دراسات لكل متغير.\n"
         "3. **التنظيف والربط:** توحيد أسماء الأمراض والجينات، واستخراج المجموعات السكانية من وصف العينة، وإزالة التكرار.\n"
-        "4. **الترتيب:** درجة أهمية من 0 إلى 100 تجمع قوة الدلالة الإحصائية وعدد الدراسات والسكان واكتمال البيانات "
-        "(التفاصيل في صفحة الترتيب).\n"
+        "4. **مستوى الدليل:** «مؤكَّد» إذا بلغ الارتباط الدلالة على مستوى الجينوم في دراستين مستقلتين أو أكثر "
+        "على كامل كتالوج GWAS، و«قوي» إذا بلغها في دراسة واحدة (التفاصيل في صفحة الترتيب).\n"
         "5. **إعادة الإنتاج:** كامل البيانات يُعاد بناؤه بأمر واحد: `python -m pipeline.rebuild_dataset`.",
         f"1. **Selection:** for each disease, records whose standard trait (EFO) matches the disease exactly, with a "
         f"single variant (rsID) and genome-wide significance (p < {p_threshold:g}).\n"
@@ -84,8 +84,8 @@ def render_about_page() -> None:
         f"{meta.get('max_rows_per_snp', 5)} studies per variant.\n"
         "3. **Cleaning and linking:** disease and gene names normalized, populations extracted from the sample "
         "description, duplicates removed.\n"
-        "4. **Ranking:** a 0-100 importance score combining statistical strength, number of studies and populations, "
-        "and data completeness (see the Ranking page).\n"
+        "4. **Evidence level:** Confirmed when the association is genome-wide significant in two or more independent "
+        "studies across the whole GWAS Catalog, Strong when in one study (see the Ranking page).\n"
         "5. **Reproducibility:** the whole dataset is rebuilt with one command: `python -m pipeline.rebuild_dataset`.",
     ))
 
@@ -111,3 +111,16 @@ def render_about_page() -> None:
         "- Arab-sample detection relies on keywords in the sample description and may miss unclear descriptions.\n"
         "- The data is a balanced subset of the catalog, not every published association.",
     ))
+
+    section_title(tr("فريق العمل", "Project team"))
+    team = [
+        ("👩‍💻", tr("إعداد وتطوير", "Design and development"),
+         tr("المهندسة لانا سمان", "Eng. Lana Samman"), tr("جامعة قرطبة الخاصة", "Cordoba Private University")),
+        ("🛠️", tr("الإشراف التقني (التقنيات والبرمجة)", "Technical supervision (technologies and code)"),
+         tr("الدكتور كنان سمعان", "Dr. Kinan Samaan"), tr("جامعة قرطبة الخاصة", "Cordoba Private University")),
+        ("🔬", tr("الإشراف العلمي (علم الأحياء وتدقيق المعلومات)", "Scientific supervision (biology and fact-checking)"),
+         tr("الدكتور جوزيف شنكجي", "Dr. Joseph Shenekji"), tr("جامعة حلب", "University of Aleppo")),
+    ]
+    for col, (icon, role, name, place) in zip(st.columns(len(team)), team):
+        with col:
+            feature_card(icon, name, name, f"{role} · {place}")

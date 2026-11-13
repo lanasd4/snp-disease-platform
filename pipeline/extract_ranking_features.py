@@ -391,7 +391,7 @@ def extract_ranking_features() -> dict:
         if feature in ["odds_ratio_numeric", "effect_size_numeric"]:
             strategy = "Optional evidence feature. Do not fabricate values; use has_or_beta flag."
         elif feature == "p_value_numeric":
-            strategy = "Core feature. Rows without p-value should be excluded or ranked low on Day 26."
+            strategy = "Core feature. Rows without p-value should be excluded or ranked low."
         elif feature == "risk_allele":
             strategy = "Optional feature for PRS/interpretation. Use has_risk_allele flag."
         else:
@@ -409,14 +409,13 @@ def extract_ranking_features() -> dict:
 
     metadata = {
         "file_name": RANKING_FEATURES_FILENAME,
-        "project_day": 25,
         "stage": "Association Ranking Features",
         "is_ranking_features_file": True,
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "association_rows": int(len(features_df)),
         "unique_diseases": int(features_df["disease_id"].nunique(dropna=True)),
         "unique_snps": int(features_df["rsid"].nunique(dropna=True)),
-        "note": "This file prepares ranking features only. Final score calculation is planned for Day 26."
+        "note": "This file prepares ranking features only."
     }
 
     with open(metadata_path, "w", encoding="utf-8") as file:
@@ -436,7 +435,7 @@ def extract_ranking_features() -> dict:
 def main() -> None:
     result = extract_ranking_features()
 
-    print("Day 25 ranking feature extraction completed.")
+    print("Ranking feature extraction completed.")
     print(f"Association rows: {result['association_rows']}")
     print(f"Processed ranking features: {result['processed_output_path']}")
     print(f"Output ranking features: {result['outputs_output_path']}")

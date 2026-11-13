@@ -99,7 +99,7 @@ def extract_association_context(row: Dict[str, Any]) -> Dict[str, str]:
         "rsid": _first_available(row, ["rsid", "rs_id", "snp", "snp_id", "variant_id"]),
         "gene": _first_available(row, ["gene_symbol", "gene", "mapped_gene"]),
         "p_value": _first_available(row, ["p_value", "p-value", "pvalue"]),
-        "importance_score": _first_available(row, ["importance_score", "score", "ranking_score"]),
+        "independent_gws_studies": _first_available(row, ["independent_gws_studies"]),
         "rank_label": _first_available(row, ["rank_label", "rank"]),
         "rank_label_arabic": _first_available(row, ["rank_label_arabic"], default=""),
         "population": _first_available(row, ["population", "population_label", "ancestry"]),
@@ -124,8 +124,9 @@ def build_result_context_text(context: Dict[str, str]) -> str:
         f"SNP/rsID: {context.get('rsid', 'غير متوفر')}",
         f"Gene: {context.get('gene', 'غير متوفر')}",
         f"p-value: {context.get('p_value', 'غير متوفر')}",
-        f"Importance score: {context.get('importance_score', 'غير متوفر')}",
-        f"Rank: {context.get('rank_label', 'غير متوفر')} {context.get('rank_label_arabic', '')}",
+        f"Evidence level: {context.get('rank_label', 'غير متوفر')} {context.get('rank_label_arabic', '')} "
+        "(Confirmed = p < 5e-8 in 2+ independent studies; Strong = p < 5e-8 in one study)",
+        f"Independent genome-wide significant studies: {context.get('independent_gws_studies', 'غير متوفر')}",
         f"Population/region: {context.get('population', 'غير متوفر')} {context.get('region', '')} {context.get('country', '')}",
         f"Study/PubMed: {context.get('study_title', 'غير متوفر')} / {context.get('pubmed_id', 'غير متوفر')}",
     ]
@@ -428,8 +429,14 @@ def fallback_rule_based_explanation(row: Dict[str, Any], user_question: str = ""
     rsid = context.get("rsid", "غير متوفر")
     gene = context.get("gene", "غير متوفر")
     p_value = context.get("p_value", "غير متوفر")
-    score = context.get("importance_score", "غير متوفر")
-    rank_label = context.get("rank_label", "غير متوفر")
+    studies = context.get("independent_gws_studies", "غير متوفر")
+    try:
+        from core.evidence import arabic_studies
+
+        studies_text = arabic_studies(int(float(studies)))
+    except (TypeError, ValueError):
+        studies_text = f"{studies} دراسة مستقلة"
+    rank_label = context.get("rank_label_arabic") or context.get("rank_label", "غير متوفر")
     population = context.get("population", "غير متوفر")
     study_title = context.get("study_title", "غير متوفر")
     pubmed_id = context.get("pubmed_id", "غير متوفر")
@@ -445,7 +452,7 @@ def fallback_rule_based_explanation(row: Dict[str, Any], user_question: str = ""
 - **Population:** العينة أو الخلفية السكانية في الدراسة، والقيمة المتاحة هي **{population}**.
 
 ### 3. تفسير قوة الدليل بحذر
-تعرض المنصة درجة أهمية مقدارها **{score}** وتصنيفا هو **{rank_label}**. هذا لا يعني سببية مباشرة، بل يساعد في ترتيب الارتباطات حسب قواعد المنصة والبيانات المتاحة.
+مستوى الدليل لهذا الارتباط هو **{rank_label}**، وقد بلغ الدلالة على مستوى الجينوم في **{studies_text}**. هذا يصف قوة الدليل الإحصائي ولا يعني سببية مباشرة.
 
 ### 4. سياق الدراسة
 عنوان الدراسة: **{study_title}**. PubMed ID: **{pubmed_id}**.
@@ -455,15 +462,67 @@ def fallback_rule_based_explanation(row: Dict[str, Any], user_question: str = ""
 """.strip()
     return explanation + "\n\n" + safe_research_disclaimer()
 
+
+EN_DISCLAIMER = ("This explanation is for education only; it is not a medical diagnosis or treatment plan. "
+                 "Consult a qualified doctor or specialist for any personal health decision.")
+
+
+def _english(language: Optional[str]) -> bool:
+    if language is None:
+        try:
+            from core.i18n import get_lang
+
+            language = get_lang()
+        except Exception:
+            language = "ar"
+    return language == "en"
+
+
+def english_general_explanation() -> str:
+    return ("I am an educational assistant for bioinformatics and genetics on this platform. I can explain concepts "
+            "such as SNP, gene, GWAS, PRS and p-value, what a result means, where the data comes from, how strong "
+            "the evidence is, and the limits of using these results.\n\nSend me a specific result and I will "
+            "explain its disease, gene and variant and its evidence level in plain language.\n\n" + EN_DISCLAIMER)
+
+
+def english_fallback_explanation(row: Dict[str, Any]) -> str:
+    c = extract_association_context(row or {})
+    na = "not available"
+    get = lambda key: c.get(key) if c.get(key) not in (None, "", "غير متوفر") else na  # noqa: E731
+    return f"""
+### 1. Summary
+This result is a research association between the variant **{get('rsid')}** and **{get('disease')}**. The gene linked to
+or near the variant is **{get('gene')}**.
+
+### 2. Key terms
+- **SNP/rsID:** an identifier for a specific genetic variant, here **{get('rsid')}**.
+- **Gene:** the gene mapped to or near the variant in the study, here **{get('gene')}**.
+- **p-value:** how unlikely the association is to be chance; the reported value is **{get('p_value')}**.
+- **Population:** the study sample, here **{get('population')}**.
+
+### 3. Strength of evidence
+The evidence level is **{get('rank_label')}**: the association reached genome-wide significance in
+**{get('independent_gws_studies')}** independent studies. This describes statistical evidence, not causation.
+
+### 4. Study
+Title: **{get('study_title')}**. PubMed ID: **{get('pubmed_id')}**.
+
+### 5. Limits
+This result is for education and research and is not enough to assess an individual's risk or make medical decisions.
+""".strip() + "\n\n" + EN_DISCLAIMER
+
+
 def generate_ai_explanation(
     row: Optional[Dict[str, Any]],
     user_question: str = "",
     prefer_ollama: bool = True,
     base_url: str = DEFAULT_OLLAMA_BASE_URL,
     model_name: Optional[str] = None,
+    language: Optional[str] = None,
 ) -> Dict[str, Any]:
-    """Hybrid explanation:"""
+    """Local AI model when available, otherwise safe rule-based text, in the interface language."""
     has_input_association_context = isinstance(row, dict) and bool(row)
+    english = _english(language)
 
     if not is_question_in_scope(user_question, has_association_context=has_input_association_context):
         return {
@@ -471,12 +530,16 @@ def generate_ai_explanation(
             "model": model_name or "",
             "ollama_available": False,
             "gemma_available": False,
-            "explanation": out_of_scope_response(),
+            "explanation": (
+                "I can help with educational questions about genetics, bioinformatics, health and this platform."
+                "\n\n" + EN_DISCLAIMER) if english else out_of_scope_response(),
             "used_fallback": True,
             "safety_replaced": False,
         }
 
     prompt_data = build_strict_prompt(row, user_question=user_question)
+    if english:
+        prompt_data["user_prompt"] += "\n\nAnswer in clear English."
     has_association_context = bool(prompt_data.get("has_association_context"))
 
     ollama_available = False
@@ -500,9 +563,11 @@ def generate_ai_explanation(
 
             if contains_unsafe_claims(ai_text):
                 fallback = (
-                    fallback_rule_based_explanation(row or {}, user_question=user_question)
+                    (english_fallback_explanation(row or {}) if english
+                     else fallback_rule_based_explanation(row or {}, user_question=user_question))
                     if has_association_context
-                    else general_rule_based_explanation(user_question=user_question)
+                    else (english_general_explanation() if english
+                          else general_rule_based_explanation(user_question=user_question))
                 )
 
                 return {
@@ -517,8 +582,9 @@ def generate_ai_explanation(
                     "glossary_context": prompt_data["glossary_context"],
                 }
 
-            if safe_research_disclaimer() not in ai_text:
-                ai_text = ai_text.strip() + "\n\n" + safe_research_disclaimer()
+            disclaimer = EN_DISCLAIMER if english else safe_research_disclaimer()
+            if disclaimer not in ai_text:
+                ai_text = ai_text.strip() + "\n\n" + disclaimer
 
             return {
                 "mode": "ollama_local",
@@ -534,9 +600,11 @@ def generate_ai_explanation(
 
         except Exception as exc:
             fallback = (
-                fallback_rule_based_explanation(row or {}, user_question=user_question)
+                (english_fallback_explanation(row or {}) if english
+                 else fallback_rule_based_explanation(row or {}, user_question=user_question))
                 if has_association_context
-                else general_rule_based_explanation(user_question=user_question)
+                else (english_general_explanation() if english
+                      else general_rule_based_explanation(user_question=user_question))
             )
 
             return {
@@ -553,9 +621,11 @@ def generate_ai_explanation(
             }
 
     fallback = (
-        fallback_rule_based_explanation(row or {}, user_question=user_question)
+        (english_fallback_explanation(row or {}) if english
+         else fallback_rule_based_explanation(row or {}, user_question=user_question))
         if has_association_context
-        else general_rule_based_explanation(user_question=user_question)
+        else (english_general_explanation() if english
+              else general_rule_based_explanation(user_question=user_question))
     )
 
     return {

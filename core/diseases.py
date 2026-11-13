@@ -100,6 +100,18 @@ def resolve_disease(query: str) -> Optional[Disease]:
     return index.get(key) or (index.get(key[2:]) if key.startswith("ال") else None)
 
 
+def resolve_disease_or_trait(text: str) -> Optional[Disease]:
+    """Like resolve_disease, but also accepts the GWAS Catalog trait names of each disease."""
+    disease = resolve_disease(text)
+    if disease is not None:
+        return disease
+    key = normalize_term(text)
+    for candidate in list_diseases():
+        if key and key in {normalize_term(trait) for trait in candidate.gwas_traits}:
+            return candidate
+    return None
+
+
 def get_disease(name_or_id) -> Optional[Disease]:
     for disease in list_diseases():
         if str(name_or_id) in (str(disease.disease_id), disease.name_en):

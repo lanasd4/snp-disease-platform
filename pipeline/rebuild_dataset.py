@@ -112,6 +112,7 @@ def main() -> None:
 
     if not args.skip_extract:
         run_stage("extract_from_catalog", env)
+        run_stage("evidence_summary", env)
     create_fresh_database(BUILD_DB)
     for stage in STAGES:
         run_stage(stage, env)

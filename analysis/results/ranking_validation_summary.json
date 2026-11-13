@@ -1,13 +1,32 @@
 {
   "pooled": {
-    "importance_score": {
+    "evidence": {
+      "mean_auc": 0.6813,
+      "permutation_p": 0.0002,
+      "diseases": 10
+    },
+    "legacy_score": {
       "mean_auc": 0.6215,
       "permutation_p": 0.0002,
       "diseases": 10
     },
-    "pvalue_only": {
-      "mean_auc": 0.6687,
+    "replication": {
+      "mean_auc": 0.5004,
+      "permutation_p": 0.4751,
+      "diseases": 10
+    },
+    "neglog10p": {
+      "mean_auc": 0.6805,
       "permutation_p": 0.0002,
+      "diseases": 10
+    },
+    "evidence_vs_legacy": {
+      "mean_difference": 0.0599,
+      "ci95": [
+        0.0268,
+        0.0934
+      ],
+      "diseases_improved": 8,
       "diseases": 10
     }
   },

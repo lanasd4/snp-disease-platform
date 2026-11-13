@@ -729,7 +729,6 @@ def run_database_loading() -> dict:
     issues_df.to_csv(issues_path, index=False, encoding="utf-8-sig")
 
     metadata = {
-        "project_day": 22,
         "stage": "Database Loading",
         "is_real_data_loaded_to_sqlite": True,
         "database_file": str(database_path),
@@ -759,7 +758,7 @@ def run_database_loading() -> dict:
 def main() -> None:
     result = run_database_loading()
 
-    print("Day 22 processed data loading completed.")
+    print("Processed data loading completed.")
     print(f"Associations inserted: {result['associations_inserted']}")
     print(f"Associations existing/skipped: {result['associations_existing']}")
     print(f"Loading issue rows: {result['loading_issue_rows']}")

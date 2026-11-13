@@ -11,6 +11,7 @@ from typing import Dict, Any
 import shutil
 import pandas as pd
 from core.paths import get_project_root
+from core.admin.ranked_rows import SOURCE_COLUMN, add_source, remove_source
 from core.admin.common import get_active_ranked_path, get_outputs_dir, get_registry_path, resolve_within_project
 
 
@@ -118,8 +119,11 @@ def list_approved_sources() -> pd.DataFrame:
 def list_merged_sources() -> pd.DataFrame:
     registry_df = load_registry()
 
+    # Only sources merged through the dashboard can be rolled back (not the base dataset).
+    merged_by = registry_df["merged_by"] if "merged_by" in registry_df.columns else ""
     merged_df = registry_df[
         registry_df["status"].astype(str).str.lower().isin(["merged", "active"])
+        & pd.Series(merged_by, index=registry_df.index).fillna("").astype(str).str.strip().ne("")
     ].copy()
 
     preferred_cols = [
@@ -238,22 +242,29 @@ def final_merge_source(
         raise ValueError("staging_path is missing. Approve source and create staging first.")
 
     staging_path = resolve_within_project(staging_path_value, what="staging_path")
+    rows_path = resolve_within_project(str(row.get("source_rows_path", "")).strip(), what="source_rows_path")
 
-    if not staging_path.exists():
-        raise FileNotFoundError(f"staging file not found: {staging_path}")
+    if not rows_path.is_file():
+        raise FileNotFoundError("This source's rows file is missing. Approve the source again.")
+
+    active_path = get_active_ranked_path()
+    active_df = pd.read_csv(active_path, dtype=str, keep_default_na=False)
+    if SOURCE_COLUMN in active_df.columns and (active_df[SOURCE_COLUMN] == str(source_id)).any():
+        raise ValueError("This source is already live in Search.")
+
+    # Rebuild from the current active file, so sources merged since approval are kept.
+    new_rows = pd.read_csv(rows_path, dtype=str, keep_default_na=False)
+    merged_df = add_source(active_df, new_rows)
+    merged_df.to_csv(staging_path, index=False, encoding="utf-8-sig")
 
     validation_report = validate_staging_file(staging_path)
 
     if not validation_report["is_valid"]:
         raise ValueError(f"Invalid staging file: {validation_report['issues']}")
 
-    active_path = get_active_ranked_path()
     backup_path = create_active_ranked_backup(source_id)
+    merged_df.to_csv(active_path, index=False, encoding="utf-8-sig")
 
-    # Final merge operation: staging becomes active ranked file
-    shutil.copy2(staging_path, active_path)
-
-    merged_df = pd.read_csv(active_path)
 
     log_data = {
         "source_id": source_id,
@@ -306,27 +317,28 @@ def rollback_source(
     """Roll back active ranked file to the backup created before merge."""
     row = get_source_row(source_id)
 
+    if str(row.get("status", "")).lower() != "active":
+        raise ValueError("Only sources that are live in Search can be rolled back.")
+
     backup_path_value = str(row.get("backup_path", "")).strip()
+    backup_path = resolve_within_project(backup_path_value, what="backup_path") if backup_path_value else None
 
-    if not backup_path_value:
-        raise ValueError("No backup_path found for this source.")
-
-    backup_path = resolve_within_project(backup_path_value, what="backup_path")
-
-    if not backup_path.exists():
-        raise FileNotFoundError(f"Backup file not found: {backup_path}")
-
+    # Remove only this source's rows; sources merged later stay live.
     active_path = get_active_ranked_path()
-    shutil.copy2(backup_path, active_path)
+    active_df = pd.read_csv(active_path, dtype=str, keep_default_na=False)
+    if SOURCE_COLUMN not in active_df.columns or not (active_df[SOURCE_COLUMN] == str(source_id)).any():
+        raise ValueError("This source has no rows in Search that were added through the dashboard.")
+    restored_df = remove_source(active_df, source_id)
+    restored_df.to_csv(active_path, index=False, encoding="utf-8-sig")
 
-    restored_df = pd.read_csv(active_path)
 
     log_data = {
         "source_id": source_id,
         "action": "rollback",
         "rollback_by": rollback_by,
         "rollback_at": now_iso(),
-        "restored_from_backup": str(backup_path.relative_to(get_project_root())),
+        "rows_removed": int(len(active_df) - len(restored_df)),
+        "pre_merge_backup": str(backup_path.relative_to(get_project_root())) if backup_path else "",
         "active_file": str(active_path.relative_to(get_project_root())),
         "rows_after_rollback": int(len(restored_df)),
         "notes": notes,

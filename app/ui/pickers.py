@@ -9,6 +9,9 @@ from typing import Optional
 import pandas as pd
 import streamlit as st
 
+from app.ui.components import rank_text
+from core.evidence import sort_by_evidence
+
 from core.diseases import list_diseases
 from core.i18n import is_rtl, tr
 from core.search_engine import load_tri_search_data
@@ -18,7 +21,7 @@ MAX_CHOICES = 40
 
 def _label(row: pd.Series) -> str:
     disease = row.get("disease_arabic_name") if is_rtl() else row.get("disease_name")
-    return f"{row.get('rsid')} · {row.get('gene_symbol')} · {disease} · {float(row.get('importance_score_numeric', 0)):.0f}"
+    return f"{row.get('rsid')} · {row.get('gene_symbol')} · {disease} · {rank_text(row.get('rank_label'))}"
 
 
 def pick_association(key: str, from_search_key: str, allow_none: bool = False) -> Optional[dict]:
@@ -54,7 +57,7 @@ def pick_association(key: str, from_search_key: str, allow_none: bool = False) -
     if disease is None:
         return None
 
-    rows = data[data["disease_name"] == disease.name_en].sort_values("importance_score_numeric", ascending=False)
+    rows = sort_by_evidence(data[data["disease_name"] == disease.name_en])
     rows = rows.drop_duplicates(subset=["rsid"]).head(MAX_CHOICES).reset_index(drop=True)
     if rows.empty:
         return None

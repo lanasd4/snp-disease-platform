@@ -309,7 +309,6 @@ def run_fuzzy_tests() -> dict:
     with open(metadata_path, "w", encoding="utf-8") as file:
         json.dump(
             {
-                "project_day": 24,
                 "stage": "Basic Fuzzy Matching",
                 "created_at": datetime.now().isoformat(timespec="seconds"),
                 **summary
@@ -325,7 +324,7 @@ def run_fuzzy_tests() -> dict:
 def main() -> None:
     result = run_fuzzy_tests()
 
-    print("Day 24 fuzzy matching tests completed.")
+    print("Fuzzy matching tests completed.")
     print(f"Test queries: {result['test_queries']}")
     print(f"Rows saved: {result['rows_saved']}")
     print(f"Queries with suggestions: {result['queries_with_suggestions']}")

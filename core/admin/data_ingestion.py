@@ -11,6 +11,7 @@ import re
 from typing import Dict, Any, Tuple, Optional
 
 import pandas as pd
+from core.diseases import resolve_disease_or_trait as resolve_disease
 from core.paths import get_project_root
 from core.admin.common import get_registry_path
 
@@ -54,8 +55,7 @@ COLUMN_ALIASES = {
         "nearest_gene", "nearest gene", "reported gene(s)", "reported genes"
     ],
     "p_value": [
-        "p_value", "p-value", "pvalue", "p", "p-value annotation",
-        "pvalue_mlog"
+        "p_value", "p-value", "pvalue", "p",
     ],
     "study_title": [
         "study_title", "title", "study", "initial sample description",
@@ -282,13 +282,13 @@ def read_uploaded_source(file_path: str | Path) -> pd.DataFrame:
     suffix = path.suffix.lower()
 
     if suffix == ".csv":
-        return pd.read_csv(path)
+        return pd.read_csv(path, dtype=str, keep_default_na=False)
 
     if suffix in [".tsv", ".txt"]:
-        return pd.read_csv(path, sep="\t")
+        return pd.read_csv(path, sep="\t", dtype=str, keep_default_na=False)
 
     if suffix in [".xlsx", ".xls"]:
-        return pd.read_excel(path)
+        return pd.read_excel(path, dtype=str).fillna("")
 
     raise ValueError(f"Unsupported file type: {suffix}")
 
@@ -313,9 +313,21 @@ def infer_column_mapping(df: pd.DataFrame) -> Dict[str, str]:
     return mapping
 
 
+def _add_p_from_mlog(df: pd.DataFrame, mapping: Dict[str, str]) -> None:
+    """GWAS files may only give -log10(p) (PVALUE_MLOG); convert it to a real p-value."""
+    if "p_value" in mapping:
+        return
+    mlog = next((c for c in df.columns if normalize_column_name(c) in {"pvalue_mlog", "p_value_mlog", "mlog10p"}), None)
+    if mlog:
+        df["__p_from_mlog"] = df[mlog].apply(
+            lambda v: 10 ** -parse_numeric(v) if parse_numeric(v) is not None else "")
+        mapping["p_value"] = "__p_from_mlog"
+
+
 def validate_uploaded_source(df: pd.DataFrame, mapping: Optional[Dict[str, str]] = None) -> Tuple[bool, Dict[str, Any]]:
     if mapping is None:
         mapping = infer_column_mapping(df)
+    _add_p_from_mlog(df, mapping)
 
     missing_required = [
         col for col in REQUIRED_STANDARD_COLUMNS
@@ -391,38 +403,38 @@ def normalize_uploaded_source(clean_df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def _row_rejection_reasons(row) -> list:
+    reasons = []
+    if not re.match(r"^rs\d+$", str(row.get("rsid_normalized", ""))):
+        reasons.append("invalid_or_missing_rsid")
+    if not str(row.get("disease_name", "")).strip():
+        reasons.append("missing_disease_name")
+    elif resolve_disease(str(row.get("disease_name"))) is None:
+        reasons.append("disease_not_on_platform")
+    if not str(row.get("gene_symbol", "")).strip():
+        reasons.append("missing_gene_symbol")
+    p_value = row.get("p_value")
+    if p_value is None or pd.isna(p_value):
+        reasons.append("missing_or_invalid_p_value")
+    elif not 0 < float(p_value) <= 1:
+        reasons.append("p_value_out_of_range")
+    return reasons
+
+
 def split_accepted_rejected_rows(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
-    accepted_mask = (
-        df["rsid_normalized"].astype(str).str.match(r"^rs\d+$", na=False)
-        & df["disease_name"].astype(str).str.len().gt(0)
-        & df["gene_symbol"].astype(str).str.len().gt(0)
-        & df["p_value"].notna()
-    )
+    """Keep rows that are complete, valid and about one of the platform's diseases."""
+    reasons = df.apply(_row_rejection_reasons, axis=1) if not df.empty else pd.Series(dtype=object)
+    accepted_mask = reasons.apply(len) == 0 if not df.empty else pd.Series(dtype=bool)
 
     accepted = df[accepted_mask].copy()
     rejected = df[~accepted_mask].copy()
 
+    if not accepted.empty:
+        accepted["disease_name"] = accepted["disease_name"].apply(lambda name: resolve_disease(name).name_en)
+        accepted["disease_name_normalized"] = accepted["disease_name"].str.lower()
+
     if not rejected.empty:
-        rejection_reasons = []
-
-        for _, row in rejected.iterrows():
-            reasons = []
-
-            if not re.match(r"^rs\d+$", str(row.get("rsid_normalized", ""))):
-                reasons.append("invalid_or_missing_rsid")
-
-            if not str(row.get("disease_name", "")).strip():
-                reasons.append("missing_disease_name")
-
-            if not str(row.get("gene_symbol", "")).strip():
-                reasons.append("missing_gene_symbol")
-
-            if pd.isna(row.get("p_value")):
-                reasons.append("missing_or_invalid_p_value")
-
-            rejection_reasons.append(";".join(reasons))
-
-        rejected["rejection_reason"] = rejection_reasons
+        rejected["rejection_reason"] = reasons[~accepted_mask].apply(";".join)
 
     return accepted, rejected
 
@@ -577,7 +589,7 @@ def run_uploaded_source_pipeline(
             "accepted_rows": int(len(processed_df)),
             "rejected_rows": int(len(rejected_df)),
             "enabled": "N",
-            "notes": "Processed source created. Waiting for admin approval in Day 40.",
+            "notes": "Processed. Waiting for admin approval.",
         }
     )
 

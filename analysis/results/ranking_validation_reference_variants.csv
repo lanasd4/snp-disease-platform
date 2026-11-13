@@ -1,253 +1,253 @@
-disease_name,rsid,gene_symbol,score,p_value
-Type 2 Diabetes,rs13266634,SLC30A8,100.0,2e-101
-Type 2 Diabetes,rs9368222,CDKAL1,98.98,2e-189
-Type 2 Diabetes,rs10811661,CDKN2B-AS1,98.17,4e-177
-Type 2 Diabetes,rs9348441,CDKAL1,96.92,9.999999999999999e-87
-Alzheimer's Disease,rs429358,APOE,96.19,1e-323
-Coronary Artery Disease,rs1333049,CDKN2B-AS1,96.19,1.9999999999999998e-192
-Type 2 Diabetes,rs10440833,CDKAL1,95.98,5.000000000000001e-215
-Type 2 Diabetes,rs10965247,CDKN2B-AS1,95.52,3e-99
-Type 2 Diabetes,rs1111875,HHEX - Y_RNA,95.4,7e-108
-Type 2 Diabetes,rs34872471,TCF7L2,95.19,1e-323
-Coronary Artery Disease,rs2891168,CDKN2B-AS1,95.19,5.0000000000000005e-278
-Alzheimer's Disease,rs6733839,BIN1 - NIFKP9,95.19,6e-118
-Alzheimer's Disease,rs7412,APOE,95.19,4e-106
-Type 2 Diabetes,rs7756992,CDKAL1,93.9,6e-128
-Type 2 Diabetes,rs7766070,CDKAL1,93.64,6e-127
-Coronary Artery Disease,rs4977574,CDKN2B-AS1,92.64,9e-223
-Type 2 Diabetes,rs7903146,TCF7L2,92.64,1e-219
-Coronary Artery Disease,rs9349379,PHACTR1,92.64,4e-114
-Type 2 Diabetes,rs12555274,CDKN2B-AS1,92.53,5.000000000000001e-58
-Alzheimer's Disease,rs483082,APOE - APOC1,92.53,1e-15
-Type 2 Diabetes,rs7633675,IGF2BP2,92.32,8e-111
-Type 2 Diabetes,rs11558471,SLC30A8,91.47,4e-98
-Obesity,rs1558902,FTO,91.4,7e-122
-Type 2 Diabetes,rs10965250,CDKN2B-AS1,91.4,8e-114
-Breast Cancer,rs2981579,FGFR2,91.36,2e-170
-Hypothyroidism,rs75778624,VAV3,90.93,6e-322
-Asthma,rs2305479,GSDMB,90.11,3e-69
-Obesity,rs1421085,FTO,89.55,6e-291
-Asthma,rs72823641,IL18R1,89.55,1e-61
-Breast Cancer,rs2981578,FGFR2,89.53,2e-291
-Rheumatoid Arthritis,rs35139284,HLA-DRB1 - HLA-DQA1,89.53,3.9999999999999995e-287
-Coronary Artery Disease,rs1333042,CDKN2B-AS1,89.53,8e-129
-Coronary Artery Disease,rs186696265,LPA - PLG,89.53,9e-116
-Asthma,rs3771180,IL18R1,89.53,2e-20
-Breast Cancer,rs35054928,FGFR2,88.25,2e-322
-Coronary Artery Disease,rs55730499,LPA,88.25,2.9999999999999996e-154
-Alzheimer's Disease,rs1081105,APOE - APOC1,88.25,2e-127
-Type 2 Diabetes,rs10811660,CDKN2B-AS1,88.25,9.999999999999999e-116
-Coronary Artery Disease,rs12740374,CELSR2,88.2,3e-85
-Type 2 Diabetes,rs9859406,IGF2BP2,87.93,2e-169
-Type 2 Diabetes,rs4414887,IGF2BP2,87.23,1e-109
-Type 2 Diabetes,rs9808924,IGF2BP2,87.23,5.0000000000000005e-68
-Coronary Artery Disease,rs10455872,LPA,86.64,1e-234
-Type 2 Diabetes,rs9350271,CDKAL1,86.44,5e-183
-Coronary Artery Disease,rs7528419,CELSR2,85.12,2.0000000000000002e-23
-Asthma,rs17293632,SMAD3,84.47,5.000000000000001e-58
-Alzheimer's Disease,rs75627662,APOE - APOC1,84.23,7e-292
-Hypothyroidism,rs17020127,VAV3,84.23,8e-108
-Hypertension,rs10857147,PRDM8 - FGF5,84.23,2.0000000000000002e-23
-Hypertension,rs13125101,PRDM8 - FGF5,83.04,1e-92
-Breast Cancer,rs62355902,C5ORF67 - MAP3K1,82.95,7e-98
-Rheumatoid Arthritis,rs660895,HLA-DRB1 - HLA-DQA1,82.42,1e-300
-Asthma,rs4795399,GSDMB,82.42,1e-111
-Coronary Artery Disease,rs56393506,LPA - PLG,82.42,5e-34
-Coronary Artery Disease,rs140570886,LPA,82.18,3e-87
-Rheumatoid Arthritis,rs34434863,HLA-DRB1 - HLA-DQA1,81.97,2e-236
-Obesity,rs11642015,FTO,81.97,5e-162
-Breast Cancer,rs62355901,C5ORF67 - MAP3K1,81.31,3e-98
-Hypertension,rs12509595,PRDM8 - FGF5,81.24,1.0000000000000001e-88
-Breast Cancer,rs2981582,FGFR2,79.18,2e-76
-Coronary Artery Disease,rs1537371,CDKN2B-AS1,76.77,3e-166
-Type 2 Diabetes,rs10965248,CDKN2B-AS1,76.77,4e-164
-Hypothyroidism,rs80173139,VAV3,76.77,2.0000000000000002e-162
-Rheumatoid Arthritis,rs532322163,HLA-DRB1 - HLA-DQA1,76.77,1.9999999999999997e-152
-Obesity,rs8043757,FTO,76.77,5e-110
-Type 2 Diabetes,rs9854769,IGF2BP2,76.77,1e-107
-Breast Cancer,rs2981575,FGFR2,76.06,7.999999999999999e-50
-Asthma,rs9901146,ZPBP2 - GSDMB,75.91,8e-99
-Type 2 Diabetes,rs3802177,SLC30A8,74.94,1e-55
-Type 2 Diabetes,rs35859536,SLC30A8 - MED30,74.4,2.0000000000000002e-60
-Type 2 Diabetes,rs7901695,TCF7L2,73.85,8e-62
-Asthma,rs10197862,IL1RL1,73.35,4e-93
-Asthma,rs72823635,IL18R1,73.15,5e-86
-Type 2 Diabetes,rs114322470,TCF7L2,72.94,5e-17
-Type 2 Diabetes,rs13092876,IGF2BP2,72.81,2.0000000000000002e-66
-Type 2 Diabetes,rs7754840,CDKAL1,72.71,1.9999999999999999e-56
-Asthma,rs72743461,SMAD3,72.55,1.0000000000000001e-45
-Asthma,rs1008723,GSDMB,72.5,1e-65
-Rheumatoid Arthritis,rs112062732,HLA-DRB9 - HLA-DRB5,71.77,6e-227
-Type 2 Diabetes,rs1977833,HHEX - Y_RNA,71.77,3e-223
-Rheumatoid Arthritis,rs6457620,HLA-DQB1 - MTCO3P1,71.77,4.0000000000000005e-186
-Alzheimer's Disease,rs10414043,APOE - APOC1,71.77,4e-146
-Rheumatoid Arthritis,rs3763309,TSBP1-AS1 - HLA-DRA,71.77,2.0000000000000003e-124
-Type 2 Diabetes,rs10757282,CDKN2B-AS1,71.71,1e-69
-Asthma,rs56375023,SMAD3,71.69,4.9999999999999996e-57
-Alzheimer's Disease,rs769449,APOE,71.45,2e-83
-Rheumatoid Arthritis,rs6457617,HLA-DQB1 - MTCO3P1,70.86,5.000000000000001e-75
-Alzheimer's Disease,rs7259620,APOE,70.78,2.0000000000000002e-23
-Type 2 Diabetes,rs116929578,TCF7L2,70.61,2e-12
-Type 2 Diabetes,rs12355158,KIF11,70.55,3e-80
-Asthma,rs12470864,CFAP144P2 - IL1RL1,69.62,1.9999999999999999e-56
-Type 2 Diabetes,rs35906730,EIF2S2P3 - HHEX,69.37,1e-71
-Hypothyroidism,rs7310615,SH2B3,69.12,1e-83
-Asthma,rs60227565,CFAP144P2 - IL1RL1,69.06,5e-71
-Coronary Artery Disease,rs35158675,MIA3,68.93,6e-28
-Hypertension,rs16998073,PRDM8 - FGF5,68.72,5.9999999999999996e-36
-Asthma,rs3771175,IL18R1,68.45,2e-37
-Type 2 Diabetes,rs2149632,IDE,68.14,7.000000000000003e-75
-Obesity,rs7185735,FTO,67.32,1e-79
-Alzheimer's Disease,rs4663105,BIN1 - NIFKP9,67.27,3e-39
-Type 2 Diabetes,rs397978231,IGF2BP2,67.1,3e-79
-Rheumatoid Arthritis,rs11889341,STAT4,67.0,2e-31
-Asthma,rs11651596,ZPBP2 - GSDMB,66.77,2.0000000000000003e-124
-Alzheimer's Disease,rs12151021,ABCA7,66.7,2e-37
-Hypothyroidism,rs9357119,HCG27 - HLA-C,66.46,8e-78
-Type 2 Diabetes,rs76393458,CDKAL1,66.4,5e-71
-Coronary Artery Disease,rs4007642,CDKN2B-AS1,65.46,3e-85
-Asthma,rs1011082,GSDMB,64.26,2e-40
-Type 2 Diabetes,rs7070182,TCF7L2,64.25,4.999999999999999e-84
-Alzheimer's Disease,rs9331896,CLU,64.2,1.0000000000000001e-34
-Type 2 Diabetes,rs6780171,IGF2BP2,64.0,8.999999999999998e-56
-Coronary Artery Disease,rs602633,CELSR2 - PSRC1,63.84,2e-59
-Coronary Artery Disease,rs10811650,CDKN2B-AS1,63.58,2e-71
-Alzheimer's Disease,rs440446,APOE,63.55,9e-59
-Hypothyroidism,rs17020139,VAV3,63.39,2e-58
-Type 2 Diabetes,rs6769511,IGF2BP2,63.32,1e-09
-Type 2 Diabetes,rs10882102,HHEX - Y_RNA,62.98,1.9999999999999999e-63
-Alzheimer's Disease,rs11787077,CLU,62.91,2e-44
-Breast Cancer,rs889312,C5ORF67 - MAP3K1,62.1,1.0000000000000001e-39
-Alzheimer's Disease,rs769450,APOE,61.07,6e-19
-Type 2 Diabetes,rs11309330,HHEX - Y_RNA,60.88,2e-65
-Type 2 Diabetes,rs10536170,CDKAL1,60.52,1.0000000000000001e-75
-Obesity,rs12463617,LINC01875 - TMEM18,60.11,2e-13
-Breast Cancer,rs1219648,FGFR2,59.86,2e-13
-Alzheimer's Disease,rs1532276,CLU,59.76,2.0000000000000003e-34
-Asthma,rs1420101,IL18R1,59.2,4e-21
-Asthma,rs56062135,SMAD3,59.18,3e-26
-Hypertension,rs7310615,SH2B3,58.53,3e-38
-Breast Cancer,rs2936870,FGFR2,58.45,5e-60
-Coronary Artery Disease,rs10811654,CDKN2B-AS1,58.37,5.9999999999999995e-71
-Asthma,rs12949100,ZPBP2 - GSDMB,57.87,1e-58
-Breast Cancer,rs10510097,FGFR2,57.73,2e-58
-Rheumatoid Arthritis,rs13192471,HLA-DQB1 - MTCO3P1,57.73,2e-58
-Asthma,rs1861245,IL18R1,57.68,2e-69
-Coronary Artery Disease,rs6511720,LDLR,57.37,5e-41
-Breast Cancer,rs112776581,C5ORF67 - MAP3K1,57.34,1e-21
-Coronary Artery Disease,rs10757274,CDKN2B-AS1,57.27,8.000000000000001e-45
-Type 2 Diabetes,rs7651090,IGF2BP2,57.15,4e-57
-Breast Cancer,rs7709971,C5ORF67 - MAP3K1,56.84,6e-35
-Coronary Artery Disease,rs17465637,MIA3,56.79,8e-31
-Coronary Artery Disease,rs142130958,SMARCA4 - LDLR,56.77,1e-44
-Hypothyroidism,rs28367766,LINC02571 - HLA-B,56.62,1e-37
-Asthma,rs4795401,GSDMB,56.52,1e-55
-Asthma,rs13001714,IL1RL1,56.32,1e-43
-Coronary Artery Disease,rs11591147,PCSK9,55.95,6e-29
-Asthma,rs72823646,IL18R1,55.61,3e-52
-Breast Cancer,rs45631563,FGFR2,55.5,7e-37
-Breast Cancer,rs3817198,LSP1,55.46,6e-21
-Obesity,rs688671,RNU4-17P - MC4R,55.42,2e-13
-Type 2 Diabetes,rs72832348,CDKAL1,55.02,1.0000000000000001e-45
-Alzheimer's Disease,rs6656401,CR1,55.0,6e-24
-Coronary Artery Disease,rs583104,CELSR2 - PSRC1,54.58,2e-51
-Hypothyroidism,rs371058848,VAV3,54.58,2e-51
-Obesity,rs663129,RNU4-17P - MC4R,54.53,2e-62
-Alzheimer's Disease,rs405509,APOE,54.31,3e-38
-Coronary Artery Disease,rs148812085,WDR12,53.95,5e-50
-Asthma,rs8076131,ORMDL3,53.95,3e-10
-Asthma,rs12479210,IL18R1,53.94,2.0000000000000002e-29
-Coronary Artery Disease,rs67180937,MIA3,53.4,1e-12
-Alzheimer's Disease,rs7232,MS4A6A,53.28,6e-32
-Coronary Artery Disease,rs12151108,SMARCA4 - LDLR,53.04,2e-36
-Alzheimer's Disease,rs1532278,CLU,53.01,4e-08
-Asthma,rs78545931,CFAP144P2 - IL1RL1,52.89,9e-59
-Breast Cancer,rs1696803,FGFR2 - ATE1,51.88,2.000000000000001e-45
-Coronary Artery Disease,rs148513392,WDR12,51.42,8e-33
-Obesity,rs8050136,FTO,50.72,3e-26
-Breast Cancer,rs2912780,FGFR2,50.51,8e-15
-Coronary Artery Disease,rs6475608,CDKN2B-AS1,50.22,1e-41
-Asthma,rs117097909,GSDMB,49.58,2e-51
-Obesity,rs6711012,LINC01875 - TMEM18,49.55,2.9999999999999998e-40
-Type 2 Diabetes,rs140908036,TCF7L2,49.05,3e-50
-Type 2 Diabetes,rs145532103,EIF2S2P3 - HHEX,49.0,3.9999999999999996e-50
-Asthma,rs2290400,GSDMB,48.86,3e-37
-Coronary Artery Disease,rs629301,CELSR2,48.73,2e-38
-Alzheimer's Disease,rs7767350,CD2AP,48.73,8e-22
-Asthma,rs10208293,IL1RL1,48.6,4e-38
-Breast Cancer,rs1973765,LSP1,48.42,1e-37
-Breast Cancer,rs377595512,FGFR2,47.95,4.0000000000000004e-24
-Obesity,rs538656,RNU4-17P - MC4R,47.83,2e-36
-Coronary Artery Disease,rs17163363,MIA3,47.65,5e-36
-Rheumatoid Arthritis,rs12194148,HLA-DRB9 - HLA-DRB5,47.55,5.000000000000001e-58
-Alzheimer's Disease,rs3844143,PICALM - RNU6-560P,47.38,2e-35
-Alzheimer's Disease,rs10792831,PICALM - RNU6-560P,47.25,4e-35
-Hypertension,rs1458038,PRDM8 - FGF5,47.11,3e-22
-Alzheimer's Disease,rs449647,APOE,46.9,9e-22
-Alzheimer's Disease,rs1385742,CD2AP - ADGRF2P,46.88,1e-17
-Rheumatoid Arthritis,rs13426947,STAT4,46.61,4e-17
-Obesity,rs35796073,LINC01875 - TMEM18,46.21,8e-33
-Coronary Artery Disease,rs6728861,WDR12,46.17,9.999999999999999e-33
-Alzheimer's Disease,rs4236673,CLU,46.07,6e-20
-Obesity,rs56094641,FTO,45.67,6e-25
-Hypertension,rs1902859,PRDM8 - FGF5,45.12,4e-14
-Chronic Kidney Disease,rs36060036,UMOD,44.82,1.0000000000000001e-29
-Rheumatoid Arthritis,rs2157337,HLA-DRB5 - RNU1-61P,44.74,9e-52
-Hypertension,rs11072508,CYP1A2 - CSK,44.41,8.000000000000001e-29
-Alzheimer's Disease,rs561655,PICALM - RNU6-560P,44.12,7e-11
-Alzheimer's Disease,rs59325138,APOE - APOC1,44.05,4.0000000000000004e-39
-Coronary Artery Disease,rs17465982,MIA3,43.94,9e-28
-Obesity,rs10871777,RNU4-17P - MC4R,43.78,2e-27
-Coronary Artery Disease,rs7865618,CDKN2B-AS1,43.78,2e-27
-Coronary Artery Disease,rs35212307,WDR12,43.5,5.000000000000001e-49
-Hypertension,rs11099097,PRDM8 - FGF5,43.23,2e-48
-Obesity,rs13028310,LINC01875 - TMEM18,43.2,3.9999999999999996e-26
-Chronic Kidney Disease,rs13329952,UMOD,42.88,1.9999999999999998e-25
-Coronary Artery Disease,rs17163360,MIA3,42.8,3e-25
-Rheumatoid Arthritis,rs117203060,HLA-DRB1 - HLA-DQA1,42.78,2e-47
-Obesity,rs7579427,LINC01875 - TMEM18,42.6,4e-18
-Obesity,rs62037364,SH2B1,42.43,2.0000000000000002e-24
-Obesity,rs10189761,LINC01875 - TMEM18,42.22,6e-24
-Obesity,rs13387091,LINC01875 - TMEM18,41.98,2.0000000000000002e-23
-Coronary Artery Disease,rs61194703,SMARCA4 - LDLR,41.64,9e-34
-Obesity,rs11152213,RNU4-17P - MC4R,41.45,3e-22
-Hypertension,rs11099098,PRDM8 - FGF5,41.08,2e-21
-Asthma,rs10206753,IL1RL1,41.03,1.9999999999999998e-32
-Coronary Artery Disease,rs10738607,CDKN2B-AS1,40.48,2e-13
-Rheumatoid Arthritis,rs116666910,HLA-B,40.45,5e-20
-Asthma,rs202011557,CFAP144P2 - IL1RL1,40.4,5e-31
-Breast Cancer,rs2912778,FGFR2,40.32,1e-19
-Rheumatoid Arthritis,rs4853458,STAT4,40.1,3e-19
-Alzheimer's Disease,rs595290,MARK4,39.73,2e-18
-Alzheimer's Disease,rs754366,MARK4,39.73,2e-18
-Obesity,rs17817964,FTO,39.52,6e-18
-Rheumatoid Arthritis,rs117530403,HLA-DRB1 - HLA-DQA1,39.39,6.9999999999999995e-40
-Asthma,rs59185885,IL1RL1,39.32,1.0000000000000001e-39
-Alzheimer's Disease,rs73566293,MARK4,39.2,3e-17
-Asthma,rs56380902,GSDMB,38.97,6e-39
-Rheumatoid Arthritis,rs7748270,HLA-DRB9 - HLA-DRB5,38.97,1e-16
-Chronic Kidney Disease,rs1145077,GATM,38.83,2e-16
-Chronic Kidney Disease,rs28817415,SHROOM3,38.83,2e-16
-Obesity,rs61765646,NEGR1,38.75,3e-16
-Breast Cancer,rs2912774,FGFR2,38.7,3e-27
-Chronic Kidney Disease,rs2486272,GATM,38.3,3e-15
-Rheumatoid Arthritis,rs3761847,TRAF1,37.8,4e-14
-Chronic Kidney Disease,rs12917707,UMOD,37.03,2e-12
-Chronic Kidney Disease,rs28362063,UMOD,36.72,1e-11
-Alzheimer's Disease,rs446037,APOE,36.35,5e-22
-Breast Cancer,rs7714232,C5ORF67 - MAP3K1,36.32,6e-22
-Alzheimer's Disease,rs435380,APOE,36.32,6e-22
-Chronic Kidney Disease,rs4293393,UMOD,36.0,4e-10
-Rheumatoid Arthritis,rs3104413,HLA-DRB1 - HLA-DQA1,35.9,5e-21
-Breast Cancer,rs4784223,TOX3,35.87,6e-21
-Breast Cancer,rs16886165,C5ORF67 - MAP3K1,35.77,1e-20
-Obesity,rs55872725,FTO,34.65,3e-18
-Rheumatoid Arthritis,rs615672,HLA-DRB1 - HLA-DQA1,33.51,8e-27
-Coronary Artery Disease,rs114846969,SMARCA4 - LDLR,33.47,9.999999999999999e-27
-Rheumatoid Arthritis,rs9275428,HLA-DQB1 - MTCO3P1,32.43,2.0000000000000002e-24
-Rheumatoid Arthritis,rs28414125,HLA-DQA1 - HLA-DQB1,30.05,4e-19
-Rheumatoid Arthritis,rs9266271,HLA-B,30.05,4e-19
-Alzheimer's Disease,rs9369716,CD2AP,29.28,2e-17
-Chronic Kidney Disease,rs201761378,UMOD,28.83,2e-16
-Rheumatoid Arthritis,rs146003472,TSBP1-AS1 - HLA-DRA,27.72,6e-14
-Rheumatoid Arthritis,rs10181656,STAT4,27.48,2e-13
+disease_name,rsid,gene_symbol,rank_label,independent_gws_studies,legacy_score,p
+Alzheimer's Disease,rs429358,APOE,Confirmed,19,96.19,1e-323
+Alzheimer's Disease,rs75627662,APOE - APOC1,Confirmed,2,84.23,7e-292
+Alzheimer's Disease,rs1081105,APOE - APOC1,Confirmed,3,88.25,2e-180
+Alzheimer's Disease,rs10414043,APOE - APOC1,Strong,1,71.77,4e-146
+Alzheimer's Disease,rs483082,APOE - APOC1,Confirmed,3,92.53,4e-139
+Alzheimer's Disease,rs6733839,BIN1 - NIFKP9,Confirmed,10,95.19,6e-118
+Alzheimer's Disease,rs7412,APOE,Confirmed,8,95.19,4e-106
+Alzheimer's Disease,rs769449,APOE,Confirmed,2,71.45,2e-83
+Alzheimer's Disease,rs7259620,APOE,Confirmed,2,70.78,8e-71
+Alzheimer's Disease,rs440446,APOE,Confirmed,2,63.55,9e-59
+Alzheimer's Disease,rs4663105,BIN1 - NIFKP9,Confirmed,6,67.27,4e-58
+Alzheimer's Disease,rs769450,APOE,Confirmed,2,61.07,3e-49
+Alzheimer's Disease,rs11787077,CLU,Confirmed,3,62.91,2e-44
+Alzheimer's Disease,rs59325138,APOE - APOC1,Strong,1,44.05,4e-39
+Alzheimer's Disease,rs405509,APOE,Confirmed,2,54.31,3e-38
+Alzheimer's Disease,rs1532276,CLU,Confirmed,3,59.76,2e-37
+Alzheimer's Disease,rs12151021,ABCA7,Confirmed,6,66.7,2e-37
+Alzheimer's Disease,rs3844143,PICALM - RNU6-560P,Strong,1,47.38,2e-35
+Alzheimer's Disease,rs10792831,PICALM - RNU6-560P,Strong,1,47.25,4e-35
+Alzheimer's Disease,rs9331896,CLU,Confirmed,5,64.2,1e-34
+Alzheimer's Disease,rs7232,MS4A6A,Confirmed,2,53.28,6e-32
+Alzheimer's Disease,rs561655,PICALM - RNU6-560P,Confirmed,2,44.12,9.999999999999999e-27
+Alzheimer's Disease,rs6656401,CR1,Confirmed,4,55.0,6e-24
+Alzheimer's Disease,rs1532278,CLU,Confirmed,3,53.01,2e-22
+Alzheimer's Disease,rs446037,APOE,Strong,1,36.35,5e-22
+Alzheimer's Disease,rs435380,APOE,Strong,1,36.32,6e-22
+Alzheimer's Disease,rs7767350,CD2AP,Confirmed,2,48.73,8e-22
+Alzheimer's Disease,rs449647,APOE,Confirmed,2,46.9,9e-22
+Alzheimer's Disease,rs4236673,CLU,Confirmed,2,46.07,6e-20
+Alzheimer's Disease,rs754366,MARK4,Strong,1,39.73,2e-18
+Alzheimer's Disease,rs595290,MARK4,Strong,1,39.73,2e-18
+Alzheimer's Disease,rs1385742,CD2AP - ADGRF2P,Confirmed,2,46.88,1e-17
+Alzheimer's Disease,rs9369716,CD2AP,Strong,1,29.28,2e-17
+Alzheimer's Disease,rs73566293,MARK4,Strong,1,39.2,3e-17
+Asthma,rs4795399,GSDMB,Confirmed,2,82.42,1e-257
+Asthma,rs72823641,IL18R1,Confirmed,10,89.55,2e-136
+Asthma,rs11651596,ZPBP2 - GSDMB,Strong,1,66.77,2.0000000000000003e-124
+Asthma,rs3771180,IL18R1,Confirmed,3,89.53,5.999999999999999e-116
+Asthma,rs2305479,GSDMB,Confirmed,3,90.11,8e-112
+Asthma,rs9901146,ZPBP2 - GSDMB,Strong,1,75.91,8e-99
+Asthma,rs10197862,IL1RL1,Strong,1,73.35,4e-93
+Asthma,rs72823635,IL18R1,Strong,1,73.15,5e-86
+Asthma,rs60227565,CFAP144P2 - IL1RL1,Confirmed,2,69.06,5e-71
+Asthma,rs17293632,SMAD3,Confirmed,6,84.47,2.9999999999999995e-70
+Asthma,rs1861245,IL18R1,Strong,1,57.68,2e-69
+Asthma,rs1008723,GSDMB,Confirmed,3,72.5,1e-65
+Asthma,rs72743461,SMAD3,Confirmed,9,72.55,6e-63
+Asthma,rs78545931,CFAP144P2 - IL1RL1,Strong,1,52.89,9e-59
+Asthma,rs12949100,ZPBP2 - GSDMB,Strong,1,57.87,1e-58
+Asthma,rs56375023,SMAD3,Confirmed,4,71.69,5e-57
+Asthma,rs12470864,CFAP144P2 - IL1RL1,Confirmed,4,69.62,2e-56
+Asthma,rs4795401,GSDMB,Strong,1,56.52,1e-55
+Asthma,rs72823646,IL18R1,Confirmed,2,55.61,3e-52
+Asthma,rs117097909,GSDMB,Strong,1,49.58,2e-51
+Asthma,rs3771175,IL18R1,Confirmed,4,68.45,7.999999999999999e-50
+Asthma,rs13001714,IL1RL1,Strong,1,56.32,1e-43
+Asthma,rs1011082,GSDMB,Confirmed,3,64.26,2e-40
+Asthma,rs59185885,IL1RL1,Strong,1,39.32,1e-39
+Asthma,rs56380902,GSDMB,Strong,1,38.97,6e-39
+Asthma,rs10208293,IL1RL1,Strong,1,48.6,4e-38
+Asthma,rs12479210,IL18R1,Confirmed,2,53.94,2e-37
+Asthma,rs2290400,GSDMB,Confirmed,2,48.86,3e-37
+Asthma,rs8076131,ORMDL3,Confirmed,2,53.95,2e-33
+Asthma,rs56062135,SMAD3,Confirmed,4,59.18,3e-33
+Asthma,rs10206753,IL1RL1,Strong,1,41.03,1.9999999999999998e-32
+Asthma,rs1420101,IL18R1,Confirmed,3,59.2,4.999999999999999e-32
+Asthma,rs202011557,CFAP144P2 - IL1RL1,Strong,1,40.4,5e-31
+Breast Cancer,rs35054928,FGFR2,Confirmed,3,88.25,2e-322
+Breast Cancer,rs2981578,FGFR2,Confirmed,3,89.53,2e-291
+Breast Cancer,rs2981579,FGFR2,Confirmed,5,91.36,2e-170
+Breast Cancer,rs62355901,C5ORF67 - MAP3K1,Confirmed,2,81.31,3e-98
+Breast Cancer,rs62355902,C5ORF67 - MAP3K1,Confirmed,2,82.95,7e-98
+Breast Cancer,rs2981582,FGFR2,Confirmed,3,79.18,2e-76
+Breast Cancer,rs2981575,FGFR2,Confirmed,4,76.06,1e-66
+Breast Cancer,rs2936870,FGFR2,Strong,1,58.45,5e-60
+Breast Cancer,rs10510097,FGFR2,Strong,1,57.73,2e-58
+Breast Cancer,rs1696803,FGFR2 - ATE1,Strong,1,51.88,2.0000000000000012e-45
+Breast Cancer,rs889312,C5ORF67 - MAP3K1,Confirmed,5,62.1,1e-39
+Breast Cancer,rs1973765,LSP1,Strong,1,48.42,1e-37
+Breast Cancer,rs45631563,FGFR2,Confirmed,2,55.5,7e-37
+Breast Cancer,rs7709971,C5ORF67 - MAP3K1,Confirmed,3,56.84,6e-35
+Breast Cancer,rs1219648,FGFR2,Confirmed,4,59.86,1e-30
+Breast Cancer,rs2912774,FGFR2,Strong,1,38.7,3e-27
+Breast Cancer,rs377595512,FGFR2,Confirmed,2,47.95,4e-24
+Breast Cancer,rs7714232,C5ORF67 - MAP3K1,Strong,1,36.32,6e-22
+Breast Cancer,rs112776581,C5ORF67 - MAP3K1,Confirmed,4,57.34,1e-21
+Breast Cancer,rs3817198,LSP1,Confirmed,5,55.46,6e-21
+Breast Cancer,rs4784223,TOX3,Strong,1,35.87,6e-21
+Breast Cancer,rs16886165,C5ORF67 - MAP3K1,Strong,1,35.77,1e-20
+Breast Cancer,rs2912780,FGFR2,Confirmed,2,50.51,2e-20
+Breast Cancer,rs2912778,FGFR2,Strong,1,40.32,1e-19
+Chronic Kidney Disease,rs36060036,UMOD,Strong,1,44.82,1.0000000000000001e-29
+Chronic Kidney Disease,rs13329952,UMOD,Strong,1,42.88,2e-25
+Chronic Kidney Disease,rs1145077,GATM,Strong,1,38.83,2e-16
+Chronic Kidney Disease,rs28817415,SHROOM3,Strong,1,38.83,2e-16
+Chronic Kidney Disease,rs201761378,UMOD,Strong,1,28.83,2e-16
+Chronic Kidney Disease,rs2486272,GATM,Strong,1,38.3,3e-15
+Chronic Kidney Disease,rs12917707,UMOD,Strong,1,37.03,2e-12
+Chronic Kidney Disease,rs28362063,UMOD,Strong,1,36.72,1e-11
+Chronic Kidney Disease,rs4293393,UMOD,Strong,1,36.0,4e-10
+Coronary Artery Disease,rs2891168,CDKN2B-AS1,Confirmed,6,95.19,4e-295
+Coronary Artery Disease,rs10455872,LPA,Confirmed,3,86.64,1e-234
+Coronary Artery Disease,rs4977574,CDKN2B-AS1,Confirmed,4,92.64,9e-223
+Coronary Artery Disease,rs1333049,CDKN2B-AS1,Confirmed,7,96.19,2e-192
+Coronary Artery Disease,rs55730499,LPA,Confirmed,7,88.25,8.000000000000001e-186
+Coronary Artery Disease,rs1537371,CDKN2B-AS1,Strong,1,76.77,3e-166
+Coronary Artery Disease,rs1333042,CDKN2B-AS1,Confirmed,3,89.53,8e-129
+Coronary Artery Disease,rs186696265,LPA - PLG,Confirmed,3,89.53,9e-116
+Coronary Artery Disease,rs9349379,PHACTR1,Confirmed,16,92.64,4e-114
+Coronary Artery Disease,rs56393506,LPA - PLG,Confirmed,2,82.42,3e-103
+Coronary Artery Disease,rs140570886,LPA,Confirmed,3,82.18,3e-87
+Coronary Artery Disease,rs12740374,CELSR2,Confirmed,7,88.2,3e-85
+Coronary Artery Disease,rs4007642,CDKN2B-AS1,Confirmed,2,65.46,3e-85
+Coronary Artery Disease,rs7528419,CELSR2,Confirmed,4,85.12,1e-71
+Coronary Artery Disease,rs10811650,CDKN2B-AS1,Strong,1,63.58,2e-71
+Coronary Artery Disease,rs10811654,CDKN2B-AS1,Strong,1,58.37,6e-71
+Coronary Artery Disease,rs602633,CELSR2 - PSRC1,Confirmed,2,63.84,2e-59
+Coronary Artery Disease,rs583104,CELSR2 - PSRC1,Strong,1,54.58,2e-51
+Coronary Artery Disease,rs148812085,WDR12,Strong,1,53.95,5e-50
+Coronary Artery Disease,rs35212307,WDR12,Strong,1,43.5,5.000000000000001e-49
+Coronary Artery Disease,rs35158675,MIA3,Confirmed,4,68.93,5e-48
+Coronary Artery Disease,rs10757274,CDKN2B-AS1,Confirmed,2,57.27,8.000000000000001e-45
+Coronary Artery Disease,rs142130958,SMARCA4 - LDLR,Strong,1,56.77,1e-44
+Coronary Artery Disease,rs6475608,CDKN2B-AS1,Strong,1,50.22,1e-41
+Coronary Artery Disease,rs6511720,LDLR,Confirmed,2,57.37,5e-41
+Coronary Artery Disease,rs629301,CELSR2,Strong,1,48.73,2e-38
+Coronary Artery Disease,rs12151108,SMARCA4 - LDLR,Strong,1,53.04,2e-36
+Coronary Artery Disease,rs17163363,MIA3,Strong,1,47.65,5e-36
+Coronary Artery Disease,rs61194703,SMARCA4 - LDLR,Strong,1,41.64,9e-34
+Coronary Artery Disease,rs148513392,WDR12,Strong,1,51.42,8e-33
+Coronary Artery Disease,rs6728861,WDR12,Strong,1,46.17,9.999999999999999e-33
+Coronary Artery Disease,rs17465637,MIA3,Confirmed,3,56.79,8e-31
+Coronary Artery Disease,rs11591147,PCSK9,Confirmed,7,55.95,6e-29
+Coronary Artery Disease,rs17465982,MIA3,Strong,1,43.94,9e-28
+Coronary Artery Disease,rs7865618,CDKN2B-AS1,Strong,1,43.78,2e-27
+Coronary Artery Disease,rs114846969,SMARCA4 - LDLR,Strong,1,33.47,9.999999999999999e-27
+Coronary Artery Disease,rs17163360,MIA3,Strong,1,42.8,3e-25
+Coronary Artery Disease,rs67180937,MIA3,Confirmed,3,53.4,9e-14
+Coronary Artery Disease,rs10738607,CDKN2B-AS1,Strong,1,40.48,2e-13
+Hypertension,rs10857147,PRDM8 - FGF5,Confirmed,2,84.23,4e-121
+Hypertension,rs13125101,PRDM8 - FGF5,Confirmed,2,83.04,1e-92
+Hypertension,rs12509595,PRDM8 - FGF5,Confirmed,2,81.24,1e-88
+Hypertension,rs16998073,PRDM8 - FGF5,Confirmed,8,68.72,2e-50
+Hypertension,rs11099097,PRDM8 - FGF5,Strong,1,43.23,2e-48
+Hypertension,rs7310615,SH2B3,Confirmed,2,58.53,3e-38
+Hypertension,rs11072508,CYP1A2 - CSK,Strong,1,44.41,8.000000000000001e-29
+Hypertension,rs1458038,PRDM8 - FGF5,Confirmed,2,47.11,3e-22
+Hypertension,rs11099098,PRDM8 - FGF5,Strong,1,41.08,2e-21
+Hypertension,rs1902859,PRDM8 - FGF5,Confirmed,2,45.12,8e-18
+Hypothyroidism,rs75778624,VAV3,Confirmed,2,90.93,6e-322
+Hypothyroidism,rs80173139,VAV3,Strong,1,76.77,2e-162
+Hypothyroidism,rs17020127,VAV3,Confirmed,2,84.23,8e-108
+Hypothyroidism,rs7310615,SH2B3,Strong,1,69.12,1e-83
+Hypothyroidism,rs9357119,HCG27 - HLA-C,Strong,1,66.46,8e-78
+Hypothyroidism,rs17020139,VAV3,Confirmed,2,63.39,2e-58
+Hypothyroidism,rs371058848,VAV3,Strong,1,54.58,2e-51
+Hypothyroidism,rs28367766,LINC02571 - HLA-B,Strong,1,56.62,1e-37
+Obesity,rs1421085,FTO,Confirmed,5,89.55,6e-291
+Obesity,rs11642015,FTO,Strong,1,81.97,5e-162
+Obesity,rs1558902,FTO,Confirmed,3,91.4,7e-122
+Obesity,rs8043757,FTO,Strong,1,76.77,5e-110
+Obesity,rs7185735,FTO,Strong,1,67.32,1e-79
+Obesity,rs663129,RNU4-17P - MC4R,Strong,1,54.53,2e-62
+Obesity,rs12463617,LINC01875 - TMEM18,Confirmed,2,60.11,4e-47
+Obesity,rs688671,RNU4-17P - MC4R,Confirmed,2,55.42,1e-40
+Obesity,rs6711012,LINC01875 - TMEM18,Strong,1,49.55,2.9999999999999998e-40
+Obesity,rs538656,RNU4-17P - MC4R,Strong,1,47.83,2e-36
+Obesity,rs35796073,LINC01875 - TMEM18,Strong,1,46.21,8e-33
+Obesity,rs10871777,RNU4-17P - MC4R,Strong,1,43.78,2e-27
+Obesity,rs8050136,FTO,Confirmed,2,50.72,3e-26
+Obesity,rs13028310,LINC01875 - TMEM18,Strong,1,43.2,3.9999999999999996e-26
+Obesity,rs56094641,FTO,Strong,1,45.67,6e-25
+Obesity,rs62037364,SH2B1,Strong,1,42.43,2e-24
+Obesity,rs10189761,LINC01875 - TMEM18,Strong,1,42.22,6e-24
+Obesity,rs13387091,LINC01875 - TMEM18,Strong,1,41.98,2.0000000000000002e-23
+Obesity,rs11152213,RNU4-17P - MC4R,Strong,1,41.45,3e-22
+Obesity,rs55872725,FTO,Strong,1,34.65,3e-18
+Obesity,rs7579427,LINC01875 - TMEM18,Strong,1,42.6,4e-18
+Obesity,rs17817964,FTO,Strong,1,39.52,6e-18
+Obesity,rs61765646,NEGR1,Strong,1,38.75,3e-16
+Rheumatoid Arthritis,rs660895,HLA-DRB1 - HLA-DQA1,Confirmed,2,82.42,1e-300
+Rheumatoid Arthritis,rs35139284,HLA-DRB1 - HLA-DQA1,Confirmed,3,89.53,4e-287
+Rheumatoid Arthritis,rs34434863,HLA-DRB1 - HLA-DQA1,Strong,1,81.97,2e-236
+Rheumatoid Arthritis,rs112062732,HLA-DRB9 - HLA-DRB5,Strong,1,71.77,6e-227
+Rheumatoid Arthritis,rs6457620,HLA-DQB1 - MTCO3P1,Strong,1,71.77,4.000000000000001e-186
+Rheumatoid Arthritis,rs532322163,HLA-DRB1 - HLA-DQA1,Strong,1,76.77,2e-152
+Rheumatoid Arthritis,rs3763309,TSBP1-AS1 - HLA-DRA,Strong,1,71.77,2.0000000000000003e-124
+Rheumatoid Arthritis,rs6457617,HLA-DQB1 - MTCO3P1,Confirmed,2,70.86,5.000000000000001e-75
+Rheumatoid Arthritis,rs13192471,HLA-DQB1 - MTCO3P1,Strong,1,57.73,2e-58
+Rheumatoid Arthritis,rs12194148,HLA-DRB9 - HLA-DRB5,Strong,1,47.55,5.000000000000001e-58
+Rheumatoid Arthritis,rs2157337,HLA-DRB5 - RNU1-61P,Strong,1,44.74,9e-52
+Rheumatoid Arthritis,rs117203060,HLA-DRB1 - HLA-DQA1,Strong,1,42.78,2e-47
+Rheumatoid Arthritis,rs117530403,HLA-DRB1 - HLA-DQA1,Strong,1,39.39,6.9999999999999995e-40
+Rheumatoid Arthritis,rs11889341,STAT4,Confirmed,6,67.0,2e-31
+Rheumatoid Arthritis,rs615672,HLA-DRB1 - HLA-DQA1,Strong,1,33.51,8e-27
+Rheumatoid Arthritis,rs9275428,HLA-DQB1 - MTCO3P1,Strong,1,32.43,2e-24
+Rheumatoid Arthritis,rs3104413,HLA-DRB1 - HLA-DQA1,Strong,1,35.9,5e-21
+Rheumatoid Arthritis,rs116666910,HLA-B,Strong,1,40.45,5e-20
+Rheumatoid Arthritis,rs4853458,STAT4,Strong,1,40.1,3e-19
+Rheumatoid Arthritis,rs28414125,HLA-DQA1 - HLA-DQB1,Strong,1,30.05,4e-19
+Rheumatoid Arthritis,rs9266271,HLA-B,Strong,1,30.05,4e-19
+Rheumatoid Arthritis,rs13426947,STAT4,Confirmed,2,46.61,4e-17
+Rheumatoid Arthritis,rs7748270,HLA-DRB9 - HLA-DRB5,Strong,1,38.97,1e-16
+Rheumatoid Arthritis,rs3761847,TRAF1,Strong,1,37.8,4e-14
+Rheumatoid Arthritis,rs146003472,TSBP1-AS1 - HLA-DRA,Strong,1,27.72,6e-14
+Rheumatoid Arthritis,rs10181656,STAT4,Strong,1,27.48,2e-13
+Type 2 Diabetes,rs34872471,TCF7L2,Confirmed,9,95.19,1e-323
+Type 2 Diabetes,rs9808924,IGF2BP2,Confirmed,2,87.23,2e-279
+Type 2 Diabetes,rs1977833,HHEX - Y_RNA,Strong,1,71.77,3e-223
+Type 2 Diabetes,rs7903146,TCF7L2,Confirmed,33,92.64,1e-219
+Type 2 Diabetes,rs13266634,SLC30A8,Confirmed,16,100.0,2e-219
+Type 2 Diabetes,rs10440833,CDKAL1,Confirmed,4,95.98,5.000000000000001e-215
+Type 2 Diabetes,rs10811661,CDKN2B-AS1,Confirmed,16,98.17,1e-205
+Type 2 Diabetes,rs9368222,CDKAL1,Confirmed,4,98.98,2e-189
+Type 2 Diabetes,rs9348441,CDKAL1,Confirmed,3,96.92,2e-188
+Type 2 Diabetes,rs9350271,CDKAL1,Confirmed,3,86.44,5e-183
+Type 2 Diabetes,rs9859406,IGF2BP2,Confirmed,2,87.93,2e-169
+Type 2 Diabetes,rs10965248,CDKN2B-AS1,Strong,1,76.77,4e-164
+Type 2 Diabetes,rs12555274,CDKN2B-AS1,Confirmed,3,92.53,4e-135
+Type 2 Diabetes,rs1111875,HHEX - Y_RNA,Confirmed,10,95.4,9.999999999999999e-129
+Type 2 Diabetes,rs7756992,CDKAL1,Confirmed,8,93.9,6e-128
+Type 2 Diabetes,rs7766070,CDKAL1,Confirmed,5,93.64,6e-127
+Type 2 Diabetes,rs10811660,CDKN2B-AS1,Confirmed,3,88.25,1e-115
+Type 2 Diabetes,rs10965250,CDKN2B-AS1,Confirmed,3,91.4,8e-114
+Type 2 Diabetes,rs7633675,IGF2BP2,Confirmed,2,92.32,8e-111
+Type 2 Diabetes,rs4414887,IGF2BP2,Confirmed,2,87.23,1e-109
+Type 2 Diabetes,rs9854769,IGF2BP2,Strong,1,76.77,1e-107
+Type 2 Diabetes,rs10965247,CDKN2B-AS1,Confirmed,5,95.52,3e-99
+Type 2 Diabetes,rs11558471,SLC30A8,Confirmed,4,91.47,4e-98
+Type 2 Diabetes,rs7070182,TCF7L2,Strong,1,64.25,4.999999999999999e-84
+Type 2 Diabetes,rs12355158,KIF11,Strong,1,70.55,3e-80
+Type 2 Diabetes,rs397978231,IGF2BP2,Strong,1,67.1,3e-79
+Type 2 Diabetes,rs10536170,CDKAL1,Strong,1,60.52,1e-75
+Type 2 Diabetes,rs2149632,IDE,Strong,1,68.14,7.000000000000004e-75
+Type 2 Diabetes,rs35906730,EIF2S2P3 - HHEX,Confirmed,2,69.37,1e-71
+Type 2 Diabetes,rs76393458,CDKAL1,Strong,1,66.4,5e-71
+Type 2 Diabetes,rs10757282,CDKN2B-AS1,Strong,1,71.71,1e-69
+Type 2 Diabetes,rs13092876,IGF2BP2,Confirmed,3,72.81,2e-66
+Type 2 Diabetes,rs11309330,HHEX - Y_RNA,Strong,1,60.88,2e-65
+Type 2 Diabetes,rs10882102,HHEX - Y_RNA,Strong,1,62.98,2e-63
+Type 2 Diabetes,rs116929578,TCF7L2,Confirmed,2,70.61,3e-62
+Type 2 Diabetes,rs7901695,TCF7L2,Confirmed,4,73.85,8e-62
+Type 2 Diabetes,rs35859536,SLC30A8 - MED30,Confirmed,3,74.4,2e-60
+Type 2 Diabetes,rs7651090,IGF2BP2,Strong,1,57.15,4e-57
+Type 2 Diabetes,rs7754840,CDKAL1,Confirmed,5,72.71,2e-56
+Type 2 Diabetes,rs6780171,IGF2BP2,Confirmed,2,64.0,8.999999999999998e-56
+Type 2 Diabetes,rs3802177,SLC30A8,Confirmed,11,74.94,1e-55
+Type 2 Diabetes,rs6769511,IGF2BP2,Confirmed,2,63.32,2.9999999999999995e-54
+Type 2 Diabetes,rs114322470,TCF7L2,Confirmed,3,72.94,8e-51
+Type 2 Diabetes,rs140908036,TCF7L2,Strong,1,49.05,3e-50
+Type 2 Diabetes,rs145532103,EIF2S2P3 - HHEX,Strong,1,49.0,4e-50
+Type 2 Diabetes,rs72832348,CDKAL1,Strong,1,55.02,1e-45

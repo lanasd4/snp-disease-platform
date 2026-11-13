@@ -200,8 +200,8 @@ def test_ranking_comparison_uses_the_chosen_diseases():
     at = _open(_app(), 2)
     at.multiselect(key="rank_compare").set_value(["Obesity", "Asthma", "Breast Cancer"]).run()
     _no_errors(at)
-    summary = next(df.value for df in at.dataframe if "median_score" in df.value.columns)
+    summary = next(df.value for df in at.dataframe if "confirmed_share" in df.value.columns)
     assert len(summary) == 3
     at.multiselect(key="rank_compare").set_value(["Obesity"]).run()
     _no_errors(at)
-    assert not any("median_score" in df.value.columns for df in at.dataframe)
+    assert not any("confirmed_share" in df.value.columns for df in at.dataframe)

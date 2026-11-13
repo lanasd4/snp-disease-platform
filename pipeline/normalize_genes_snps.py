@@ -254,7 +254,7 @@ def normalize_genes_and_snps() -> dict:
     input_path = paths["processed"] / INPUT_FILENAME
 
     if not input_path.exists():
-        raise FileNotFoundError(f"Day 19 input file not found: {input_path}")
+        raise FileNotFoundError(f"Input file not found: {input_path}")
 
     input_df = pd.read_csv(input_path, dtype=str)
 
@@ -385,7 +385,6 @@ def normalize_genes_and_snps() -> dict:
     metadata = {
         "file_name": ASSOCIATIONS_OUTPUT_FILENAME,
         "source_input_file": INPUT_FILENAME,
-        "project_day": 20,
         "stage": "Gene and SNP Normalization",
         "is_real_data": True,
         "is_gene_snp_normalized": True,
@@ -421,7 +420,7 @@ def normalize_genes_and_snps() -> dict:
 def main() -> None:
     result = normalize_genes_and_snps()
 
-    print("Day 20 Gene and SNP normalization completed.")
+    print("Gene and SNP normalization completed.")
     print(f"Input rows: {result['input_rows']}")
     print(f"Usable association rows: {result['usable_association_rows']}")
     print(f"Unique genes: {result['unique_genes']}")

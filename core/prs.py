@@ -8,6 +8,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Dict, Any, List
 import math
+from core.evidence import sort_by_evidence
 import pandas as pd
 from core.paths import get_project_root
 from core.admin.common import get_active_ranked_path
@@ -102,11 +103,8 @@ def filter_disease_associations(disease_name: str, max_snps: int = 10) -> pd.Dat
         return filtered
 
     rsid_col = _first_existing_col(filtered, ["rsid", "rs_id", "snp", "snp_id"])
-    score_col = _first_existing_col(filtered, ["importance_score", "score", "ranking_score"])
-
-    if score_col:
-        filtered[score_col] = pd.to_numeric(filtered[score_col], errors="coerce").fillna(0)
-        filtered = filtered.sort_values(score_col, ascending=False)
+    if "evidence_tier" in filtered.columns:
+        filtered = sort_by_evidence(filtered, within_disease=False)
 
     if rsid_col:
         filtered = filtered.drop_duplicates(subset=[rsid_col], keep="first")
@@ -129,11 +127,7 @@ def derive_prototype_weight(row: Dict[str, Any]) -> float:
         except Exception:
             pass
 
-    score = _to_float(row.get("importance_score", row.get("score", "")), default=0.0)
-
-    if score > 0:
-        return round(score / 100.0, 4)
-
+    # No effect size reported: a small, equal placeholder weight (educational demo only).
     return 0.1
 
 
@@ -148,7 +142,7 @@ def normalize_prs_input_table(disease_name: str, max_snps: int = 10) -> pd.DataF
             "disease_name",
             "risk_allele",
             "p_value",
-            "importance_score",
+            "rank_label",
             "prototype_weight",
             "genotype_dosage",
         ])
@@ -178,7 +172,7 @@ def normalize_prs_input_table(disease_name: str, max_snps: int = 10) -> pd.DataF
             "disease_name": _clean_value(get_value(row, ["disease_name", "disease", "trait"]), disease_name),
             "risk_allele": _clean_value(get_value(row, ["risk_allele", "effect_allele"]), "غير متوفر"),
             "p_value": _clean_value(get_value(row, ["p_value", "p-value", "pvalue"]), "غير متوفر"),
-            "importance_score": _clean_value(get_value(row, ["importance_score", "score", "ranking_score"]), "0"),
+            "rank_label": _clean_value(get_value(row, ["rank_label"]), ""),
             "odds_ratio": _clean_value(get_value(row, ["odds_ratio", "or"]), ""),
             "effect_size": _clean_value(get_value(row, ["effect_size", "beta"]), ""),
         }

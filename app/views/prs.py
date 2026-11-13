@@ -107,10 +107,10 @@ def render_prs_prototype_page():
 
 
 METHOD_STEPS = [
-    ("تُختار أقوى المتغيرات المرتبطة بالمرض.",
-     "The disease's strongest variants are selected."),
-    ("وزن كل متغير = حجم الأثر (Beta) أو لوغاريتم نسبة الأرجحية إن توفر، وإلا درجة الأهمية كبديل تعليمي.",
-     "Each weight is the reported beta or log(odds ratio) when available, otherwise the importance score."),
+    ("تُختار المتغيرات ذات أعلى مستوى دليل للمرض.",
+     "The disease's variants with the highest evidence level are selected."),
+    ("وزن كل متغير = حجم الأثر (Beta) أو لوغاريتم نسبة الأرجحية إن توفر، وإلا وزن صغير ثابت (0.1) للتوضيح.",
+     "Each weight is the reported beta or log(odds ratio) when available, otherwise a small fixed weight (0.1)."),
     ("مساهمة المتغير = عدد النسخ × الوزن.",
      "A variant's contribution = copies × weight."),
     ("الدرجة = مجموع المساهمات، وتُعرض أيضًا كنسبة من أعلى قيمة ممكنة.",

@@ -426,7 +426,7 @@ def run_prepare_regional_training_set() -> dict:
 
     if not input_path.exists():
         raise FileNotFoundError(
-            f"Input file not found: {input_path}. Day 28 must be completed first."
+            f"Input file not found: {input_path}. Run the previous pipeline stage first."
         )
 
     input_df = pd.read_csv(input_path, dtype=str)
@@ -457,7 +457,6 @@ def run_prepare_regional_training_set() -> dict:
 
     metadata = {
         "file_name": OUTPUT_FILENAME,
-        "project_day": 29,
         "stage": "Regional Training Set Preparation",
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "input_file": str(input_path),
@@ -465,7 +464,7 @@ def run_prepare_regional_training_set() -> dict:
         "min_target_records": TARGET_MIN_RECORDS,
         "max_target_records": TARGET_MAX_RECORDS,
         "label_distribution": balance_df.to_dict(orient="records"),
-        "note": "This file prepares a small labeled dataset for the Day 30 ML classifier."
+        "note": "This file prepares a small labeled dataset for the ML classifier."
     }
 
     with open(metadata_path, "w", encoding="utf-8") as file:
@@ -486,7 +485,7 @@ def run_prepare_regional_training_set() -> dict:
 def main() -> None:
     result = run_prepare_regional_training_set()
 
-    print("Day 29 regional training set preparation completed.")
+    print("Regional training set preparation completed.")
     print(f"Input rows: {result['input_rows']}")
     print(f"Training rows: {result['training_rows']}")
     print(f"Processed output: {result['processed_output_path']}")

@@ -15,3 +15,6 @@ pillow>=13.0
 urllib3>=2.8
 requests>=2.33
 gitpython>=3.2.1
+
+# PostgreSQL driver for persistent user data (library, community) on hosting
+psycopg[binary]>=3.2

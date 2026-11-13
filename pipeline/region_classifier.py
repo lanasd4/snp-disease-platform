@@ -447,7 +447,6 @@ def run_rule_based_region_classification() -> dict:
 
     metadata = {
         "file_name": OUTPUT_FILENAME,
-        "project_day": 28,
         "stage": "Rule-Based Arab/Middle East Region Classification",
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "input_file": str(input_path),
@@ -455,7 +454,7 @@ def run_rule_based_region_classification() -> dict:
         "arab_middle_east_related_rows": int(len(arab_df)),
         "summary_path": str(summary_path),
         "tests_output_path": tests_result.get("output_path"),
-        "note": "Rule-based classification only. ML classifier is planned for Day 30."
+        "note": "Rule-based classification only."
     }
 
     with open(metadata_path, "w", encoding="utf-8") as file:
@@ -567,7 +566,7 @@ def run_region_tagging_tests(save_output: bool = True) -> dict:
 def main() -> None:
     result = run_rule_based_region_classification()
 
-    print("Day 28 rule-based regional classification completed.")
+    print("Rule-based regional classification completed.")
     print(f"Input file: {result['input_path']}")
     print(f"Output rows: {result['output_rows']}")
     print(f"Arab/Middle East related rows: {result['arab_rows']}")

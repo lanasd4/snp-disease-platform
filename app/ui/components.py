@@ -19,7 +19,7 @@ COUNTED_TABLES = ["Disease", "SNP", "Gene", "Study", "PopulationRegion", "Associ
 NAV_TARGET_KEY = "nav_target_page"
 SEARCH_REQUEST_KEY = "search_request"
 
-RANK_TONES = {"Very High": "strong", "High": "good", "Moderate": "mid", "Low": "low"}
+RANK_TONES = {"Confirmed": "strong", "Strong": "good", "Suggestive": "mid", "Below threshold": "low"}
 
 
 # ---------------------------------------------------------------------------
@@ -89,16 +89,20 @@ def badge(text: str, tone: str = "neutral") -> str:
     return f'<span class="badge badge-{_esc(tone)}">{_esc(text)}</span>'
 
 
-def rank_text(rank_label: str) -> str:
-    """Translated rank label (Very High / High / Moderate / Low)."""
-    label = str(rank_label or "").strip()
-    key = {"Very High": "search.rank_very_high", "High": "search.rank_high",
-           "Moderate": "search.rank_moderate", "Low": "search.rank_low"}.get(label)
-    return t(key) if key else (label or "—")
+def rank_text(rank_label) -> str:
+    """Translated evidence level (Confirmed / Strong / Suggestive / Below threshold)."""
+    from core.evidence import tier_label
+
+    label = tier_label(rank_label)
+    key = {"Confirmed": "search.tier_confirmed", "Strong": "search.tier_strong",
+           "Suggestive": "search.tier_suggestive", "Below threshold": "search.tier_below"}[label]
+    return t(key)
 
 
-def rank_badge(rank_label: str) -> str:
-    label = str(rank_label or "").strip()
+def rank_badge(rank_label) -> str:
+    from core.evidence import tier_label
+
+    label = tier_label(rank_label)
     return badge(rank_text(label), RANK_TONES.get(label, "neutral"))
 
 
@@ -171,19 +175,29 @@ def open_search(query: str, mode: Optional[str] = None) -> None:
 # ---------------------------------------------------------------------------
 
 def get_database_counts() -> dict:
-    """Row counts for the main tables (0 when the DB or a table is missing)."""
+    """Counts shown to users, taken from the live search data so admin merges show up at once."""
     counts = {table: 0 for table in COUNTED_TABLES}
 
-    if not DATABASE_PATH.exists():
-        return counts
+    if DATABASE_PATH.exists():
+        with sqlite3.connect(DATABASE_PATH) as conn:
+            for table in COUNTED_TABLES:
+                try:
+                    counts[table] = conn.execute(f"SELECT COUNT(*) FROM {table};").fetchone()[0]
+                except sqlite3.Error:
+                    counts[table] = 0
 
-    with sqlite3.connect(DATABASE_PATH) as conn:
-        for table in COUNTED_TABLES:
-            try:
-                counts[table] = conn.execute(f"SELECT COUNT(*) FROM {table};").fetchone()[0]
-            except sqlite3.Error:
-                counts[table] = 0
+    from core.search_engine import load_tri_search_data
 
+    data = load_tri_search_data()
+    if not data.empty:
+        def distinct(column: str) -> int:
+            if column not in data.columns:
+                return 0
+            values = data[column].astype(str).str.strip()
+            return int(values[~values.isin(["", "nan", "None"])].nunique())
+
+        counts.update(Disease=distinct("disease_id"), SNP=distinct("rsid"), Gene=distinct("gene_symbol"),
+                      Study=distinct("pubmed_id") or distinct("study_title"), Association=int(len(data)))
     return counts
 
 

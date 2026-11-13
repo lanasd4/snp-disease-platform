@@ -519,7 +519,6 @@ def normalize_diseases() -> dict:
         "source_cleaned_file": CLEANED_INPUT_FILENAME,
         "is_real_data": True,
         "is_disease_normalized": True,
-        "project_day": 19,
         "stage": "Disease Normalization",
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "input_rows": int(len(cleaned_df)),
@@ -553,7 +552,7 @@ def normalize_diseases() -> dict:
 def main() -> None:
     result = normalize_diseases()
 
-    print("Day 19 disease normalization completed.")
+    print("Disease normalization completed.")
     print(f"Input rows: {result['input_rows']}")
     print(f"Matched rows: {result['matched_rows']}")
     print(f"Unmatched rows: {result['unmatched_rows']}")

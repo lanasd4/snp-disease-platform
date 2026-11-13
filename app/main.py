@@ -27,7 +27,9 @@ from app.views.about import render_about_page  # noqa: E402
 from app.views.admin import render_admin_dashboard_page  # noqa: E402
 from app.views.ai_explanation import render_ai_explanation_page  # noqa: E402
 from app.views.circos import render_circos_plot_page  # noqa: E402
+from app.views.community import render_community_page  # noqa: E402
 from app.views.home import render_home_page  # noqa: E402
+from app.views.library import render_library_page  # noqa: E402
 from app.views.prs import render_prs_prototype_page  # noqa: E402
 from app.views.ranking import render_association_ranking_page  # noqa: E402
 from app.views.search import render_disease_search_page  # noqa: E402
@@ -63,6 +65,8 @@ PAGES = {
     "Study Summaries": ("📄", "nav.study_summaries", render_study_summary_page),
     "Circos Plot": ("🧬", "nav.circos", render_circos_plot_page),
     "PRS Prototype": ("🧪", "nav.prs", render_prs_prototype_page),
+    "Library": ("📚", "nav.library", render_library_page),
+    "Community": ("💬", "nav.community", render_community_page),
     "About": ("ℹ️", "nav.about", render_about_page),
     ADMIN_PAGE: ("🛡️", "nav.admin", render_admin_dashboard_page),
 }
@@ -82,7 +86,8 @@ def page_display_label(page_key: str) -> str:
 # URL slugs for shareable links, e.g. ?page=search&q=rs429358 or ?page=ranking
 PAGE_SLUGS = {
     "home": "Home", "search": "Search", "ranking": "Ranking", "ai": "AI Explanation",
-    "studies": "Study Summaries", "circos": "Circos Plot", "prs": "PRS Prototype", "about": "About",
+    "studies": "Study Summaries", "circos": "Circos Plot", "prs": "PRS Prototype", "library": "Library",
+    "community": "Community", "about": "About",
 }
 
 

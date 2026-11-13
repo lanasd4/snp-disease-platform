@@ -101,7 +101,7 @@ def load_training_data() -> pd.DataFrame:
 
     if not training_path.exists():
         raise FileNotFoundError(
-            f"Training set not found: {training_path}. Day 29 must be completed first."
+            f"Training set not found: {training_path}. Run the previous pipeline stage first."
         )
 
     df = pd.read_csv(training_path, dtype=str)
@@ -426,7 +426,6 @@ def run_ml_region_classifier() -> dict:
 
     metadata = {
         "file_name": MODEL_FILENAME,
-        "project_day": 30,
         "stage": "Initial ML Arab/Middle East Region Classifier",
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "model_type": "TF-IDF + Logistic Regression",
@@ -498,7 +497,7 @@ def predict_region_label(text: str) -> dict:
 def main() -> None:
     result = run_ml_region_classifier()
 
-    print("Day 30 ML region classifier completed.")
+    print("ML region classifier completed.")
     print(f"Training rows total: {result['training_rows_total']}")
     print(f"Train size: {result['train_size']}")
     print(f"Test size: {result['test_size']}")

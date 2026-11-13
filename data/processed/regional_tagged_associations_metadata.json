@@ -2,11 +2,11 @@
   "file_name": "regional_tagged_associations.csv",
   "project_day": 28,
   "stage": "Rule-Based Arab/Middle East Region Classification",
-  "created_at": "2026-11-11T21:45:19",
+  "created_at": "2026-11-13T14:04:36",
   "input_file": "C:\\Users\\Asus\\Desktop\\New folder\\SNP_Disease_Platform\\data\\processed\\ranked_associations_initial.csv",
   "output_rows": 2975,
   "arab_middle_east_related_rows": 235,
-  "summary_path": "C:\\Users\\Asus\\Desktop\\New folder\\SNP_Disease_Platform\\outputs\\tables\\day28_regional_tagging_summary.csv",
+  "summary_path": "C:\\Users\\Asus\\Desktop\\New folder\\SNP_Disease_Platform\\outputs\\tables\\regional_tagging_summary.csv",
   "tests_output_path": "C:\\Users\\Asus\\Desktop\\New folder\\SNP_Disease_Platform\\outputs\\tables\\regional_tagging_tests.csv",
   "note": "Rule-based classification only. ML classifier is planned for Day 30."
 }

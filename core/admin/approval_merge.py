@@ -7,12 +7,13 @@ from __future__ import annotations
 
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, Any, List, Optional
+from typing import Any, Dict
 import re
 
 import pandas as pd
 from core.paths import get_project_root
 from core.admin.common import get_outputs_dir, get_registry_path, resolve_within_project
+from core.admin.ranked_rows import add_source, build_source_rows
 
 
 REVIEW_STATUSES = ["processed", "pending_approval", "approved", "rejected"]
@@ -186,94 +187,13 @@ def reject_source(source_id: str, rejected_by: str = "admin", reason: str = "") 
     )
 
 
-def _find_first_existing_column(df: pd.DataFrame, candidates: List[str]) -> Optional[str]:
-    normalized_map = {normalize_col_name(c): c for c in df.columns}
-
-    for candidate in candidates:
-        normalized_candidate = normalize_col_name(candidate)
-        if normalized_candidate in normalized_map:
-            return normalized_map[normalized_candidate]
-
-    return None
-
-
-def _series_or_blank(df: pd.DataFrame, candidates: List[str]) -> pd.Series:
-    col = _find_first_existing_column(df, candidates)
-
-    if col is None:
-        return pd.Series([""] * len(df), index=df.index)
-
-    return df[col]
-
-
-def _map_processed_rows_to_ranked_schema(processed_df: pd.DataFrame, base_columns: List[str], source_id: str) -> pd.DataFrame:
-    """Convert processed admin source rows into the current ranked file schema as much as possible."""
-    output = pd.DataFrame(index=processed_df.index)
-
-    source_candidate_map = {
-        "rsid": ["rsid", "rsid_normalized", "rs_id", "snp", "snp_id", "variant_id"],
-        "snp": ["rsid", "rsid_normalized", "snp", "snp_id"],
-        "disease": ["disease_name", "disease_name_normalized", "disease", "trait", "mapped_trait"],
-        "trait": ["disease_name", "disease_name_normalized", "trait", "disease"],
-        "gene": ["gene_symbol", "gene_symbol_normalized", "gene", "mapped_gene"],
-        "gene_symbol": ["gene_symbol", "gene_symbol_normalized", "gene"],
-        "p_value": ["p_value", "pvalue", "p-value"],
-        "pvalue": ["p_value", "pvalue", "p-value"],
-        "study_title": ["study_title", "study", "title"],
-        "pubmed_id": ["pubmed_id", "pubmed", "pmid"],
-        "pmid": ["pubmed_id", "pubmed", "pmid"],
-        "publication_year": ["publication_year", "year"],
-        "year": ["publication_year", "year"],
-        "population": ["population", "population_region", "ancestry"],
-        "region": ["region", "country", "population"],
-        "country": ["country", "region"],
-        "odds_ratio": ["odds_ratio", "or"],
-        "or": ["odds_ratio", "or"],
-        "effect_size": ["effect_size", "beta"],
-        "beta": ["effect_size", "beta"],
-        "risk_allele": ["risk_allele", "effect_allele"],
-        "effect_allele": ["effect_allele", "risk_allele"],
-        "source_database": ["source_database"],
-    }
-
-    for base_col in base_columns:
-        normalized_base_col = normalize_col_name(base_col)
-
-        candidates = []
-
-        # direct same-name match
-        candidates.append(base_col)
-        candidates.append(normalized_base_col)
-
-        # semantic candidate match
-        for key, values in source_candidate_map.items():
-            if key in normalized_base_col or normalized_base_col in key:
-                candidates.extend(values)
-
-        output[base_col] = _series_or_blank(processed_df, candidates)
-
-    # Try to set ranking-related columns for new admin-uploaded rows if they exist
-    for col in output.columns:
-        ncol = normalize_col_name(col)
-
-        if "importance_score" in ncol and output[col].astype(str).str.strip().eq("").all():
-            output[col] = 0
-
-        if "rank_label" in ncol and output[col].astype(str).str.strip().eq("").all():
-            output[col] = "Pending Review"
-
-        if "source" == ncol or "source_database" in ncol:
-            empty_mask = output[col].astype(str).str.strip().eq("")
-            output.loc[empty_mask, col] = "admin_upload"
-
-    output["admin_upload_source_id"] = source_id
-    output["row_origin"] = "admin_uploaded_processed"
-    output["merge_stage"] = "staging_only_not_active"
-
-    return output
+def source_rows_path(source_id: str) -> Path:
+    safe_source_id = re.sub(r"[^A-Za-z0-9_]+", "_", source_id)
+    return get_staging_dir() / f"source_rows_{safe_source_id}.csv"
 
 
 def create_staging_file(source_id: str, created_by: str = "admin") -> Path:
+    """Convert the processed source into ranked rows and write a preview of the merged table."""
     row = get_source_row(source_id)
 
     processed_path_value = str(row.get("processed_path", "")).strip()
@@ -291,17 +211,16 @@ def create_staging_file(source_id: str, created_by: str = "admin") -> Path:
     if not ranked_path.exists():
         raise FileNotFoundError(f"Base ranked file not found: {ranked_path}")
 
-    base_df = pd.read_csv(ranked_path)
-    processed_df = pd.read_csv(processed_path)
+    base_df = pd.read_csv(ranked_path, dtype=str, keep_default_na=False)
+    processed_df = pd.read_csv(processed_path, dtype=str, keep_default_na=False)
 
-    staged_new_rows = _map_processed_rows_to_ranked_schema(
-        processed_df=processed_df,
-        base_columns=list(base_df.columns),
-        source_id=source_id,
-    )
+    new_rows, skipped = build_source_rows(processed_df, source_id, base_df)
+    if new_rows.empty:
+        raise ValueError("No rows can be added: every row is for a disease outside the platform "
+                         "or has an invalid p-value.")
+    new_rows.to_csv(source_rows_path(source_id), index=False, encoding="utf-8-sig")
 
-    # Keep staging columns as union: base schema + review metadata columns
-    staging_df = pd.concat([base_df, staged_new_rows], ignore_index=True, sort=False)
+    staging_df = add_source(base_df, new_rows)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     safe_source_id = re.sub(r"[^A-Za-z0-9_]+", "_", source_id)
@@ -313,6 +232,9 @@ def create_staging_file(source_id: str, created_by: str = "admin") -> Path:
         source_id,
         {
             "staging_path": str(staging_path.relative_to(get_project_root())),
+            "source_rows_path": str(source_rows_path(source_id).relative_to(get_project_root())),
+            "staged_rows": int(len(new_rows)),
+            "skipped_rows": int(len(skipped)),
             "staging_created_at": datetime.now().isoformat(timespec="seconds"),
             "reviewed_by": created_by,
             "reviewed_at": datetime.now().isoformat(timespec="seconds"),
@@ -340,7 +262,7 @@ def approve_source(source_id: str, approved_by: str = "admin", notes: str = "") 
             "reviewed_at": datetime.now().isoformat(timespec="seconds"),
             "review_notes": notes,
             "staging_path": str(staging_path.relative_to(get_project_root())),
-            "notes": "Approved and staging file created. Not merged into active Search yet.",
+            "notes": "Approved. Not live in Search until the final merge.",
         }
     )
 

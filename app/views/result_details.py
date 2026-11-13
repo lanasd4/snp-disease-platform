@@ -10,6 +10,7 @@ import pandas as pd
 import streamlit as st
 
 
+from core.i18n import is_rtl, tr
 from core.glossary import get_relevant_glossary_for_result
 from core.ai.agent import generate_ai_explanation
 from core.study_summary import build_structured_study_summary
@@ -65,7 +66,11 @@ def normalize_result_context(raw_context: dict) -> dict:
         "disease_name": _first_available(data, ["disease_name", "disease", "trait", "mapped_trait"]),
         "disease_arabic_name": _first_available(data, ["disease_arabic_name", "disease_arabic", "arabic_name"], default=""),
         "p_value": _first_available(data, ["p_value", "p-value", "pvalue"]),
-        "importance_score": _first_available(data, ["importance_score", "score", "ranking_score"]),
+        "evidence_tier": _first_available(data, ["evidence_tier"], default=""),
+        "independent_gws_studies": _first_available(data, ["independent_gws_studies"], default=""),
+        "independent_studies": _first_available(data, ["independent_studies"], default=""),
+        "best_p_value": _first_available(data, ["best_p_value"], default=""),
+        "max_sample_size": _first_available(data, ["max_sample_size"], default=""),
         "rank_label": _first_available(data, ["rank_label", "rank"]),
         "rank_label_arabic": _first_available(data, ["rank_label_arabic"], default=""),
         "risk_allele": _first_available(data, ["risk_allele", "effect_allele"], default=""),
@@ -92,249 +97,134 @@ def _key(prefix: str, suffix: str, row: dict) -> str:
 
 
 def build_ranking_reason(row: dict) -> str:
-    """Build a clear Arabic Markdown explanation for why the result received its score/rank."""
-    p_value = row.get("p_value", "غير متوفر")
-    score = row.get("importance_score", "غير متوفر")
-    rank_label = row.get("rank_label", "غير متوفر")
-    rank_label_ar = row.get("rank_label_arabic", "")
-    risk_allele = row.get("risk_allele", "")
-    odds_ratio = row.get("odds_ratio", "")
-    effect_size = row.get("effect_size", "")
-    population = row.get("population", "")
-    study_title = row.get("study_title", "")
-    pubmed_id = row.get("pubmed_id", "")
+    """Markdown explaining the association's evidence level, in the active language."""
+    from core.evidence import GENOME_WIDE_P, arabic_studies, tier_label, tier_number
 
-    reasons = []
+    def num(key):
+        try:
+            return float(str(row.get(key, "")).replace(",", ""))
+        except ValueError:
+            return None
 
-    if p_value != "غير متوفر":
-        reasons.append(
-            f"قيمة الدلالة الإحصائية المتاحة هي **{p_value}**، وهي من الإشارات التي تستخدمها المنصة لتقدير قوة الدليل البحثي."
-        )
+    tier = tier_number(row.get("evidence_tier") if row.get("evidence_tier") not in ("", None) else row.get("rank_label"))
+    gws, total, n, best_p = num("independent_gws_studies"), num("independent_studies"), num("max_sample_size"), num("best_p_value")
+    level = tier_label(tier, arabic=is_rtl())
+    lines = [tr(f"**مستوى الدليل: {level}**", f"**Evidence level: {level}**")]
 
-    if score != "غير متوفر":
-        reasons.append(
-            f"درجة الأهمية المعروضة لهذه النتيجة هي **{score}**، وهي درجة ترتيب داخلية تساعد على مقارنة النتائج فيما بينها."
-        )
+    if tier == 3:
+        lines.append(tr(f"بلغ الارتباط الدلالة على مستوى الجينوم (p < 5×10⁻⁸) في **{arabic_studies(gws)}** "
+                        "منشورة في كتالوج GWAS، أي أنه تكرر ولم يظهر في دراسة واحدة فقط.",
+                        f"The association reached genome-wide significance (p < 5×10⁻⁸) in **{int(gws)} independent "
+                        "studies** in the GWAS Catalog, so it has been replicated."))
+    elif tier == 2:
+        lines.append(tr("بلغ الارتباط الدلالة على مستوى الجينوم (p < 5×10⁻⁸) في **دراسة واحدة**، ولم يتكرر بعد "
+                        "في دراسة مستقلة أخرى.",
+                        "The association reached genome-wide significance (p < 5×10⁻⁸) in **one study** and has "
+                        "not yet been replicated in an independent study."))
+    elif tier == 1:
+        lines.append(tr("الدلالة مقترحة (p < 10⁻⁵) لكنها لم تبلغ عتبة الجينوم.",
+                        "The signal is suggestive (p < 10⁻⁵) but below genome-wide significance."))
+    else:
+        lines.append(tr("لا تبلغ قيمة p عتبة الدلالة المعتمدة.", "The p-value does not reach the accepted threshold."))
 
-    if rank_label != "غير متوفر":
-        if rank_label_ar and rank_label_ar != "غير متوفر":
-            label_text = f"{rank_label_ar} | {rank_label}"
-        else:
-            label_text = rank_label
-
-        reasons.append(
-            f"تصنيف قوة الارتباط لهذه النتيجة هو **{label_text}**."
-        )
-
-    if risk_allele and risk_allele != "غير متوفر":
-        reasons.append(
-            f"يتوفر في السجل أليل مؤثر أو مرتبط بالخطر وهو **{risk_allele}**، وهذا يجعل وصف النتيجة أكثر اكتمالًا."
-        )
-
-    if odds_ratio and odds_ratio != "غير متوفر":
-        reasons.append(
-            f"يتوفر Odds Ratio بقيمة **{odds_ratio}**، وهو حقل إحصائي يساعد في فهم اتجاه أو قوة الارتباط داخل الدراسة."
-        )
-
-    if effect_size and effect_size != "غير متوفر":
-        reasons.append(
-            f"يتوفر حجم تأثير أو Beta بقيمة **{effect_size}**، وهو مؤشر إضافي يمكن استخدامه في تفسير قوة الارتباط."
-        )
-
-    if population and population != "غير متوفر":
-        reasons.append(
-            f"يتوفر سياق سكاني أو عينة للدراسة: **{population}**."
-        )
-
-    if study_title and study_title != "غير متوفر":
-        reasons.append(
-            "وجود عنوان دراسة مرتبط بالنتيجة يساعد في تتبع مصدر الدليل البحثي."
-        )
-
-    if pubmed_id and pubmed_id != "غير متوفر":
-        reasons.append(
-            f"وجود معرّف PubMed **{pubmed_id}** يساعد في الرجوع إلى المصدر البحثي الأصلي."
-        )
-
-    if not reasons:
-        reasons.append(
-            "يعتمد ترتيب هذه النتيجة على الحقول المتاحة داخل ملف النتائج، لكن بعض تفاصيل الدليل غير مكتملة في هذا السجل."
-        )
-
-    markdown_lines = [f"- {item}" for item in reasons]
-    markdown_lines.append("")
-    markdown_lines.append("> تنبيه: درجة الترتيب مخصصة لتنظيم النتائج البحثية داخل المنصة، ولا تمثل تقييمًا طبيًا أو تشخيصيًا.")
-
-    return chr(10).join(markdown_lines)
+    details = []
+    if best_p is not None:
+        details.append(tr(f"أفضل قيمة p في الكتالوج: **{best_p:.1e}**", f"Best p-value in the catalog: **{best_p:.1e}**"))
+    if total:
+        details.append(tr(f"عدد الدراسات التي ذكرته: **{int(total)}**", f"Studies reporting it: **{int(total)}**"))
+    if n:
+        details.append(tr(f"أكبر عينة: **{int(n):,}** مشارك", f"Largest sample: **{int(n):,}** participants"))
+    effect = row.get("odds_ratio") or row.get("effect_size")
+    if effect and effect != "غير متوفر":
+        details.append(tr(f"حجم التأثير (OR أو Beta): **{effect}**", f"Effect size (OR or beta): **{effect}**"))
+    lines += [f"- {d}" for d in details]
+    lines.append("")
+    lines.append(tr(f"تُرتّب النتائج حسب قوة الدلالة (أفضل قيمة p)، ويبيّن المستوى موثوقية الارتباط. "
+                    f"العتبة {GENOME_WIDE_P:g} هي المعيار المعتمد في دراسات GWAS.",
+                    f"Results are ordered by statistical strength (best p-value); the level shows reliability. "
+                    f"The {GENOME_WIDE_P:g} threshold is the standard used in GWAS."))
+    lines.append("")
+    lines.append(tr("> مستوى الدليل يصف قوة الارتباط الإحصائي في الأبحاث، ولا يمثل تقييمًا طبيًا أو تشخيصيًا.",
+                    "> The evidence level describes statistical evidence in research; it is not a medical or "
+                    "diagnostic assessment."))
+    return chr(10).join(lines)
 
 
 def render_glossary_terms(row: dict):
-    """Render related glossary terms safely without exposing raw HTML tags."""
+    """Related glossary terms in the active language (term + definition + safety note)."""
+    import html
 
-    st.markdown("#### المصطلحات المرتبطة")
-
+    st.markdown(f"#### {tr('المصطلحات المرتبطة', 'Related terms')}")
     try:
-        import html
-
         glossary_df = get_relevant_glossary_for_result(row)
-
-        if glossary_df.empty:
-            st.info("لا توجد مصطلحات مرتبطة متاحة حاليًا.")
-            return
-
-
-        def get_value(record, column):
-            if column not in record:
-                return "—"
-
-            return _safe_value(
-                record.get(column),
-                default="—"
-            )
-
-
-        table_rows = []
-
-
-        for _, record in glossary_df.iterrows():
-
-            arabic_term = html.escape(
-                get_value(record, "arabic_term")
-            )
-
-            english_term = html.escape(
-                get_value(record, "term")
-            )
-
-            arabic_definition = html.escape(
-                get_value(record, "arabic_definition")
-            )
-
-            safe_note = html.escape(
-                get_value(record, "safe_note")
-            )
-
-
-            row_html = (
-                '<tr>'
-                f'<td class="glossary-ar-term" dir="rtl">{arabic_term}</td>'
-                f'<td class="glossary-en-term" dir="ltr">{english_term}</td>'
-                f'<td class="glossary-definition" dir="rtl">{arabic_definition}</td>'
-                f'<td class="glossary-note" dir="auto">{safe_note}</td>'
-                '</tr>'
-            )
-
-            table_rows.append(row_html)
-
-
-        html_table = (
-            '<div class="glossary-rtl-wrapper" dir="rtl">'
-            '<table class="glossary-rtl-table">'
-            '<thead>'
-            '<tr>'
-            '<th>المصطلح العربي</th>'
-            '<th>English Term</th>'
-            '<th>التعريف العربي</th>'
-            '<th>ملاحظة</th>'
-            '</tr>'
-            '</thead>'
-            '<tbody>'
-            + ''.join(table_rows)
-            + '</tbody>'
-            '</table>'
-            '</div>'
-        )
-
-
-        # Streamlit الحديثة
-        if hasattr(st, "html"):
-            st.html(html_table)
-
-        # Fallback للإصدارات الأقدم
-        else:
-            st.markdown(
-                html_table,
-                unsafe_allow_html=True
-            )
-
-
     except Exception as exc:
-        st.warning(
-            f"تعذر عرض المصطلحات المرتبطة: {exc}"
-        )
+        st.warning(f"{tr('تعذر عرض المصطلحات المرتبطة', 'Could not show related terms')}: {exc}")
+        return
+    if glossary_df.empty:
+        st.info(tr("لا توجد مصطلحات مرتبطة متاحة حاليًا.", "No related terms available."))
+        return
+
+    arabic = is_rtl()
+
+    def get_value(record, column):
+        return html.escape(_safe_value(record.get(column), default="—")) if column in record else "—"
+
+    rows = []
+    for _, record in glossary_df.iterrows():
+        term = get_value(record, "arabic_term" if arabic else "term")
+        other = get_value(record, "term" if arabic else "arabic_term")
+        definition = get_value(record, "arabic_definition" if arabic else "english_definition")
+        note = get_value(record, "safe_note") if arabic else ""
+        rows.append(f"<tr><td><b>{term}</b><br><span class='muted'>{other}</span></td>"
+                    f"<td>{definition}</td>" + (f"<td>{note}</td>" if arabic else "") + "</tr>")
+    direction = "rtl" if arabic else "ltr"
+    headers = [tr("المصطلح", "Term"), tr("التعريف", "Definition")] + ([tr("ملاحظة", "Note")] if arabic else [])
+    table = (f'<div class="glossary-rtl-wrapper" dir="{direction}"><table class="glossary-rtl-table"><thead><tr>'
+             + "".join(f"<th>{h}</th>" for h in headers) + "</tr></thead><tbody>" + "".join(rows)
+             + "</tbody></table></div>")
+    st.html(table)
+
+
 def render_ai_explanation_for_result(row: dict, prefix: str):
-    st.markdown("#### الشرح الذكي لهذه النتيجة")
-
-    st.caption(
-        "يشرح هذا القسم النتيجة المختارة اعتمادًا على بيانات المنصة وقاموس المصطلحات. "
-        "لا يقدم تشخيصًا أو توصيات علاجية."
-    )
-
+    st.markdown(f"#### {tr('الشرح الذكي لهذه النتيجة', 'AI explanation of this result')}")
+    st.caption(tr(
+        "يشرح هذا القسم النتيجة المختارة اعتمادًا على بيانات المنصة وقاموس المصطلحات. لا يقدم تشخيصًا أو توصيات علاجية.",
+        "Explains the selected result using the platform's data and glossary. No diagnosis or treatment advice.",
+    ))
     question = st.text_area(
-        "سؤال اختياري عن هذه النتيجة",
-        placeholder="مثال: اشرح معنى قيمة الدلالة الإحصائية ودرجة الأهمية في هذه النتيجة.",
-        key=_key(prefix, "inline_ai_question", row)
+        tr("سؤال اختياري عن هذه النتيجة", "Optional question about this result"),
+        placeholder=tr("مثال: اشرح معنى قيمة الدلالة الإحصائية ومستوى الدليل في هذه النتيجة.",
+                       "e.g. Explain the p-value and the evidence level of this result."),
+        key=_key(prefix, "inline_ai_question", row),
     )
-
-    if st.button(
-        "توليد شرح لهذه النتيجة",
-        width="stretch",
-        key=_key(prefix, "inline_ai_button", row)
-    ):
-        with st.spinner("جاري توليد الشرح..."):
-            result = generate_ai_explanation(
-                row,
-                user_question=question,
-                prefer_ollama=True
-            )
-
+    if st.button(tr("توليد شرح لهذه النتيجة", "Explain this result"), width="stretch",
+                 key=_key(prefix, "inline_ai_button", row)):
+        with st.spinner(tr("جاري توليد الشرح...", "Generating the explanation...")):
+            result = generate_ai_explanation(row, user_question=question, prefer_ollama=True)
         mode = result.get("mode", "")
-
         if mode in {"gemma_ollama", "ollama_local"}:
-            st.success("تم توليد الشرح باستخدام المساعد الذكي المحلي.")
+            st.success(tr("تم توليد الشرح باستخدام المساعد الذكي المحلي.", "Generated with the local AI assistant."))
         elif mode == "scope_refusal":
-            st.warning("السؤال خارج نطاق الشرح البحثي للمنصة.")
+            st.warning(tr("السؤال خارج نطاق الشرح البحثي للمنصة.", "This question is outside the platform's scope."))
         else:
-            st.info("تم توليد الشرح باستخدام القواعد الآمنة المعتمدة داخل المنصة.")
-
+            st.info(tr("تم توليد الشرح باستخدام القواعد الآمنة المعتمدة داخل المنصة.",
+                       "Generated with the platform's built-in safe rules (AI model not available)."))
         st.markdown(result.get("explanation", ""))
 
 
 def render_study_summary_for_result(row: dict, prefix: str):
-    st.markdown("#### ملخص الدراسة المرتبطة")
-
-    st.caption(
-        "يعتمد الملخص على الحقول المنظمة المتاحة داخل المنصة مثل عنوان الدراسة، PubMed ID، المرض، SNP، الجين، والسكان."
-    )
-
-    if st.button(
-        "عرض ملخص الدراسة لهذه النتيجة",
-        width="stretch",
-        key=_key(prefix, "inline_study_button", row)
-    ):
+    st.markdown(f"#### {tr('ملخص الدراسة المرتبطة', 'Summary of the related study')}")
+    st.caption(tr(
+        "يعتمد الملخص على الحقول المنظمة المتاحة داخل المنصة مثل عنوان الدراسة، PubMed ID، المرض، SNP، الجين، والسكان.",
+        "Built from the platform's structured fields: study title, PubMed ID, disease, SNP, gene and population.",
+    ))
+    if st.button(tr("عرض ملخص الدراسة لهذه النتيجة", "Show the study summary"), width="stretch",
+                 key=_key(prefix, "inline_study_button", row)):
         try:
             summary = build_structured_study_summary(row)
-
-            tab_ar, tab_en, tab_fields = st.tabs([
-                "الملخص العربي",
-                "English Summary",
-                "الحقول"
-            ])
-
-            with tab_ar:
-                st.markdown(summary["arabic_summary"])
-
-            with tab_en:
-                st.markdown(summary["english_summary"])
-
-            with tab_fields:
-                st.dataframe(
-                    pd.DataFrame([summary["context"]]),
-                    width="stretch",
-                    hide_index=True
-                )
-
         except Exception as exc:
-            st.warning(f"تعذر إنشاء ملخص الدراسة لهذه النتيجة: {exc}")
-
-
+            st.warning(f"{tr('تعذر إنشاء ملخص الدراسة', 'Could not build the study summary')}: {exc}")
+            return
+        st.markdown(summary["arabic_summary"] if is_rtl() else summary["english_summary"])
+        with st.expander(tr("الحقول المستخدمة", "Fields used")):
+            st.dataframe(pd.DataFrame([summary["context"]]), width="stretch", hide_index=True)

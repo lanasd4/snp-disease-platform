@@ -29,13 +29,14 @@ from app.views.result_details import (
 )
 from core.auth import clear_my_search_history, get_current_user, get_my_search_history, save_user_search_history
 from core.diseases import list_diseases, resolve_disease
+from core.evidence import sort_by_evidence
 from core.i18n import is_rtl, t
 from core.search_engine import search_tri_ranked_file
 
 KEY = "srch"  # widget-key namespace for this page
 MODES = ["disease", "snp", "gene"]
 MODE_KEY, QUERY_KEY = f"{KEY}_mode", f"{KEY}_query"
-RANK_LABELS = ["Very High", "High", "Moderate", "Low"]
+RANK_LABELS = ["Confirmed", "Strong", "Suggestive", "Below threshold"]
 SORTS = ["score", "pvalue", "studies", "gene"]
 EXAMPLES = {
     "snp": ["rs7903146", "rs429358", "rs9939609", "rs2476601", "rs1801282"],
@@ -158,9 +159,8 @@ def _render_search_panel() -> dict:
             with c1:
                 arab_only = st.toggle(t('search.arab_only'), key=f"{KEY}_arab")
                 rank_labels = st.multiselect(t('search.rank_label'), RANK_LABELS, format_func=rank_text,
-                                             key=f"{KEY}_ranks")
+                                             key=f"{KEY}_ranks", help=t('search.tier_help'))
             with c2:
-                min_score = st.slider(t('search.min_score'), 0, 100, 0, step=5, key=f"{KEY}_min_score")
                 max_p = st.select_slider(
                     t('search.max_p_value'),
                     options=["5e-8", "1e-10", "1e-20", "1e-50", "1e-100"],
@@ -181,7 +181,6 @@ def _render_search_panel() -> dict:
         "query": st.session_state.get(QUERY_KEY, "").strip(),
         "arab_only": arab_only,
         "rank_labels": rank_labels,
-        "min_score": float(min_score),
         "max_p": float(max_p),
         "sort": sort,
         "limit": int(limit),
@@ -197,25 +196,25 @@ def _apply_filters(df: pd.DataFrame, opts: dict) -> pd.DataFrame:
     if df.empty:
         return df
     df = df.copy()
-    df["_score"] = pd.to_numeric(df.get("importance_score"), errors="coerce").fillna(0)
     df["_p"] = pd.to_numeric(df.get("p_value"), errors="coerce")
-    df["_studies"] = pd.to_numeric(df.get("study_count_for_disease_snp"), errors="coerce").fillna(0)
+    df["_studies"] = pd.to_numeric(df.get("independent_gws_studies"), errors="coerce").fillna(0)
 
     if opts["rank_labels"]:
         df = df[df["rank_label"].isin(opts["rank_labels"])]
     if opts["gene_filter"]:
         df = df[df["gene_symbol"].astype(str).str.contains(opts["gene_filter"], case=False, na=False, regex=False)]
-    df = df[df["_score"] >= opts["min_score"]]
     df = df[df["_p"].isna() | (df["_p"] <= opts["max_p"])]
 
     # One row per variant and disease: keep its strongest evidence record
-    # (the record count is already in study_count_for_disease_snp).
-    df = df.sort_values(["_score", "_p"], ascending=[False, True], na_position="last")
-    df = df.drop_duplicates(subset=["rsid", "disease_name"], keep="first")
+    # (replication is already summarised in independent_gws_studies).
+    df = sort_by_evidence(df, within_disease=False)
+    df = df.drop_duplicates(subset=["rsid", "disease_name"], keep="first").reset_index(drop=True)
 
-    sort_by = {"score": (["_score", "_p"], [False, True]), "pvalue": (["_p"], [True]),
-               "studies": (["_studies", "_score"], [False, False]), "gene": (["gene_symbol"], [True])}[opts["sort"]]
-    return df.sort_values(sort_by[0], ascending=sort_by[1], na_position="last").reset_index(drop=True)
+    if opts["sort"] == "score":
+        return df
+    sort_by = {"pvalue": (["_p"], [True]), "studies": (["_studies", "_p"], [False, True]),
+               "gene": (["gene_symbol"], [True])}[opts["sort"]]
+    return df.sort_values(sort_by[0], ascending=sort_by[1], na_position="last", kind="mergesort").reset_index(drop=True)
 
 
 def _table(df: pd.DataFrame) -> pd.DataFrame:
@@ -223,10 +222,9 @@ def _table(df: pd.DataFrame) -> pd.DataFrame:
         "rsid": df["rsid"],
         "gene": df["gene_symbol"],
         "disease": [_disease_label(row) for _, row in df.iterrows()],
-        "score": df["_score"],
         "rank": [rank_text(label) for label in df["rank_label"]],
-        "p": [_format_p(v) for v in df["p_value"]],
         "studies": df["_studies"].astype(int),
+        "p": [_format_p(v) for v in df["p_value"]],
         "arab": ["✓" if str(v).upper() in {"1", "Y", "TRUE", "YES"} else "" for v in
                  df.get("is_arab_related_flag", pd.Series([""] * len(df)))],
     })
@@ -261,11 +259,9 @@ def _render_results(df: pd.DataFrame, opts: dict) -> int | None:
             "rsid": st.column_config.TextColumn("SNP"),
             "gene": st.column_config.TextColumn(t('search.col_gene')),
             "disease": st.column_config.TextColumn(t('search.col_disease'), width="medium"),
-            "score": st.column_config.ProgressColumn(t('search.col_score'), min_value=0, max_value=100,
-                                                     format="%.0f"),
-            "rank": st.column_config.TextColumn(t('search.col_rank')),
+            "rank": st.column_config.TextColumn(t('search.col_rank'), help=t('search.tier_help')),
+            "studies": st.column_config.NumberColumn(t('search.col_score'), format="%d"),
             "p": st.column_config.TextColumn(t('search.col_p')),
-            "studies": st.column_config.NumberColumn(t('search.col_studies'), format="%d"),
             "arab": st.column_config.TextColumn(t('search.col_arab'), width="small"),
         },
     )
@@ -325,10 +321,10 @@ def _render_details(row: pd.Series, results: pd.DataFrame) -> None:
                 · {html.escape(_disease_label(row))}</span>
             </div>
             <div class="fact-grid">
-                {_fact(t('search.col_score'), _text(row.get('importance_score')))}
+                {_fact(t('search.col_score'), _text(row.get('independent_gws_studies')))}
                 {_fact(t('search.col_p'), _format_p(row.get('p_value')))}
                 {_fact(t('search.risk_allele'), _text(row.get('risk_allele')))}
-                {_fact(t('search.col_studies'), _text(row.get('study_count_for_disease_snp')))}
+                {_fact(t('search.col_studies'), _text(row.get('independent_studies')))}
                 {_fact(t('search.odds_ratio'), _text(row.get('odds_ratio')))}
                 {_fact('PubMed', _text(row.get('pubmed_id')))}
             </div>

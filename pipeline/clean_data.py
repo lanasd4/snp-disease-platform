@@ -351,14 +351,13 @@ def create_cleaned_associations() -> dict:
         "source_raw_file": RAW_GWAS_FILENAME,
         "is_real_data": True,
         "is_cleaned_data": True,
-        "project_day": 18,
         "stage": "Initial Data Cleaning",
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "raw_rows": int(len(raw_df)),
         "accepted_rows": int(len(accepted_df)),
         "rejected_rows": int(len(rejected_df)),
         "core_acceptance_rule": "Rows must have disease_trait, rsid, and p_value.",
-        "note": "This is the first cleaned version. Disease normalization will be handled on Day 19."
+        "note": "This is the first cleaned version."
     }
 
     metadata_path = paths["processed"] / METADATA_FILENAME
@@ -383,7 +382,7 @@ def create_cleaned_associations() -> dict:
 def main() -> None:
     result = create_cleaned_associations()
 
-    print("Day 18 initial cleaning completed.")
+    print("Initial cleaning completed.")
     print(f"Raw rows: {result['raw_rows']}")
     print(f"Accepted rows: {result['accepted_rows']}")
     print(f"Rejected rows: {result['rejected_rows']}")

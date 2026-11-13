@@ -14,6 +14,7 @@ from app.ui.components import notice, page_header, section_title, stat_card
 from core.i18n import tr
 from core.paths import DATABASE_PATH, PROJECT_ROOT, get_project_root
 from core.admin.common import get_registry_path
+from core.admin.data_ingestion import run_uploaded_source_pipeline
 
 
 def sanitize_uploaded_filename(raw_name: str) -> str:
@@ -25,6 +26,8 @@ def sanitize_uploaded_filename(raw_name: str) -> str:
     return name or "upload"
 
 
+from app.ui.components import get_database_counts as get_live_counts
+from app.views.admin_community import render_community_admin_tab
 from core.auth import (
     create_user_account,
     list_users,
@@ -255,7 +258,7 @@ def run_validation_checks() -> pd.DataFrame:
     else:
         add_check("Ranked associations not empty", "passed", f"{len(df)} rows")
 
-    required_cols = ["rsid", "gene_symbol", "disease_name", "p_value", "importance_score"]
+    required_cols = ["rsid", "gene_symbol", "disease_name", "p_value", "evidence_tier"]
     missing_cols = [c for c in required_cols if c not in df.columns]
 
     if missing_cols:
@@ -274,11 +277,11 @@ def run_validation_checks() -> pd.DataFrame:
         status = "passed" if invalid_p == 0 else "warning"
         add_check("p-value numeric validation", status, f"{invalid_p} invalid p-value entries")
 
-    if "importance_score" in df.columns:
-        score_numeric = pd.to_numeric(df["importance_score"], errors="coerce")
-        invalid_score = int(score_numeric.isna().sum())
-        status = "passed" if invalid_score == 0 else "warning"
-        add_check("Importance score validation", status, f"{invalid_score} invalid score entries")
+    if "evidence_tier" in df.columns:
+        tiers = pd.to_numeric(df["evidence_tier"], errors="coerce")
+        invalid_tier = int((~tiers.isin([0, 1, 2, 3])).sum())
+        status = "passed" if invalid_tier == 0 else "warning"
+        add_check("Evidence level validation", status, f"{invalid_tier} invalid evidence levels")
 
     duplicate_cols = [c for c in ["disease_name", "rsid", "gene_symbol"] if c in df.columns]
 
@@ -308,7 +311,8 @@ def _object_count(counts_df: pd.DataFrame, table: str) -> int:
 
 
 def render_overview_tab():
-    counts_df = get_database_counts()
+    live = get_live_counts()
+    counts_df = pd.DataFrame([{"object": k, "count": v} for k, v in live.items()])
     users_df = list_users()
     registry_df = load_registry()
 
@@ -353,9 +357,9 @@ def render_sources_tab():
     registry_df = load_registry()
 
     if registry_df.empty:
-        st.warning("لا يوجد سجل مصادر بيانات.")
+        st.warning(tr("لا يوجد سجل مصادر بيانات.", "No data source registry found."))
     else:
-        st.info("يمكن تعديل حالة المصدر أو ملاحظاته ثم الضغط على Save Registry.")
+        st.info(tr("يمكن تعديل حالة المصدر أو ملاحظاته ثم الضغط على Save Registry.", "Edit a source's status or notes, then save the registry."))
 
         edited_df = st.data_editor(
             registry_df,
@@ -366,7 +370,7 @@ def render_sources_tab():
 
         if st.button(tr("حفظ سجل المصادر", "Save Registry"), key=f"{ADMIN_VERSION}_save_registry"):
             save_registry(edited_df)
-            st.success("تم حفظ سجل مصادر البيانات بنجاح.")
+            st.success(tr("تم حفظ سجل مصادر البيانات بنجاح.", "Data source registry saved."))
 
     st.divider()
 
@@ -374,7 +378,8 @@ def render_sources_tab():
 
     uploaded_file = st.file_uploader(
         tr("رفع ملف بيانات خام", "Upload raw data file"),
-        type=["csv", "tsv", "txt", "json"],
+        type=["csv", "tsv", "txt", "xlsx"],
+        help=tr("أعمدة مطلوبة: rsid، المرض، الجين، قيمة p", "Required columns: rsid, disease, gene, p-value"),
         key=f"{ADMIN_VERSION}_raw_upload"
     )
 
@@ -385,7 +390,7 @@ def render_sources_tab():
     )
 
     if uploaded_file is not None:
-        if st.button(tr("تسجيل الملف", "Register Uploaded File"), key=f"{ADMIN_VERSION}_register_upload"):
+        if st.button(tr("رفع ومعالجة الملف", "Upload and process"), key=f"{ADMIN_VERSION}_register_upload"):
             project_root = get_project_root()
             upload_dir = project_root / "data" / "raw" / "admin_uploaded"
             upload_dir.mkdir(parents=True, exist_ok=True)
@@ -395,25 +400,28 @@ def render_sources_tab():
 
             target_path.write_bytes(uploaded_file.getvalue())
 
-            registry_df = load_registry()
+            try:
+                with st.spinner(tr("نتحقق من الملف ونعالجه…", "Validating and processing the file…")):
+                    result = run_uploaded_source_pipeline(
+                        target_path,
+                        uploaded_by=(get_current_user() or {}).get("username", "admin"),
+                        source_name=source_name,
+                    )
+            except Exception as exc:
+                st.error(f"{tr('تعذرت معالجة الملف: ', 'Could not process the file: ')}{exc}")
+                return
 
-            new_row = {
-                "source_id": f"SRC_UPLOAD_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
-                "source_name": source_name,
-                "category": "Uploaded raw file",
-                "status": "uploaded",
-                "enabled": "N",
-                "last_update": datetime.now().strftime("%Y-%m-%d"),
-                "reliability": "pending",
-                "raw_path": str(target_path.relative_to(project_root)),
-                "processed_path": "",
-                "notes": "Uploaded through Admin Dashboard prototype."
-            }
+            if result["status"] != "processed":
+                missing = ", ".join(result["report"].get("missing_required_columns", []))
+                st.error(f"{tr('الملف ينقصه أعمدة أساسية: ', 'The file is missing required columns: ')}{missing}")
+                return
 
-            registry_df = pd.concat([registry_df, pd.DataFrame([new_row])], ignore_index=True)
-            save_registry(registry_df)
-
-            st.success(f"تم رفع وتسجيل الملف: {target_path.name}")
+            st.success(tr(
+                f"تمت المعالجة: {result['accepted_rows']} صف مقبول و {result['rejected_rows']} صف مرفوض. "
+                "المصدر الآن في «الموافقات» بانتظار المراجعة.",
+                f"Processed: {result['accepted_rows']} rows accepted, {result['rejected_rows']} rejected. "
+                "The source is now waiting in Approvals.",
+            ))
 
 
 def render_validation_tab():
@@ -422,7 +430,7 @@ def render_validation_tab():
     validation_df = run_validation_checks()
 
     if validation_df.empty:
-        st.warning("لا توجد نتائج تحقق.")
+        st.warning(tr("لا توجد نتائج تحقق.", "No validation results."))
         return
 
     st.dataframe(validation_df, width="stretch", hide_index=True)
@@ -447,7 +455,7 @@ def render_files_tab():
     files_df = scan_project_files()
 
     if files_df.empty:
-        st.warning("لا توجد ملفات للعرض.")
+        st.warning(tr("لا توجد ملفات للعرض.", "No files to show."))
         return
 
     st.dataframe(files_df, width="stretch", hide_index=True)
@@ -470,17 +478,17 @@ def render_run_controls_tab():
 
     if st.button(tr("تشغيل فحص البيانات", "Run Validation Checks"), key=f"{ADMIN_VERSION}_run_validation_button"):
         validation_df = run_validation_checks()
-        st.success("تم تشغيل فحوصات التحقق.")
+        st.success(tr("تم تشغيل فحوصات التحقق.", "Validation checks ran."))
         st.dataframe(validation_df, width="stretch", hide_index=True)
 
     ranked_path = get_ranked_path()
 
     if ranked_path.exists():
         modified = datetime.fromtimestamp(ranked_path.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")
-        st.write("**Ranked file:**", str(ranked_path.relative_to(get_project_root())))
-        st.write("**Last modified:**", modified)
+        st.write(tr("**ملف النتائج المرتبة:**", "**Ranked file:**"), str(ranked_path.relative_to(get_project_root())))
+        st.write(tr("**آخر تعديل:**", "**Last modified:**"), modified)
     else:
-        st.warning("ملف ranked_associations_initial.csv غير موجود.")
+        st.warning(tr("ملف ranked_associations_initial.csv غير موجود.", "ranked_associations_initial.csv not found."))
 
 
 def render_users_tab():
@@ -491,8 +499,7 @@ def render_users_tab():
     actor_username = current_user.get("username", "admin")
 
     st.info(
-        "هذه اللوحة متاحة فقط بعد تسجيل الدخول بحساب مسؤول النظام. "
-            "يمكن استخدامها لإضافة حسابات المسؤولين والمستخدمين، وتحديث الأدوار والصلاحيات، وتعطيل الحسابات، وإعادة تعيين كلمات المرور."
+        tr("هذه اللوحة متاحة فقط بعد تسجيل الدخول بحساب مسؤول النظام. يمكن استخدامها لإضافة حسابات المسؤولين والمستخدمين، وتحديث الأدوار والصلاحيات، وتعطيل الحسابات، وإعادة تعيين كلمات المرور.", "Available to administrators only. Add admin and user accounts, change roles, disable accounts and reset passwords.")
     )
 
     tab_add_user, tab_manage_users, tab_audit_logs = st.tabs([
@@ -542,11 +549,11 @@ def render_users_tab():
 
         if submit_new_user:
             if not new_username.strip():
-                st.error("اسم المستخدم مطلوب.")
+                st.error(tr("اسم المستخدم مطلوب.", "Username is required."))
             elif len(new_password) < 8:
-                st.error("كلمة المرور يجب أن تكون 8 أحرف على الأقل.")
+                st.error(tr("كلمة المرور يجب أن تكون 8 أحرف على الأقل.", "Password must be at least 8 characters."))
             elif new_password != confirm_password:
-                st.error("كلمتا المرور غير متطابقتين.")
+                st.error(tr("كلمتا المرور غير متطابقتين.", "Passwords do not match."))
             else:
                 try:
                     create_user_account(
@@ -556,10 +563,10 @@ def render_users_tab():
                         is_active=1 if new_is_active else 0,
                         actor_username=actor_username
                     )
-                    st.success(f"تم إنشاء الحساب بنجاح: {new_username} ({new_role})")
+                    st.success(f"{tr('تم إنشاء الحساب بنجاح: ', 'Account created: ')}{new_username} ({new_role})")
                     st.rerun()
                 except Exception as exc:
-                    st.error(f"لم يتم إنشاء الحساب: {exc}")
+                    st.error(f"{tr('لم يتم إنشاء الحساب: ', 'Account not created: ')}{exc}")
 
     with tab_manage_users:
         st.markdown("##### " + tr("الحسابات الحالية", "Existing Accounts"))
@@ -567,7 +574,7 @@ def render_users_tab():
         users_df = list_users()
 
         if users_df.empty:
-            st.warning("لا توجد حسابات مستخدمين.")
+            st.warning(tr("لا توجد حسابات مستخدمين.", "No user accounts."))
         else:
             st.dataframe(users_df, width="stretch", hide_index=True)
 
@@ -581,7 +588,7 @@ def render_users_tab():
                 options[label] = int(row["user_id"])
 
             selected_label = st.selectbox(
-                tr("اختاري الحساب", "Select account"),
+                tr("اختر الحساب", "Select account"),
                 list(options.keys()),
                 key="selected_user"
             )
@@ -590,9 +597,9 @@ def render_users_tab():
             selected_row = users_df[users_df["user_id"] == selected_user_id].iloc[0].to_dict()
 
             st.caption(
-                f"Selected: {selected_row['username']} | "
-                f"Current role: {selected_row['role']} | "
-                f"Active: {selected_row['is_active']}"
+                f"{tr('المحدد: ', 'Selected: ')}{selected_row['username']} | "
+                f"{tr('الصلاحية الحالية', 'Current role')}: {selected_row['role']} | "
+                f"{tr('مفعّل', 'Active')}: {selected_row['is_active']}"
             )
 
             role_options = ["admin", "user", "guest"]
@@ -620,10 +627,10 @@ def render_users_tab():
                             new_role=selected_new_role,
                             actor_username=actor_username
                         )
-                        st.success("تم تحديث الصلاحية.")
+                        st.success(tr("تم تحديث الصلاحية.", "Role updated."))
                         st.rerun()
                     except Exception as exc:
-                        st.error(f"تعذر تحديث الصلاحية: {exc}")
+                        st.error(f"{tr('تعذر تحديث الصلاحية: ', 'Could not update the role: ')}{exc}")
 
             with c2:
                 current_active = int(selected_row.get("is_active", 1))
@@ -648,10 +655,10 @@ def render_users_tab():
                             is_active=1 if selected_status == "Active" else 0,
                             actor_username=actor_username
                         )
-                        st.success("تم تحديث حالة الحساب.")
+                        st.success(tr("تم تحديث حالة الحساب.", "Account status updated."))
                         st.rerun()
                     except Exception as exc:
-                        st.error(f"تعذر تحديث حالة الحساب: {exc}")
+                        st.error(f"{tr('تعذر تحديث حالة الحساب: ', 'Could not update the account status: ')}{exc}")
 
             st.divider()
 
@@ -677,9 +684,9 @@ def render_users_tab():
 
             if submit_reset:
                 if len(reset_password_value) < 8:
-                    st.error("كلمة المرور يجب أن تكون 8 أحرف على الأقل.")
+                    st.error(tr("كلمة المرور يجب أن تكون 8 أحرف على الأقل.", "Password must be at least 8 characters."))
                 elif reset_password_value != reset_password_confirm:
-                    st.error("كلمتا المرور غير متطابقتين.")
+                    st.error(tr("كلمتا المرور غير متطابقتين.", "Passwords do not match."))
                 else:
                     try:
                         reset_user_password(
@@ -687,9 +694,9 @@ def render_users_tab():
                             new_password=reset_password_value,
                             actor_username=actor_username
                         )
-                        st.success("تم تغيير كلمة المرور بنجاح.")
+                        st.success(tr("تم تغيير كلمة المرور بنجاح.", "Password changed."))
                     except Exception as exc:
-                        st.error(f"تعذر تغيير كلمة المرور: {exc}")
+                        st.error(f"{tr('تعذر تغيير كلمة المرور: ', 'Could not change the password: ')}{exc}")
 
     with tab_audit_logs:
         st.markdown("##### " + tr("آخر عمليات الأدمن", "Recent Admin Actions"))
@@ -697,7 +704,7 @@ def render_users_tab():
         logs_df = get_admin_action_logs(limit=100)
 
         if logs_df.empty:
-            st.warning("لا توجد سجلات عمليات بعد.")
+            st.warning(tr("لا توجد سجلات عمليات بعد.", "No actions logged yet."))
         else:
             st.dataframe(logs_df, width="stretch", hide_index=True)
 
@@ -718,19 +725,17 @@ def render_approvals_tab():
     section_title(tr("الموافقة على مصادر البيانات", "Source Approval & Staging"))
 
     st.info(
-        "يمكن مراجعة مصادر البيانات المعالجة هنا. "
-        "عند الموافقة على المصدر يتم إنشاء ملف مرحلي فقط، "
-        "ولا يصبح المصدر متاحًا في صفحة البحث إلا بعد تنفيذ خطوة الدمج النهائية."
+        tr("يمكن مراجعة مصادر البيانات المعالجة هنا. عند الموافقة على المصدر يتم إنشاء ملف مرحلي فقط، ولا يصبح المصدر متاحًا في صفحة البحث إلا بعد تنفيذ خطوة الدمج النهائية.", "Review processed data sources here. Approving a source only creates a staging file; it reaches the Search page after the final merge step.")
     )
 
     try:
         review_df = list_sources_for_review()
     except Exception as exc:
-        st.error(f"Could not load sources for review: {exc}")
+        st.error(f"{tr('تعذر تحميل المصادر للمراجعة: ', 'Could not load sources for review: ')}{exc}")
         return
 
     if review_df.empty:
-        st.warning("لا توجد مصادر جاهزة للمراجعة حاليًا.")
+        st.warning(tr("لا توجد مصادر جاهزة للمراجعة حاليًا.", "No sources waiting for review."))
         return
 
     st.markdown("##### " + tr("مصادر بانتظار المراجعة", "Sources for Review"))
@@ -748,7 +753,7 @@ def render_approvals_tab():
         options[label] = source_id
 
     selected_label = st.selectbox(
-        tr("اختاري المصدر", "Select source"),
+        tr("اختر المصدر", "Select source"),
         list(options.keys()),
         key="selected_source_for_approval"
     )
@@ -760,7 +765,7 @@ def render_approvals_tab():
     ]
 
     if selected_row.empty:
-        st.error("Selected source not found.")
+        st.error(tr("المصدر المحدد غير موجود.", "Selected source not found."))
         return
 
     selected_status = str(selected_row.iloc[0].get("status", "")).lower()
@@ -779,35 +784,35 @@ def render_approvals_tab():
             processed_df = load_processed_rows_for_source(selected_source_id)
 
             if processed_df.empty:
-                st.caption("لا يوجد ملف processed أو الملف فارغ.")
+                st.caption(tr("لا يوجد ملف processed أو الملف فارغ.", "No processed file, or it is empty."))
             else:
-                st.caption(f"Processed rows: {len(processed_df)}")
+                st.caption(f"{tr('الصفوف المعالجة: ', 'Processed rows: ')}{len(processed_df)}")
                 st.dataframe(processed_df.head(100), width="stretch", hide_index=True)
         except Exception as exc:
-            st.error(f"Could not load processed rows: {exc}")
+            st.error(f"{tr('تعذر تحميل الصفوف المعالجة: ', 'Could not load processed rows: ')}{exc}")
 
     with report_tabs[1]:
         try:
             rejected_df = load_rejected_rows_for_source(selected_source_id)
 
             if rejected_df.empty:
-                st.caption("لا توجد صفوف مرفوضة أو التقرير غير موجود.")
+                st.caption(tr("لا توجد صفوف مرفوضة أو التقرير غير موجود.", "No rejected rows, or the report is missing."))
             else:
-                st.caption(f"Rejected rows: {len(rejected_df)}")
+                st.caption(f"{tr('الصفوف المرفوضة: ', 'Rejected rows: ')}{len(rejected_df)}")
                 st.dataframe(rejected_df.head(100), width="stretch", hide_index=True)
         except Exception as exc:
-            st.error(f"Could not load rejected rows: {exc}")
+            st.error(f"{tr('تعذر تحميل الصفوف المرفوضة: ', 'Could not load rejected rows: ')}{exc}")
 
     with report_tabs[2]:
         try:
             validation_df = load_validation_report_for_source(selected_source_id)
 
             if validation_df.empty:
-                st.caption("تقرير التحقق غير موجود.")
+                st.caption(tr("تقرير التحقق غير موجود.", "Validation report not found."))
             else:
                 st.dataframe(validation_df, width="stretch", hide_index=True)
         except Exception as exc:
-            st.error(f"Could not load validation report: {exc}")
+            st.error(f"{tr('تعذر تحميل تقرير التحقق: ', 'Could not load validation report: ')}{exc}")
 
     st.divider()
     st.markdown("##### " + tr("قرار الأدمن", "Decision"))
@@ -837,11 +842,11 @@ def render_approvals_tab():
                     approved_by=actor_username,
                     notes=notes
                 )
-                st.success("تمت الموافقة وإنشاء ملف Staging بنجاح.")
+                st.success(tr("تمت الموافقة وإنشاء ملف Staging بنجاح.", "Approved; staging file created."))
                 st.code(str(staging_path), language="text")
                 st.rerun()
             except Exception as exc:
-                st.error(f"Approval failed: {exc}")
+                st.error(f"{tr('فشلت الموافقة: ', 'Approval failed: ')}{exc}")
 
     with c2:
         reject_disabled = selected_status not in ["processed", "pending_approval", "approved"]
@@ -856,12 +861,12 @@ def render_approvals_tab():
                 reject_source(
                     source_id=selected_source_id,
                     rejected_by=actor_username,
-                    reason=notes if notes else "Rejected by admin during Day 40 review."
+                    reason=notes if notes else "Rejected by admin."
                 )
-                st.warning("تم رفض المصدر.")
+                st.warning(tr("تم رفض المصدر.", "Source rejected."))
                 st.rerun()
             except Exception as exc:
-                st.error(f"Reject failed: {exc}")
+                st.error(f"{tr('فشل الرفض: ', 'Reject failed: ')}{exc}")
 
     st.divider()
 
@@ -872,28 +877,26 @@ def render_approvals_tab():
     ):
         try:
             snapshot_path = export_review_snapshot()
-            st.success("تم تصدير لقطة المراجعة.")
+            st.success(tr("تم تصدير لقطة المراجعة.", "Review snapshot exported."))
             st.code(str(snapshot_path), language="text")
         except Exception as exc:
-            st.error(f"Snapshot export failed: {exc}")
+            st.error(f"{tr('فشل تصدير اللقطة: ', 'Snapshot export failed: ')}{exc}")
 
 
 def render_online_updates_tab():
     """Controlled Online Source Update through Admin only."""
     project_root = PROJECT_ROOT
 
-    st.markdown("### التحديثات الأونلاين لمصادر البيانات")
+    st.markdown(tr("### التحديثات الأونلاين لمصادر البيانات", "### Online data source updates"))
 
     st.info(
-        "يمكن للأدمن تشغيل تحديث أونلاين مضبوط من مصدر بيانات علمي. "
-        "يتم حفظ نسخة خام من المصدر، ثم تمريرها إلى مسار التحقق والتنظيف والمعالجة. "
-        "لا يتم دمج البيانات في صفحة البحث تلقائيًا، بل تحتاج لاحقًا إلى مراجعة وموافقة ودمج."
+        tr("يمكن للأدمن تشغيل تحديث أونلاين مضبوط من مصدر بيانات علمي. يتم حفظ نسخة خام من المصدر، ثم تمريرها إلى مسار التحقق والتنظيف والمعالجة. لا يتم دمج البيانات في صفحة البحث تلقائيًا، بل تحتاج لاحقًا إلى مراجعة وموافقة ودمج.", "Run a controlled online update from a scientific data source. A raw copy is saved and passed through validation, cleaning and processing. Nothing is merged into Search automatically: it still needs review, approval and merge.")
     )
 
-    st.markdown("#### إعدادات المصدر الأونلاين")
+    st.markdown(tr("#### إعدادات المصدر الأونلاين", "#### Online source settings"))
 
     gwas_url = st.text_input(
-        "رابط المصدر الأونلاين",
+        tr("رابط المصدر الأونلاين", "Online source URL"),
         value=DEFAULT_GWAS_ASSOCIATIONS_URL,
         key="gwas_url"
     )
@@ -902,7 +905,7 @@ def render_online_updates_tab():
 
     with c1:
         max_lines = st.number_input(
-            "الحد الأقصى لعدد الأسطر المحمّلة",
+            tr("الحد الأقصى لعدد الأسطر المحمّلة", "Maximum lines to download"),
             min_value=100,
             max_value=20000,
             value=1500,
@@ -912,7 +915,7 @@ def render_online_updates_tab():
 
     with c2:
         max_rows = st.number_input(
-            "الحد الأقصى للصفوف المعالجة",
+            tr("الحد الأقصى للصفوف المعالجة", "Maximum rows to process"),
             min_value=50,
             max_value=5000,
             value=300,
@@ -924,43 +927,43 @@ def render_online_updates_tab():
     actor_username = current_user.get("username", "admin")
 
     if st.button(
-        "تشغيل التحديث الأونلاين",
+        tr("تشغيل التحديث الأونلاين", "Run online update"),
         width="stretch",
         key="run_online_gwas_update"
     ):
         try:
-            with st.spinner("جاري تحميل ومعالجة المصدر الأونلاين..."):
+            with st.spinner(tr("جاري تحميل ومعالجة المصدر الأونلاين...", "Downloading and processing the online source...")):
                 result = run_gwas_online_update(
                     url=gwas_url,
                     max_lines=int(max_lines),
                     max_rows_for_processing=int(max_rows),
                     uploaded_by=actor_username,
-                    notes="Day 41 online source update from Admin Dashboard. Not merged into Search."
+                    notes="Online source update from the admin dashboard. Not merged into Search."
                 )
 
-            st.success("تم تنفيذ التحديث الأونلاين وحفظ النتائج.")
-            st.write("الحالة:", result.get("status"))
+            st.success(tr("تم تنفيذ التحديث الأونلاين وحفظ النتائج.", "Online update finished and saved."))
+            st.write(tr("الحالة:", "Status:"), result.get("status"))
 
             raw_path = result.get("raw_snapshot_path")
             converted_path = result.get("converted_ingestion_path")
             log_path = result.get("online_update_log_path")
 
             if raw_path:
-                st.markdown("**مسار النسخة الخام:**")
+                st.markdown(tr("**مسار النسخة الخام:**", "**Raw copy path:**"))
                 st.code(str(raw_path), language="text")
 
             if converted_path:
-                st.markdown("**مسار الملف المحوّل للمعالجة:**")
+                st.markdown(tr("**مسار الملف المحوّل للمعالجة:**", "**Converted file path:**"))
                 st.code(str(converted_path), language="text")
 
             if log_path:
-                st.markdown("**مسار سجل التحديث:**")
+                st.markdown(tr("**مسار سجل التحديث:**", "**Update log path:**"))
                 st.code(str(log_path), language="text")
 
             pipeline_result = result.get("pipeline_result", {})
 
             if pipeline_result:
-                st.markdown("#### نتيجة المعالجة")
+                st.markdown(tr("#### نتيجة المعالجة", "#### Processing result"))
                 st.json({
                     "source_id": pipeline_result.get("source_id"),
                     "status": pipeline_result.get("status"),
@@ -972,10 +975,10 @@ def render_online_updates_tab():
             st.rerun()
 
         except Exception as exc:
-            st.error(f"فشل التحديث الأونلاين: {exc}")
+            st.error(f"{tr('فشل التحديث الأونلاين: ', 'Online update failed: ')}{exc}")
 
     st.divider()
-    st.markdown("#### سجل آخر مصادر الأونلاين")
+    st.markdown(tr("#### سجل آخر مصادر الأونلاين", "#### Recent online sources"))
 
     try:
         registry_path = project_root / "data" / "metadata" / "data_sources_registry.csv"
@@ -991,26 +994,24 @@ def render_online_updates_tab():
                 ].copy()
 
                 if online_df.empty:
-                    st.caption("لا توجد مصادر أونلاين مسجلة بعد.")
+                    st.caption(tr("لا توجد مصادر أونلاين مسجلة بعد.", "No online sources recorded yet."))
                 else:
                     st.dataframe(online_df.tail(20), width="stretch", hide_index=True)
             else:
-                st.caption("لا يوجد عمود source_type داخل سجل مصادر البيانات.")
+                st.caption(tr("لا يوجد عمود source_type داخل سجل مصادر البيانات.", "The registry has no source_type column."))
         else:
-            st.caption("ملف سجل مصادر البيانات غير موجود.")
+            st.caption(tr("ملف سجل مصادر البيانات غير موجود.", "Data source registry file not found."))
 
     except Exception as exc:
-        st.error(f"تعذر عرض سجل التحديثات: {exc}")
+        st.error(f"{tr('تعذر عرض سجل التحديثات: ', 'Could not show the update log: ')}{exc}")
 
 
 def render_final_merge_tab():
     """Final Merge + Rollback."""
-    st.markdown("### الدمج النهائي والتراجع")
+    st.markdown(tr("### الدمج النهائي والتراجع", "### Final merge and rollback"))
 
     st.info(
-        "هذه الصفحة مخصصة لتنفيذ الدمج النهائي للمصادر الموافق عليها فقط. "
-        "قبل الدمج يتم إنشاء نسخة احتياطية من ملف البحث الحالي. "
-        "بعد الدمج يصبح المصدر نشطًا في صفحة البحث. يمكن تنفيذ التراجع عند الحاجة لاستعادة النسخة السابقة."
+        tr("هذه الصفحة مخصصة لتنفيذ الدمج النهائي للمصادر الموافق عليها فقط. قبل الدمج يتم إنشاء نسخة احتياطية من ملف البحث الحالي. بعد الدمج يصبح المصدر نشطًا في صفحة البحث. يمكن تنفيذ التراجع عند الحاجة لاستعادة النسخة السابقة.", "Final merge of approved sources only. A backup of the current search file is made first; after merging, the source is live in Search. Roll back at any time to restore the previous version.")
     )
 
     current_user = get_current_user() or {}
@@ -1022,16 +1023,16 @@ def render_final_merge_tab():
     ])
 
     with merge_tab:
-        st.markdown("#### المصادر الموافق عليها")
+        st.markdown(tr("#### المصادر الموافق عليها", "#### Approved sources"))
 
         try:
             approved_df = list_approved_sources()
         except Exception as exc:
-            st.error(f"تعذر تحميل المصادر الموافق عليها: {exc}")
+            st.error(f"{tr('تعذر تحميل المصادر الموافق عليها: ', 'Could not load approved sources: ')}{exc}")
             return
 
         if approved_df.empty:
-            st.warning("لا توجد مصادر موافق عليها جاهزة للدمج النهائي.")
+            st.warning(tr("لا توجد مصادر موافق عليها جاهزة للدمج النهائي.", "No approved sources ready to merge."))
         else:
             st.dataframe(approved_df, width="stretch", hide_index=True)
 
@@ -1046,14 +1047,14 @@ def render_final_merge_tab():
                 options[label] = source_id
 
             selected_label = st.selectbox(
-                "اختر المصدر المراد دمجه",
+                tr("اختر المصدر المراد دمجه", "Source to merge"),
                 list(options.keys()),
                 key="selected_source_for_merge"
             )
 
             selected_source_id = options[selected_label]
 
-            st.markdown("#### فحص ملف Staging قبل الدمج")
+            st.markdown(tr("#### فحص ملف Staging قبل الدمج", "#### Check the staging file before merging"))
 
             selected_row = approved_df[
                 approved_df["source_id"].astype(str).eq(str(selected_source_id))
@@ -1062,7 +1063,7 @@ def render_final_merge_tab():
             staging_path_value = str(selected_row.get("staging_path", "")).strip()
 
             if not staging_path_value:
-                st.error("لا يوجد مسار Staging لهذا المصدر.")
+                st.error(tr("لا يوجد مسار Staging لهذا المصدر.", "This source has no staging path."))
             else:
                 staging_path = PROJECT_ROOT / staging_path_value
 
@@ -1072,25 +1073,25 @@ def render_final_merge_tab():
                     st.json(report)
 
                     if report.get("is_valid"):
-                        st.success("ملف Staging صالح للدمج النهائي.")
+                        st.success(tr("ملف Staging صالح للدمج النهائي.", "Staging file is valid for merging."))
                     else:
-                        st.error("ملف Staging غير صالح للدمج النهائي.")
+                        st.error(tr("ملف Staging غير صالح للدمج النهائي.", "Staging file is not valid for merging."))
 
                 except Exception as exc:
-                    st.error(f"تعذر فحص ملف Staging: {exc}")
+                    st.error(f"{tr('تعذر فحص ملف Staging: ', 'Could not check the staging file: ')}{exc}")
 
             merge_notes = st.text_area(
-                "ملاحظات الدمج",
+                tr("ملاحظات الدمج", "Merge notes"),
                 key="merge_notes"
             )
 
             confirm_merge = st.checkbox(
-                "أؤكد تنفيذ الدمج النهائي لهذا المصدر",
+                tr("أؤكد تنفيذ الدمج النهائي لهذا المصدر", "I confirm the final merge of this source"),
                 key="confirm_final_merge"
             )
 
             if st.button(
-                "تنفيذ الدمج النهائي",
+                tr("تنفيذ الدمج النهائي", "Run final merge"),
                 width="stretch",
                 key="final_merge_button",
                 disabled=not confirm_merge
@@ -1102,7 +1103,7 @@ def render_final_merge_tab():
                         notes=merge_notes
                     )
 
-                    st.success("تم الدمج النهائي بنجاح. أصبح المصدر نشطًا في صفحة البحث.")
+                    st.success(tr("تم الدمج النهائي بنجاح. أصبح المصدر نشطًا في صفحة البحث.", "Final merge done. The source is now live in Search."))
                     st.json({
                         "source_id": result.get("source_id"),
                         "status": result.get("status"),
@@ -1114,19 +1115,19 @@ def render_final_merge_tab():
                     st.rerun()
 
                 except Exception as exc:
-                    st.error(f"فشل الدمج النهائي: {exc}")
+                    st.error(f"{tr('فشل الدمج النهائي: ', 'Final merge failed: ')}{exc}")
 
     with rollback_tab:
-        st.markdown("#### المصادر المدمجة")
+        st.markdown(tr("#### المصادر المدمجة", "#### Merged sources"))
 
         try:
             merged_df = list_merged_sources()
         except Exception as exc:
-            st.error(f"تعذر تحميل المصادر المدمجة: {exc}")
+            st.error(f"{tr('تعذر تحميل المصادر المدمجة: ', 'Could not load merged sources: ')}{exc}")
             return
 
         if merged_df.empty:
-            st.warning("لا توجد مصادر مدمجة حاليًا.")
+            st.warning(tr("لا توجد مصادر مدمجة حاليًا.", "No merged sources."))
         else:
             st.dataframe(merged_df, width="stretch", hide_index=True)
 
@@ -1141,7 +1142,7 @@ def render_final_merge_tab():
                 rollback_options[label] = source_id
 
             selected_rollback_label = st.selectbox(
-                "اختر المصدر المراد التراجع عنه",
+                tr("اختر المصدر المراد التراجع عنه", "Source to roll back"),
                 list(rollback_options.keys()),
                 key="selected_source_for_rollback"
             )
@@ -1149,17 +1150,17 @@ def render_final_merge_tab():
             rollback_source_id = rollback_options[selected_rollback_label]
 
             rollback_notes = st.text_area(
-                "ملاحظات التراجع",
+                tr("ملاحظات التراجع", "Rollback notes"),
                 key="rollback_notes"
             )
 
             confirm_rollback = st.checkbox(
-                "أؤكد تنفيذ التراجع واستعادة النسخة السابقة",
+                tr("أؤكد تنفيذ التراجع واستعادة النسخة السابقة", "I confirm the rollback and restoring the previous version"),
                 key="confirm_rollback"
             )
 
             if st.button(
-                "تنفيذ التراجع",
+                tr("تنفيذ التراجع", "Run rollback"),
                 width="stretch",
                 key="rollback_button",
                 disabled=not confirm_rollback
@@ -1171,7 +1172,7 @@ def render_final_merge_tab():
                         notes=rollback_notes
                     )
 
-                    st.warning("تم تنفيذ التراجع واستعادة النسخة السابقة.")
+                    st.warning(tr("تم تنفيذ التراجع واستعادة النسخة السابقة.", "Rolled back; previous version restored."))
                     st.json({
                         "source_id": result.get("source_id"),
                         "status": result.get("status"),
@@ -1182,33 +1183,31 @@ def render_final_merge_tab():
                     st.rerun()
 
                 except Exception as exc:
-                    st.error(f"فشل التراجع: {exc}")
+                    st.error(f"{tr('فشل التراجع: ', 'Rollback failed: ')}{exc}")
 
     st.divider()
 
     if st.button(
-        "تصدير لقطة حالة الدمج",
+        tr("تصدير لقطة حالة الدمج", "Export merge status snapshot"),
         width="stretch",
         key="export_merge_snapshot"
     ):
         try:
             snapshot_path = export_merge_snapshot()
-            st.success("تم تصدير لقطة حالة الدمج.")
+            st.success(tr("تم تصدير لقطة حالة الدمج.", "Merge status snapshot exported."))
             st.code(str(snapshot_path), language="text")
         except Exception as exc:
-            st.error(f"فشل تصدير لقطة الدمج: {exc}")
+            st.error(f"{tr('فشل تصدير لقطة الدمج: ', 'Merge snapshot export failed: ')}{exc}")
 
 
 def render_data_management_review_tab():
     """Admin Dashboard final data management review."""
     project_root = PROJECT_ROOT
 
-    st.markdown("### مراجعة إدارة البيانات")
+    st.markdown(tr("### مراجعة إدارة البيانات", "### Data management review"))
 
     st.info(
-        "تعرض هذه الصفحة ملخصًا شاملًا لمسار البيانات داخل المنصة، "
-        "من رفع المصدر أو جلبه أونلاين، مرورًا بالتحقق والمعالجة والموافقة، "
-        "ثم الدمج النهائي أو التراجع عند الحاجة."
+        tr("تعرض هذه الصفحة ملخصًا شاملًا لمسار البيانات داخل المنصة، من رفع المصدر أو جلبه أونلاين، مرورًا بالتحقق والمعالجة والموافقة، ثم الدمج النهائي أو التراجع عند الحاجة.", "An overview of the data workflow: upload or fetch a source, validate, process, approve, then merge or roll back.")
     )
 
     registry_path = project_root / "data" / "metadata" / "data_sources_registry.csv"
@@ -1220,48 +1219,41 @@ def render_data_management_review_tab():
     registry_df = pd.read_csv(registry_path) if registry_path.exists() else pd.DataFrame()
     ranked_df = pd.read_csv(ranked_path) if ranked_path.exists() else pd.DataFrame()
 
-    st.markdown("#### ملخص ملف البحث النشط")
+    st.markdown(tr("#### ملخص ملف البحث النشط", "#### Active search file"))
 
     c1, c2, c3, c4 = st.columns(4)
 
-    c1.metric("صفوف البحث النشط", len(ranked_df))
-    c2.metric("أعمدة ملف البحث", len(ranked_df.columns))
-    c3.metric("مصادر البيانات", len(registry_df))
+    c1.metric(tr("صفوف البحث النشط", "Active search rows"), len(ranked_df))
+    c2.metric(tr("أعمدة ملف البحث", "Search file columns"), len(ranked_df.columns))
+    c3.metric(tr("مصادر البيانات", "Data sources"), len(registry_df))
     c4.metric(
-        "مصادر نشطة",
+        tr("مصادر نشطة", "Active sources"),
         int(registry_df["status"].astype(str).str.lower().isin(["active", "merged"]).sum())
         if not registry_df.empty and "status" in registry_df.columns else 0
     )
 
-    st.markdown("#### مسار البيانات المعتمد")
+    st.markdown(tr("#### مسار البيانات المعتمد", "#### Data workflow"))
 
-    st.markdown(
-        """
-        <div class="data-flow-card">
-            <div class="flow-step">1. رفع ملف أو جلب مصدر أونلاين</div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step">2. التحقق من الأعمدة والقيم الأساسية</div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step">3. التنظيف والتوحيد وإزالة التكرار</div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step">4. حفظ مصدر معالج غير نشط</div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step">5. مراجعة الأدمن والموافقة أو الرفض</div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step">6. إنشاء ملف مرحلي Staging</div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step">7. الدمج النهائي بعد إنشاء نسخة احتياطية</div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step">8. ظهور البيانات في البحث أو التراجع عند الحاجة</div>
-        </div>
-        """,
-        unsafe_allow_html=True
+    flow_steps = [
+        tr("رفع ملف أو جلب مصدر أونلاين", "Upload a file or fetch an online source"),
+        tr("التحقق من الأعمدة والقيم الأساسية", "Validate columns and key values"),
+        tr("التنظيف والتوحيد وإزالة التكرار", "Clean, normalize and deduplicate"),
+        tr("حفظ مصدر معالج غير نشط", "Save as an inactive processed source"),
+        tr("مراجعة الأدمن والموافقة أو الرفض", "Admin review: approve or reject"),
+        tr("إنشاء ملف مرحلي Staging", "Create a staging file"),
+        tr("الدمج النهائي بعد إنشاء نسخة احتياطية", "Final merge after a backup"),
+        tr("ظهور البيانات في البحث أو التراجع عند الحاجة", "Live in Search, or roll back if needed"),
+    ]
+    arrow = '<div class="flow-arrow">↓</div>'
+    flow_html = arrow.join(
+        f'<div class="flow-step">{i}. {html.escape(step)}</div>' for i, step in enumerate(flow_steps, 1)
     )
+    st.markdown(f'<div class="data-flow-card">{flow_html}</div>', unsafe_allow_html=True)
 
-    st.markdown("#### حالة مصادر البيانات")
+    st.markdown(tr("#### حالة مصادر البيانات", "#### Data source status"))
 
     if registry_df.empty:
-        st.warning("لا يوجد سجل مصادر بيانات.")
+        st.warning(tr("لا يوجد سجل مصادر بيانات.", "No data source registry found."))
     else:
         status_tab, source_tab, full_tab = st.tabs([
             "حسب الحالة",
@@ -1275,7 +1267,7 @@ def render_data_management_review_tab():
                 status_df.columns = ["الحالة", "العدد"]
                 st.dataframe(status_df, width="stretch", hide_index=True)
             else:
-                st.caption("لا يوجد عمود status داخل سجل المصادر.")
+                st.caption(tr("لا يوجد عمود status داخل سجل المصادر.", "The registry has no status column."))
 
         with source_tab:
             if "source_type" in registry_df.columns:
@@ -1283,17 +1275,17 @@ def render_data_management_review_tab():
                 source_df.columns = ["نوع المصدر", "العدد"]
                 st.dataframe(source_df, width="stretch", hide_index=True)
             else:
-                st.caption("لا يوجد عمود source_type داخل سجل المصادر.")
+                st.caption(tr("لا يوجد عمود source_type داخل سجل المصادر.", "The registry has no source_type column."))
 
         with full_tab:
             st.dataframe(registry_df.tail(50), width="stretch", hide_index=True)
 
-    st.markdown("#### ملفات النسخ الاحتياطية وسجلات الدمج")
+    st.markdown(tr("#### ملفات النسخ الاحتياطية وسجلات الدمج", "#### Backups and merge logs"))
 
     b1, b2 = st.columns(2)
 
     with b1:
-        st.markdown("##### النسخ الاحتياطية")
+        st.markdown(tr("##### النسخ الاحتياطية", "##### Backups"))
         backup_files = []
 
         if backups_dir.exists():
@@ -1311,10 +1303,10 @@ def render_data_management_review_tab():
             ])
             st.dataframe(backup_df, width="stretch", hide_index=True)
         else:
-            st.caption("لا توجد نسخ احتياطية مسجلة بعد.")
+            st.caption(tr("لا توجد نسخ احتياطية مسجلة بعد.", "No backups recorded yet."))
 
     with b2:
-        st.markdown("##### سجلات الدمج والتراجع")
+        st.markdown(tr("##### سجلات الدمج والتراجع", "##### Merge and rollback logs"))
         log_files = []
 
         if merge_logs_dir.exists():
@@ -1332,12 +1324,12 @@ def render_data_management_review_tab():
             ])
             st.dataframe(log_df, width="stretch", hide_index=True)
         else:
-            st.caption("لا توجد سجلات دمج أو تراجع بعد.")
+            st.caption(tr("لا توجد سجلات دمج أو تراجع بعد.", "No merge or rollback logs yet."))
 
-    st.markdown("#### تصدير تقرير المراجعة")
+    st.markdown(tr("#### تصدير تقرير المراجعة", "#### Export review report"))
 
     if st.button(
-        "تصدير تقرير مراجعة إدارة البيانات",
+        tr("تصدير تقرير مراجعة إدارة البيانات", "Export data management review"),
         width="stretch",
         key="export_data_management_review"
     ):
@@ -1378,49 +1370,47 @@ def render_data_management_review_tab():
             report_path = outputs_dir / "data_management_review_from_ui.csv"
             report_df.to_csv(report_path, index=False, encoding="utf-8-sig")
 
-            st.success("تم تصدير تقرير مراجعة إدارة البيانات.")
+            st.success(tr("تم تصدير تقرير مراجعة إدارة البيانات.", "Data management review exported."))
             st.code(str(report_path), language="text")
 
         except Exception as exc:
-            st.error(f"تعذر تصدير التقرير: {exc}")
+            st.error(f"{tr('تعذر تصدير التقرير: ', 'Could not export the report: ')}{exc}")
 
 
 def render_glossary_tab():
     """قاموس المصطلحات:"""
-    st.markdown("### قاموس المصطلحات الحيوية والجينية")
+    st.markdown(tr("### قاموس المصطلحات الحيوية والجينية", "### Biological and genetic glossary"))
 
     st.info(
-        "يعرض هذا القسم المصطلحات الأساسية المستخدمة في المنصة، "
-        "مع تعريف عربي مبسط وتعريف إنجليزي. "
-        "يُستخدم هذا القاموس كمرجع موحّد للشرح داخل المنصة، بحيث تكون تفسيرات المصطلحات واضحة ومتسقة وآمنة."
+        tr("يعرض هذا القسم المصطلحات الأساسية المستخدمة في المنصة، مع تعريف عربي مبسط وتعريف إنجليزي. يُستخدم هذا القاموس كمرجع موحّد للشرح داخل المنصة، بحيث تكون تفسيرات المصطلحات واضحة ومتسقة وآمنة.", "Core terms used on the platform, with a simple Arabic and an English definition. The glossary is the single reference for explanations, so terms stay clear, consistent and safe.")
     )
 
     try:
         glossary_df = load_glossary(active_only=True)
     except Exception as exc:
-        st.error(f"تعذر تحميل قاموس المصطلحات: {exc}")
+        st.error(f"{tr('تعذر تحميل قاموس المصطلحات: ', 'Could not load the glossary: ')}{exc}")
         return
 
     if glossary_df.empty:
-        st.warning("لا يوجد قاموس مصطلحات حاليًا.")
+        st.warning(tr("لا يوجد قاموس مصطلحات حاليًا.", "No glossary available."))
         return
 
     c1, c2, c3 = st.columns(3)
 
-    c1.metric("عدد المصطلحات", len(glossary_df))
-    c2.metric("عدد الفئات", glossary_df["category"].nunique() if "category" in glossary_df.columns else 0)
+    c1.metric(tr("عدد المصطلحات", "Terms"), len(glossary_df))
+    c2.metric(tr("عدد الفئات", "Categories"), glossary_df["category"].nunique() if "category" in glossary_df.columns else 0)
     c3.metric(
-        "مصطلحات نشطة",
+        tr("مصطلحات نشطة", "Active terms"),
         int(glossary_df["is_active"].astype(str).isin(["1", "True", "true"]).sum())
         if "is_active" in glossary_df.columns else len(glossary_df)
     )
 
-    st.markdown("#### البحث في القاموس")
+    st.markdown(tr("#### البحث في القاموس", "#### Search the glossary"))
 
     query = st.text_input(
-        "اكتب مصطلحًا للبحث",
+        tr("اكتب مصطلحًا للبحث", "Type a term to search"),
         key="glossary_search_query",
-        placeholder="مثال: SNP, p-value, Gene, PRS"
+        placeholder=tr("مثال: SNP, p-value, Gene, PRS", "e.g. SNP, p-value, Gene, PRS")
     )
 
     if query.strip():
@@ -1445,35 +1435,35 @@ def render_glossary_tab():
         hide_index=True
     )
 
-    st.markdown("#### المصطلحات حسب الفئة")
+    st.markdown(tr("#### المصطلحات حسب الفئة", "#### Terms by category"))
 
     if "category" in glossary_df.columns:
         category_df = glossary_df["category"].astype(str).value_counts().reset_index()
-        category_df.columns = ["الفئة", "عدد المصطلحات"]
+        category_df.columns = ["الفئة", tr("عدد المصطلحات", "Terms")]
         st.dataframe(category_df, width="stretch", hide_index=True)
 
-    st.markdown("#### مرجع الشرح الذكي")
+    st.markdown(tr("#### مرجع الشرح الذكي", "#### Reference for AI explanations"))
 
     st.caption(
-        "يُستخدم هذا القاموس كمرجع موحّد لتفسير المصطلحات الحيوية والجينية والإحصائية داخل المنصة، بما يساعد المستخدم على فهم نتائج البحث بطريقة أوضح وأكثر أمانًا."
+        tr("يُستخدم هذا القاموس كمرجع موحّد لتفسير المصطلحات الحيوية والجينية والإحصائية داخل المنصة، بما يساعد المستخدم على فهم نتائج البحث بطريقة أوضح وأكثر أمانًا.", "The glossary is the shared reference for explaining biological, genetic and statistical terms, helping users read results more clearly and safely.")
     )
 
     if st.button(
-        "تصدير ملخص القاموس",
+        tr("تصدير ملخص القاموس", "Export glossary summary"),
         width="stretch",
         key="export_glossary_summary"
     ):
         try:
             summary_path = export_glossary_summary()
-            st.success("تم تصدير ملخص القاموس.")
+            st.success(tr("تم تصدير ملخص القاموس.", "Glossary summary exported."))
             st.code(str(summary_path), language="text")
         except Exception as exc:
-            st.error(f"تعذر تصدير ملخص القاموس: {exc}")
+            st.error(f"{tr('تعذر تصدير ملخص القاموس: ', 'Could not export the glossary summary: ')}{exc}")
 
 
 def render_ai_model_management_tab():
     """AI Model Management tab for local Ollama models."""
-    st.markdown("### إدارة نماذج الذكاء الاصطناعي")
+    st.markdown(tr("### إدارة نماذج الذكاء الاصطناعي", "### AI model management"))
 
     status = get_ollama_status()
     models = list_installed_models() if status.get("running") else []
@@ -1505,8 +1495,7 @@ def render_ai_model_management_tab():
         """
         <style>
         .ai-status-title-card {
-            direction: rtl;
-            background: #FFFFFF;
+                        background: #FFFFFF;
             border: 1px solid #D9E7FA;
             border-radius: 16px;
             padding: 18px 20px;
@@ -1521,8 +1510,7 @@ def render_ai_model_management_tab():
             margin-bottom: 6px;
         }
         .ai-status-title-ar {
-            direction: rtl;
-            text-align: right;
+                        text-align: start;
             color: #0B3978;
             font-size: 1.16rem;
             font-weight: 780;
@@ -1540,7 +1528,7 @@ def render_ai_model_management_tab():
             color: #4B638A;
             font-size: 0.92rem;
             line-height: 1.6;
-            text-align: right;
+            text-align: start;
         }
         .ai-summary-card {
             background: #FFFFFF;
@@ -1574,13 +1562,14 @@ def render_ai_model_management_tab():
             margin-top: 8px;
         }
         </style>
+        """ + f"""
         <div class="ai-status-title-card">
             <div class="ai-status-title-row">
-                <div class="ai-status-title-ar">لوحة حالة الذكاء الاصطناعي</div>
-                <div class="ai-status-title-en">AI Status Dashboard</div>
+                <div class="ai-status-title-ar">{html.escape(tr("لوحة حالة الذكاء الاصطناعي", "AI status"))}</div>
             </div>
             <div class="ai-status-subtitle">
-                متابعة خدمة Ollama، النموذج النشط، والنماذج المحلية المثبتة.
+                {html.escape(tr("متابعة خدمة Ollama، والنموذج النشط، والنماذج المحلية المثبتة.",
+                                "Ollama service, the active model and installed local models."))}
             </div>
         </div>
         """,
@@ -1615,23 +1604,23 @@ def render_ai_model_management_tab():
     with c5:
         st.markdown("##### " + tr("النموذج النشط الحالي", "Current Active Model"))
         if active_model:
-            st.write("Model:", active_model)
-            st.write("Family:", active_info.get("family", ""))
-            st.write("Parameters:", active_info.get("parameters", ""))
-            st.write("Size:", active_info.get("size", ""))
-            st.write("Modified:", active_info.get("modified_at", ""))
+            st.write(tr("النموذج:", "Model:"), active_model)
+            st.write(tr("العائلة:", "Family:"), active_info.get("family", ""))
+            st.write(tr("عدد المعاملات:", "Parameters:"), active_info.get("parameters", ""))
+            st.write(tr("الحجم:", "Size:"), active_info.get("size", ""))
+            st.write(tr("آخر تعديل:", "Modified:"), active_info.get("modified_at", ""))
         else:
-            st.warning("لم يتم اختيار نموذج بعد.")
+            st.warning(tr("لم يتم اختيار نموذج بعد.", "No model selected yet."))
 
     with c6:
         st.markdown("##### " + tr("النموذج الموصى به", "Recommended Model"))
         st.success(recommendation.get("selected_model") or "Gemma 3")
-        st.caption(recommendation.get("reason") or "Fast inference, Arabic support, suitable for local execution.")
+        st.caption(recommendation.get("reason") or tr("سريع، يدعم العربية، ومناسب للتشغيل المحلي.", "Fast inference, Arabic support, suitable for local execution."))
         if last_ai:
-            st.write("Last response time:", last_ai.get("elapsed_seconds", ""))
-            st.write("Last successful request:", last_ai.get("updated_at", ""))
+            st.write(tr("زمن آخر استجابة:", "Last response time:"), last_ai.get("elapsed_seconds", ""))
+            st.write(tr("آخر طلب ناجح:", "Last successful request:"), last_ai.get("updated_at", ""))
         else:
-            st.write("Last AI Response: No requests yet")
+            st.write(tr("آخر استجابة: لا توجد طلبات بعد", "Last AI Response: No requests yet"))
 
     b1, b2, b3 = st.columns(3)
     with b1:
@@ -1643,10 +1632,10 @@ def render_ai_model_management_tab():
     with b3:
         if st.button(tr("اختبار النموذج النشط", "Test Active Model"), width="stretch", key="ai_model_test_active"):
             if active_model:
-                with st.spinner("Testing active model..."):
+                with st.spinner(tr("جارٍ اختبار النموذج النشط...", "Testing active model...")):
                     result = test_model(active_model)
                 if result.get("ok"):
-                    st.success(f"Working | {result.get('elapsed_seconds')} seconds")
+                    st.success(f"{tr('يعمل | ', 'Working | ')}{result.get('elapsed_seconds')}{tr(' ثانية', ' seconds')}")
                     config["last_ai_response"] = {
                         "elapsed_seconds": result.get("elapsed_seconds"),
                         "updated_at": datetime.now().isoformat(timespec="seconds"),
@@ -1656,16 +1645,16 @@ def render_ai_model_management_tab():
                     write_config(config)
                     st.caption(result.get("response", ""))
                 else:
-                    st.error(f"Failed: {result.get('message')}")
+                    st.error(f"{tr('فشل: ', 'Failed: ')}{result.get('message')}")
             else:
-                st.warning("Select an active model first.")
+                st.warning(tr("اختر نموذجًا نشطًا أولًا.", "Select an active model first."))
 
     section_title(tr("النماذج المثبتة", "Installed Models"))
 
     if not status.get("running"):
-        st.error(f"Ollama service is not available: {status.get('error')}")
+        st.error(f"{tr('خدمة Ollama غير متاحة: ', 'Ollama service is not available: ')}{status.get('error')}")
     elif not models:
-        st.warning("No local Ollama models were detected.")
+        st.warning(tr("لم يُعثر على نماذج Ollama محلية.", "No local Ollama models were detected."))
     else:
         rows = []
         for item in models:
@@ -1698,18 +1687,18 @@ def render_ai_model_management_tab():
             result = set_active_model(selected_model)
             if result.get("ok"):
                 st.success(result.get("message"))
-                st.info("AI Explanation will use this model immediately. سيستخدم الشرح الذكي هذا النموذج مباشرة.")
+                st.info(tr("سيستخدم الشرح الذكي هذا النموذج مباشرة.", "AI Explanation will use this model immediately."))
             else:
                 st.error(result.get("message"))
     with a2:
         if st.button(tr("اختبار النموذج المحدد", "Test Selected Model"), width="stretch", key="ai_model_test_selected"):
-            with st.spinner("Testing selected model..."):
+            with st.spinner(tr("جارٍ اختبار النموذج المحدد...", "Testing selected model...")):
                 result = test_model(selected_model)
             if result.get("ok"):
-                st.success(f"Working | {result.get('elapsed_seconds')} seconds")
+                st.success(f"{tr('يعمل | ', 'Working | ')}{result.get('elapsed_seconds')}{tr(' ثانية', ' seconds')}")
                 st.caption(result.get("response", ""))
             else:
-                st.error(f"Failed: {result.get('message')}")
+                st.error(f"{tr('فشل: ', 'Failed: ')}{result.get('message')}")
 
     if recommendation.get("benchmarks"):
         section_title(tr("نتائج قياس الأداء", "Benchmark Results"))
@@ -1718,17 +1707,17 @@ def render_ai_model_management_tab():
     section_title(tr("تثبيت نموذج Ollama جديد", "Install New Ollama Model"))
     model_to_install = st.text_input(
         tr("اسم النموذج", "Model name"),
-        placeholder="gemma3:latest أو qwen3:latest",
+        placeholder=tr("gemma3:latest أو qwen3:latest", "gemma3:latest or qwen3:latest"),
         key="ai_model_install_name",
     )
     if st.button(tr("تثبيت", "Install"), width="stretch", key="ai_model_install_button"):
         model_to_install = model_to_install.strip()
         if not validate_model_name(model_to_install):
-            st.error("Invalid model name. الرجاء إدخال اسم نموذج Ollama صحيح.")
+            st.error(tr("اسم النموذج غير صالح. أدخل اسم نموذج Ollama صحيح.", "Invalid model name. Enter a valid Ollama model name."))
         elif model_to_install in model_names:
-            st.warning("This model is already installed.")
+            st.warning(tr("هذا النموذج مثبت مسبقًا.", "This model is already installed."))
         else:
-            with st.spinner(f"Running ollama pull {model_to_install} ..."):
+            with st.spinner(f"{tr('جارٍ تنفيذ ollama pull ', 'Running ollama pull ')}{model_to_install} ..."):
                 result = install_model(model_to_install)
             if result.get("ok"):
                 st.success(result.get("message"))
@@ -1747,9 +1736,10 @@ def render_admin_dashboard_page():
         icon="🛡️",
     )
 
-    tab_overview, tab_users, tab_data, tab_glossary, tab_ai = st.tabs([
+    tab_overview, tab_users, tab_community, tab_data, tab_glossary, tab_ai = st.tabs([
         tr("📊 نظرة عامة", "📊 Overview"),
         tr("👥 المستخدمون", "👥 Users"),
+        tr("💬 المكتبة والمجتمع", "💬 Library & community"),
         tr("🗂️ إدارة البيانات", "🗂️ Data management"),
         tr("📖 قاموس المصطلحات", "📖 Glossary"),
         tr("🧠 الذكاء الاصطناعي", "🧠 AI models"),
@@ -1759,6 +1749,8 @@ def render_admin_dashboard_page():
         render_overview_tab()
     with tab_users:
         render_users_tab()
+    with tab_community:
+        render_community_admin_tab()
     with tab_data:
         notice(tr(
             "مسار البيانات: رفع المصدر أو جلبه ← التحقق ← الموافقة ← الدمج النهائي (مع إمكانية التراجع).",

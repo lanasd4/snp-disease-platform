@@ -8,6 +8,8 @@ from pathlib import Path
 import re
 import pandas as pd
 
+from core.evidence import sort_by_evidence
+
 from core.diseases import resolve_disease
 from core.paths import get_project_root
 
@@ -99,7 +101,9 @@ def prepare_search_dataframe(df: pd.DataFrame) -> pd.DataFrame:
         "gene_symbol",
         "disease_name",
         "disease_arabic_name",
-        "importance_score",
+        "evidence_tier",
+        "independent_gws_studies",
+        "best_p_value",
         "rank_label",
         "rank_label_arabic",
         "p_value",
@@ -118,10 +122,8 @@ def prepare_search_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     df["_disease_norm"] = df["disease_name"].apply(normalize_text)
     df["_disease_ar_norm"] = df["disease_arabic_name"].apply(normalize_text)
 
-    df["importance_score_numeric"] = pd.to_numeric(
-        df["importance_score"],
-        errors="coerce"
-    ).fillna(0)
+    df["evidence_tier"] = pd.to_numeric(df["evidence_tier"], errors="coerce").fillna(0).astype(int)
+    df["independent_gws_studies"] = pd.to_numeric(df["independent_gws_studies"], errors="coerce").fillna(0).astype(int)
 
     return df
 
@@ -282,10 +284,7 @@ def search_tri_ranked_file(
             }
 
     if not matched.empty:
-        matched = matched.sort_values(
-            "importance_score_numeric",
-            ascending=False
-        ).head(int(limit))
+        matched = sort_by_evidence(matched, within_disease=False).head(int(limit))
 
     helper_cols = [c for c in matched.columns if c.startswith("_")]
     matched = matched.drop(columns=helper_cols, errors="ignore")

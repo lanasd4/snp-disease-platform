@@ -117,7 +117,7 @@ def download_gwas_catalog_raw_sample(
             request = urllib.request.Request(
                 url,
                 headers={
-                    "User-Agent": "SNP-Disease-Platform-Day17/1.0"
+                    "User-Agent": "SNP-Disease-Platform/1.0"
                 }
             )
 
@@ -200,7 +200,6 @@ def download_gwas_catalog_raw_sample(
         "is_partial_sample": True,
         "max_lines_requested": max_lines,
         "lines_saved": line_count,
-        "project_day": 17,
         "stage": "First Real Raw Data Sample",
         "downloaded_at": datetime.now().isoformat(timespec="seconds"),
         "note": "This is a partial raw sample from GWAS Catalog. It is saved as plain TSV and has not been cleaned or normalized."
@@ -297,7 +296,7 @@ def run_gwas_sample_download(max_lines: int = 5000) -> dict:
 def main() -> None:
     result = run_gwas_sample_download(max_lines=5000)
 
-    print("Day 17 GWAS raw sample download completed.")
+    print("GWAS raw sample download completed.")
     print(f"Selected URL: {result['selected_url']}")
     print(f"Raw file: {result['raw_path']}")
     print(f"Metadata file: {result['metadata_path']}")

@@ -14,6 +14,7 @@ import streamlit as st
 
 from app.ui.components import empty_state, notice, page_header, stat_card
 from core.diseases import list_diseases
+from core.evidence import sort_by_evidence
 from core.i18n import is_rtl, tr
 from core.paths import PROJECT_ROOT
 
@@ -91,8 +92,15 @@ def _hex_to_rgba(hex_color: str, alpha: float) -> str:
 # Load platform data
 # -----------------------------
 
-@st.cache_data(show_spinner=False)
 def load_ranked_relationships() -> pd.DataFrame:
+    """Cached until the ranked file changes (e.g. after an admin merge)."""
+    if not RANKED_PATH.exists():
+        return pd.DataFrame()
+    return _load_ranked_relationships(RANKED_PATH.stat().st_mtime_ns)
+
+
+@st.cache_data(show_spinner=False, max_entries=2)
+def _load_ranked_relationships(mtime_ns: int) -> pd.DataFrame:
     if not RANKED_PATH.exists():
         return pd.DataFrame()
 
@@ -105,7 +113,7 @@ def load_ranked_relationships() -> pd.DataFrame:
     disease_ar_col = _first_col(raw, ["disease_arabic_name", "disease_arabic", "arabic_name"])
     gene_col = _first_col(raw, ["gene_symbol", "gene", "mapped_gene"])
     snp_col = _first_col(raw, ["rsid", "rs_id", "snp", "snp_id", "variant_id"])
-    score_col = _first_col(raw, ["importance_score", "score", "ranking_score"])
+    raw = sort_by_evidence(raw) if "evidence_tier" in raw.columns else raw
     p_col = _first_col(raw, ["p_value", "p-value", "pvalue"])
     rank_col = _first_col(raw, ["rank_label", "rank"])
     rank_ar_col = _first_col(raw, ["rank_label_arabic"])
@@ -121,7 +129,8 @@ def load_ranked_relationships() -> pd.DataFrame:
     df["Disease_AR"] = raw[disease_ar_col].apply(lambda x: _clean(x, "")) if disease_ar_col else ""
     df["Gene"] = raw[gene_col].apply(lambda x: _clean(x, "Unknown gene"))
     df["SNP"] = raw[snp_col].apply(lambda x: _clean(x, "Unknown SNP"))
-    df["Importance_Score"] = raw[score_col].apply(lambda x: _to_float(x, 0.0)) if score_col else 0.0
+    df["Evidence_Tier"] = pd.to_numeric(raw.get("evidence_tier", 0), errors="coerce").fillna(0).astype(int)
+    df["Independent_Studies"] = pd.to_numeric(raw.get("independent_gws_studies", 0), errors="coerce").fillna(0).astype(int)
     df["P_value"] = raw[p_col].apply(lambda x: _clean(x, "")) if p_col else ""
     df["Rank_Label"] = raw[rank_col].apply(lambda x: _clean(x, "")) if rank_col else ""
     df["Rank_Label_AR"] = raw[rank_ar_col].apply(lambda x: _clean(x, "")) if rank_ar_col else ""
@@ -134,9 +143,6 @@ def load_ranked_relationships() -> pd.DataFrame:
         (df["SNP"] != "Unknown SNP")
     ].copy()
 
-    df["Importance_Score"] = pd.to_numeric(df["Importance_Score"], errors="coerce").fillna(0.0)
-
-    df = df.sort_values("Importance_Score", ascending=False)
     df = df.drop_duplicates(subset=["Disease", "Gene", "SNP"], keep="first").reset_index(drop=True)
 
     return df
@@ -236,31 +242,22 @@ def build_segmented_circos_figure(
         fig.update_layout(height=760)
         return fig
 
-    # Select strongest entities to avoid overcrowding
+    # Rows are already in evidence order: keep the first entities seen.
     diseases = (
-        df.groupby("Disease")["Importance_Score"]
-        .max()
-        .sort_values(ascending=False)
+        df["Disease"].drop_duplicates()
         .head(max_diseases)
-        .index
         .tolist()
     )
 
     genes = (
-        df.groupby("Gene")["Importance_Score"]
-        .max()
-        .sort_values(ascending=False)
+        df["Gene"].drop_duplicates()
         .head(max_genes)
-        .index
         .tolist()
     )
 
     snps = (
-        df.groupby("SNP")["Importance_Score"]
-        .max()
-        .sort_values(ascending=False)
+        df["SNP"].drop_duplicates()
         .head(max_snps)
-        .index
         .tolist()
     )
 
@@ -386,12 +383,13 @@ def build_segmented_circos_figure(
         disease = row["Disease"]
         gene = row["Gene"]
         snp = row["SNP"]
-        score = float(row["Importance_Score"])
+        tier = int(row["Evidence_Tier"])
+        studies = int(row["Independent_Studies"])
         p_value = _clean(row.get("P_value", ""))
         rank_label = _clean(row.get("Rank_Label", ""))
         rank_ar = _clean(row.get("Rank_Label_AR", ""))
 
-        link_width = max(1.0, min(8.0, 1.0 + score * 0.055))
+        link_width = 1.0 + 1.6 * tier + min(studies, 10) * 0.15
 
         disease_col = disease_colors.get(disease, "#2563eb")
 
@@ -399,9 +397,9 @@ def build_segmented_circos_figure(
             f"<b>{disease}</b><br>"
             f"Gene: {gene}<br>"
             f"SNP: {snp}<br>"
-            f"Score: {score:.2f}<br>"
+            f"{tr('دراسات مستقلة', 'Independent studies')}: {studies}<br>"
             f"p-value: {p_value}<br>"
-            f"Rank: {rank_label} {rank_ar}"
+            f"{tr('مستوى الدليل', 'Evidence')}: {rank_ar if is_rtl() else rank_label}"
         )
 
         if relationship_type in ["All", "Disease-Gene"]:
@@ -537,8 +535,8 @@ def build_segmented_circos_figure(
 def render_circos_plot_page():
     page_header(
         tr("مخطط العلاقات (Circos)", "Relationship map (Circos)"),
-        subtitle=tr("مخطط دائري يربط الأمراض بالجينات والمتغيرات الجينية؛ سماكة الرابط تعكس درجة الأهمية.",
-                    "A circular map linking diseases, genes and variants; link width reflects the importance score."),
+        subtitle=tr("مخطط دائري يربط الأمراض بالجينات والمتغيرات الجينية؛ سماكة الرابط تعكس مستوى الدليل.",
+                    "A circular map linking diseases, genes and variants; link width reflects the evidence level."),
         icon="🧬",
     )
 
@@ -566,8 +564,10 @@ def render_circos_plot_page():
         relationship_type = st.selectbox(tr("نوع العلاقة", "Relationship"), list(relation_labels),
                                          format_func=relation_labels.get, key="segmented_circos_relationship_type")
     with c3:
-        min_score = st.slider(tr("أقل درجة أهمية", "Minimum score"), 0.0, 100.0, 0.0, step=5.0,
-                              key="segmented_circos_min_score")
+        min_tier = st.selectbox(
+            tr("أدنى مستوى دليل", "Minimum evidence"), [0, 2, 3], key="segmented_circos_min_tier",
+            format_func=lambda v: {0: tr("الكل", "All"), 2: tr("قوي فأعلى", "Strong or higher"),
+                                   3: tr("مؤكَّد فقط", "Confirmed only")}[v])
     with c4:
         max_connections = st.slider(tr("أقصى عدد روابط", "Maximum links"), 10, 200, 60, step=10,
                                     key="segmented_circos_max_connections")
@@ -586,8 +586,8 @@ def render_circos_plot_page():
     filtered = df.copy()
     if selected_disease != "__all__":
         filtered = filtered[filtered["Disease"].astype(str).eq(selected_disease)].copy()
-    filtered = filtered[filtered["Importance_Score"] >= float(min_score)]
-    filtered = filtered.sort_values("Importance_Score", ascending=False).head(max_connections).reset_index(drop=True)
+    filtered = filtered[filtered["Evidence_Tier"] >= int(min_tier)]
+    filtered = filtered.head(max_connections).reset_index(drop=True)
 
     if filtered.empty:
         empty_state("🧹", tr("لا توجد علاقات مطابقة", "No matching relationships"),
@@ -611,8 +611,10 @@ def render_circos_plot_page():
     st.plotly_chart(fig, width="stretch", config={
         "displaylogo": False, "responsive": True, "modeBarButtonsToRemove": ["lasso2d", "select2d"]})
 
-    notice(tr("أزرق: مرض ↔ جين · بنفسجي: جين ↔ متغير · فيروزي: مرض ↔ متغير. سماكة الرابط = درجة الأهمية.",
-              "Blue: disease ↔ gene · Purple: gene ↔ variant · Teal: disease ↔ variant. Link width = importance score."))
+    notice(tr("أزرق: مرض ↔ جين · بنفسجي: جين ↔ متغير · فيروزي: مرض ↔ متغير. "
+              "سماكة الرابط = مستوى الدليل وعدد الدراسات المستقلة.",
+              "Blue: disease ↔ gene · Purple: gene ↔ variant · Teal: disease ↔ variant. "
+              "Link width = evidence level and number of independent studies."))
 
     with st.expander(tr("بيانات العلاقات المستخدمة في المخطط", "Relationship data used in the map")):
         st.dataframe(filtered, width="stretch", hide_index=True)

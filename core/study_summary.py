@@ -74,7 +74,7 @@ def extract_study_context(row: Dict[str, Any]) -> Dict[str, str]:
         "rsid": _first_available(row, ["rsid", "rs_id", "snp", "snp_id", "variant_id"]),
         "gene": _first_available(row, ["gene_symbol", "gene", "mapped_gene"]),
         "p_value": _first_available(row, ["p_value", "p-value", "pvalue"]),
-        "importance_score": _first_available(row, ["importance_score", "score", "ranking_score"]),
+        "independent_gws_studies": _first_available(row, ["independent_gws_studies"], default="—"),
         "rank_label": _first_available(row, ["rank_label", "rank"]),
         "rank_label_arabic": _first_available(row, ["rank_label_arabic"], default=""),
         "population": _first_available(row, ["population", "population_label", "ancestry"]),
@@ -122,8 +122,8 @@ def build_arabic_study_summary(row: Dict[str, Any]) -> str:
 - **المنطقة:** {c['region']}
 - **الدولة:** {c['country']}
 - **قيمة الدلالة الإحصائية p-value:** {c['p_value']}
-- **درجة الأهمية في المنصة:** {c['importance_score']}
-- **تصنيف قوة الارتباط:** {c['rank_label']} {c['rank_label_arabic']}
+- **مستوى الدليل في المنصة:** {c['rank_label_arabic'] or c['rank_label']}
+- **دراسات مستقلة بلغت الدلالة:** {c['independent_gws_studies']}
 """.strip()
 
     extra_lines = []
@@ -178,8 +178,8 @@ The available platform data indicates a research record related to **{c['disease
 - **Region:** {c['region']}
 - **Country:** {c['country']}
 - **p-value:** {c['p_value']}
-- **Platform importance score:** {c['importance_score']}
-- **Rank label:** {c['rank_label']}
+- **Platform evidence level:** {c['rank_label']}
+- **Independent genome-wide significant studies:** {c['independent_gws_studies']}
 """.strip()
 
     extra_lines = []

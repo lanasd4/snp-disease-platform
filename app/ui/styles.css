@@ -424,6 +424,9 @@ div[class*="st-key-dz_"] .stButton button:hover {
 .badge-low     { background: var(--low-soft); color: var(--low); border-color: var(--border); }
 .badge-neutral { background: var(--teal-soft); color: var(--teal-2); }
 .badge-arab    { background: var(--purple-soft); color: var(--purple); }
+.badge-bad     { background: #FDECEC; color: #B42318; border-color: #F5C2C0; }
+.opinion-tag   { display: inline-block; font-size: 0.75rem; padding: 2px 8px; border-radius: 999px; background: #FFF4E5; color: #8A5300; border: 1px solid #F2D3A2; }
+.post-meta     { color: var(--muted); font-size: 0.82rem; }
 
 /* ------------------------------------------------- empty state & notice -- */
 
@@ -613,3 +616,6 @@ code { direction: ltr; unicode-bidi: isolate; }
     .page-head { padding: 16px 18px; }
     .ph-title { font-size: 1.3rem !important; }
 }
+
+/* Toggle switches: keep the track left-to-right so the knob stays inside it in RTL. */
+[data-testid="stCheckbox"] label:has(input[role="switch"]) > div:not([data-testid]) { direction: ltr; }

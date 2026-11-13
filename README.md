@@ -31,14 +31,16 @@ On Windows you can also double-click `run.bat`. To create the first admin accoun
 |---|---|---|---|
 | 3.1 Representation | Share of GWAS studies and participants from Arab / Middle Eastern populations | `docs/research/01_representation.md` | `python -m analysis.representation` |
 | 3.2 Classifier validation | Accuracy of detecting Arab / Middle Eastern samples in GWAS sample descriptions | `docs/research/02_classifier_validation.md` | `python -m analysis.classifier_validation score --sample B` |
-| 3.3 Ranking validation | Does the importance score rank established disease genes first? | `docs/research/03_ranking_validation.md` | `python -m analysis.ranking_validation` |
+| 3.3 Ranking validation | Do the evidence levels rank established disease genes first? | `docs/research/03_ranking_validation.md` | `python -m analysis.ranking_validation` |
 | 3.4 Usability | SUS and task success with Arab users (protocol ready, data pending) | `docs/research/04_usability_study.md` | `python -m analysis.usability` |
 
 Key findings so far: Arab participants are 0.04% of GWAS discovery participants and 0.91% of
 studies include an Arab discovery sample; hypertension, chronic kidney disease and breast cancer
 have no Arab or Middle Eastern discovery study in the catalog. The platform's classifier finds
-these samples with high precision and recall; the importance score ranks established genes above
-chance (mean AUC 0.62) but below the p-value alone (0.67), for a documented reason.
+these samples with high precision and recall. Associations carry an evidence level (Confirmed =
+genome-wide significant in 2+ independent studies across the whole catalog; Strong = in one study) and
+are ordered by statistical strength; this ranks established genes better than the former weighted
+score (mean AUC 0.68 vs 0.62; difference 0.06, 95% CI 0.03-0.09).
 
 The dataset is rebuilt from the GWAS Catalog with one command: `python -m pipeline.rebuild_dataset`.
 

@@ -283,7 +283,7 @@ def run_entity_linking() -> dict:
     input_path = paths["processed"] / INPUT_ASSOCIATIONS_FILENAME
 
     if not input_path.exists():
-        raise FileNotFoundError(f"Day 20 input file not found: {input_path}")
+        raise FileNotFoundError(f"Input file not found: {input_path}")
 
     input_df = pd.read_csv(input_path, dtype=str)
 
@@ -420,7 +420,6 @@ def run_entity_linking() -> dict:
     metadata = {
         "file_name": ASSOCIATIONS_READY_FILENAME,
         "source_input_file": INPUT_ASSOCIATIONS_FILENAME,
-        "project_day": 21,
         "stage": "Deduplication and Entity Linking",
         "is_real_data": True,
         "is_ready_for_db": True,
@@ -459,7 +458,7 @@ def run_entity_linking() -> dict:
 def main() -> None:
     result = run_entity_linking()
 
-    print("Day 21 entity linking and deduplication completed.")
+    print("Entity linking and deduplication completed.")
     print(f"Input rows: {result['input_rows']}")
     print(f"Ready before dedup rows: {result['ready_before_dedup_rows']}")
     print(f"Ready after dedup rows: {result['ready_after_dedup_rows']}")

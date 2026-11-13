@@ -10,34 +10,23 @@ import streamlit as st
 
 from app.ui.components import empty_state, page_header, rank_text, section_title, stat_card
 from core.diseases import list_diseases
-from core.i18n import is_rtl, tr
+from core.evidence import TIER_ORDER, sort_by_evidence
+from core.i18n import is_rtl, t, tr
 from core.search_engine import load_tri_search_data
 
 KEY = "rank"
 BRAND = ["#0A2158", "#0E7C8C", "#5B3291", "#1D4E9E", "#3FA7B5", "#8A6BBE", "#6C86B8", "#9AD0D7"]
-RANK_ORDER = ["Very High", "High", "Moderate", "Low"]
-RANK_COLORS = {"Very High": "#0A2158", "High": "#0E7C8C", "Moderate": "#C98A12", "Low": "#AAB4C5"}
-
-# (weight, Arabic, English) - same weights as pipeline/association_ranking.RANKING_WEIGHTS
-SCORE_COMPONENTS = [
-    (45, "قوة الدلالة الإحصائية (‎-log10 p، بحد أقصى 100)", "Statistical strength (-log10 p, capped at 100)"),
-    (15, "عدد سجلات الدليل للمتغير والمرض", "Number of evidence records for the variant and disease"),
-    (10, "عدد الدراسات المستقلة", "Number of independent studies"),
-    (8, "عدد المجموعات السكانية", "Number of populations"),
-    (5, "عدد مصادر البيانات", "Number of data sources"),
-    (5, "توفر نسبة الأرجحية أو Beta", "Odds ratio / beta reported"),
-    (5, "توفر الأليل المؤثر", "Risk allele reported"),
-    (4, "توفر معرّف PubMed", "PubMed id available"),
-    (3, "عينة عربية أو شرق أوسطية", "Arab / Middle East sample"),
-]
+RANK_ORDER = TIER_ORDER
+RANK_COLORS = {"Confirmed": "#0A2158", "Strong": "#0E7C8C", "Suggestive": "#C98A12", "Below threshold": "#AAB4C5"}
 
 
 def _per_variant(data: pd.DataFrame) -> pd.DataFrame:
-    """One row per (disease, variant): its best-scored evidence record."""
+    """One row per (disease, variant): its strongest evidence record, in evidence order."""
     data = data.copy()
-    data["_p"] = pd.to_numeric(data["p_value"], errors="coerce")
+    data["_p"] = pd.to_numeric(data["best_p_value"], errors="coerce")
     data["_arab"] = data["is_arab_related_flag"].astype(str).isin({"1", "Y", "True", "TRUE"})
-    best = data.sort_values(["importance_score_numeric", "_p"], ascending=[False, True])
+    data["_replicated"] = pd.to_numeric(data["independent_gws_studies"], errors="coerce").fillna(0).astype(int)
+    best = sort_by_evidence(data)
     variants = best.drop_duplicates(subset=["disease_name", "rsid"]).copy()
     arab_any = data.groupby(["disease_name", "rsid"])["_arab"].any()
     variants["_arab"] = [arab_any.get((d, r), False) for d, r in zip(variants["disease_name"], variants["rsid"])]
@@ -78,12 +67,14 @@ def _render_comparison(variants: pd.DataFrame, data: pd.DataFrame) -> None:
     data = data[data["disease_name"].isin(chosen)]
     summary = (
         variants.groupby("disease_name")
-        .agg(variants=("rsid", "nunique"), genes=("gene_symbol", "nunique"), median_score=("importance_score_numeric", "median"),
-             arab=("_arab", "sum"))
+        .agg(variants=("rsid", "nunique"), genes=("gene_symbol", "nunique"),
+             confirmed=("evidence_tier", lambda s: int((s == 3).sum())), arab=("_arab", "sum"))
         .reindex(list(names)).fillna(0).reset_index()
     )
     summary["label"] = summary["disease_name"].map(names)
     summary["studies"] = summary["disease_name"].map(data.groupby("disease_name")["pubmed_id"].nunique()).fillna(0)
+    share = summary["confirmed"] / summary["variants"].where(summary["variants"] > 0)
+    summary["confirmed_share"] = share.fillna(0) * 100
 
     c1, c2 = st.columns(2)
     with c1:
@@ -95,7 +86,7 @@ def _render_comparison(variants: pd.DataFrame, data: pd.DataFrame) -> None:
                      category_orders={"label": list(names.values())})
         st.plotly_chart(_style(fig), width="stretch", key=f"{KEY}_counts")
     with c2:
-        section_title(tr("توزيع قوة الارتباط", "Strength of association"))
+        section_title(tr("مستويات الدليل لكل مرض", "Evidence levels per disease"))
         dist = variants.groupby(["disease_name", "rank_label"]).size().reset_index(name="n")
         dist["label"] = dist["disease_name"].map(names)
         dist["rank"] = dist["rank_label"].map(rank_text)
@@ -108,8 +99,8 @@ def _render_comparison(variants: pd.DataFrame, data: pd.DataFrame) -> None:
     section_title(tr("ملخص المقارنة", "Comparison summary"),
                   tr("المتغيرات العربية = متغيرات لها دليل من عينة عربية أو شرق أوسطية",
                      "Arab variants = variants with evidence from an Arab / Middle East sample"))
-    table = summary[["label", "variants", "genes", "studies", "median_score", "arab"]].sort_values("variants",
-                                                                                                  ascending=False)
+    table = summary[["label", "variants", "genes", "studies", "confirmed_share", "arab"]].sort_values(
+        "variants", ascending=False)
     st.dataframe(
         table, hide_index=True, width="stretch",
         column_config={
@@ -117,8 +108,10 @@ def _render_comparison(variants: pd.DataFrame, data: pd.DataFrame) -> None:
             "variants": st.column_config.NumberColumn(tr("المتغيرات", "Variants"), format="%d"),
             "genes": st.column_config.NumberColumn(tr("الجينات", "Genes"), format="%d"),
             "studies": st.column_config.NumberColumn(tr("الدراسات", "Studies"), format="%d"),
-            "median_score": st.column_config.ProgressColumn(tr("وسيط الدرجة", "Median score"), min_value=0,
-                                                            max_value=100, format="%.0f"),
+            "confirmed_share": st.column_config.ProgressColumn(
+                tr("نسبة المؤكَّد", "Confirmed share"), min_value=0, max_value=100, format="%.0f%%",
+                help=tr("نسبة المتغيرات التي تكرر ارتباطها في دراستين مستقلتين أو أكثر",
+                        "Share of variants replicated in two or more independent studies")),
             "arab": st.column_config.NumberColumn(tr("متغيرات عربية", "Arab variants"), format="%d"),
         },
     )
@@ -129,8 +122,7 @@ def _render_disease(variants: pd.DataFrame) -> None:
     diseases = list_diseases()
     disease = st.selectbox(tr("اختر المرض", "Choose a disease"), diseases,
                            format_func=lambda d: f"{d.icon} {d.display_name(arabic)}", key=f"{KEY}_disease")
-    rows = variants[variants["disease_name"] == disease.name_en].sort_values("importance_score_numeric",
-                                                                             ascending=False)
+    rows = variants[variants["disease_name"] == disease.name_en]
     if rows.empty:
         empty_state("📊", tr("لا توجد بيانات", "No data"))
         return
@@ -141,7 +133,8 @@ def _render_disease(variants: pd.DataFrame) -> None:
     with c2:
         stat_card(tr("الجينات", "Genes"), rows["gene_symbol"].nunique(), icon="🧪")
     with c3:
-        stat_card(tr("قوية جدًا", "Very high"), int((rows["rank_label"] == "Very High").sum()), icon="⭐")
+        stat_card(tr("مؤكَّدة", "Confirmed"), int((rows["evidence_tier"] == 3).sum()),
+                  tr("تكررت في دراستين مستقلتين أو أكثر", "Replicated in 2+ independent studies"), icon="⭐")
     with c4:
         stat_card(tr("بدليل عربي", "Arab evidence"), int(rows["_arab"].sum()), icon="🌍")
 
@@ -151,18 +144,20 @@ def _render_disease(variants: pd.DataFrame) -> None:
         top = rows.head(20)
         st.dataframe(
             pd.DataFrame({
-                "rsid": top["rsid"], "gene": top["gene_symbol"], "score": top["importance_score_numeric"],
+                "rsid": top["rsid"], "gene": top["gene_symbol"],
                 "rank": top["rank_label"].map(rank_text),
+                "studies": top["_replicated"],
                 "p": top["_p"].map(lambda v: f"{v:.1e}" if pd.notna(v) else "—"),
-                "studies": pd.to_numeric(top["study_count_for_disease_snp"], errors="coerce").fillna(0).astype(int),
             }),
             hide_index=True, width="stretch", height=740,
             column_config={
                 "rsid": "SNP", "gene": tr("الجين", "Gene"),
-                "score": st.column_config.ProgressColumn(tr("الدرجة", "Score"), min_value=0, max_value=100,
-                                                         format="%.0f"),
-                "rank": tr("القوة", "Strength"), "p": tr("قيمة p", "p-value"),
-                "studies": st.column_config.NumberColumn(tr("الدراسات", "Studies"), format="%d"),
+                "rank": st.column_config.TextColumn(tr("مستوى الدليل", "Evidence"), help=t("search.tier_help")),
+                "studies": st.column_config.NumberColumn(
+                    tr("دراسات مستقلة", "Independent studies"), format="%d",
+                    help=tr("عدد الدراسات المستقلة التي بلغ فيها الارتباط p < 5×10⁻⁸",
+                            "Independent studies where the association reached p < 5×10⁻⁸")),
+                "p": tr("أفضل قيمة p", "Best p-value"),
             },
         )
     with right:
@@ -173,32 +168,42 @@ def _render_disease(variants: pd.DataFrame) -> None:
                      labels={"n": tr("عدد المتغيرات", "Variants"), "gene": ""})
         st.plotly_chart(_style(fig, 360), width="stretch", key=f"{KEY}_genes")
 
-        section_title(tr("توزيع الدرجات", "Score distribution"))
-        fig = px.histogram(rows, x="importance_score_numeric", nbins=20, color_discrete_sequence=[BRAND[0]],
-                           labels={"importance_score_numeric": tr("درجة الأهمية", "Importance score")})
-        fig.update_yaxes(title=tr("عدد المتغيرات", "Variants"))
+        section_title(tr("التكرار في دراسات مستقلة", "Replication in independent studies"))
+        counts = rows["_replicated"].clip(upper=10).value_counts().sort_index().reset_index()
+        counts.columns = ["k", "n"]
+        counts["k"] = counts["k"].map(lambda k: "10+" if k >= 10 else str(int(k)))
+        fig = px.bar(counts, x="k", y="n", color_discrete_sequence=[BRAND[0]],
+                     labels={"k": tr("عدد الدراسات المستقلة", "Independent studies"),
+                             "n": tr("عدد المتغيرات", "Variants")})
+        fig.update_xaxes(type="category")
         st.plotly_chart(_style(fig, 300), width="stretch", key=f"{KEY}_hist")
 
 
 def _render_method() -> None:
-    with st.expander(tr("كيف تُحسب درجة الأهمية؟", "How is the importance score computed?"), icon="ℹ️"):
-        st.markdown(tr(
-            "الدرجة من 0 إلى 100، وهي مجموع مكونات موزونة. كل مكوّن يُحوَّل أولًا إلى قيمة بين 0 و1 "
-            "(الأعداد بمقياس لوغاريتمي حتى لا تطغى القيم الكبيرة):",
-            "The score runs from 0 to 100 and is a weighted sum. Each component is first scaled to 0-1 "
-            "(counts on a log scale so very large values do not dominate):",
-        ))
+    with st.expander(tr("كيف يُحدَّد مستوى الدليل؟", "How is the evidence level decided?"), icon="ℹ️"):
         st.dataframe(
-            pd.DataFrame([{"w": w, "c": tr(ar, en)} for w, ar, en in SCORE_COMPONENTS]),
+            pd.DataFrame([
+                {"level": rank_text("Confirmed"), "rule": tr(
+                    "دلالة على مستوى الجينوم (p < 5×10⁻⁸) في دراستين مستقلتين أو أكثر",
+                    "Genome-wide significant (p < 5×10⁻⁸) in two or more independent studies")},
+                {"level": rank_text("Strong"), "rule": tr(
+                    "دلالة على مستوى الجينوم في دراسة واحدة", "Genome-wide significant in one study")},
+                {"level": rank_text("Suggestive"), "rule": "p < 10⁻⁵"},
+            ]),
             hide_index=True, width="stretch",
-            column_config={"w": st.column_config.NumberColumn(tr("الوزن", "Weight"), format="%d"),
-                           "c": tr("المكوّن", "Component")},
+            column_config={"level": tr("المستوى", "Level"), "rule": tr("الشرط", "Rule")},
         )
         st.markdown(tr(
-            "**التصنيف:** 85 فأكثر = قوي جدًا، 70-85 = قوي، 50-70 = متوسط، أقل من 50 = منخفض. "
-            "الدرجة أداة لترتيب الأدلة داخل المنصة وليست تقديرًا لخطر الإصابة.",
-            "**Labels:** 85+ very high, 70-85 high, 50-70 moderate, below 50 low. "
-            "The score orders evidence within the platform; it is not a disease-risk estimate.",
+            "تُعدّ الدراسات المستقلة على كامل كتالوج GWAS، لا على السجلات المعروضة فقط. "
+            "الترتيب حسب أفضل قيمة p في الكتالوج (قوة الدليل)، ثم المستوى، ثم حجم التأثير (|log OR| أو |β|)، "
+            "ثم حجم العينة. أما المستوى فيبيّن مدى موثوقية الارتباط (هل تكرر).\n\n"
+            "العينات العربية لا تغيّر المستوى؛ تظهر كشارة منفصلة ويمكن تصفية النتائج بها. "
+            "مستوى الدليل يصف قوة الارتباط في الأبحاث، وليس تقديرًا لخطر الإصابة.",
+            "Independent studies are counted over the whole GWAS Catalog, not only the records shown. "
+            "Order is by best p-value in the catalog (strength), then level, effect size (|log OR| or |β|) and "
+            "sample size. The level shows how reliable the association is (was it replicated).\n\n"
+            "Arab samples do not change the level; they appear as a separate badge and filter. "
+            "The evidence level describes research evidence, not a disease-risk estimate.",
         ))
 
 

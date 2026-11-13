@@ -124,8 +124,8 @@ def detect_relevant_terms_from_columns(columns: List[str]) -> List[str]:
         "Population": ["population", "ancestry", "region", "country"],
         "Study title": ["study_title", "study"],
         "PubMed ID": ["pubmed", "pmid"],
-        "Importance score": ["importance_score"],
-        "Rank label": ["rank_label"],
+        "Evidence level": ["evidence_tier", "rank_label"],
+        "Replication": ["independent_gws_studies"],
         "Arab-related evidence": ["arab", "middle", "regional"],
     }
 

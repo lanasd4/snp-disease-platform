@@ -53,16 +53,6 @@ def test_clicking_a_disease_tile_opens_search_with_results():
     assert len(table) > 0 and "APOE" in set(table["gene"])
 
 
-def test_home_search_box_routes_to_the_right_mode():
-    at = _app()
-    at.text_input(key="home_search_query").input("rs429358")
-    at.button[0].click()  # form submit is the first button
-    at = at.run()
-    _no_errors(at)
-    assert at.session_state["current_page_key"] == "Search"
-    assert at.session_state["srch_mode"] == "snp"
-
-
 # --- Search -------------------------------------------------------------------
 
 @pytest.mark.parametrize("query, expected_gene", [("السكري", "TCF7L2"), ("Breast Cancer", None), ("الروماتيزم", None)])

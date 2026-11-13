@@ -46,20 +46,6 @@ def _render_hero() -> None:
         unsafe_allow_html=True,
     )
 
-    with st.form("home_search_form", border=False):
-        query_col, button_col = st.columns([5, 1], vertical_alignment="bottom")
-        with query_col:
-            query = st.text_input(
-                t('home.search_label'),
-                placeholder=t('home.search_placeholder'),
-                key="home_search_query",
-            )
-        with button_col:
-            submitted = st.form_submit_button(t('common.search_button'), type="primary", width="stretch")
-
-    if submitted and query.strip():
-        open_search(query.strip())
-
 
 def _render_numbers() -> None:
     counts = get_database_counts()

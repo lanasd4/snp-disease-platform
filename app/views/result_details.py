@@ -10,6 +10,7 @@ import pandas as pd
 import streamlit as st
 
 
+from core.auth import is_admin
 from core.i18n import is_rtl, tr
 from core.glossary import get_relevant_glossary_for_result
 from core.ai.agent import generate_ai_explanation
@@ -202,10 +203,12 @@ def render_ai_explanation_for_result(row: dict, prefix: str):
         with st.spinner(tr("جاري توليد الشرح...", "Generating the explanation...")):
             result = generate_ai_explanation(row, user_question=question, prefer_ollama=True)
         mode = result.get("mode", "")
-        if mode in {"gemma_ollama", "ollama_local"}:
-            st.success(tr("تم توليد الشرح باستخدام المساعد الذكي المحلي.", "Generated with the local AI assistant."))
-        elif mode == "scope_refusal":
+        if mode == "scope_refusal":
             st.warning(tr("السؤال خارج نطاق الشرح البحثي للمنصة.", "This question is outside the platform's scope."))
+        elif not is_admin():
+            pass
+        elif mode in {"gemma_ollama", "ollama_local"}:
+            st.success(tr("تم توليد الشرح باستخدام المساعد الذكي المحلي.", "Generated with the local AI assistant."))
         else:
             st.info(tr("تم توليد الشرح باستخدام القواعد الآمنة المعتمدة داخل المنصة.",
                        "Generated with the platform's built-in safe rules (AI model not available)."))

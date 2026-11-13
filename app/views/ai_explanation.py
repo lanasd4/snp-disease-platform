@@ -11,6 +11,7 @@ from app.ui.components import notice, page_header, section_title
 from app.ui.pickers import pick_association
 from core.ai.agent import generate_ai_explanation, get_ollama_models
 from core.ai.model_manager import get_active_model
+from core.auth import is_admin
 from core.i18n import tr
 
 KEY = "aiexp"
@@ -28,11 +29,12 @@ def render_ai_explanation_page() -> None:
     installed = get_ollama_models()
     active = get_active_model()
     model = active if active in installed else (installed[0] if installed else None)
-    if model:
-        notice(tr(f"يعمل الشرح بمساعد ذكي محلي ({model}).", f"Explanations use a local AI model ({model})."))
-    else:
-        notice(tr("يعمل الشرح بالقواعد العلمية المعتمدة داخل المنصة (لا يتوفر نموذج ذكاء اصطناعي محلي على هذا الخادم).",
-                  "Explanations use the platform's built-in scientific rules (no local AI model on this server)."))
+    if is_admin():
+        if model:
+            notice(tr(f"يعمل الشرح بمساعد ذكي محلي ({model}).", f"Explanations use a local AI model ({model})."))
+        else:
+            notice(tr("يعمل الشرح بالقواعد العلمية المعتمدة داخل المنصة (لا يتوفر نموذج ذكاء اصطناعي محلي على هذا الخادم).",
+                      "Explanations use the platform's built-in scientific rules (no local AI model on this server)."))
 
     section_title(tr("ماذا تريد أن تفهم؟", "What would you like to understand?"))
     row = pick_association(KEY, FROM_SEARCH_KEY, allow_none=True)
@@ -59,6 +61,8 @@ def render_ai_explanation_page() -> None:
     notice(tr("هذا الشرح تعليمي فقط ولا يُستخدم للتشخيص أو القرارات العلاجية.",
               "This explanation is educational only and not for diagnosis or treatment decisions."), "research")
 
-    with st.expander(tr("تفاصيل تقنية", "Technical details")):
+    if not is_admin():
+        return
+    with st.expander(tr("تفاصيل تقنية (للإدارة فقط)", "Technical details (admins only)")):
         st.write({"mode": result.get("mode"), "model": result.get("model"),
                   "fallback": result.get("used_fallback"), "safety_replaced": result.get("safety_replaced")})

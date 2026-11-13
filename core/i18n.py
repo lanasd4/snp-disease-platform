@@ -172,6 +172,10 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
     "auth.new_username": {"ar": "اسم المستخدم الجديد", "en": "New username"},
     "auth.new_password": {"ar": "كلمة المرور الجديدة", "en": "New password"},
     "auth.confirm_password": {"ar": "تأكيد كلمة المرور", "en": "Confirm password"},
+    "auth.trial_notice": {
+        "ar": "نسخة تجريبية: قد تُحذف الحسابات والمشاركات عند تحديث المنصة أو إعادة تشغيلها.",
+        "en": "Trial version: accounts and posts may be deleted when the platform is updated or restarted.",
+    },
     "auth.register_self_note": {
         "ar": "التسجيل الذاتي ينشئ حساب مستخدم عادي فقط، ولا ينشئ حساب أدمن.",
         "en": "Self-registration creates a regular user account only - it never creates an admin.",
@@ -334,6 +338,12 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
         "ar": "اكتب اسم مرض أو رقم متغير أو رمز جين، أو اختر من الاقتراحات أعلاه.",
         "en": "Type a disease, a variant ID or a gene symbol, or pick one of the suggestions above.",
     },
+    "search.did_you_mean": {
+        "ar": "لا توجد نتائج لـ «{original}». هل تقصد «{suggestion}»؟ عرضنا نتائجه.",
+        "en": "No results for “{original}”. Did you mean “{suggestion}”? Showing its results.",
+    },
+    "search.use_suggestion": {"ar": "نعم، ابحث عن «{suggestion}»", "en": "Yes, search for “{suggestion}”"},
+    "search.button": {"ar": "بحث", "en": "Search"},
     "search.none": {"ar": "لا توجد نتائج", "en": "No results"},
     "search.none_hint_disease": {
         "ar": "تأكد من اسم المرض، أو اختر أحد الأمراض المشمولة من الاقتراحات.",

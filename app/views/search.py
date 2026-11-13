@@ -15,6 +15,7 @@ from app.ui.components import (
     SEARCH_REQUEST_KEY,
     empty_state,
     go_to_page,
+    notice,
     page_header,
     rank_badge,
     rank_text,
@@ -31,7 +32,8 @@ from core.auth import clear_my_search_history, get_current_user, get_my_search_h
 from core.diseases import list_diseases, resolve_disease
 from core.evidence import sort_by_evidence
 from core.i18n import is_rtl, t
-from core.search_engine import search_tri_ranked_file
+from core.search_engine import load_tri_search_data, search_tri_ranked_file
+from core.search_suggest import autocomplete_options, suggest
 
 KEY = "srch"  # widget-key namespace for this page
 MODES = ["disease", "snp", "gene"]
@@ -91,7 +93,7 @@ def _disease_label(row) -> str:
 
 def _init_state() -> None:
     st.session_state.setdefault(MODE_KEY, "disease")
-    st.session_state.setdefault(QUERY_KEY, "")
+    st.session_state.setdefault(QUERY_KEY, None)
     st.session_state.setdefault(f"{KEY}_history", [])
 
     request = st.session_state.pop(SEARCH_REQUEST_KEY, None)
@@ -132,11 +134,24 @@ def _render_search_panel() -> dict:
         # Clicking the active segment deselects it; treat that as "disease".
         mode = st.session_state.get(MODE_KEY) or "disease"
 
-        st.text_input(
-            t(f'search.input_{mode}'),
-            placeholder=t(f'search.placeholder_{mode}'),
-            key=QUERY_KEY,
-        )
+        options = autocomplete_options(mode, load_tri_search_data(), is_rtl())
+        current = st.session_state.get(QUERY_KEY)
+        if current and current not in options:
+            options = [current, *options]  # keep free text the user typed
+        box, button = st.columns([12, 1], vertical_alignment="bottom")
+        with box:
+            st.selectbox(
+                t(f'search.input_{mode}'),
+                options,
+                index=None,
+                key=QUERY_KEY,
+                placeholder=t(f'search.placeholder_{mode}'),
+                accept_new_options=True,
+                filter_mode="fuzzy",
+            )
+        with button:
+            st.button("", icon=":material/search:", key=f"{KEY}_go", help=t('search.button'),
+                      type="primary", width="stretch")
 
         if mode == "disease":
             arabic = is_rtl()
@@ -178,7 +193,7 @@ def _render_search_panel() -> dict:
 
     return {
         "mode": mode,
-        "query": st.session_state.get(QUERY_KEY, "").strip(),
+        "query": (st.session_state.get(QUERY_KEY) or "").strip(),
         "arab_only": arab_only,
         "rank_labels": rank_labels,
         "max_p": float(max_p),
@@ -411,6 +426,26 @@ def _render_history() -> None:
 # Page
 # ---------------------------------------------------------------------------
 
+def _suggestion_label(mode: str, value: str) -> str:
+    if mode == "disease":
+        disease = resolve_disease(value)
+        if disease:
+            return disease.display_name(is_rtl())
+    return value
+
+
+def _render_did_you_mean(original: str, mode: str, value: str) -> None:
+    label = _suggestion_label(mode, value)
+    notice(t('search.did_you_mean').format(original=original, suggestion=label), "info")
+    st.button(t('search.use_suggestion').format(suggestion=label), key=f"{KEY}_use_suggestion",
+              on_click=_accept_suggestion, args=(mode, value), icon="✔️")
+
+
+def _accept_suggestion(mode: str, value: str) -> None:
+    st.session_state[MODE_KEY] = mode
+    st.session_state[QUERY_KEY] = _suggestion_label(mode, value) if mode == "disease" else value
+
+
 def render_disease_search_page() -> None:
     _init_state()
     page_header(t('search.title'), subtitle=t('search.subtitle'), icon="🔎")
@@ -425,6 +460,17 @@ def render_disease_search_page() -> None:
     result = search_tri_ranked_file(query=opts["query"], search_mode=opts["mode"],
                                     arab_related_only=opts["arab_only"], limit=5000)
     raw = pd.DataFrame(result.get("results", []))
+    if raw.empty and result.get("no_results_reason") != "arab_filter_empty":
+        alternative = suggest(opts["query"], opts["mode"], load_tri_search_data())
+        if alternative:
+            new_mode, new_query = alternative
+            retry = search_tri_ranked_file(query=new_query, search_mode=new_mode,
+                                           arab_related_only=opts["arab_only"], limit=5000)
+            if retry.get("results"):
+                _render_did_you_mean(opts["query"], new_mode, new_query)
+                opts = {**opts, "mode": new_mode, "query": new_query}
+                result = retry
+                raw = pd.DataFrame(retry["results"])
     filtered = _apply_filters(raw, opts) if not raw.empty else raw
 
     if filtered.empty:

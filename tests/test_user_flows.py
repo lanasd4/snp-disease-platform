@@ -48,7 +48,7 @@ def test_clicking_a_disease_tile_opens_search_with_results():
     at.button(key="dz_btn_9").click().run()  # Alzheimer's disease
     _no_errors(at)
     assert at.session_state["current_page_key"] == "Search"
-    assert at.text_input(key="srch_query").value == "مرض الزهايمر"
+    assert at.selectbox(key="srch_query").value == "مرض الزهايمر"
     table = at.dataframe[0].value
     assert len(table) > 0 and "APOE" in set(table["gene"])
 
@@ -68,7 +68,7 @@ def test_home_search_box_routes_to_the_right_mode():
 @pytest.mark.parametrize("query, expected_gene", [("السكري", "TCF7L2"), ("Breast Cancer", None), ("الروماتيزم", None)])
 def test_disease_search_returns_one_row_per_variant(query, expected_gene):
     at = _open(_app(), 1)
-    at.text_input(key="srch_query").input(query).run()
+    at.selectbox(key="srch_query").set_value(query).run()
     _no_errors(at)
     table = at.dataframe[0].value
     assert len(table) > 0
@@ -77,17 +77,31 @@ def test_disease_search_returns_one_row_per_variant(query, expected_gene):
         assert expected_gene in set(table["gene"])
 
 
-def test_unknown_query_shows_empty_state_not_an_error():
-    at = _open(_app(), 1)
-    at.text_input(key="srch_query").input("xyzxyz").run()
-    _no_errors(at)
-    assert len(at.dataframe) == 0
-    assert "لا توجد نتائج" in _markdown_text(at)
+def test_unknown_query_has_no_results_and_no_suggestion():
+    from core.search_engine import load_tri_search_data, search_tri_ranked_file
+    from core.search_suggest import suggest
 
+    assert search_tri_ranked_file(query="xyzxyz", search_mode="disease", arab_related_only=False)["found"] is False
+    assert suggest("xyzxyz", "disease", load_tri_search_data()) is None
+
+
+@pytest.mark.parametrize("query, mode, expected", [
+    ("سكنة", "disease", ("disease", "Obesity")),
+    ("Diabetis", "disease", ("disease", "Type 2 Diabetes")),
+    ("سرطن الثدي", "disease", ("disease", "Breast Cancer")),
+    ("TCF7L", "gene", ("gene", "TCF7L2")),
+    ("rs790314", "snp", ("snp", "rs7903146")),
+    ("TCF7L2", "disease", ("gene", "TCF7L2")),
+])
+def test_did_you_mean_suggestions(query, mode, expected):
+    from core.search_engine import load_tri_search_data
+    from core.search_suggest import suggest
+
+    assert suggest(query, mode, load_tri_search_data()) == expected
 
 def test_arab_only_filter_keeps_only_arab_rows():
     at = _open(_app(), 1)
-    at.text_input(key="srch_query").input("قصور الغدة الدرقية")
+    at.selectbox(key="srch_query").set_value("قصور الغدة الدرقية")
     at.toggle(key="srch_arab").set_value(True)
     at = at.run()
     _no_errors(at)
@@ -99,7 +113,7 @@ def test_quick_pick_fills_the_query():
     at = _open(_app(), 1)
     at.button_group(key="srch_pick_disease").set_value("قصور الغدة الدرقية").run()
     _no_errors(at)
-    assert at.text_input(key="srch_query").value == "قصور الغدة الدرقية"
+    assert at.selectbox(key="srch_query").value == "قصور الغدة الدرقية"
 
 
 # --- Language -------------------------------------------------------------------

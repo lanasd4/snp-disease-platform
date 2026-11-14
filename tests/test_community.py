@@ -9,7 +9,11 @@ import pytest
 import core.community as cm
 import core.paths
 import core.userdb as userdb
+from pathlib import Path
+
 from core.references import ReferenceCheck
+
+PROJECT_ROOT_DB = Path(__file__).resolve().parents[1] / "database" / "snp_platform.db"
 
 
 @pytest.fixture(autouse=True)
@@ -108,3 +112,11 @@ def test_report_and_hide():
 def test_sql_injection_in_search_is_harmless():
     cm.submit_library_item("lana", "explanation", "Safe", "text", url="https://e.org")
     assert cm.list_library(status=cm.LIBRARY_PENDING, query="' OR 1=1 --") == []
+
+
+def test_library_survives_the_database_file_being_replaced(tmp_path):
+    """Hosting may swap in the repository's database copy while the app keeps running."""
+    cm.list_library()
+    shutil.copy(PROJECT_ROOT_DB, core.paths.DATABASE_PATH)  # fresh copy: no library tables
+    assert cm.list_library(status=cm.LIBRARY_PENDING) == []
+    assert cm.list_posts() == []

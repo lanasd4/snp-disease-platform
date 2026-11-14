@@ -46,14 +46,20 @@ _schema_ready: set = set()
 
 
 def ensure_schema() -> None:
-    from core.userdb import database_url
-    from core.paths import DATABASE_PATH
+    """Create the tables if missing.
 
-    key = database_url() or str(DATABASE_PATH)
-    if key in _schema_ready:
+    The SQLite file can be swapped for the repository copy while the app keeps
+    running (hosting pulls a new commit), so for SQLite the cheap CREATE IF NOT
+    EXISTS check runs every time; only the remote Postgres check is cached.
+    """
+    from core.userdb import database_url
+
+    url = database_url()
+    if url and url in _schema_ready:
         return
     _ensure_schema()
-    _schema_ready.add(key)
+    if url:
+        _schema_ready.add(url)
 
 
 def _ensure_schema() -> None:

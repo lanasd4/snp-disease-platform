@@ -33,6 +33,7 @@ On Windows you can also double-click `run.bat`. To create the first admin accoun
 | 3.2 Classifier validation | Accuracy of detecting Arab / Middle Eastern samples in GWAS sample descriptions | `docs/research/02_classifier_validation.md` | `python -m analysis.classifier_validation score --sample B` |
 | 3.3 Ranking validation | Do the evidence levels rank established disease genes first? | `docs/research/03_ranking_validation.md` | `python -m analysis.ranking_validation` |
 | 3.4 Usability | SUS and task success with Arab users (protocol ready, data pending) | `docs/research/04_usability_study.md` | `python -m analysis.usability` |
+| 3.5 Learning study | Do biology students understand association concepts better after using the platform? (pre/post test, protocol and analysis ready) | `docs/research/05_learning_study.md` | `python -m analysis.learning analyse` |
 
 Key findings so far: Arab participants are 0.04% of GWAS discovery participants and 0.91% of
 studies include an Arab discovery sample; hypertension, chronic kidney disease and breast cancer

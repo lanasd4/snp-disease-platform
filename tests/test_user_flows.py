@@ -8,6 +8,7 @@ import pytest
 from streamlit.testing.v1 import AppTest
 
 import core.auth as auth
+from core.diseases import list_diseases
 
 ENTRY = str(Path(__file__).resolve().parents[1] / "app" / "main.py")
 NAV = "main_navigation_display"
@@ -140,7 +141,12 @@ def test_ranking_page_switches_disease():
     at = _open(_app(), 2)
     _no_errors(at)
     box = at.selectbox(key="rank_disease")
-    box.select_index(8).run()  # Alzheimer's disease
+    # Keyed plotly charts on this page are widgets AppTest cannot serialise, so
+    # set the choice through session state instead of box.select_index(...).run().
+    assert box.value is not None
+    alzheimer = next(d for d in list_diseases() if d.name_en.lower().startswith("alzheimer"))
+    at.session_state["rank_disease"] = alzheimer
+    at = at.run()
     _no_errors(at)
     top = next(df.value for df in at.dataframe if "gene" in df.value.columns)
     assert top.iloc[0]["gene"] in {"APOE", "TOMM40", "APOC1"}
@@ -165,6 +171,14 @@ def test_login_with_bootstrap_admin_shows_admin_page(monkeypatch):
     _no_errors(at)
     assert at.session_state["auth_role"] == "admin"
     assert any("الإدارة" in o for o in at.sidebar.radio(key=NAV).options)
+
+    # The audit log on the admin page shows this sign-in, with an IP column and filters.
+    radio = at.sidebar.radio(key=NAV)
+    at = radio.set_value(next(o for o in radio.options if "الإدارة" in o)).run()
+    _no_errors(at)
+    assert at.multiselect(key="audit_filter_category")
+    log = next(df.value for df in at.dataframe if "IP" in df.value.columns)
+    assert "login_success" in set(log.iloc[:, 4]) or "login_success" in log.to_string()
 
 
 def test_wrong_password_is_rejected():

@@ -13,7 +13,7 @@ from app.ui.components import badge, empty_state, notice, page_header
 from app.ui.references import reference_link
 from app.views.library import disease_label, disease_options
 from core import community as cm
-from core.auth import get_current_user
+from core.auth import get_current_user, safe_log_admin_action
 from core.i18n import tr
 
 OPINION_TAG = ("💬 رأي المستخدمين، ليس معلومة معتمدة", "💬 Users' opinion, not verified evidence")
@@ -121,7 +121,9 @@ def render_new_post(user: dict | None) -> None:
             return
         try:
             with st.spinner(tr("نفحص المرجع…", "Checking the reference…")):
-                cm.create_post(user["username"], title, body, disease=disease, gene=gene, reference_id=reference_id)
+                post_id = cm.create_post(user["username"], title, body, disease=disease, gene=gene,
+                                         reference_id=reference_id)
+            safe_log_admin_action(user["username"], "community_post", f"post {post_id}: {title[:80]}")
         except cm.CommunityError as exc:
             st.error(str(exc))
             return

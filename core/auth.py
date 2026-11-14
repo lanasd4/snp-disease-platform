@@ -105,6 +105,13 @@ def ensure_user_account_table() -> None:
             """
         )
 
+        log_columns = {
+            row[1] for row in conn.execute("PRAGMA table_info(AdminActionLog)").fetchall()
+        }
+        for column in ("ip_address", "user_agent", "category"):
+            if column not in log_columns:
+                conn.execute(f"ALTER TABLE AdminActionLog ADD COLUMN {column} TEXT")
+
         existing_columns = {
             row[1] for row in conn.execute("PRAGMA table_info(UserAccount)").fetchall()
         }
@@ -249,23 +256,87 @@ def _hash_needs_upgrade(stored_hash: str) -> bool:
 _DUMMY_HASH = f"pbkdf2_{HASH_NAME}${HASH_ITERATIONS}${'00' * 16}${'00' * 32}"
 
 
+AUDIT_CATEGORIES = {
+    "login": ("login_", "logout"),
+    "account": ("create_user", "create_bootstrap", "self_register", "update_user", "set_user",
+                "reset_user", "change_own"),
+    "data": ("data_",),
+    "community": ("library_", "community_"),
+    "system": ("ai_model_",),
+}
+
+
+def audit_category(action: str) -> str:
+    """Group an action name (e.g. data_final_merge) into a category for filtering."""
+    for category, prefixes in AUDIT_CATEGORIES.items():
+        if action.startswith(prefixes):
+            return category
+    return "other"
+
+
+def _first_forwarded_ip(value: str) -> str:
+    # "client, proxy1, proxy2": the left-most entry is the original client.
+    return value.split(",")[0].strip()
+
+
+def get_client_info() -> tuple[str, str]:
+    """Return (ip_address, user_agent) of the current browser session, or blanks."""
+    try:
+        context = st.context
+        headers = {k.lower(): v for k, v in dict(context.headers or {}).items()}
+    except Exception:  # not running inside a Streamlit session (tests, scripts)
+        return "", ""
+
+    ip = ""
+    for header in ("x-forwarded-for", "x-real-ip", "cf-connecting-ip"):
+        if headers.get(header):
+            ip = _first_forwarded_ip(headers[header])
+            break
+    if not ip:
+        try:
+            ip = context.ip_address
+        except Exception:
+            ip = ""
+    if not isinstance(ip, str):  # e.g. None, or a stand-in object under AppTest
+        ip = ""
+    if not ip and headers.get("host", "").split(":")[0] in {"localhost", "127.0.0.1", "[::1]"}:
+        ip = "127.0.0.1"  # Streamlit hides the address of local connections
+
+    user_agent = (headers.get("user-agent") or "")[:300]
+    return ip[:64], user_agent
+
+
 def log_admin_action(username: str, action: str, details: str = "") -> None:
+    """Write one audit-log row, with the caller's IP address and browser when available."""
     ensure_user_account_table()
+    ip_address, user_agent = get_client_info()
 
     with get_connection() as conn:
         conn.execute(
             """
-            INSERT INTO AdminActionLog (username, action, details, created_at)
-            VALUES (?, ?, ?, ?)
+            INSERT INTO AdminActionLog
+                (username, action, details, created_at, ip_address, user_agent, category)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 username,
                 action,
                 details,
                 datetime.now().isoformat(timespec="seconds"),
+                ip_address,
+                user_agent,
+                audit_category(action),
             ),
         )
         conn.commit()
+
+
+def safe_log_admin_action(username: str, action: str, details: str = "") -> None:
+    """Like log_admin_action, but a logging failure never breaks the user's action."""
+    try:
+        log_admin_action(username, action, details)
+    except Exception:
+        pass
 
 
 def create_user(username: str, password: str, role: str = "user", is_active: int = 1) -> None:
@@ -349,6 +420,7 @@ def authenticate_user(username: str, password: str) -> Optional[Dict[str, Any]]:
     remaining_lock_seconds = is_login_locked(username)
 
     if remaining_lock_seconds is not None:
+        safe_log_admin_action(username, "login_blocked_locked", "Login attempt while the account is locked out.")
         wait_minutes = int(remaining_lock_seconds // 60) + 1
         raise LoginLockedError(
             f"Too many failed login attempts for '{username}'. "
@@ -360,17 +432,21 @@ def authenticate_user(username: str, password: str) -> Optional[Dict[str, Any]]:
     if not user:
         verify_password(password, _DUMMY_HASH)
         record_login_failure(username)
+        safe_log_admin_action(username, "login_failed", "Unknown username.")
         return None
 
     if int(user.get("is_active", 0)) != 1:
         record_login_failure(username)
+        safe_log_admin_action(username, "login_failed", "Account is disabled.")
         return None
 
     if not verify_password(password, user.get("password_hash", "")):
         record_login_failure(username)
+        safe_log_admin_action(username, "login_failed", "Wrong password.")
         return None
 
     reset_login_throttle(username)
+    safe_log_admin_action(username, "login_success", f"role={user.get('role')}")
 
     if _hash_needs_upgrade(user.get("password_hash", "")):
         with get_connection() as conn:
@@ -423,6 +499,9 @@ def login_user(user: Dict[str, Any]) -> None:
 
 
 def logout_user() -> None:
+    current = st.session_state.get("auth_user") or {}
+    if current.get("username"):
+        safe_log_admin_action(current["username"], "logout", "")
     st.session_state["auth_user"] = None
     st.session_state["auth_role"] = "guest"
     st.session_state["auth_login_error"] = ""
@@ -834,7 +913,7 @@ def change_own_password(user_id: int, current_password: str, new_password: str) 
 
 
 def get_admin_action_logs(limit: int = 100):
-    """Return recent admin/user management actions."""
+    """Return the most recent audit-log rows (accounts, logins, data and community actions)."""
     import pandas as pd
 
     ensure_user_account_table()
@@ -844,7 +923,8 @@ def get_admin_action_logs(limit: int = 100):
     with get_connection() as conn:
         return pd.read_sql_query(
             """
-            SELECT log_id, username, action, details, created_at
+            SELECT log_id, created_at, username, category, action, details,
+                   ip_address, user_agent
             FROM AdminActionLog
             ORDER BY log_id DESC
             LIMIT ?;

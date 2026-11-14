@@ -11,7 +11,7 @@ import streamlit as st
 from app.ui.components import badge, empty_state, notice, page_header, section_title
 from app.ui.references import reference_link
 from core import community as cm
-from core.auth import get_current_user
+from core.auth import get_current_user, safe_log_admin_action
 from core.diseases import list_diseases
 from core.i18n import is_rtl, tr
 
@@ -128,8 +128,10 @@ def render_submit(user: dict | None) -> None:
             return
         try:
             with st.spinner(tr("نفحص المرجع…", "Checking the reference…")):
-                cm.submit_library_item(user["username"], item_type, title, description, url=url,
-                                       reference_id=reference_id, disease=disease, gene=gene)
+                item_id = cm.submit_library_item(user["username"], item_type, title, description, url=url,
+                                                 reference_id=reference_id, disease=disease, gene=gene)
+            safe_log_admin_action(user["username"], "library_submit",
+                                  f"item {item_id}: type={item_type}, title={title[:80]}, reference={reference_id}")
         except cm.CommunityError as exc:
             st.error(str(exc))
             return

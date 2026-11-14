@@ -39,3 +39,10 @@ database/*.build.db
 
 # account listings never published
 outputs/tables/*user_accounts*
+
+# Personal study guide (not published)
+PROJECT_GUIDE_AR.md
+analysis/learning/responses.csv
+analysis/learning/*_export*.csv
+analysis/usability/responses.csv
+analysis/learning/FORM_LINKS_PRIVATE.md

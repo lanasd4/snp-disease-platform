@@ -112,6 +112,19 @@ def render_about_page() -> None:
         "- The data is a balanced subset of the catalog, not every published association.",
     ))
 
+    section_title(tr("الخصوصية والسجلات", "Privacy and logs"))
+    st.markdown(tr(
+        "- البحث متاح بدون حساب، ولا نحفظ عمليات بحث الزوار.\n"
+        "- عند تسجيل الدخول أو إنشاء حساب أو رفع محتوى، نسجّل اسم المستخدم والوقت وعنوان IP ونوع المتصفح "
+        "في سجل عمليات لا يراه إلا الأدمن، لحماية الحسابات وتتبّع أي تغيير على البيانات العلمية.\n"
+        "- لا نطلب الاسم الحقيقي أو البريد الإلكتروني، ولا نشارك هذه السجلات مع أي جهة.",
+        "- Search works without an account, and visitors' searches are not stored.\n"
+        "- When you sign in, create an account or submit content, we record the username, time, IP address and "
+        "browser type in an audit log that only admins can see, to protect accounts and trace any change to the "
+        "scientific data.\n"
+        "- We do not ask for your real name or email, and we do not share these logs with anyone.",
+    ))
+
     section_title(tr("فريق العمل", "Project team"))
     team = [
         ("👩‍💻", tr("إعداد وتطوير", "Design and development"),

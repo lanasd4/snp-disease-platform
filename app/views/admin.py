@@ -36,7 +36,13 @@ from core.auth import (
     reset_user_password,
     get_admin_action_logs,
     get_current_user,
+    safe_log_admin_action,
 )
+
+
+def _audit(action: str, details: str = "") -> None:
+    """Record an admin action in the audit log under the signed-in username."""
+    safe_log_admin_action((get_current_user() or {}).get("username", "admin"), action, details)
 
 
 from core.admin.approval_merge import (
@@ -370,6 +376,7 @@ def render_sources_tab():
 
         if st.button(tr("حفظ سجل المصادر", "Save Registry"), key=f"{ADMIN_VERSION}_save_registry"):
             save_registry(edited_df)
+            _audit("data_registry_saved", f"{len(edited_df)} registry rows")
             st.success(tr("تم حفظ سجل مصادر البيانات بنجاح.", "Data source registry saved."))
 
     st.divider()
@@ -399,6 +406,8 @@ def render_sources_tab():
             target_path = upload_dir / f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{safe_name}"
 
             target_path.write_bytes(uploaded_file.getvalue())
+            _audit("data_file_uploaded",
+                   f"file={target_path.name}, source_name={source_name}, size_kb={round(target_path.stat().st_size / 1024, 1)}")
 
             try:
                 with st.spinner(tr("نتحقق من الملف ونعالجه…", "Validating and processing the file…")):
@@ -408,14 +417,19 @@ def render_sources_tab():
                         source_name=source_name,
                     )
             except Exception as exc:
+                _audit("data_processing_failed", f"file={target_path.name}, error={exc}")
                 st.error(f"{tr('تعذرت معالجة الملف: ', 'Could not process the file: ')}{exc}")
                 return
 
             if result["status"] != "processed":
                 missing = ", ".join(result["report"].get("missing_required_columns", []))
+                _audit("data_processing_failed", f"file={target_path.name}, missing_columns={missing}")
                 st.error(f"{tr('الملف ينقصه أعمدة أساسية: ', 'The file is missing required columns: ')}{missing}")
                 return
 
+            _audit("data_file_processed",
+                   f"source_id={result.get('source_id')}, file={target_path.name}, "
+                   f"accepted={result['accepted_rows']}, rejected={result['rejected_rows']}")
             st.success(tr(
                 f"تمت المعالجة: {result['accepted_rows']} صف مقبول و {result['rejected_rows']} صف مرفوض. "
                 "المصدر الآن في «الموافقات» بانتظار المراجعة.",
@@ -699,16 +713,73 @@ def render_users_tab():
                         st.error(f"{tr('تعذر تغيير كلمة المرور: ', 'Could not change the password: ')}{exc}")
 
     with tab_audit_logs:
-        st.markdown("##### " + tr("آخر عمليات الأدمن", "Recent Admin Actions"))
+        st.markdown("##### " + tr("سجل العمليات", "Audit Log"))
+        st.caption(tr(
+            "يسجّل من نفّذ كل عملية ومتى ومن أي عنوان IP: إنشاء الحسابات، تسجيل الدخول، رفع الملفات "
+            "ومعالجتها، الموافقة والرفض، الدمج النهائي والتراجع، وقرارات المكتبة والمجتمع. "
+            "عنوان IP قد يكون عنوان شبكة وسيطة وليس جهاز المستخدم نفسه.",
+            "Who did what, when and from which IP address: accounts, logins, file uploads and processing, "
+            "approvals, final merges and rollbacks, and library/community decisions. "
+            "The IP may belong to a proxy rather than the user's own device.",
+        ))
 
-        logs_df = get_admin_action_logs(limit=100)
+        logs_df = get_admin_action_logs(limit=1000)
 
         if logs_df.empty:
             st.warning(tr("لا توجد سجلات عمليات بعد.", "No actions logged yet."))
         else:
-            st.dataframe(logs_df, width="stretch", hide_index=True)
+            category_names = {
+                "data": tr("البيانات العلمية", "Scientific data"),
+                "account": tr("الحسابات", "Accounts"),
+                "login": tr("تسجيل الدخول", "Logins"),
+                "community": tr("المكتبة والمجتمع", "Library & community"),
+                "system": tr("النظام", "System"),
+                "other": tr("أخرى", "Other"),
+            }
+            logs_df["category"] = logs_df["category"].fillna("other").replace("", "other")
+            logs_df[["ip_address", "user_agent"]] = logs_df[["ip_address", "user_agent"]].fillna("")
 
-            csv_data = logs_df.to_csv(index=False, encoding="utf-8-sig").encode("utf-8-sig")
+            f1, f2, f3 = st.columns(3)
+            with f1:
+                chosen = st.multiselect(
+                    tr("نوع العملية", "Category"),
+                    options=list(category_names),
+                    format_func=category_names.get,
+                    key="audit_filter_category",
+                )
+            with f2:
+                user_filter = st.text_input(tr("اسم المستخدم", "Username"), key="audit_filter_user")
+            with f3:
+                ip_filter = st.text_input(tr("عنوان IP", "IP address"), key="audit_filter_ip")
+
+            view = logs_df
+            if chosen:
+                view = view[view["category"].isin(chosen)]
+            if user_filter.strip():
+                view = view[view["username"].fillna("").str.contains(user_filter.strip(), case=False, regex=False)]
+            if ip_filter.strip():
+                view = view[view["ip_address"].str.contains(ip_filter.strip(), regex=False)]
+
+            failed_logins = int((logs_df["action"] == "login_failed").sum())
+            m1, m2, m3 = st.columns(3)
+            m1.metric(tr("عمليات معروضة", "Rows shown"), len(view))
+            m2.metric(tr("عمليات بيانات", "Data actions"), int((logs_df["category"] == "data").sum()))
+            m3.metric(tr("محاولات دخول فاشلة", "Failed logins"), failed_logins)
+
+            display = view.assign(category=view["category"].map(category_names).fillna(view["category"]))
+            display = display.rename(columns={
+                "log_id": "#",
+                "created_at": tr("الوقت", "Time"),
+                "username": tr("المستخدم", "User"),
+                "category": tr("النوع", "Category"),
+                "action": tr("العملية", "Action"),
+                "details": tr("التفاصيل", "Details"),
+                "ip_address": "IP",
+                "user_agent": tr("المتصفح", "Browser"),
+            })
+            st.dataframe(display, width="stretch", hide_index=True)
+
+            csv_data = view.to_csv(index=False, encoding="utf-8-sig").encode("utf-8-sig")
 
             st.download_button(
                 tr("تحميل سجل العمليات", "Download Audit Log"),
@@ -842,10 +913,12 @@ def render_approvals_tab():
                     approved_by=actor_username,
                     notes=notes
                 )
+                _audit("data_source_approved", f"source_id={selected_source_id}, notes={notes}")
                 st.success(tr("تمت الموافقة وإنشاء ملف Staging بنجاح.", "Approved; staging file created."))
                 st.code(str(staging_path), language="text")
                 st.rerun()
             except Exception as exc:
+                _audit("data_source_approve_failed", f"source_id={selected_source_id}, error={exc}")
                 st.error(f"{tr('فشلت الموافقة: ', 'Approval failed: ')}{exc}")
 
     with c2:
@@ -863,6 +936,7 @@ def render_approvals_tab():
                     rejected_by=actor_username,
                     reason=notes if notes else "Rejected by admin."
                 )
+                _audit("data_source_rejected", f"source_id={selected_source_id}, reason={notes}")
                 st.warning(tr("تم رفض المصدر.", "Source rejected."))
                 st.rerun()
             except Exception as exc:
@@ -941,6 +1015,10 @@ def render_online_updates_tab():
                     notes="Online source update from the admin dashboard. Not merged into Search."
                 )
 
+            pipeline_info = result.get("pipeline_result", {}) or {}
+            _audit("data_online_update",
+                   f"url={gwas_url}, status={result.get('status')}, source_id={pipeline_info.get('source_id')}, "
+                   f"accepted={pipeline_info.get('accepted_rows')}, rejected={pipeline_info.get('rejected_rows')}")
             st.success(tr("تم تنفيذ التحديث الأونلاين وحفظ النتائج.", "Online update finished and saved."))
             st.write(tr("الحالة:", "Status:"), result.get("status"))
 
@@ -975,6 +1053,7 @@ def render_online_updates_tab():
             st.rerun()
 
         except Exception as exc:
+            _audit("data_online_update_failed", f"url={gwas_url}, error={exc}")
             st.error(f"{tr('فشل التحديث الأونلاين: ', 'Online update failed: ')}{exc}")
 
     st.divider()
@@ -1103,6 +1182,9 @@ def render_final_merge_tab():
                         notes=merge_notes
                     )
 
+                    _audit("data_final_merge",
+                           f"source_id={selected_source_id}, rows_after_merge={result.get('rows_after_merge')}, "
+                           f"backup={result.get('backup_path')}, notes={merge_notes}")
                     st.success(tr("تم الدمج النهائي بنجاح. أصبح المصدر نشطًا في صفحة البحث.", "Final merge done. The source is now live in Search."))
                     st.json({
                         "source_id": result.get("source_id"),
@@ -1115,6 +1197,7 @@ def render_final_merge_tab():
                     st.rerun()
 
                 except Exception as exc:
+                    _audit("data_final_merge_failed", f"source_id={selected_source_id}, error={exc}")
                     st.error(f"{tr('فشل الدمج النهائي: ', 'Final merge failed: ')}{exc}")
 
     with rollback_tab:
@@ -1172,6 +1255,9 @@ def render_final_merge_tab():
                         notes=rollback_notes
                     )
 
+                    _audit("data_rollback",
+                           f"source_id={rollback_source_id}, rows_after_rollback={result.get('rows_after_rollback')}, "
+                           f"notes={rollback_notes}")
                     st.warning(tr("تم تنفيذ التراجع واستعادة النسخة السابقة.", "Rolled back; previous version restored."))
                     st.json({
                         "source_id": result.get("source_id"),
@@ -1183,6 +1269,7 @@ def render_final_merge_tab():
                     st.rerun()
 
                 except Exception as exc:
+                    _audit("data_rollback_failed", f"source_id={rollback_source_id}, error={exc}")
                     st.error(f"{tr('فشل التراجع: ', 'Rollback failed: ')}{exc}")
 
     st.divider()
@@ -1686,6 +1773,7 @@ def render_ai_model_management_tab():
         if st.button(tr("تطبيق النموذج", "Apply Model"), width="stretch", key="ai_model_apply"):
             result = set_active_model(selected_model)
             if result.get("ok"):
+                _audit("ai_model_applied", f"model={selected_model}")
                 st.success(result.get("message"))
                 st.info(tr("سيستخدم الشرح الذكي هذا النموذج مباشرة.", "AI Explanation will use this model immediately."))
             else:
@@ -1719,6 +1807,7 @@ def render_ai_model_management_tab():
         else:
             with st.spinner(f"{tr('جارٍ تنفيذ ollama pull ', 'Running ollama pull ')}{model_to_install} ..."):
                 result = install_model(model_to_install)
+            _audit("ai_model_install", f"model={model_to_install}, ok={bool(result.get('ok'))}")
             if result.get("ok"):
                 st.success(result.get("message"))
                 st.rerun()

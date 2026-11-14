@@ -7,5 +7,5 @@
 | [DEPLOY.md](DEPLOY.md) | Publishing on Streamlit Community Cloud |
 | [guides/windows_setup.md](guides/windows_setup.md) | Install and run on Windows |
 | [../pipeline/README.md](../pipeline/README.md) | Data pipeline stages and order |
-| [research/](research/) | Representation, classifier validation, ranking validation, usability study |
+| [research/](research/) | Representation, classifier validation, ranking validation, usability and learning studies |
 | [reports/quality/](reports/quality/) | Test, security and load-test results |

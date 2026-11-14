@@ -176,10 +176,6 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
         "ar": "نسخة تجريبية: قد تُحذف الحسابات والمشاركات عند تحديث المنصة أو إعادة تشغيلها.",
         "en": "Trial version: accounts and posts may be deleted when the platform is updated or restarted.",
     },
-    "auth.register_self_note": {
-        "ar": "التسجيل الذاتي ينشئ حساب مستخدم عادي فقط. نسجّل وقت الدخول وعنوان IP لحماية الحسابات (انظر «عن المنصة»).",
-        "en": "Self-registration creates a regular user account only. Sign-in time and IP address are logged to protect accounts (see About).",
-    },
     "auth.username_required": {"ar": "اسم المستخدم مطلوب.", "en": "Username is required."},
     "auth.password_min_length": {
         "ar": "كلمة المرور يجب أن تكون 8 أحرف على الأقل.",

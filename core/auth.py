@@ -582,7 +582,6 @@ def render_auth_sidebar() -> None:
         return
 
     with st.sidebar.expander(t('auth.create_account'), expanded=False):
-        st.caption(t('auth.register_self_note'))
         from core.userdb import backend
 
         if backend() == "sqlite" and get_setting("SNP_TRIAL_NOTICE", "true").strip().lower() in {"1", "true", "yes"}:
